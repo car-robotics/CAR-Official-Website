@@ -18,9 +18,14 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: "1rem",
         },
         levelSection: {
-            marginTop: "3rem",
+            margin: "3rem 0 0 3rem",
             display: "inline-flex",
             width: "100%",
+        },
+        sponsorCards: {
+            display: "inline-flex",
+            width: "70%",
+            justifyContent: "space-evenly",
         },
         divider: {
             margin: "10px",
@@ -50,20 +55,20 @@ function Sponsors() {
                 <LevelCard
                     level="Gold"
                 />
-                <SponsorCard 
-                    img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
-                    orgName={"Envyntus Partners"}
-                    orgLink={"https://enventyspartners.com/"}
-                />
-                <SponsorCard
-                    img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
-                    orgName={"Walmart"}
-                    orgLink={"https://walmart.com/"}
-                />
-                <SponsorCard
-                    img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                    orgName={"Your logo here!"}
-                />
+
+                <div className={classes.sponsorCards} >
+
+                    <SponsorCard
+                        img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
+                        orgName={"Walmart"}
+                        orgLink={"https://walmart.com/"}
+                    />
+                    <SponsorCard
+                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                        orgName={"Your logo here!"}
+                    />
+
+                </div>
 
             </div>
 
@@ -72,10 +77,20 @@ function Sponsors() {
                     level="Silver"
                 />
 
-                <SponsorCard
-                    img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                    orgName={"Your logo here!"}
-                />
+                <div className={classes.sponsorCards} >
+
+                    <SponsorCard 
+                        img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
+                        orgName={"Envyntus Partners"}
+                        orgLink={"https://enventyspartners.com/"}
+                    />
+                    <SponsorCard
+                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                        orgName={"Your logo here!"}
+                    />
+
+                </div>
+                
             </div>
 
             <div className={classes.levelSection}>
@@ -83,10 +98,15 @@ function Sponsors() {
                     level="Bronze"
                 />
 
-                <SponsorCard
-                    img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                    orgName={"Your logo here!"}
-                />
+                <div className={classes.sponsorCards} >
+                    
+                    <SponsorCard
+                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                        orgName={"Your logo here!"}
+                    />
+
+                </div>
+
             </div>
 
             {/* <SponsorCard className="leftCard" style={{ backgroundColor: "#B3A369" }}>

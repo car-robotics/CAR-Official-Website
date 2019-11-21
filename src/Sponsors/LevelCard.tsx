@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: "#212b31",
             boxShadow: "0px 0px 9px 2px",
             padding: "10px",
-            height: "20rem",
+            height: "21rem",
             width: "15rem",
         },
     }),
