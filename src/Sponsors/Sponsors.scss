@@ -1,60 +1,7 @@
 //Main Grid CSS 
 .sponsors-container {
-    background-size: contain;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    display: grid;
-    margin: auto;
+    margin: 5rem auto;
     max-width: 85rem;
-    grid-gap: 2rem 1rem;
-    grid-template-areas:
-        'banner banner banner banner banner'
-        'tyTxt tyTxt tyTxt tyTxt tyTxt'
-        'leftCard handshake handshake handshake rightCard'
-        'sec1 sec1 gSpon1 gSpon2 gSpon3'
-        'sec2 sec2 sSpon1 sSpon2 sSpon3'
-        'sec3 sec3 grSpon1 grSpon2 grSpon3'
-        '. . . . .';
-}
-
-//Main Grid Setup (Mobile Version)
-.sponsors-container-mobile {
-    background-size: contain;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    row-gap: 2rem; 
-    display: grid;
-    grid-template-areas:
-        'banner banner banner'
-        'tyTxt tyTxt tyTxt'
-        'handshake handshake handshake'
-        '. sec1 .'
-        '. gSpon1 .'
-        '. gSpon2 .'
-        '. gSpon3 .'
-        '. sec2 .'
-        '. sSpon1 .'
-        '. sSpon2 .'
-        '. sec3 .'
-        '. grSpon1 .'
-        '. leftCard .'
-        '. rightCard .'
-        '. . .';
-}
-
-//Banner image
-.banner {
-    grid-area: banner;
-    display: block;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    width: 95%;
-    height: 30rem;
-    opacity: .95;
-    margin: 57px auto auto auto;
-    border-radius: 20rem;
-    background-color: #B3A369;
-    box-shadow: inset 0px 0px 14px 5px;
 }
 
 //ThankYou SideCard Styling
@@ -63,19 +10,6 @@
     background-color: #212b31;
     color: #B3A369;
     padding-top: 6px;
-}
-
-//Handshake Imag styling
-.handshakeImg {
-    background-color: #B3A369;
-    grid-area: handshake;
-    display: block;
-    width: 85%;
-    height: 20rem;
-    border-radius: 180px;
-    margin: auto auto 1rem auto;
-    color: #212b31;
-    box-shadow: inset 0px 0px 10px 3px;
 }
 
 //leftCard Styling
@@ -91,7 +25,7 @@
 }
 //sponsorCard Styling
 .gSpon {
-    margin: auto;
+    margin: auto 3rem;
 }
 
 .desc {
