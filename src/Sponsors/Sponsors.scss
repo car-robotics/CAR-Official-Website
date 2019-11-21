@@ -1,17 +1,3 @@
-//Main Grid CSS 
-.sponsors-container {
-    margin: 5rem auto;
-    max-width: 85rem;
-}
-
-//ThankYou SideCard Styling
-.ty-text {
-    grid-area: tyTxt;
-    background-color: #212b31;
-    color: #B3A369;
-    padding-top: 6px;
-}
-
 //leftCard Styling
 .leftCard {
     margin: auto auto auto 20px;
@@ -22,10 +8,6 @@
 .rightCard {
     margin: auto 20px auto auto;
     padding: 20px 10px 10px 10px;
-}
-//sponsorCard Styling
-.gSpon {
-    margin: auto 3rem;
 }
 
 .desc {

@@ -4,24 +4,8 @@ import { Email } from "@material-ui/icons";
 import { useCurrentWidth } from "react-socks";
 import { DocumentTitle } from "../Main/DocumentTitle";
 import "./Sponsors.scss";
-import Walmart from "./Walmart";
-import SolidWork from "./SolidWork";
-import Advanced from "./Advanced";
-import Ctc from "./CTC";
-import JoinTeam from "./JoinTeam";
-
-
-const SponsorCard = withStyles({
-    root: {
-        display: "flex",
-        fontFamily: "Inconsolata",
-        textAlign: "center",
-        backgroundColor: "inherit",
-        borderRadius: "1rem",
-        alignItems: "Center",
-        boxShadow: "inset 0px 0px 9px 1px",
-    },
-})(Card);
+import SponsorCard from "./SponsorCard";
+import LevelCard from "./LevelCard";
 
 const ListItem = withStyles({
     root: {
@@ -74,34 +58,34 @@ function Sponsors() {
     DocumentTitle({ title: "Sponsors" });
 
     return (
-        <div className="sponsors-container">
+        <div style={{margin: "5rem auto", width: "85rem"}}>
 
             <Paper className={classes.tyCard} >
-                <Typography align="center" className="ty-text" variant="h2">
+                <Typography align="center" variant="h2">
                     Thank You To Our Sponsors For Their Support!
                 </Typography>
             </Paper>
 
             <div style={{ marginTop: "3rem", display: "inline-flex", width: "100%" }}>
-                <Paper className={classes.sectionCard} style={{ backgroundImage: "linear-gradient(to bottom left, #cea110, #e4d9a1, #cea110)" }}>
-                    <Typography align="center" className="desc cBlack">
-                        <Typography className="secTitle" variant="h4">Gold Level<br />($250+)</Typography>
-                        <Typography variant="h5" className="leftAlign">Includes:</Typography>
-                        <ListItem>Your Companys Logo On Clubs Shirts</ListItem>
-                        <ListItem>Logo On Club Merchendise</ListItem>
-                        <ListItem>Same Benefits As The Silver &amp; Green Level Sponsorship</ListItem>
-                    </Typography>
-                </Paper>
 
-                <SponsorCard className="gSpon" >
-                    <Walmart classes={classes} />
-                </SponsorCard>
-                <SponsorCard className="gSpon" >
-                    <SolidWork classes={classes} />
-                </SponsorCard>
-                <SponsorCard className="gSpon" >
-                    <JoinTeam classes={classes} />
-                </SponsorCard>
+                <LevelCard
+                    level="Gold"
+                />
+
+                <SponsorCard 
+                    img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
+                    orgName={"Envyntus Partners"}
+                    orgLink={"https://enventyspartners.com/"}
+                />
+                <SponsorCard
+                    img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
+                    orgName={"Walmart"}
+                    orgLink={"https://walmart.com/"}
+                />
+                <SponsorCard
+                    img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                    orgName={"This could be you!"}
+                />
 
             </div>
 
@@ -114,12 +98,12 @@ function Sponsors() {
                         <ListItem>Same Benefits As The Green Level Sponsorship</ListItem>
                     </Typography>
                 </Paper>
-                <SponsorCard className="gSpon">
+                {/* <SponsorCard className="gSpon">
                     <Advanced classes={classes} />
                 </SponsorCard>
                 <SponsorCard className="gSpon">
                     <Ctc classes={classes} />
-                </SponsorCard>
+                </SponsorCard> */}
             </div>
 
             <div style={{ marginTop: "3rem", display: "inline-flex", width: "100%" }}>
@@ -133,9 +117,9 @@ function Sponsors() {
                     </Typography>
                 </Paper>
 
-                <SponsorCard className="gSpon">
+                {/* <SponsorCard className="gSpon">
                     <JoinTeam classes={classes} />
-                </SponsorCard>
+                </SponsorCard> */}
             </div>
 
             {/* <SponsorCard className="leftCard" style={{ backgroundColor: "#B3A369" }}>
