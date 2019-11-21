@@ -7,16 +7,6 @@ import "./Sponsors.scss";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 
-const ListItem = withStyles({
-    root: {
-        fontFamily: "Inconsolata",
-        fontSize: "1.25rem",
-        fontWeight: "bold",
-        textAlign: "left",
-        margin: "1.5rem",
-    },
-})(Typography);
-
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         tyCard: {
@@ -27,21 +17,10 @@ const useStyles = makeStyles((theme: Theme) =>
             color: "#B3A369",
             borderRadius: "1rem",
         },
-        sectionCard: {
-            display: "flex",
-            color: "#212b31",
-            boxShadow: "0px 0px 9px 2px",
-            padding: "10px",
-            minHeight: "20rem",
-        },
-        SideCard: {
-            display: "flex",
-            color: "#212b31",
-            backgroundColor: "#B3A369",
-            boxShadow: "0px 0px 23px 10px",
-            padding: "10px",
-            height: "100%",
-            width: "auto",
+        levelSection: {
+            marginTop: "3rem",
+            display: "inline-flex",
+            width: "100%",
         },
         divider: {
             margin: "10px",
@@ -66,12 +45,11 @@ function Sponsors() {
                 </Typography>
             </Paper>
 
-            <div style={{ marginTop: "3rem", display: "inline-flex", width: "100%" }}>
+            <div className={classes.levelSection}>
 
                 <LevelCard
                     level="Gold"
                 />
-
                 <SponsorCard 
                     img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
                     orgName={"Envyntus Partners"}
@@ -84,42 +62,31 @@ function Sponsors() {
                 />
                 <SponsorCard
                     img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                    orgName={"This could be you!"}
+                    orgName={"Your logo here!"}
                 />
 
             </div>
 
-            <div style={{ marginTop: "3rem", display: "inline-flex", width: "100%" }}>
-                <Paper className={classes.sectionCard} style={{ backgroundImage: "linear-gradient(to top right, #484848, #c1c0c0,  #484848)" }}>
-                    <Typography align="center" className="desc cBlack">
-                        <Typography className="secTitle" variant="h4">Silver Level<br />($100+)</Typography>
-                        <Typography variant="h5" className="leftAlign">Includes:</Typography>
-                        <ListItem>Logo Sticker On Our Robot(s)</ListItem>
-                        <ListItem>Same Benefits As The Green Level Sponsorship</ListItem>
-                    </Typography>
-                </Paper>
-                {/* <SponsorCard className="gSpon">
-                    <Advanced classes={classes} />
-                </SponsorCard>
-                <SponsorCard className="gSpon">
-                    <Ctc classes={classes} />
-                </SponsorCard> */}
+            <div className={classes.levelSection}>
+                <LevelCard
+                    level="Silver"
+                />
+
+                <SponsorCard
+                    img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                    orgName={"Your logo here!"}
+                />
             </div>
 
-            <div style={{ marginTop: "3rem", display: "inline-flex", width: "100%" }}>
-                <Paper className={classes.sectionCard} style={{ backgroundImage: "linear-gradient(to top right, #5f3d00, #bda780, #6d4700)" }}>
-                    <Typography align="center" className="desc cBlack" variant="h5">
-                        <Typography className="secTitle" variant="h4">Bronze Level<br />($-100)</Typography>
-                        <Typography variant="h5" className="leftAlign">Includes:</Typography>
-                        <ListItem>
-                            Your company gets a spot on the sponsors page!
-                        </ListItem>
-                    </Typography>
-                </Paper>
+            <div className={classes.levelSection}>
+                <LevelCard
+                    level="Bronze"
+                />
 
-                {/* <SponsorCard className="gSpon">
-                    <JoinTeam classes={classes} />
-                </SponsorCard> */}
+                <SponsorCard
+                    img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                    orgName={"Your logo here!"}
+                />
             </div>
 
             {/* <SponsorCard className="leftCard" style={{ backgroundColor: "#B3A369" }}>

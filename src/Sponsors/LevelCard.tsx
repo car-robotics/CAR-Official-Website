@@ -5,7 +5,7 @@ interface LevelCardProps{
     level: "Gold" | "Silver" | "Bronze";
 }
 
-const ListItem = withStyles({
+export const ListItem = withStyles({
     root: {
         fontFamily: "Inconsolata",
         fontSize: "1.25rem",
@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
             color: "#212b31",
             boxShadow: "0px 0px 9px 2px",
             padding: "10px",
-            minHeight: "20rem",
+            height: "20rem",
+            width: "15rem",
         },
     }),
 );
@@ -32,25 +33,25 @@ export default function LevelCard(props: LevelCardProps){
     const classes = useStyles();
 
     let backgroundGradient: string;
-    let cardTitle: string;
+    let cardTitle;
     let listItems: string[];
 
-    if (props.level == "Gold"){
-        cardTitle = "Gold Level<br />($250+)";
+    if (props.level === "Gold"){
+        cardTitle = <>Gold Level<br />($250+)</>;
         backgroundGradient = "linear-gradient(to bottom left, #cea110, #e4d9a1, #cea110)";
         listItems = [
             "Your logo on our t-shirts",
             "Same benefits as Silver & Bronze",
         ];
-    } else if (props.level == "Silver"){
-        cardTitle = "Silver Level<br />($100+)";
+    } else if (props.level === "Silver"){
+        cardTitle = <>Silver Level<br />($100+)</>;
         backgroundGradient = "linear-gradient(to top right, #484848, #c1c0c0,  #484848)";
         listItems = [
             "Your logo on our robot",
             "Same benefits as Bronze",
         ];
     } else {
-        cardTitle = "Bronze Level<br />($-100)";
+        cardTitle = <>Bronze Level<br />($-100)</>;
         backgroundGradient = "linear-gradient(to top right, #5f3d00, #bda780, #6d4700)";
         listItems = [
             "A spot here on the sponsors page",
@@ -66,10 +67,12 @@ export default function LevelCard(props: LevelCardProps){
                 <Typography variant="h5" className="leftAlign">
                     Includes:
                 </Typography>
-                {listItems.map((x) => {
-                    <ListItem>
-                        {x}
-                    </ListItem>
+                {listItems.map((x: string) => {
+                    return (
+                        <ListItem>
+                            {x}
+                        </ListItem>
+                    );
                 })}
             </Typography>
         </Paper>

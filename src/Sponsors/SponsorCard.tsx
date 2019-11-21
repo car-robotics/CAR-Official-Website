@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withStyles, Card } from "@material-ui/core";
 import EasyToSeeTooltip from "../Main/EasyToSeeTooltip";
 import Image from "material-ui-image";
+import { ListItem } from "../Sponsors/LevelCard";
 import "./Sponsors.scss";
 
 interface SponsorsCardProps{
@@ -51,7 +52,9 @@ export default function SponsorCard(props: SponsorsCardProps) {
                                 }}
                             />
                             <div className="overlay backgroundBlack">
-                                <div className="middleText cGold">Learn More</div>
+                                <ListItem align="center" className="middleText" style={{fontSize: "1.5rem"}}>
+                                    Learn More
+                                </ListItem>
                             </div>
                         </div>
                     </Link>
@@ -78,7 +81,9 @@ export default function SponsorCard(props: SponsorsCardProps) {
                         }}
                     />
                     <div className="overlay backgroundBlack">
-                        <div className="middleText cGold">{orgName}</div>
+                        <ListItem align="center" className="middleText" style={{fontSize: "1.5rem"}}>
+                            {orgName}
+                        </ListItem>
                     </div>
                 </div>}
             </OrgCard>
