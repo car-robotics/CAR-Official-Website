@@ -1,17 +1,13 @@
 import React from "react";
-import { Typography, Card, Paper, makeStyles, withStyles, createStyles, Theme, IconButton } from "@material-ui/core";
-import { Email } from "@material-ui/icons";
-import { useCurrentWidth } from "react-socks";
+import { Typography, Paper, makeStyles, createStyles, Theme, Divider, Link } from "@material-ui/core";
 import { DocumentTitle } from "../Main/DocumentTitle";
-import "./Sponsors.scss";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        tyCard: {
-            width: "85%",
-            padding: "10px",
+        container: {
+            padding: "2rem",
             margin: "auto",
             backgroundColor: "#212b31",
             color: "#B3A369",
@@ -20,15 +16,16 @@ const useStyles = makeStyles((theme: Theme) =>
         levelSection: {
             margin: "3rem 0 0 3rem",
             display: "inline-flex",
-            width: "100%",
+            width: "95%",
+            borderRadius: "1rem",
         },
         sponsorCards: {
             display: "inline-flex",
-            width: "70%",
+            width: "76%",
             justifyContent: "space-evenly",
-        },
-        divider: {
-            margin: "10px",
+            padding: "1rem",
+            boxShadow: "inset 0px 0px 9px 2px black",
+            borderRadius: "0px 1rem 1rem 0px",
         },
     }),
 );
@@ -36,40 +33,42 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Sponsors() {
     //Set the default sizing only used for (mobile version)
-    const width = useCurrentWidth();
+    // const width = useCurrentWidth();
     const classes = useStyles();
 
     DocumentTitle({ title: "Sponsors" });
 
     return (
-        <div style={{margin: "5rem auto", width: "85rem"}}>
+        <div style={{margin: "5rem auto", width: "95%"}}>
 
-            <Paper className={classes.tyCard} >
-                <Typography align="center" variant="h2">
+            <Paper className={classes.container} >
+                <Typography align="center" variant="h2" >
                     Thank You To Our Sponsors For Their Support!
                 </Typography>
-            </Paper>
 
-            <div className={classes.levelSection}>
+                <Divider style={{ backgroundColor: "#B3A369", marginTop: "10px" }} variant="middle" />
 
+            <div className={classes.levelSection} >
                 <LevelCard
                     level="Gold"
                 />
 
-                <div className={classes.sponsorCards} >
-
+                <div className={classes.sponsorCards} style={{backgroundColor: "#ead286"}} >
                     <SponsorCard
                         img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
                         orgName={"Walmart"}
                         orgLink={"https://walmart.com/"}
                     />
                     <SponsorCard
+                        img={"http://imatrixsol.com/img/solidworks.png"}
+                        orgName={"SolidWorks"}
+                        orgLink={"https://www.solidworks.com/"}
+                    />
+                    <SponsorCard
                         img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
                         orgName={"Your logo here!"}
                     />
-
                 </div>
-
             </div>
 
             <div className={classes.levelSection}>
@@ -77,8 +76,7 @@ function Sponsors() {
                     level="Silver"
                 />
 
-                <div className={classes.sponsorCards} >
-
+                <div className={classes.sponsorCards} style={{backgroundColor: "#c1c0c0"}} >
                     <SponsorCard 
                         img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
                         orgName={"Envyntus Partners"}
@@ -88,9 +86,7 @@ function Sponsors() {
                         img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
                         orgName={"Your logo here!"}
                     />
-
                 </div>
-                
             </div>
 
             <div className={classes.levelSection}>
@@ -98,31 +94,22 @@ function Sponsors() {
                     level="Bronze"
                 />
 
-                <div className={classes.sponsorCards} >
-                    
+                <div className={classes.sponsorCards} style={{backgroundColor: "#bda780"}} >
                     <SponsorCard
                         img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
                         orgName={"Your logo here!"}
                     />
-
                 </div>
-
             </div>
 
-            {/* <SponsorCard className="leftCard" style={{ backgroundColor: "#B3A369" }}>
-                <Typography align="center" variant="h5">
-                    Interested In Sponsoring?<br />
-                </Typography>
-            </SponsorCard>
+            
+            </Paper>
 
-            <SponsorCard className="rightCard" style={{ gridArea: "rightCard", backgroundColor: "#B3A369" }}>
+            <Paper className={classes.container} style={{marginTop: "2rem", width: "60%"}}>
                 <Typography align="center" variant="h5">
-                    Please Contact Sam Luu
-                    <IconButton href="mailto:car-robotics@uncc.edu/" target="_blank">
-                        <Email fontSize="large" htmlColor="#212b31" />
-                    </IconButton>
+                    To become a sponsor contact Sam Luu, our Outreach Officer, at <br/><Link href="mailto:car-robotics@uncc.edu" style={{color: "#00713d"}}>car-robotics@uncc.edu</Link>
                 </Typography>
-            </SponsorCard> */}
+            </Paper>
 
         </div >
     );

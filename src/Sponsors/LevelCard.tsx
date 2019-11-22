@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme: Theme) =>
         sectionCard: {
             display: "flex",
             color: "#212b31",
-            boxShadow: "0px 0px 9px 2px",
+            boxShadow: "0px 0px 9px 2px black",
             padding: "10px",
             height: "21rem",
             width: "15rem",
+            zIndex: 1,
         },
     }),
 );
@@ -38,7 +39,7 @@ export default function LevelCard(props: LevelCardProps){
 
     if (props.level === "Gold"){
         cardTitle = <>Gold Level<br />($250+)</>;
-        backgroundGradient = "linear-gradient(to bottom left, #cea110, #e4d9a1, #cea110)";
+        backgroundGradient = "linear-gradient(to bottom left, #cea110, #ead286, #cea110)";
         listItems = [
             "Your logo on our t-shirts",
             "Same benefits as Silver & Bronze",

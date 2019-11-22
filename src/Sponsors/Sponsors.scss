@@ -1,17 +1,4 @@
-//leftCard Styling
-.leftCard {
-    margin: auto auto auto 20px;
-    padding: 25px 10px 25px 10px;
-}
-
-//rightCard Styling
-.rightCard {
-    margin: auto 20px auto auto;
-    padding: 20px 10px 10px 10px;
-}
-
 .desc {
-    grid-area: desc;
     max-width: 20rem;
     height: 100%;
     padding-bottom: 1rem;
@@ -26,15 +13,6 @@
     padding-left: 20px;
 }
 
-ul {
-    margin-top: 0;
-    padding-left: 45px;
-}
-
-li {
-    text-align: left;
-}
-
 .container {
     position: relative;
     width: 50%;
@@ -44,18 +22,6 @@ li {
             width: 14rem;
         }
     }
-}
-
-.sponsorLogo {
-    opacity: 1;
-    display: block;
-    width: 13rem;
-    height: 15rem;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 12px;
 }
 
 .overlay {
@@ -84,49 +50,9 @@ li {
 .cBlack {
     color: #212b31;
 }
-.cGold {
-    color: #B3A369;
-}
-
-.cSilver {
-    color: #A9A9A9;
-}
-
-.cGreen {
-    color: #2d855f;
-}
-
-//Border Color Tags
-.borderColorBlack {
-    border-color: #212b31;
-}
-.borderColorGold
-{
-    border-color: #B3A369;
-}
-.borderColorSilver
-{
-    border-color: #A9A9A9;
-}
-.borderColorGreen
-{
-    border-color: #2d855f;
-}
 
 //Hover Color
 .backgroundBlack {
     background-color: #212b31;
-}
-.backgroundGold
-{
-    background-color: #B3A369;
-}
-.backgroundSilver
-{
-    background-color: #A9A9A9;
-}
-.backgroundGreen
-{
-    background-color: #2d855f;
 }
 

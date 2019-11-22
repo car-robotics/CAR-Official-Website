@@ -19,8 +19,7 @@ const OrgCard = withStyles({
         backgroundColor: "inherit",
         borderRadius: "1rem",
         alignItems: "Center",
-        boxShadow: "inset 0px 0px 9px 1px",
-        margin: "auto 3rem",
+        margin: "auto",
     },
 })(Card);
 
