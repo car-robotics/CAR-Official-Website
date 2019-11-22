@@ -13,31 +13,34 @@ import NavBar from "./NavBar";
 
 const theme = createMuiTheme({
   typography: {
-    h2: {
+    allVariants: {
       fontFamily: "Inconsolata",
-      fontSize: "2.75rem",
-      fontWeight: 700,
-    },
-    h3: {
-      fontFamily: "Inconsolata",
-      fontSize: "2.5rem",
-      fontWeight: 700,
-    },
-    h4: {
-      fontFamily: "Inconsolata",
-      fontSize: "2rem",
-      fontWeight: 700,
-    },
-    h5: {
-      fontFamily: "Inconsolata",
-      fontSize: "1.75rem",
-      fontWeight: 700,
-    },
-    h6: {
-      fontFamily: "Inconsolata",
-      fontSize: "1.5rem",
-      fontWeight: 700,
-    },
+    }
+    // h2: {
+    //   fontFamily: "Inconsolata",
+    //   fontSize: "2.75rem",
+    //   fontWeight: 700,
+    // },
+    // h3: {
+    //   fontFamily: "Inconsolata",
+    //   fontSize: "2.5rem",
+    //   fontWeight: 700,
+    // },
+    // h4: {
+    //   fontFamily: "Inconsolata",
+    //   fontSize: "2rem",
+    //   fontWeight: 700,
+    // },
+    // h5: {
+    //   fontFamily: "Inconsolata",
+    //   fontSize: "1.75rem",
+    //   fontWeight: 700,
+    // },
+    // h6: {
+    //   fontFamily: "Inconsolata",
+    //   fontSize: "1.5rem",
+    //   fontWeight: 700,
+    // },
   },
 });
 
