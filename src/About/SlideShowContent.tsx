@@ -27,22 +27,22 @@ const SlideShowContentItems = [
     {
         text: "Charlotte Area Robotics is an UNCC Student Organization that competes anually in the IEEE SoutheastCon Hardware Competition",
         img: Logo,
-        size: { width: "30rem", height: "30rem" }
+        size: { width: "60vh", height: "60vh" }
     },
     {
         text: "We educate other students through workshops and demonstrations",
         img: ArduinoWksp,
-        size: { width: "40rem", height: "30rem" }
+        size: { width: "80vh", height: "60vh" }
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned",
         img: SprintReview23,
-        size: { width: "40rem", height: "30rem" }
+        size: { width: "80vh", height: "60vh" }
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region",
         img: Robot,
-        size: { width: "40rem", height: "30rem" }
+        size: { width: "80vh", height: "60vh" }
     }
 ];
 
@@ -53,7 +53,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
 
     return (
         <>
-            <Typography variant="h3" className={classes.text} style={{animationName: "fadeIn", animationDuration: "1s"}}>
+            <Typography variant="h4" className={classes.text} style={{animationName: "fadeIn", animationDuration: "1s"}}>
                 {contentObject.text}
             </Typography>
 

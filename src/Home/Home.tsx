@@ -67,8 +67,7 @@ function Home() {
                     imageStyle={{
                         position: "relative",
                         display: "block",
-                        maxHeight: "40%",
-                        maxWidth: "40%",
+                        width: useCurrentWidth() > 1000 ? "40%" : "75%",
                         margin: "2rem auto",
                     }} 
                 />

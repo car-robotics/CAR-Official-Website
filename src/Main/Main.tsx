@@ -15,32 +15,23 @@ const theme = createMuiTheme({
   typography: {
     allVariants: {
       fontFamily: "Inconsolata",
-    }
-    // h2: {
-    //   fontFamily: "Inconsolata",
-    //   fontSize: "2.75rem",
-    //   fontWeight: 700,
-    // },
-    // h3: {
-    //   fontFamily: "Inconsolata",
-    //   fontSize: "2.5rem",
-    //   fontWeight: 700,
-    // },
-    // h4: {
-    //   fontFamily: "Inconsolata",
-    //   fontSize: "2rem",
-    //   fontWeight: 700,
-    // },
-    // h5: {
-    //   fontFamily: "Inconsolata",
-    //   fontSize: "1.75rem",
-    //   fontWeight: 700,
-    // },
-    // h6: {
-    //   fontFamily: "Inconsolata",
-    //   fontSize: "1.5rem",
-    //   fontWeight: 700,
-    // },
+      fontWeight: 700,
+    },
+    h2: {
+      fontSize: "2.75rem",
+    },
+    h3: {
+      fontSize: "2.5rem",
+    },
+    h4: {
+      fontSize: "2rem",
+    },
+    h5: {
+      fontSize: "1.75rem",
+    },
+    h6: {
+      fontSize: "1.5rem",
+    },
   },
 });
 

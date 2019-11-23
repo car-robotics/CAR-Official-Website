@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
         mobileNavBar: {
             alignSelf: "center",
             margin: "auto",
+            padding: "0.5rem",
         },
     }),
 );

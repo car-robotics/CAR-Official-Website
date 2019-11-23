@@ -57,15 +57,15 @@
 
 .who-we-are-container {
     @extend .card-container;
+    width: 90%;
     padding-top: 5rem;
     display: block;
 }
 
 .slideshow-container {
-    min-width: 1500px;
     display: grid;
     grid-row-gap: 15px;
-    grid-template-columns: 100px 650px 650px 100px;
+    grid-template-columns: 5% 45% 45% 5%;
     grid-template-areas:
         '. . . .'
         'title title title title'

@@ -107,7 +107,7 @@ function Sponsors() {
 
             <Paper className={classes.container} style={{marginTop: "2rem", width: "60%"}}>
                 <Typography align="center" variant="h5">
-                    To become a sponsor contact Sam Luu, our Outreach Officer, at <br/><Link href="mailto:car-robotics@uncc.edu" style={{color: "#00713d"}}>car-robotics@uncc.edu</Link>
+                    To become a sponsor contact Sam Luu at <br/><Link href="mailto:car-robotics@uncc.edu" style={{color: "#00713d"}}>car-robotics@uncc.edu</Link>
                 </Typography>
             </Paper>
 
