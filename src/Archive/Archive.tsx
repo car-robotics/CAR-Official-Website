@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList from './ImageGrid';
 import { Typography, Link } from "@material-ui/core";
+import ReactPlayer from "react-player";
 
 
 class Archive extends Component {
@@ -11,14 +12,13 @@ class Archive extends Component {
                 <div id="msgs">
                     <Typography variant='h1' id="archiveWelcome"> Welcome to The Archive</Typography>
                     <Typography variant='h3' id="welcomeMsg">Check out our video compilation and photo gallery of previous competitions and club activities</Typography>
-                    <div id="video">
-                        <iframe
-                            src="https://www.youtube.com/embed/QIC3dg53WWg"
-                            width="950px"
-                            height="550px"
-                            className="archiveVideos"
-                            title="CAR_CompilationVid"
-                            allowFullScreen
+                    <div>
+                        <ReactPlayer
+                            url="https://www.youtube.com/embed/QIC3dg53WWg"
+                            playing
+                            width="64rem"
+                            height="36rem"
+                            style={{margin: "auto"}}
                         />
                     </div>
                     <Typography variant='h3' id="checkoutMore">Watch more videos on <Link style={{ color: "#046A38" }} href="https://www.youtube.com/results?search_query=Charlotte+Area+Robotics+" target="_blank">YouTube </Link>
