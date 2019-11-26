@@ -35,13 +35,22 @@
 }
 
 .card-group {
+
+
+    @media screen and (min-width: 1000px) {
+        width: 95%;
+    }
+    @media screen and (max-width: 800px) {
+        width: 90%;
+    }
+
     margin: 2rem auto;
     display: grid;
     row-gap: 20px;
-    grid-template-columns: 100px 650px 650px 100px;
+    grid-template-columns: 5% 45% 45% 5%;
     grid-template-areas: 
     '. . . .'
-    't t t t'
+    '. t t .'
     'w w w w'
     '. d d .'
     'c c c c'
@@ -49,10 +58,15 @@
 }
 
 .card-container {
-    width: max-content;
     margin: 0 auto;
-    display: flex;
     grid-area: c;
+    @media screen and (min-width: 1000px) {
+        display: flex;
+        width: max-content;
+    }
+    @media screen and (max-width: 500px) {
+        width: 90%;
+    }
 }
 
 .who-we-are-container {
@@ -69,15 +83,23 @@
     grid-template-areas:
         '. . . .'
         'title title title title'
-        'words words words words'
         '. divider divider .'
         'leftArrow text content rightArrow'
         '. . . .';
 }
 
+.slideshow-mobile-container {
+    @extend .slideshow-container;
+    grid-template-areas:
+        '. . . .'
+        'title title title title'
+        '. divider divider .'
+        'leftArrow text text rightArrow'
+        'leftArrow content content rightArrow'
+        '. . . .';
+}
+
 .slideshow-leftArrow {
-    height: 50px;
-    width: 50px;
     align-self: center;
     grid-row-start: title;
     grid-row-end: leftArrow;
@@ -86,8 +108,6 @@
 }
 
 .slideshow-rightArrow {
-    height: 50px;
-    width: 50px;
     align-self: center;
     grid-row-start: title;
     grid-row-end: rightArrow;

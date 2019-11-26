@@ -13,7 +13,7 @@ interface SlideShowContentProps {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         text: {
-            padding: "2rem",
+            padding: "0 2rem 1rem 2rem",
             gridArea: "text",
             textAlign: "center",
             color: "#B3A369",
@@ -27,22 +27,22 @@ const SlideShowContentItems = [
     {
         text: "Charlotte Area Robotics is an UNCC Student Organization that competes anually in the IEEE SoutheastCon Hardware Competition",
         img: Logo,
-        size: { width: "60vh", height: "60vh" }
+        size: { width: "80%", height: "" }
     },
     {
         text: "We educate other students through workshops and demonstrations",
         img: ArduinoWksp,
-        size: { width: "80vh", height: "60vh" }
+        size: { width: "100%", height: "100%" }
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned",
         img: SprintReview23,
-        size: { width: "80vh", height: "60vh" }
+        size: { width: "100%", height: "100%" }
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region",
         img: Robot,
-        size: { width: "80vh", height: "60vh" }
+        size: { width: "100%", height: "100%" }
     }
 ];
 
@@ -59,7 +59,8 @@ export default function SlideShowContent(props: SlideShowContentProps) {
 
             <Image 
                 style={{ 
-                    gridArea: "content", 
+                    gridArea: "content",
+                    textAlign: "center",
                     backgroundColor: "#212B31", 
                     paddingTop: "0", 
                     margin: "auto"

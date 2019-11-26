@@ -24,8 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
         hamburgerMenu: {
             color: "white",
             position: "absolute",
-            left: "2px",
-            paddingTop: "2px",
         },
         mobileNavBar: {
             alignSelf: "center",
@@ -70,7 +68,7 @@ export default function NavBar() {
             <Breakpoint medium down>
                 <AppBar className={classes.appbar}>
                     <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
-                        <Menu fontSize="large" />
+                        <Menu fontSize="inherit" />
                     </IconButton>
                     <Typography className={classes.mobileNavBar} variant="h6">
                         Charlotte Area Robotics
@@ -85,6 +83,7 @@ export default function NavBar() {
                     anchor="left"
                 >
                     <NavBarContent
+                        showSidebar={setShowSidebar}
                         isSidebar={true}
                         handleFeedbackClick={handleFeedbackClick}
                         classes={classes}

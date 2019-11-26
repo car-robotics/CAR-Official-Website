@@ -33,7 +33,7 @@ const CardDivider = withStyles({
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         missionCard: {
-            maxWidth: "50rem",
+            maxWidth: "60%",
             display: "inline-table",
             backgroundColor: "#212b31",
             padding: "2rem",

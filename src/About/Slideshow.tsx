@@ -2,8 +2,9 @@ import React from "react";
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@material-ui/icons";
 import { IconButton, Paper, withStyles, Typography, Divider } from "@material-ui/core";
 import SlideShowContent from "./SlideShowContent";
+import { useCurrentWidth } from "react-socks";
 
-export default function Slideshow(props: any) {
+export default function Slideshow() {
     const [slideIndex, setSlideIndex] = React.useState<number>(0);
 
     const handleLeftArrowClick = () => {
@@ -24,29 +25,27 @@ export default function Slideshow(props: any) {
         root: {
             backgroundColor: "#212B31",
             borderRadius: "1rem",
+            height: "max-content",
         },
     })(Paper);
 
     return (
         <>
-            <AboutBackground className="slideshow-container">
+            <AboutBackground className={useCurrentWidth() > 1000 ? "slideshow-container" : "slideshow-mobile-container"}>
 
                 <Typography align="center" variant="h2" style={{ gridArea: "title", color: "#B3A369" }}  >
                     Who We Are
                 </Typography>
-                <Typography align="center" variant="h5" style={{ gridArea: "words", color: "#B3A369" }}  >
-                    Mechanical Engineering | Electrical Engineering | Computer Engineering | Computer Science
-                </Typography>
 
                 <Divider style={{ gridArea: "divider", backgroundColor: "#B3A369" }} />
 
-                <IconButton style={{ margin: "auto" }} className="slideshow-leftArrow" onClick={handleLeftArrowClick}>
+                <IconButton className="slideshow-leftArrow" onClick={handleLeftArrowClick}>
                     <KeyboardArrowLeft style={{ color: "white" }} />
                 </IconButton>
 
                 <SlideShowContent contentIndex={slideIndex} />
 
-                <IconButton style={{ margin: "auto" }} className="slideshow-rightArrow" onClick={handleRightArrowClick}>
+                <IconButton className="slideshow-rightArrow" onClick={handleRightArrowClick}>
                     <KeyboardArrowRight style={{ color: "white" }} />
                 </IconButton>
 

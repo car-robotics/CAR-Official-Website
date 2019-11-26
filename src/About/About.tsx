@@ -18,7 +18,6 @@ import { DocumentTitle } from "../Main/DocumentTitle";
 const AboutBackground = withStyles({
     root: {
         backgroundColor: "#212B31",
-        width: "max-content",
         borderRadius: "1rem",
     },
 })(Paper);
@@ -36,7 +35,7 @@ class About extends Component {
                         <Typography style={{ color: "#B3A369", gridArea: "t" }} variant="h2" align="center">
                             Officers
                         </Typography>
-                        <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h5" align="center">
+                        <Typography style={{ color: "#B3A369", gridArea: "w", padding: "0 1px 0 1px" }} variant="h5" align="center">
                             Our officers help run the club so that members only need to worry about working on the robot
                         </Typography>
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
@@ -77,7 +76,7 @@ class About extends Component {
                         <Typography style={{ color: "#B3A369", gridArea: "t" }} variant="h2" align="center">
                             Web Team
                         </Typography>
-                        <Typography style={{ color: "#B3A369", gridArea: "w" }} variant="h5" align="center">
+                        <Typography style={{ color: "#B3A369", gridArea: "w", padding: "0 1px 0 1px"  }} variant="h5" align="center">
                             Our web team works diligently to provide a stunning website to showcase the club
                         </Typography>
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
@@ -105,12 +104,6 @@ class About extends Component {
                                 name="Teng Lee"
                                 officer={Officer.Developer}
                                 linkedIn="https://www.linkedin.com/in/teng-lee-5323a0162/"
-                            />
-                            <OfficerCard
-                                image={President}
-                                name="Aaron Yow"
-                                officer={Officer.Developer}
-                                linkedIn="https://www.linkedin.com/in/aaron-yow-6847a6170"
                             />
                         </div>
                     </AboutBackground>

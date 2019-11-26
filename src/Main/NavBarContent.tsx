@@ -8,6 +8,7 @@ interface NavBarContentProps {
     handleFeedbackClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
     classes: Record<"appbar" | "feedbackSidebar", string>,
     isSidebar: boolean,
+    showSidebar?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 //Custom Tabs component for styling
@@ -44,11 +45,12 @@ const getTabWithPath = () => {
 
 export default function NavBarContent(props: NavBarContentProps) {
     const [value, setValue] = React.useState<number>(getTabWithPath()); //set index of 1 for default value which is Home tab
-    const { handleFeedbackClick, classes, isSidebar } = props;
+    const { handleFeedbackClick, classes, isSidebar, showSidebar } = props;
 
     const styles = useStyles();
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+        if (showSidebar) showSidebar(false);
         setValue(newValue);
     };
 
