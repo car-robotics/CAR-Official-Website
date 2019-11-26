@@ -14,8 +14,10 @@ const useStyles = makeStyles((theme: Theme) =>
             position: "fixed",
         },
         feedbackSidebar: {
-            width: "fit-content",
-            alignSelf: "center",
+            textAlign: "center",
+            position: "absolute",
+            left: "35%",
+            bottom: "0",
         },
         paper: {
             background: "#212b31",

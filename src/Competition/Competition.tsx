@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CountdownTimer from "./CountdownTimer";
 import Image from "material-ui-image";
 import { Paper, withStyles, Typography, Divider, Link } from "@material-ui/core";
-import IEEE from "../Images/ieee.png";
 import EasyToSeeTooltip from "../Main/EasyToSeeTooltip";
 
 const PaperBackground = withStyles({
@@ -26,7 +25,7 @@ class Competition extends Component {
             <div style={{ paddingTop: "6rem" }}>
                 <CountdownTimer />
                 <PaperBackground style={{width: "1024px"}}>
-                    <Image src={IEEE} style={{backgroundColor: "transparent", height: "18rem", paddingTop: "0px", marginBottom: "32px"}} />
+                    <Image src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"} style={{backgroundColor: "transparent", height: "18rem", paddingTop: "0px", marginBottom: "32px"}} />
                     <RulesText align="center" variant="h4">
                         The <EasyToSeeTooltip title="https://www.ieee.org/"><Link style={{color: "#00713d"}} target="_blank" href="https://www.ieee.org/"> Institute of Electrical and Electronics Engineers (IEEE) </Link></EasyToSeeTooltip>
                          Region 3 annually hosts student competitions as part of the Southeast Conference. 

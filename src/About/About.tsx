@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Paper, withStyles, Typography, Divider } from "@material-ui/core";
 import OfficerCard, { Officer } from "./OfficerCard";
-import IntVP from "../Images/Officers/InterimVP.jpg";
-import Outreach from "../Images/Officers/Outreach.jpg";
-import Treasurer from "../Images/Officers/Treasurer.jpg";
-import VP from "../Images/Officers/VP.jpg";
-import President from "../Images/Officers/President.gif";
+import NathanL from "../Images/Officers/NathanL.jpg";
+import SamL from "../Images/Officers/SamL.jpg";
+import NoelM from "../Images/Officers/NoelM.jpg";
+import MattW from "../Images/Officers/MattW.jpg";
+import NathanielB from "../Images/Officers/NathanielB.gif";
 import Matt from "../Images/DevTeam/Matt.jpg";
 import Ash from "../Images/DevTeam/Ash.jpg";
 import Pedro from "../Images/DevTeam/Pedro.jpg";
@@ -41,31 +41,31 @@ class About extends Component {
                         <Divider style={{ backgroundColor: "#B3A369", gridArea: "d" }} variant="middle" />
                         <div className="card-container">
                             <OfficerCard
-                                image={President}
+                                image={NathanielB}
                                 name="Nathaniel Belles"
                                 officer={Officer.President}
                                 linkedIn="https://www.linkedin.com/in/nathaniel-belles-04a2894b/"
                             />
                             <OfficerCard
-                                image={VP}
+                                image={MattW}
                                 name="Matt Wells"
                                 officer={Officer.VicePresident}
                                 linkedIn="https://www.linkedin.com/in/mwells21/"
                             />
                             <OfficerCard
-                                image={IntVP}
+                                image={NathanL}
                                 name="Nathan Langley"
                                 officer={Officer.Interim}
                                 linkedIn="https://www.linkedin.com/in/nathan-langley"
                             />
                             <OfficerCard
-                                image={Outreach}
+                                image={SamL}
                                 name="Sam Luu"
                                 officer={Officer.Outreach}
                                 linkedIn="https://www.linkedin.com/in/sluu3/"
                             />
                             <OfficerCard
-                                image={Treasurer}
+                                image={NoelM}
                                 name="Noel Mills"
                                 officer={Officer.Treasurer}
                                 linkedIn="https://www.linkedin.com/in/noel-mills-01362815a/"

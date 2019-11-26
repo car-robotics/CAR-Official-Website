@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Paper, makeStyles, createStyles, Theme } from "@material-ui/core";
 import { useCurrentWidth } from "react-socks";
 import { DocumentTitle } from "../Main/DocumentTitle";
-import banner from "../Images/outreachBan1.jpg";
 import arduino1 from "../Images/Outreach/ArduinoWksp-1.jpg";
 import arduino8 from "../Images/Outreach/ArduinoWksp-8.jpg";
 import bobsBash from "../Images/Outreach/BobsBash1-2.jpg";
@@ -49,7 +48,6 @@ function Outreach() {
 
 
             {/* Banner Image */}
-            <img src={banner} className="banner" alt="Banner" />
             <Paper className={classes.bottomCard} elevation={25} style={{ marginTop: "2rem" }}>
                 <Typography align="center" className="more-text" variant="h4">
                     We enjoy helping and reaching out to our community. Volunteering is very important to us
