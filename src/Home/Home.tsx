@@ -8,6 +8,7 @@ import "./Home.scss";
 import Social from "./Social";
 import Interest from "./Interest";
 import PayPal from "./PayPal";
+import PageFade from "../Main/PageFade";
 
 const SideCard = withStyles({
     root: {
@@ -56,50 +57,52 @@ function Home() {
     DocumentTitle({title: "Home"});
 
     return (
-        <>
-            <div className="electrical">
-                <Image 
-                    src={logo} 
-                    style={{
-                        backgroundColor: "transparent",
-                        paddingTop: "0",
-                    }}
-                    imageStyle={{
-                        position: "relative",
-                        display: "block",
-                        width: useCurrentWidth() > 1000 ? "40%" : "75%",
-                        margin: "2rem auto",
-                    }} 
-                />
-            </div>
-            <div className="mechanical">
-                <Paper className={classes.missionCard} elevation={24}>
-                    <Typography variant="h3" className="more-text" align="center">
-                        The Club's Mission
-                    </Typography>
-                    <CardDivider/>
-                    <Typography align="center" className="more-text" variant="h4">
-                        Our mission is to educate and to learn about all aspects of mobile robotics.
-                        From the novice to the experienced, we welcome all students who are excited
-                        to learn more about the field of robotics and apply the concepts they learn
-                        in the classroom to real world applications.
-                    </Typography>
-                </Paper>
-            </div>
-            <div className="computer">
-                <Grid container justify="space-evenly" alignItems="center" style={{height: "100%"}}>
-                    <Grid item>
-                        <SideCard elevation={24} style={{display: extras_display, height: extras_height}} >
-                            <Social CardDivider={CardDivider}/>
-                            {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
-                            <Interest CardDivider={CardDivider}/>
-                            {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
-                            <PayPal CardDivider={CardDivider}/>
-                        </SideCard>
+        <PageFade>
+            <div>
+                <div className="electrical">
+                    <Image 
+                        src={logo} 
+                        style={{
+                            backgroundColor: "transparent",
+                            paddingTop: "0",
+                        }}
+                        imageStyle={{
+                            position: "relative",
+                            display: "block",
+                            width: useCurrentWidth() > 1000 ? "40%" : "75%",
+                            margin: "2rem auto",
+                        }} 
+                    />
+                </div>
+                <div className="mechanical">
+                    <Paper className={classes.missionCard} elevation={24}>
+                        <Typography variant="h3" className="more-text" align="center">
+                            The Club's Mission
+                        </Typography>
+                        <CardDivider/>
+                        <Typography align="center" className="more-text" variant="h4">
+                            Our mission is to educate and to learn about all aspects of mobile robotics.
+                            From the novice to the experienced, we welcome all students who are excited
+                            to learn more about the field of robotics and apply the concepts they learn
+                            in the classroom to real world applications.
+                        </Typography>
+                    </Paper>
+                </div>
+                <div className="computer">
+                    <Grid container justify="space-evenly" alignItems="center" style={{height: "100%"}}>
+                        <Grid item>
+                            <SideCard elevation={24} style={{display: extras_display, height: extras_height}} >
+                                <Social CardDivider={CardDivider}/>
+                                {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
+                                <Interest CardDivider={CardDivider}/>
+                                {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
+                                <PayPal CardDivider={CardDivider}/>
+                            </SideCard>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </div>
             </div>
-        </>
+        </PageFade>
     );
 }
 

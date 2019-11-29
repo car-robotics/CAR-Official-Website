@@ -1,7 +1,6 @@
 import React from "react";
 import { Tabs, Tab, IconButton, withStyles, makeStyles, Theme, createStyles } from "@material-ui/core";
 import { Feedback } from "@material-ui/icons";
-import { Link } from "react-router-dom";
 import EasyToSeeTooltip from "./EasyToSeeTooltip";
 
 interface NavBarContentProps {
@@ -9,6 +8,7 @@ interface NavBarContentProps {
     classes: Record<"appbar" | "feedbackSidebar", string>,
     isSidebar: boolean,
     showSidebar?: React.Dispatch<React.SetStateAction<boolean>>;
+    navSelectionIndex: (i: number) => void;
 }
 
 //Custom Tabs component for styling
@@ -45,11 +45,12 @@ const getTabWithPath = () => {
 
 export default function NavBarContent(props: NavBarContentProps) {
     const [value, setValue] = React.useState<number>(getTabWithPath()); //set index of 1 for default value which is Home tab
-    const { handleFeedbackClick, classes, isSidebar, showSidebar } = props;
+    const { handleFeedbackClick, classes, isSidebar, showSidebar, navSelectionIndex } = props;
 
     const styles = useStyles();
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+        navSelectionIndex(newValue);
         if (showSidebar) showSidebar(false);
         setValue(newValue);
     };
@@ -58,12 +59,12 @@ export default function NavBarContent(props: NavBarContentProps) {
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
                 <NavTabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab className="NavBarSelection" disableFocusRipple label="Home" component={Link} to="/" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="About" component={Link} to="/about" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="Sponsors" component={Link} to="/sponsors" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="Competition" component={Link} to="/competition" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="Outreach" component={Link} to="/outreach" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="Archive" component={Link} to="/archive" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="🏠Home" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="🤖About" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="🤝Sponsors" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="⚔️Competition" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="🙋‍♀️Outreach" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="🎞️Archive" />
                 </NavTabs>
                 <EasyToSeeTooltip title="Feedback Button">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>

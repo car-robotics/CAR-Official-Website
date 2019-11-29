@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
 import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
 import About from "../About/About";
@@ -35,26 +34,35 @@ const theme = createMuiTheme({
   },
 });
 
-class Main extends Component {
+interface MainState { pageIndex: number }
+
+class Main extends Component<{}, MainState> {
+
+  constructor(props: any){
+    super(props);
+    this.state = {
+      pageIndex: 0
+    };
+  }
 
   render() {
+
+    const navSelectionIndex = (i: number) =>{
+      this.setState({pageIndex: i});
+    }
+
     return (
       <ThemeProvider theme={theme}>
         <BreakpointProvider>
-          <BrowserRouter>
-            <NavBar />
+            <NavBar navSelectionIndex={navSelectionIndex} />
             <div className="content">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/outreach" component={Outreach} />
-                <Route path="/sponsors" component={Sponsors} />
-                <Route path="/competition" component={Competition} />
-                <Route path="/archive" component={Archive} />
-                <Route component={Home} />
-              </Switch>
+                {this.state.pageIndex === 0 && <Home/>}
+                {this.state.pageIndex === 1 && <About/>}
+                {this.state.pageIndex === 2 && <Sponsors/>}
+                {this.state.pageIndex === 3 && <Competition/>}
+                {this.state.pageIndex === 4 && <Outreach/>}
+                {this.state.pageIndex === 5 && <Archive/>}
             </div>
-          </BrowserRouter>
         </BreakpointProvider>
       </ThemeProvider>
     );

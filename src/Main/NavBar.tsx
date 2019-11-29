@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function NavBar() {
+export default function NavBar(props: any) {
     const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
     const [showSidebar, setShowSidebar] = React.useState<boolean>(false);
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
@@ -64,6 +64,7 @@ export default function NavBar() {
                         isSidebar={false}
                         handleFeedbackClick={handleFeedbackClick}
                         classes={classes}
+                        {...props}
                     />
                 </AppBar>
             </Breakpoint>
@@ -89,6 +90,7 @@ export default function NavBar() {
                         isSidebar={true}
                         handleFeedbackClick={handleFeedbackClick}
                         classes={classes}
+                        {...props}
                     />
                 </SwipeableDrawer>
             </Breakpoint>
