@@ -8,7 +8,7 @@ import Outreach from "../Outreach/Outreach";
 import Sponsors from "../Sponsors/Sponsors";
 import Competition from "../Competition/Competition";
 import Archive from "../Archive/Archive";
-import NavBar from "./NavBar";
+import NavBar from "./NavBar/NavBar";
 
 const theme = createMuiTheme({
   typography: {
@@ -38,7 +38,7 @@ interface MainState { pageIndex: number }
 
 class Main extends Component<{}, MainState> {
 
-  constructor(props: any){
+  constructor(props: any) {
     super(props);
     this.state = {
       pageIndex: 0
@@ -47,22 +47,22 @@ class Main extends Component<{}, MainState> {
 
   render() {
 
-    const navSelectionIndex = (i: number) =>{
-      this.setState({pageIndex: i});
+    const navSelectionIndex = (i: number) => {
+      this.setState({ pageIndex: i });
     }
 
     return (
       <ThemeProvider theme={theme}>
         <BreakpointProvider>
-            <NavBar navSelectionIndex={navSelectionIndex} />
-            <div className="content">
-                {this.state.pageIndex === 0 && <Home/>}
-                {this.state.pageIndex === 1 && <About/>}
-                {this.state.pageIndex === 2 && <Sponsors/>}
-                {this.state.pageIndex === 3 && <Competition/>}
-                {this.state.pageIndex === 4 && <Outreach/>}
-                {this.state.pageIndex === 5 && <Archive/>}
-            </div>
+          <NavBar navSelectionIndex={navSelectionIndex} />
+          <div className="content">
+            {this.state.pageIndex === 0 && <Home />}
+            {this.state.pageIndex === 1 && <About />}
+            {this.state.pageIndex === 2 && <Sponsors />}
+            {this.state.pageIndex === 3 && <Competition />}
+            {this.state.pageIndex === 4 && <Outreach />}
+            {this.state.pageIndex === 5 && <Archive />}
+          </div>
         </BreakpointProvider>
       </ThemeProvider>
     );

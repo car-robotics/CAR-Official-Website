@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography, Paper, makeStyles, createStyles, Theme, Divider, Link } from "@material-ui/core";
-import { DocumentTitle } from "../Main/DocumentTitle";
+import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
-import PageFade from "../Main/PageFade";
+import PageFade from "../Utils/PageFade";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -41,7 +41,7 @@ function Sponsors() {
 
     return (
         <PageFade>
-            <div style={{margin: "5rem auto", width: "95%"}}>
+            <div style={{ margin: "5rem auto", width: "95%" }}>
 
                 <Paper className={classes.container} >
                     <Typography align="center" variant="h2" >
@@ -50,66 +50,66 @@ function Sponsors() {
 
                     <Divider style={{ backgroundColor: "#B3A369", marginTop: "10px" }} variant="middle" />
 
-                <div className={classes.levelSection} >
-                    <LevelCard
-                        level="Gold"
-                    />
+                    <div className={classes.levelSection} >
+                        <LevelCard
+                            level="Gold"
+                        />
 
-                    <div className={classes.sponsorCards} style={{backgroundColor: "#ead286"}} >
-                        <SponsorCard
-                            img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
-                            orgName={"Walmart"}
-                            orgLink={"https://walmart.com/"}
-                        />
-                        <SponsorCard
-                            img={"http://imatrixsol.com/img/solidworks.png"}
-                            orgName={"SolidWorks"}
-                            orgLink={"https://www.solidworks.com/"}
-                        />
-                        <SponsorCard
-                            img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                            orgName={"Your logo here!"}
-                        />
+                        <div className={classes.sponsorCards} style={{ backgroundColor: "#ead286" }} >
+                            <SponsorCard
+                                img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
+                                orgName={"Walmart"}
+                                orgLink={"https://walmart.com/"}
+                            />
+                            <SponsorCard
+                                img={"http://imatrixsol.com/img/solidworks.png"}
+                                orgName={"SolidWorks"}
+                                orgLink={"https://www.solidworks.com/"}
+                            />
+                            <SponsorCard
+                                img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                                orgName={"Your logo here!"}
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <div className={classes.levelSection}>
-                    <LevelCard
-                        level="Silver"
-                    />
+                    <div className={classes.levelSection}>
+                        <LevelCard
+                            level="Silver"
+                        />
 
-                    <div className={classes.sponsorCards} style={{backgroundColor: "#c1c0c0"}} >
-                        <SponsorCard 
-                            img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
-                            orgName={"Envyntus Partners"}
-                            orgLink={"https://enventyspartners.com/"}
-                        />
-                        <SponsorCard
-                            img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                            orgName={"Your logo here!"}
-                        />
+                        <div className={classes.sponsorCards} style={{ backgroundColor: "#c1c0c0" }} >
+                            <SponsorCard
+                                img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
+                                orgName={"Envyntus Partners"}
+                                orgLink={"https://enventyspartners.com/"}
+                            />
+                            <SponsorCard
+                                img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                                orgName={"Your logo here!"}
+                            />
+                        </div>
                     </div>
-                </div>
 
-                <div className={classes.levelSection}>
-                    <LevelCard
-                        level="Bronze"
-                    />
-
-                    <div className={classes.sponsorCards} style={{backgroundColor: "#bda780"}} >
-                        <SponsorCard
-                            img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                            orgName={"Your logo here!"}
+                    <div className={classes.levelSection}>
+                        <LevelCard
+                            level="Bronze"
                         />
-                    </div>
-                </div>
 
-                
+                        <div className={classes.sponsorCards} style={{ backgroundColor: "#bda780" }} >
+                            <SponsorCard
+                                img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                                orgName={"Your logo here!"}
+                            />
+                        </div>
+                    </div>
+
+
                 </Paper>
 
-                <Paper className={classes.container} style={{marginTop: "2rem", width: "60%"}}>
+                <Paper className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
                     <Typography align="center" variant="h5">
-                        To become a sponsor contact Sam Luu at <br/><Link href="mailto:car-robotics@uncc.edu" style={{color: "#00713d"}}>car-robotics@uncc.edu</Link>
+                        To become a sponsor contact Sam Luu at <br /><Link href="mailto:car-robotics@uncc.edu" style={{ color: "#00713d" }}>car-robotics@uncc.edu</Link>
                     </Typography>
                 </Paper>
 

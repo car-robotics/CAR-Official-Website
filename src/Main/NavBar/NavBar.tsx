@@ -3,7 +3,7 @@ import { AppBar, makeStyles, Theme, createStyles, Popover, SwipeableDrawer, Icon
 import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
-import "./Main.scss";
+import "../Main.scss";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

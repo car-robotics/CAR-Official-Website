@@ -1,11 +1,12 @@
 import React from "react";
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@material-ui/icons";
 import { IconButton, Paper, withStyles, Typography, Divider } from "@material-ui/core";
+import Slide, { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
-import { useCurrentWidth } from "react-socks";
 
 export default function Slideshow() {
     const [slideIndex, setSlideIndex] = React.useState<number>(0);
+    const [slideDirection, setSlideDirection] = React.useState<SlideProps["direction"]>("up");
 
     const handleLeftArrowClick = () => {
 
@@ -13,41 +14,56 @@ export default function Slideshow() {
             setSlideIndex(3);
         else
             setSlideIndex(slideIndex - 1);
+
+        setSlideDirection("right");
     }
     const handleRightArrowClick = () => {
         if (slideIndex === 3)
             setSlideIndex(0);
         else
             setSlideIndex(slideIndex + 1);
+
+        setSlideDirection("left");
     }
 
     const AboutBackground = withStyles({
         root: {
             backgroundColor: "#212B31",
             borderRadius: "1rem",
-            height: "max-content",
+            padding: "1rem"
         },
     })(Paper);
 
     return (
         <>
-            <AboutBackground className={useCurrentWidth() > 1000 ? "slideshow-container" : "slideshow-mobile-container"}>
+            <AboutBackground className={"slideshow-container"}>
 
-                <Typography align="center" variant="h2" style={{ gridArea: "title", color: "#B3A369" }}  >
+
+
+                <Typography align="center" variant="h2" style={{ color: "#B3A369" }}  >
                     Who We Are
                 </Typography>
 
-                <Divider style={{ gridArea: "divider", backgroundColor: "#B3A369" }} />
+                <Divider style={{ backgroundColor: "#B3A369", margin: "1rem" }} />
 
-                <IconButton className="slideshow-leftArrow" onClick={handleLeftArrowClick}>
-                    <KeyboardArrowLeft style={{ color: "white" }} />
-                </IconButton>
+                <div className="slideshow-lower-container">
 
-                <SlideShowContent contentIndex={slideIndex} />
+                    <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
+                        <KeyboardArrowLeft style={{ color: "white" }} />
+                    </IconButton>
 
-                <IconButton className="slideshow-rightArrow" onClick={handleRightArrowClick}>
-                    <KeyboardArrowRight style={{ color: "white" }} />
-                </IconButton>
+                    <Slide in={true} direction={slideDirection} timeout={{ enter: 750, exit: 750 }}>
+                        <div>
+                            <SlideShowContent contentIndex={slideIndex} />
+                        </div>
+                    </Slide>
+
+                    <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
+                        <KeyboardArrowRight style={{ color: "white" }} />
+                    </IconButton>
+
+                </div>
+
 
             </AboutBackground>
         </>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs, Tab, IconButton, withStyles, makeStyles, Theme, createStyles } from "@material-ui/core";
 import { Feedback } from "@material-ui/icons";
-import EasyToSeeTooltip from "./EasyToSeeTooltip";
+import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 
 interface NavBarContentProps {
     handleFeedbackClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
@@ -63,7 +63,7 @@ export default function NavBarContent(props: NavBarContentProps) {
                     <Tab className="NavBarSelection" disableFocusRipple label="🤖About" />
                     <Tab className="NavBarSelection" disableFocusRipple label="🤝Sponsors" />
                     <Tab className="NavBarSelection" disableFocusRipple label="⚔️Competition" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="🙋‍♀️Outreach" />
+                    <Tab className="NavBarSelection" disableFocusRipple label="👩‍💻Outreach" />
                     <Tab className="NavBarSelection" disableFocusRipple label="🎞️Archive" />
                 </NavTabs>
                 <EasyToSeeTooltip title="Feedback Button">

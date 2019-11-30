@@ -35,82 +35,55 @@
 }
 
 .card-group {
-
-
+    margin: 2rem auto;
+    padding: 1rem;
     @media screen and (min-width: 1000px) {
         width: 95%;
     }
     @media screen and (max-width: 800px) {
         width: 90%;
     }
-
-    margin: 2rem auto;
-    display: grid;
-    row-gap: 20px;
-    grid-template-columns: 5% 45% 45% 5%;
-    grid-template-areas: 
-    '. . . .'
-    '. t t .'
-    'w w w w'
-    '. d d .'
-    'c c c c'
-    '. . . .';
 }
 
 .card-container {
     margin: 0 auto;
-    grid-area: c;
     @media screen and (min-width: 1000px) {
         display: flex;
+        justify-content: space-evenly;
+    }
+    @media screen and (max-width: 800px) {
         width: max-content;
     }
-    @media screen and (max-width: 500px) {
-        width: 90%;
-    }
-}
-
-.who-we-are-container {
-    @extend .card-container;
-    width: 90%;
-    padding-top: 5rem;
-    display: block;
 }
 
 .slideshow-container {
-    display: grid;
-    grid-row-gap: 15px;
-    grid-template-columns: 5% 45% 45% 5%;
-    grid-template-areas:
-        '. . . .'
-        'title title title title'
-        '. divider divider .'
-        'leftArrow text content rightArrow'
-        '. . . .';
+    margin: 5rem auto 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    overflow: hidden;
 }
 
-.slideshow-mobile-container {
-    @extend .slideshow-container;
-    grid-template-areas:
-        '. . . .'
-        'title title title title'
-        '. divider divider .'
-        'leftArrow text text rightArrow'
-        'leftArrow content content rightArrow'
-        '. . . .';
+.slideshow-content-container {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+    }
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
 }
 
-.slideshow-leftArrow {
+.slideshow-lower-container {
+    height: 100%;
+    display: flex;
+}
+
+.slideshow-arrow, .slideshow-arrow {
     align-self: center;
-    grid-row-start: title;
-    grid-row-end: leftArrow;
-    grid-column-start: leftArrow;
-    grid-column-end: leftArrow;
-}
-
-.slideshow-rightArrow {
-    align-self: center;
-    grid-row-start: title;
-    grid-row-end: rightArrow;
-    grid-column-start: rightArrow;
-    grid-column-end: rightArrow;
+    width: max-content;
+    height: max-content;
 }

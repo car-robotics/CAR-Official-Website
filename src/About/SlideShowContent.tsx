@@ -5,6 +5,7 @@ import Robot from "../Images/Robot2.jpg";
 import SprintReview23 from "../Images/SprintReviews/EndofSprint2-3.jpg";
 import ArduinoWksp from "../Images/Outreach/ArduinoWksp-2.jpg";
 import Logo from "../Images/CARLogoPrimary.png";
+import "./About.scss";
 
 interface SlideShowContentProps {
     contentIndex: number,
@@ -14,11 +15,11 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         text: {
             padding: "0 2rem 1rem 2rem",
-            gridArea: "text",
             textAlign: "center",
             color: "#B3A369",
-            alignSelf: "center", 
+            alignSelf: "center",
             lineHeight: "1.5em",
+            flexBasis: "35%",
         },
     }),
 );
@@ -52,29 +53,29 @@ export default function SlideShowContent(props: SlideShowContentProps) {
     const contentObject = SlideShowContentItems[props.contentIndex];
 
     return (
-        <>
-            <Typography variant="h4" className={classes.text} style={{animationName: "fadeIn", animationDuration: "1s"}}>
+        <div className="slideshow-content-container">
+            <Typography variant="h4" className={classes.text} style={{ animationName: "fadeIn", animationDuration: "1s" }}>
                 {contentObject.text}
             </Typography>
 
-            <Image 
-                style={{ 
-                    gridArea: "content",
+            <Image
+                style={{
+                    flexBasis: "35%",
                     textAlign: "center",
-                    backgroundColor: "#212B31", 
-                    paddingTop: "0", 
-                    margin: "auto"
-                }} 
-                imageStyle={{ 
+                    backgroundColor: "transparent",
+                    paddingTop: "0",
+                }}
+                imageStyle={{
                     borderRadius: "1rem",
                     boxShadow: contentObject.img !== Logo ? "0px 0px 15px black" : "",
-                    position: "inherit", 
-                    width: contentObject.size.width, 
-                    height: contentObject.size.height 
-                }} 
-                aspectRatio={4/3} 
-                src={contentObject.img} 
+                    position: "inherit",
+                    width: contentObject.size.width,
+                    height: contentObject.size.height,
+                    minHeight: "30rem",
+                }}
+                aspectRatio={4 / 3}
+                src={contentObject.img}
             />
-        </>
+        </div>
     );
 }

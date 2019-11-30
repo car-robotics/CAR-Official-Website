@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList from './ImageGrid';
 import { Typography, Link } from "@material-ui/core";
-import PageFade from "../Main/PageFade";
-import { DocumentTitle } from "../Main/DocumentTitle";
+import PageFade from "../Utils/PageFade";
+import { DocumentTitle } from "../Utils/DocumentTitle";
 
 
 class Archive extends Component {
     render() {
-        DocumentTitle({title: "Archive"});
+        DocumentTitle({ title: "Archive" });
         return (
             <PageFade>
                 <div className="archivePageContent">

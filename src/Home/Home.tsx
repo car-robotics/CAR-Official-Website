@@ -2,13 +2,13 @@ import React from "react";
 import { Typography, Card, Paper, makeStyles, withStyles, createStyles, Theme, Divider, Grid } from "@material-ui/core";
 import Image from "material-ui-image";
 import { useCurrentWidth } from "react-socks";
-import {DocumentTitle} from "../Main/DocumentTitle";
+import { DocumentTitle } from "../Utils/DocumentTitle";
 import logo from "../Images/CARLogoPrimary.png";
 import "./Home.scss";
 import Social from "./Social";
 import Interest from "./Interest";
 import PayPal from "./PayPal";
-import PageFade from "../Main/PageFade";
+import PageFade from "../Utils/PageFade";
 
 const SideCard = withStyles({
     root: {
@@ -54,14 +54,14 @@ function Home() {
     const extras_display = width > 1000 ? "inline-flex" : "grid";
     const extras_height = width > 1000 ? "12rem" : "40rem";
 
-    DocumentTitle({title: "Home"});
+    DocumentTitle({ title: "Home" });
 
     return (
         <PageFade>
             <div>
                 <div className="electrical">
-                    <Image 
-                        src={logo} 
+                    <Image
+                        src={logo}
                         style={{
                             backgroundColor: "transparent",
                             paddingTop: "0",
@@ -71,7 +71,7 @@ function Home() {
                             display: "block",
                             width: useCurrentWidth() > 1000 ? "40%" : "75%",
                             margin: "2rem auto",
-                        }} 
+                        }}
                     />
                 </div>
                 <div className="mechanical">
@@ -79,7 +79,7 @@ function Home() {
                         <Typography variant="h3" className="more-text" align="center">
                             The Club's Mission
                         </Typography>
-                        <CardDivider/>
+                        <CardDivider />
                         <Typography align="center" className="more-text" variant="h4">
                             Our mission is to educate and to learn about all aspects of mobile robotics.
                             From the novice to the experienced, we welcome all students who are excited
@@ -89,14 +89,14 @@ function Home() {
                     </Paper>
                 </div>
                 <div className="computer">
-                    <Grid container justify="space-evenly" alignItems="center" style={{height: "100%"}}>
+                    <Grid container justify="space-evenly" alignItems="center" style={{ height: "100%" }}>
                         <Grid item>
-                            <SideCard elevation={24} style={{display: extras_display, height: extras_height}} >
-                                <Social CardDivider={CardDivider}/>
-                                {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
-                                <Interest CardDivider={CardDivider}/>
-                                {width > 1000 && <Divider style={{margin: "auto 10px", backgroundColor: "#B3A369"}} orientation="vertical"/>}
-                                <PayPal CardDivider={CardDivider}/>
+                            <SideCard elevation={24} style={{ display: extras_display, height: extras_height }} >
+                                <Social CardDivider={CardDivider} />
+                                {width > 1000 && <Divider style={{ margin: "auto 10px", backgroundColor: "#B3A369" }} orientation="vertical" />}
+                                <Interest CardDivider={CardDivider} />
+                                {width > 1000 && <Divider style={{ margin: "auto 10px", backgroundColor: "#B3A369" }} orientation="vertical" />}
+                                <PayPal CardDivider={CardDivider} />
                             </SideCard>
                         </Grid>
                     </Grid>

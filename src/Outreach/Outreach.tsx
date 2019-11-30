@@ -1,8 +1,8 @@
 import React from "react";
 import { Typography, Paper, makeStyles, createStyles, Theme } from "@material-ui/core";
 import { useCurrentWidth } from "react-socks";
-import { DocumentTitle } from "../Main/DocumentTitle";
-import PageFade from "../Main/PageFade";
+import { DocumentTitle } from "../Utils/DocumentTitle";
+import PageFade from "../Utils/PageFade";
 import arduino1 from "../Images/Outreach/ArduinoWksp-1.jpg";
 import arduino8 from "../Images/Outreach/ArduinoWksp-8.jpg";
 import bobsBash from "../Images/Outreach/BobsBash1-2.jpg";
@@ -45,7 +45,7 @@ function Outreach() {
     return (
         <PageFade>
             <div>
-            //Created a div to hold the entire website container
+                //Created a div to hold the entire website container
                 <div className={width > 1000 ? "outReach-container" : "outReach-container-mobile"}>
 
 
