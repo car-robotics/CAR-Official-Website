@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, Slide } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
@@ -34,15 +34,33 @@ const theme = createMuiTheme({
   },
 });
 
-interface MainState { pageIndex: number }
+interface MainState { pageIndex: number, reverseMap: boolean }
 
 class Main extends Component<{}, MainState> {
 
   constructor(props: any) {
     super(props);
     this.state = {
-      pageIndex: 0
+      pageIndex: 0,
+      reverseMap: true,
     };
+  }
+
+  pages = [
+    [<Home />, 0],
+    [<About />, 1],
+    [<Sponsors />, 2],
+    [<Competition />, 3],
+    [<Outreach />, 4],
+    [<Archive />, 5],
+  ]
+
+  componentDidUpdate(prevProps: {}, prevState: MainState) {
+    if (prevState.pageIndex > this.state.pageIndex) {
+      this.setState({ reverseMap: false });
+    } else if (prevState.pageIndex < this.state.pageIndex) {
+      this.setState({ reverseMap: true });
+    }
   }
 
   render() {
@@ -56,12 +74,24 @@ class Main extends Component<{}, MainState> {
         <BreakpointProvider>
           <NavBar navSelectionIndex={navSelectionIndex} />
           <div className="content">
-            {this.state.pageIndex === 0 && <Home />}
-            {this.state.pageIndex === 1 && <About />}
-            {this.state.pageIndex === 2 && <Sponsors />}
-            {this.state.pageIndex === 3 && <Competition />}
-            {this.state.pageIndex === 4 && <Outreach />}
-            {this.state.pageIndex === 5 && <Archive />}
+            {this.state.reverseMap && this.pages.map((page) => {
+              return (
+                <Slide in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
+                  <div>
+                    {page[0]}
+                  </div>
+                </Slide>
+              );
+            })}
+            {!this.state.reverseMap && this.pages.slice(0).reverse().map((page) => {
+              return (
+                <Slide in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
+                  <div>
+                    {page[0]}
+                  </div>
+                </Slide>
+              );
+            })}
           </div>
         </BreakpointProvider>
       </ThemeProvider>

@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-function Home() {
+export default function Home() {
     const width = useCurrentWidth();
     const classes = useStyles();
     const extras_display = width > 1000 ? "inline-flex" : "grid";
@@ -59,6 +59,7 @@ function Home() {
     return (
         <PageFade>
             <div>
+                {document.documentElement.scrollTop = 0}
                 <div className="electrical">
                     <Image
                         src={logo}
@@ -105,5 +106,3 @@ function Home() {
         </PageFade>
     );
 }
-
-export default Home;
