@@ -1,0 +1,19 @@
+@keyframes fallIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.competition-content {
+    margin: 2rem auto;
+    width: 60%;
+    padding: 2rem;
+}
+
+.countdown {
+    animation-name: fallIn;
+    animation-duration: 1s;
+}

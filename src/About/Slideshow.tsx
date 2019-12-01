@@ -27,21 +27,21 @@ export default function Slideshow() {
         setSlideDirection("left");
     }
 
+    /* Slide animation does not work if we use the ContentBackground instead of 
+        AboutBackground. I don't know why. */
     const AboutBackground = withStyles({
         root: {
             backgroundColor: "#212B31",
             borderRadius: "1rem",
-            padding: "1rem"
+            color: "#B3A369",
         },
     })(Paper);
 
     return (
         <>
-            <AboutBackground className={"slideshow-container"}>
+            <AboutBackground className="slideshow-container">
 
-
-
-                <Typography align="center" variant="h2" style={{ color: "#B3A369" }}  >
+                <Typography align="center" variant="h2" >
                     Who We Are
                 </Typography>
 
@@ -64,7 +64,6 @@ export default function Slideshow() {
                     </IconButton>
 
                 </div>
-
 
             </AboutBackground>
         </>

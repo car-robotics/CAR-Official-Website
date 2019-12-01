@@ -3,32 +3,7 @@
 @keyframes fadeIn {
     0% {
       opacity: 0;
-    }
-
-    20% {
-        opacity: 0.10;
-    }
-
-    20% {
-        opacity: 0.20;
-    }
-
-    30% {
-        opacity: 0.30;
-    }
-
-    40% {
-        opacity: 0.40;
-    }
-  
-    50% {
-      opacity: 0.5;
-    }
-
-    75% {
-        opacity: 0.75;
-    }
-  
+    }  
     100% {
       opacity: 1;
     }
@@ -63,6 +38,7 @@
     flex-direction: column;
     align-content: space-evenly;
     overflow: hidden;
+    padding: 1rem;
 }
 
 .slideshow-content-container {

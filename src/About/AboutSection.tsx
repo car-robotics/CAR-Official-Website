@@ -1,15 +1,8 @@
 import React from "react";
-import { withStyles } from "@material-ui/styles";
-import { Paper, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import OfficerCard, { OfficerCardProps } from "./OfficerCard";
 import GoldDivider from "../Utils/GoldDivider";
-
-const AboutBackground = withStyles({
-    root: {
-        backgroundColor: "#212B31",
-        borderRadius: "1rem",
-    },
-})(Paper);
+import { ContentBackground } from "../Utils/ContentBackground";
 
 interface AboutSectionProps {
     title: string,
@@ -19,11 +12,11 @@ interface AboutSectionProps {
 
 export default function AboutSection(props: AboutSectionProps) {
     return (
-        <AboutBackground elevation={24} className="card-group">
-            <Typography style={{ color: "#B3A369" }} variant="h2" align="center">
+        <ContentBackground elevation={24} className="card-group">
+            <Typography variant="h2" align="center">
                 {props.title}
             </Typography>
-            <Typography style={{ color: "#B3A369", paddingTop: "1rem" }} variant="h5" align="center">
+            <Typography style={{ paddingTop: "1rem" }} variant="h5" align="center">
                 {props.subtitle}
             </Typography>
             <GoldDivider />
@@ -42,6 +35,6 @@ export default function AboutSection(props: AboutSectionProps) {
                     })
                 }
             </div>
-        </AboutBackground>
+        </ContentBackground>
     );
 }
