@@ -61,21 +61,21 @@ export default function LevelCard(props: LevelCardProps){
 
     return(
         <Paper className={classes.sectionCard} style={{ backgroundImage: backgroundGradient }}>
-            <Typography align="center" className="desc cBlack">
-                <Typography className="secTitle" variant="h4">
+            <div className="desc cBlack">
+                <Typography className="secTitle" align="center" variant="h4">
                     {cardTitle}
                 </Typography>
                 <Typography variant="h5" className="leftAlign">
                     Includes:
                 </Typography>
-                {listItems.map((x: string) => {
+                {listItems.map((x: string, i: number) => {
                     return (
-                        <ListItem>
+                        <ListItem key={i}>
                             {x}
                         </ListItem>
                     );
                 })}
-            </Typography>
+            </div>
         </Paper>
     );
 }

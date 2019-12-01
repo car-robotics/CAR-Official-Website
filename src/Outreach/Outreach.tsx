@@ -1,132 +1,83 @@
 import React from "react";
-import { Typography, Paper, makeStyles, createStyles, Theme } from "@material-ui/core";
-import { useCurrentWidth } from "react-socks";
-import { DocumentTitle } from "../Main/DocumentTitle";
-import banner from "../Images/outreachBan1.jpg";
+import { Typography } from "@material-ui/core";
+import { DocumentTitle } from "../Utils/DocumentTitle";
+import PageFade from "../Utils/PageFade";
 import arduino1 from "../Images/Outreach/ArduinoWksp-1.jpg";
-import arduino8 from "../Images/Outreach/ArduinoWksp-8.jpg";
-import bobsBash from "../Images/Outreach/BobsBash1-2.jpg";
+import arduino2 from "../Images/Outreach/ArduinoWksp-3.jpg";
+import bobsBash1 from "../Images/Outreach/BobsBash1.jpg";
+import bobsBash2 from "../Images/Outreach/BobsBash2.jpg";
+import bobsBash3 from "../Images/Outreach/BobsBash3.jpg";
 import discoveryplace1 from "../Images/Outreach/DiscoveryPlace1.jpg";
 import discoveryplace2 from "../Images/Outreach/DiscoveryPlace2.jpg";
 import elementary1 from "../Images/Outreach/Elementary1.jpg";
 import elementary2 from "../Images/Outreach/Elementary2.jpg";
+import explore1 from "../Images/Outreach/Explore1.jpg";
 import ncscience1 from "../Images/Outreach/NCScience1.jpg";
-import "./Outreach.scss";
+import EventSection from "./EventSection";
+import GoldDivider from "../Utils/GoldDivider";
+import { ContentBackground } from "../Utils/ContentBackground";
 
 
-//Used For styling
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        bottomCard: {
-            maxWidth: "50rem",
-            display: "flex",
-            backgroundColor: "#212b31",
-            gridArea: "bottomTxt",
-            padding: "10px",
-            paddingBottom: "10px",
-            margin: "-5px auto 2rem auto",
-        },
-        divider: {
-            margin: "10px",
-        },
-    }),
-);
-
-//Function that actually creates the website
 function Outreach() {
-    //Set the default sizing only used for (mobile version)
-    const width = useCurrentWidth();
-    const classes = useStyles();
-    const card_margin = width > 1000 ? "" : "10px";
-
-    //Used to set website tab name 
     DocumentTitle({ title: "Outreach" });
-
     return (
-        //Created a div to hold the entire website container
-        <div className={width > 1000 ? "outReach-container" : "outReach-container-mobile"}>
+        <PageFade>
+            <div>
+                <div style={{ marginTop: "5rem" }}>
+
+                    <ContentBackground className="header">
+                        <Typography variant="h2" align="center">
+                            Outreach
+                        </Typography>
+                        <GoldDivider />
+                        <Typography variant="h4" align="center">
+                            We treat outreach very seriously throughout the school year.
+                            As a club, we require volunteerig if members wish to to travel to competition.
+                            Below are some of our past volunteering events, enjoy!
+                        </Typography>
+                    </ContentBackground>
 
 
 
-            {/* Banner Image */}
-            <img src={banner} className="banner" alt="Banner" />
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginTop: "2rem" }}>
-                <Typography align="center" className="more-text" variant="h4">
-                    We enjoy helping and reaching out to our community. Volunteering is very important to us
-                    and we strive to make our community better every chance we get.
-                </Typography>
-            </Paper>
+                    <EventSection
+                        eventName={"Arduino Workshop"}
+                        supportingText={"We hosted an information session at the Freshman Engineering Learning Community on the basics of Arduino."}
+                        images={[arduino1, arduino2]}
+                    />
 
+                    <EventSection
+                        eventName={"Bob's Bash 2018"}
+                        supportingText={"Our club took some time during homecoming weekend to show off our progress on the robot for competition to UNCC Engineering faculty, staff, and alumni."}
+                        images={[bobsBash1, bobsBash2, bobsBash3]}
+                    />
 
+                    <EventSection
+                        eventName={"UNCC Explore"}
+                        supportingText={"We attended Explore to show prospective students that UNCC is serious about robotics."}
+                        images={[explore1]}
+                    />
 
-            <div style={{ display: "inline-flex" }}>
-                {/*Arduino Images */}
-                <img src={arduino1} className="arduino1" alt="Arduino1" />
-                <img src={arduino8} className="arduino8" alt="Arduino8" />
+                    <EventSection
+                        eventName={"Disovery Place"}
+                        supportingText={"Our club visited Charlotte’s Discovery Place to provide fun activities for kids of varying ages to excite them about STEM."}
+                        images={[discoveryplace1, discoveryplace2]}
+                    />
+
+                    <EventSection
+                        eventName={"Hour of Code - Mallard Creek Elementary"}
+                        supportingText={"We visited Mallard Creek Elementary to teach 5th graders how to code with Code.org and Snap."}
+                        images={[elementary1, elementary2]}
+                    />
+
+                    <EventSection
+                        eventName={"NC Science Festival - UNCC"}
+                        supportingText={"Our club volunteered to talk about robotics and provide some fun activities for kids of varying ages at a NC Science Festival sponsored event at UNCC’s campus."}
+                        images={[ncscience1]}
+                    />
+
+                </div>
             </div>
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginLeft: card_margin, marginRight: card_margin }}>
-                <Typography align="center" className="more-text" variant="h5" style={{ fontFamily: "Inconsolata" }}>
-                    We hosted an information session at the Freshman Engineering Learning Community on the basics of Arduino.
-                </Typography>
-            </Paper>
-
-
-
-
-
-            {/*Bobs Bash Image*/}
-            <img src={bobsBash} className="bobsBash" alt="BobsBash" />
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginLeft: card_margin, marginRight: card_margin }}>
-                <Typography align="center" className="more-text" variant="h5" style={{ fontFamily: "Inconsolata" }}>
-                    Our club took some time during homecoming weekend to show off our progress on the robot for competition
-                    to UNCC Engineering faculty, staff, and alumni.
-            </Typography>
-            </Paper>
-
-
-
-
-            {/*Discovery Place Images */}
-            <div style={{ display: "inline-flex" }}>
-                <img src={discoveryplace1} className="discoveryplace1" alt="Discoveryplace1" />{/*Discovery Place 2 Image */}
-                <img src={discoveryplace2} className="discoveryplace2" alt="Discoveryplace2" />
-            </div>
-
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginLeft: card_margin, marginRight: card_margin }}>
-                <Typography align="center" className="more-text" variant="h5" style={{ fontFamily: "Inconsolata" }}>
-                    Our club visited Charlotte’s Discovery Place to provide fun activities for kids of varying ages
-                    to excite them about STEM.
-            </Typography>
-            </Paper>
-
-
-
-            {/*Elementary school Images */}
-            <div style={{ display: "inline-flex" }}>
-                <img src={elementary1} className="elementary1" alt="Elementary1" />
-                <img src={elementary2} className="elementary2" alt="Elementary2" />
-            </div>
-
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginLeft: card_margin, marginRight: card_margin }}>
-                <Typography align="center" className="more-text" variant="h5" style={{ fontFamily: "Inconsolata" }}>
-                    We visited Mallard Creek Elementary to teach 5th graders how to code with Code.org and Snap.
-             </Typography>
-            </Paper>
-
-
-
-            {/*NC Science Image */}
-            <img src={ncscience1} className="ncscience1" alt="Ncscience1" />
-
-            <Paper className={classes.bottomCard} elevation={25} style={{ marginLeft: card_margin, marginRight: card_margin }}>
-                <Typography align="center" className="more-text" variant="h5" style={{ fontFamily: "Inconsolata" }}>
-                    Our club volunteered to talk about robotics and provide some fun activities for kids of varying
-                    ages at a NC Science Festival sponsored event at UNCC’s campus.
-             </Typography>
-            </Paper>
-
-
-        </div> //Closed the website container Div
+        </PageFade>
     );
 }
 

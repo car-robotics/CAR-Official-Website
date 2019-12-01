@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, IconButton } from "@material-ui/core";
 import { Instagram, Facebook } from "@material-ui/icons";
-import EasyToSeeTooltip from "../Main/EasyToSeeTooltip";
+import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 import "./Home.scss";
 
 export default function Social(props: any) {
@@ -11,7 +11,7 @@ export default function Social(props: any) {
             <Typography variant="h4">
                 Support us on Social Media!
             </Typography>
-            <CardDivider/>
+            <CardDivider />
             <EasyToSeeTooltip title="https://www.instagram.com/car_robotics/">
                 <IconButton href="https://www.instagram.com/car_robotics/" target="_blank">
                     <Instagram fontSize="large" htmlColor="#B3A369" />

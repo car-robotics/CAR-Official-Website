@@ -1,3 +1,12 @@
+@keyframes growIn {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
 .desc {
     max-width: 20rem;
     height: 100%;
@@ -46,13 +55,44 @@
     user-select: none;
 }
 
-//Color Tags 
 .cBlack {
     color: #212b31;
 }
 
-//Hover Color
 .backgroundBlack {
     background-color: #212b31;
 }
 
+.levelSection {
+    margin: 3rem auto;
+    align-items: center;
+    display: flex;
+    border-radius: 1rem;
+    justify-content: center;
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+    }
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
+}
+
+.sponsorCards {
+    display: flex;
+    width: 0%;
+    justify-content: space-evenly;
+    padding: 1rem;
+    box-shadow: inset 0px 0px 9px 2px black;
+    border-radius: 0px 1rem 1rem 0px;
+    animation-name: growIn;
+    animation-duration: 1s;
+    animation-delay: 100ms;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+    }
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
+}

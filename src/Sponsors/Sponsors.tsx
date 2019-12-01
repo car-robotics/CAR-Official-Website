@@ -1,8 +1,10 @@
 import React from "react";
-import { Typography, Paper, makeStyles, createStyles, Theme, Divider, Link } from "@material-ui/core";
-import { DocumentTitle } from "../Main/DocumentTitle";
+import { Typography, Paper, makeStyles, createStyles, Theme, Link } from "@material-ui/core";
+import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
+import PageFade from "../Utils/PageFade";
+import GoldDivider from "../Utils/GoldDivider";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -12,20 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundColor: "#212b31",
             color: "#B3A369",
             borderRadius: "1rem",
-        },
-        levelSection: {
-            margin: "3rem 0 0 3rem",
-            display: "inline-flex",
-            width: "95%",
-            borderRadius: "1rem",
-        },
-        sponsorCards: {
-            display: "inline-flex",
-            width: "76%",
-            justifyContent: "space-evenly",
-            padding: "1rem",
-            boxShadow: "inset 0px 0px 9px 2px black",
-            borderRadius: "0px 1rem 1rem 0px",
         },
     }),
 );
@@ -39,79 +27,75 @@ function Sponsors() {
     DocumentTitle({ title: "Sponsors" });
 
     return (
-        <div style={{margin: "5rem auto", width: "95%"}}>
+        <PageFade>
+            <div style={{ margin: "5rem auto", width: "95%" }}>
 
-            <Paper className={classes.container} >
-                <Typography align="center" variant="h2" >
-                    Thank You To Our Sponsors For Their Support!
-                </Typography>
+                <Paper className={classes.container} >
+                    <Typography align="center" variant="h2" >
+                        Thank You To Our Sponsors For Their Support!
+                    </Typography>
 
-                <Divider style={{ backgroundColor: "#B3A369", marginTop: "10px" }} variant="middle" />
+                    <GoldDivider />
 
-            <div className={classes.levelSection} >
-                <LevelCard
-                    level="Gold"
-                />
+                    <div className="levelSection" >
+                        <LevelCard level="Gold" />
 
-                <div className={classes.sponsorCards} style={{backgroundColor: "#ead286"}} >
-                    <SponsorCard
-                        img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
-                        orgName={"Walmart"}
-                        orgLink={"https://walmart.com/"}
-                    />
-                    <SponsorCard
-                        img={"http://imatrixsol.com/img/solidworks.png"}
-                        orgName={"SolidWorks"}
-                        orgLink={"https://www.solidworks.com/"}
-                    />
-                    <SponsorCard
-                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                        orgName={"Your logo here!"}
-                    />
-                </div>
+                        <div className="sponsorCards" style={{ backgroundColor: "#EAD286" }} >
+                            <SponsorCard
+                                img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
+                                orgName={"Walmart"}
+                                orgLink={"https://walmart.com/"}
+                            />
+                            <SponsorCard
+                                img={"http://imatrixsol.com/img/solidworks.png"}
+                                orgName={"SolidWorks"}
+                                orgLink={"https://www.solidworks.com/"}
+                            />
+                            <SponsorCard
+                                img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                                orgName={"Your logo here!"}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="levelSection">
+                        <LevelCard level="Silver" />
+
+                        <div className="sponsorCards" style={{ backgroundColor: "#C1C0C0" }} >
+                            <SponsorCard
+                                img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
+                                orgName={"Envyntus Partners"}
+                                orgLink={"https://enventyspartners.com/"}
+                            />
+                            <SponsorCard
+                                img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                                orgName={"Your logo here!"}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="levelSection">
+                        <LevelCard level="Bronze" />
+
+                        <div className="sponsorCards" style={{ backgroundColor: "#BDA780" }} >
+                            <SponsorCard
+                                img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
+                                orgName={"Your logo here!"}
+                            />
+                        </div>
+                    </div>
+
+
+                </Paper>
+
+                <Paper className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
+                    <Typography align="center" variant="h5">
+                        To become a sponsor contact Sam Luu at <br /><Link href="mailto:car-robotics@uncc.edu" style={{ color: "#00713d" }}>car-robotics@uncc.edu</Link>
+                    </Typography>
+                </Paper>
+
             </div>
-
-            <div className={classes.levelSection}>
-                <LevelCard
-                    level="Silver"
-                />
-
-                <div className={classes.sponsorCards} style={{backgroundColor: "#c1c0c0"}} >
-                    <SponsorCard 
-                        img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
-                        orgName={"Envyntus Partners"}
-                        orgLink={"https://enventyspartners.com/"}
-                    />
-                    <SponsorCard
-                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                        orgName={"Your logo here!"}
-                    />
-                </div>
-            </div>
-
-            <div className={classes.levelSection}>
-                <LevelCard
-                    level="Bronze"
-                />
-
-                <div className={classes.sponsorCards} style={{backgroundColor: "#bda780"}} >
-                    <SponsorCard
-                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                        orgName={"Your logo here!"}
-                    />
-                </div>
-            </div>
-
-            
-            </Paper>
-
-            <Paper className={classes.container} style={{marginTop: "2rem", width: "60%"}}>
-                <Typography align="center" variant="h5">
-                    To become a sponsor contact Sam Luu, our Outreach Officer, at <br/><Link href="mailto:car-robotics@uncc.edu" style={{color: "#00713d"}}>car-robotics@uncc.edu</Link>
-                </Typography>
-            </Paper>
-
-        </div >
+        </PageFade>
     );
 }
 

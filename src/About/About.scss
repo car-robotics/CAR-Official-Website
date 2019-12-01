@@ -3,32 +3,7 @@
 @keyframes fadeIn {
     0% {
       opacity: 0;
-    }
-
-    20% {
-        opacity: 0.10;
-    }
-
-    20% {
-        opacity: 0.20;
-    }
-
-    30% {
-        opacity: 0.30;
-    }
-
-    40% {
-        opacity: 0.40;
-    }
-  
-    50% {
-      opacity: 0.5;
-    }
-
-    75% {
-        opacity: 0.75;
-    }
-  
+    }  
     100% {
       opacity: 1;
     }
@@ -36,61 +11,55 @@
 
 .card-group {
     margin: 2rem auto;
-    display: grid;
-    row-gap: 20px;
-    grid-template-columns: 100px 650px 650px 100px;
-    grid-template-areas: 
-    '. . . .'
-    't t t t'
-    'w w w w'
-    '. d d .'
-    'c c c c'
-    '. . . .';
+    padding: 1rem;
+    @media screen and (min-width: 1000px) {
+        width: 95%;
+    }
+    @media screen and (max-width: 800px) {
+        width: 90%;
+    }
 }
 
 .card-container {
-    width: max-content;
     margin: 0 auto;
-    display: flex;
-    grid-area: c;
-}
-
-.who-we-are-container {
-    @extend .card-container;
-    padding-top: 5rem;
-    display: block;
+    @media screen and (min-width: 1000px) {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    @media screen and (max-width: 800px) {
+        width: max-content;
+    }
 }
 
 .slideshow-container {
-    min-width: 1500px;
-    display: grid;
-    grid-row-gap: 15px;
-    grid-template-columns: 100px 650px 650px 100px;
-    grid-template-areas:
-        '. . . .'
-        'title title title title'
-        'words words words words'
-        '. divider divider .'
-        'leftArrow text content rightArrow'
-        '. . . .';
+    margin: 5rem auto 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    overflow: hidden;
+    padding: 1rem;
 }
 
-.slideshow-leftArrow {
-    height: 50px;
-    width: 50px;
-    align-self: center;
-    grid-row-start: title;
-    grid-row-end: leftArrow;
-    grid-column-start: leftArrow;
-    grid-column-end: leftArrow;
+.slideshow-content-container {
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+    }
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
 }
 
-.slideshow-rightArrow {
-    height: 50px;
-    width: 50px;
+.slideshow-lower-container {
+    height: 100%;
+    display: flex;
+}
+
+.slideshow-arrow, .slideshow-arrow {
     align-self: center;
-    grid-row-start: title;
-    grid-row-end: rightArrow;
-    grid-column-start: rightArrow;
-    grid-column-end: rightArrow;
+    width: max-content;
+    height: max-content;
 }
