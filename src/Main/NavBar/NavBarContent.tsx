@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const getTabWithPath = () => {
     const path = window.location.hash;
-    console.log(path);
     if (path === "#/about") return 1;
     if (path === "#/sponsors") return 2;
     if (path === "#/competition") return 3;
@@ -59,12 +58,12 @@ export default function NavBarContent(props: NavBarContentProps) {
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
                 <NavTabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab className="NavBarSelection" disableFocusRipple label="🏠Home" component={Link} to="/" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="🤖About" component={Link} to="/about" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="🤝Sponsors" component={Link} to="/sponsors" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="⚔️Competition" component={Link} to="/competition" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="👩‍💻Outreach" component={Link} to="/outreach" />
-                    <Tab className="NavBarSelection" disableFocusRipple label="🎞️Archive" component={Link} to="/archive" />
+                    <Tab className="NavBarSelection" label="🏠Home" component={Link} to="/" />
+                    <Tab className="NavBarSelection" label="🤖About" component={Link} to="/about" />
+                    <Tab className="NavBarSelection" label="🤝Sponsors" component={Link} to="/sponsors" />
+                    <Tab className="NavBarSelection" label="⚔️Competition" component={Link} to="/competition" />
+                    <Tab className="NavBarSelection" label="👩‍💻Outreach" component={Link} to="/outreach" />
+                    <Tab className="NavBarSelection" label="🎞️Archive" component={Link} to="/archive" />
                 </NavTabs>
                 <EasyToSeeTooltip title="Feedback Button">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>

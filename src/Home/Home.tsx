@@ -80,7 +80,7 @@ export default function Home() {
                             The Club's Mission
                         </Typography>
                         <CardDivider />
-                        <Typography align="center" className="more-text" variant="h4">
+                        <Typography style={{ lineHeight: "3.5rem" }} align="center" className="more-text" variant="h4">
                             Our mission is to educate and to learn about all aspects of mobile robotics.
                             From the novice to the experienced, we welcome all students who are excited
                             to learn more about the field of robotics and apply the concepts they learn

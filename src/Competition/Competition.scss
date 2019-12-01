@@ -7,13 +7,25 @@
     }
 }
 
+@keyframes crawlIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 .competition-content {
     margin: 2rem auto;
     width: 60%;
     padding: 2rem;
+    animation-name: crawlIn;
+    animation-duration: 1s;
 }
 
 .countdown {
+    @extend .competition-content;
     animation-name: fallIn;
     animation-duration: 1s;
 }

@@ -1,0 +1,44 @@
+.img {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+
+.containers {
+    padding: 2rem;
+    width: fit-content;
+    margin: auto;
+    animation-name: crawlIn;
+    animation-duration: 1s;
+}
+
+.header {
+    width: 90%;
+    padding: 2rem;
+    margin: auto;
+    animation-name: fallIn;
+    animation-duration: 1s;
+}
+
+.supporting-text {
+    margin: auto !important;
+    width: 60%;
+}
+
+@keyframes crawlIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fallIn {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}

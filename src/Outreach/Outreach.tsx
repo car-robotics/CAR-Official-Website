@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Paper, withStyles } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import PageFade from "../Utils/PageFade";
 import arduino1 from "../Images/Outreach/ArduinoWksp-1.jpg";
@@ -15,17 +15,7 @@ import explore1 from "../Images/Outreach/Explore1.jpg";
 import ncscience1 from "../Images/Outreach/NCScience1.jpg";
 import EventSection from "./EventSection";
 import GoldDivider from "../Utils/GoldDivider";
-
-
-const PaperBackground = withStyles({
-    root: {
-        backgroundColor: "#212B31",
-        padding: "2rem",
-        margin: "2rem auto",
-        color: "#B3A369",
-        width: "90%",
-    },
-})(Paper);
+import { ContentBackground } from "../Utils/ContentBackground";
 
 
 function Outreach() {
@@ -35,7 +25,7 @@ function Outreach() {
             <div>
                 <div style={{ paddingTop: "5rem" }}>
 
-                    <PaperBackground>
+                    <ContentBackground className="header">
                         <Typography variant="h2" align="center">
                             Outreach
                         </Typography>
@@ -45,7 +35,7 @@ function Outreach() {
                             As a club, we require volunteerig if members wish to to travel to competition.
                             Below are some of our past volunteering events, enjoy!
                         </Typography>
-                    </PaperBackground>
+                    </ContentBackground>
 
 
 

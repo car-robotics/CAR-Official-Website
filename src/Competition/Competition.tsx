@@ -20,11 +20,11 @@ class Competition extends Component {
         DocumentTitle({ title: "Competition" });
         return (
             <PageFade>
-                <div style={{ paddingTop: "6rem" }}>
+                <div style={{ paddingTop: "5rem" }}>
                     <CountdownTimer />
                     <ContentBackground className="competition-content">
                         <Image src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"} style={{ backgroundColor: "transparent", height: "18rem", paddingTop: "0px", marginBottom: "32px" }} />
-                        <Typography align="center" variant="h4">
+                        <Typography align="center" variant="h4" style={{ lineHeight: "3.5rem" }}>
                             The <EasyToSeeTooltip title="https://www.ieee.org/"><GreenLink target="_blank" href="https://www.ieee.org/"> Institute of Electrical and Electronics Engineers (IEEE) </GreenLink></EasyToSeeTooltip>
                             Region 3 annually hosts student competitions as part of the Southeast Conference.
                             Of these competitions, the hardware competition involves students from different
