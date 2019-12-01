@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Theme, createStyles, Divider } from "@material-ui/core";
-import EasyToSeeTooltip from "../Main/EasyToSeeTooltip";
+import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 
 export enum Officer {
     President = "President",
@@ -11,7 +11,7 @@ export enum Officer {
     Developer = "Developer"
 }
 
-interface OfficerCardProps {
+export interface OfficerCardProps {
     image: string;
     officer: Officer;
     linkedIn: string;
@@ -46,11 +46,11 @@ export default function OfficerCard(props: OfficerCardProps) {
                         className={classes.officerPicture}
                     />
                     <CardContent>
-                        <Typography align="center" variant="h5" style={{color: "#212B31"}}>
+                        <Typography align="center" variant="h5" style={{ color: "#212B31" }}>
                             {props.officer}
                         </Typography>
                         <Divider />
-                        <Typography align="center" variant="h6" style={{color: "#212B31"}}>
+                        <Typography align="center" variant="h6" style={{ color: "#212B31" }}>
                             {props.name}
                         </Typography>
                     </CardContent>

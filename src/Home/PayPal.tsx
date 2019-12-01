@@ -1,16 +1,16 @@
 import React from "react";
-import EasyToSeeTooltip from "../Main/EasyToSeeTooltip";
-import {Typography} from "@material-ui/core";
+import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
+import { Typography } from "@material-ui/core";
 import "./Home.scss";
 
-export default function PayPal(props: any){
-    const {CardDivider} = props;
+export default function PayPal(props: any) {
+    const { CardDivider } = props;
     return (
         <div className="side-content">
             <Typography variant="h4">
                 Support us by donating!
             </Typography>
-            <CardDivider/>
+            <CardDivider />
             <EasyToSeeTooltip title="PayPal - The safer, easier way to pay online!">
                 <form action="https://www.paypal.com/cgi-bin/webscr" target="_blank" method="post">
                     <input type="hidden" name="cmd" value="_s-xclick" />
