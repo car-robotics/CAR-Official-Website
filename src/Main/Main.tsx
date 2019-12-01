@@ -76,7 +76,7 @@ class Main extends Component<{}, MainState> {
           <div className="content">
             {this.state.reverseMap && this.pages.map((page) => {
               return (
-                <Slide in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
+                <Slide key={page[1] as number} in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
                   <div>
                     {page[0]}
                   </div>
@@ -85,7 +85,7 @@ class Main extends Component<{}, MainState> {
             })}
             {!this.state.reverseMap && this.pages.slice(0).reverse().map((page) => {
               return (
-                <Slide in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
+                <Slide key={page[1] as number} in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
                   <div>
                     {page[0]}
                   </div>

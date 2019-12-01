@@ -59,7 +59,6 @@ export default function Home() {
     return (
         <PageFade>
             <div>
-                {document.documentElement.scrollTop = 0}
                 <div className="electrical">
                     <Image
                         src={logo}

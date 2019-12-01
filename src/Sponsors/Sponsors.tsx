@@ -5,7 +5,6 @@ import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 import PageFade from "../Utils/PageFade";
 import GoldDivider from "../Utils/GoldDivider";
-import { useCurrentWidth } from "react-socks";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -15,28 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundColor: "#212b31",
             color: "#B3A369",
             borderRadius: "1rem",
-        },
-        levelSection: {
-            margin: "3rem auto",
-            alignItems: "center",
-            display: "flex",
-            borderRadius: "1rem",
-            justifyContent: "center",
-            flexDirection: useCurrentWidth() > 1000 ? "row" : "column",
-        },
-        sponsorCards: {
-            display: "flex",
-            flexDirection: useCurrentWidth() > 1000 ? "row" : "column",
-            width: "0%",
-            justifyContent: "space-evenly",
-            padding: "1rem",
-            boxShadow: "inset 0px 0px 9px 2px black",
-            borderRadius: "0px 1rem 1rem 0px",
-            animationName: "growIn",
-            animationDuration: "1s",
-            animationDelay: "800ms",
-            animationFillMode: "forwards",
-            overflow: "hidden",
         },
     }),
 );
@@ -60,10 +37,10 @@ function Sponsors() {
 
                     <GoldDivider />
 
-                    <div className={classes.levelSection} >
+                    <div className="levelSection" >
                         <LevelCard level="Gold" />
 
-                        <div className={classes.sponsorCards} style={{ backgroundColor: "#EAD286" }} >
+                        <div className="sponsorCards" style={{ backgroundColor: "#EAD286" }} >
                             <SponsorCard
                                 img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
                                 orgName={"Walmart"}
@@ -81,10 +58,10 @@ function Sponsors() {
                         </div>
                     </div>
 
-                    <div className={classes.levelSection}>
+                    <div className="levelSection">
                         <LevelCard level="Silver" />
 
-                        <div className={classes.sponsorCards} style={{ backgroundColor: "#C1C0C0" }} >
+                        <div className="sponsorCards" style={{ backgroundColor: "#C1C0C0" }} >
                             <SponsorCard
                                 img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
                                 orgName={"Envyntus Partners"}
@@ -97,10 +74,10 @@ function Sponsors() {
                         </div>
                     </div>
 
-                    <div className={classes.levelSection}>
+                    <div className="levelSection">
                         <LevelCard level="Bronze" />
 
-                        <div className={classes.sponsorCards} style={{ backgroundColor: "#BDA780" }} >
+                        <div className="sponsorCards" style={{ backgroundColor: "#BDA780" }} >
                             <SponsorCard
                                 img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
                                 orgName={"Your logo here!"}
