@@ -64,7 +64,6 @@ export default function NavBar(props: any) {
                         isSidebar={false}
                         handleFeedbackClick={handleFeedbackClick}
                         classes={classes}
-                        {...props}
                     />
                 </AppBar>
             </Breakpoint>
@@ -90,7 +89,6 @@ export default function NavBar(props: any) {
                         isSidebar={true}
                         handleFeedbackClick={handleFeedbackClick}
                         classes={classes}
-                        {...props}
                     />
                 </SwipeableDrawer>
             </Breakpoint>

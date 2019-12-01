@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { createMuiTheme, Slide } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
@@ -9,6 +9,7 @@ import Sponsors from "../Sponsors/Sponsors";
 import Competition from "../Competition/Competition";
 import Archive from "../Archive/Archive";
 import NavBar from "./NavBar/NavBar";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 const theme = createMuiTheme({
   typography: {
@@ -34,7 +35,7 @@ const theme = createMuiTheme({
   },
 });
 
-interface MainState { pageIndex: number, reverseMap: boolean }
+interface MainState { pageIndex: number }
 
 class Main extends Component<{}, MainState> {
 
@@ -42,58 +43,28 @@ class Main extends Component<{}, MainState> {
     super(props);
     this.state = {
       pageIndex: 0,
-      reverseMap: true,
     };
   }
 
-  pages = [
-    [<Home />, 0],
-    [<About />, 1],
-    [<Sponsors />, 2],
-    [<Competition />, 3],
-    [<Outreach />, 4],
-    [<Archive />, 5],
-  ]
-
-  componentDidUpdate(prevProps: {}, prevState: MainState) {
-    if (prevState.pageIndex > this.state.pageIndex) {
-      this.setState({ reverseMap: false });
-    } else if (prevState.pageIndex < this.state.pageIndex) {
-      this.setState({ reverseMap: true });
-    }
-  }
-
   render() {
-
-    const navSelectionIndex = (i: number) => {
-      this.setState({ pageIndex: i });
-    }
-
     return (
       <ThemeProvider theme={theme}>
-        <BreakpointProvider>
-          <NavBar navSelectionIndex={navSelectionIndex} />
-          <div className="content">
-            {this.state.reverseMap && this.pages.map((page) => {
-              return (
-                <Slide key={page[1] as number} in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
-                  <div>
-                    {page[0]}
-                  </div>
-                </Slide>
-              );
-            })}
-            {!this.state.reverseMap && this.pages.slice(0).reverse().map((page) => {
-              return (
-                <Slide key={page[1] as number} in={this.state.pageIndex === page[1]} mountOnEnter unmountOnExit direction={"up"} timeout={{ enter: 750, exit: 750 }}>
-                  <div>
-                    {page[0]}
-                  </div>
-                </Slide>
-              );
-            })}
-          </div>
-        </BreakpointProvider>
+        <HashRouter>
+          <BreakpointProvider>
+            <NavBar />
+            <div className="content">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/sponsors" component={Sponsors} />
+                <Route path="/competition" component={Competition} />
+                <Route path="/outreach" component={Outreach} />
+                <Route path="/archive" component={Archive} />
+                <Redirect to="/" />
+              </Switch>
+            </div>
+          </BreakpointProvider>
+        </HashRouter>
       </ThemeProvider>
     );
   }
