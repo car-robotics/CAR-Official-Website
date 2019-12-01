@@ -1,8 +1,9 @@
 import React from "react";
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@material-ui/icons";
-import { IconButton, Paper, withStyles, Typography, Divider } from "@material-ui/core";
+import { IconButton, Paper, withStyles, Typography } from "@material-ui/core";
 import Slide, { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
+import GoldDivider from "../Utils/GoldDivider";
 
 export default function Slideshow() {
     const [slideIndex, setSlideIndex] = React.useState<number>(0);
@@ -44,7 +45,7 @@ export default function Slideshow() {
                     Who We Are
                 </Typography>
 
-                <Divider style={{ backgroundColor: "#B3A369", margin: "1rem" }} />
+                <GoldDivider />
 
                 <div className="slideshow-lower-container">
 

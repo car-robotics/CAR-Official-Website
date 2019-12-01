@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import CountdownTimer from "./CountdownTimer";
 import Image from "material-ui-image";
-import { Paper, withStyles, Typography, Divider, Link } from "@material-ui/core";
+import { Paper, withStyles, Typography, Link } from "@material-ui/core";
 import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
+import GoldDivider from "../Utils/GoldDivider";
 
 const PaperBackground = withStyles({
     root: {
@@ -42,7 +43,7 @@ class Competition extends Component {
                         <RulesText variant="h2" align="center">
                             The Rules: Pi Day 2020
                         </RulesText>
-                        <Divider style={{ backgroundColor: "#B3A369", margin: "1rem" }} variant="middle" />
+                        <GoldDivider />
                         <iframe title="rules" src="https://drive.google.com/file/d/1rc0wpz5IDh3fPyaSZwz_TqPAv9dnhEcB/preview" width="1024" height="768"></iframe>
                     </PaperBackground>
                 </div>

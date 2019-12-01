@@ -1,3 +1,12 @@
+@keyframes growIn {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
 .desc {
     max-width: 20rem;
     height: 100%;

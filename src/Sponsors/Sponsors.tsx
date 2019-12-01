@@ -1,9 +1,11 @@
 import React from "react";
-import { Typography, Paper, makeStyles, createStyles, Theme, Divider, Link } from "@material-ui/core";
+import { Typography, Paper, makeStyles, createStyles, Theme, Link } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 import PageFade from "../Utils/PageFade";
+import GoldDivider from "../Utils/GoldDivider";
+import { useCurrentWidth } from "react-socks";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -15,18 +17,26 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: "1rem",
         },
         levelSection: {
-            margin: "3rem 0 0 3rem",
-            display: "inline-flex",
-            width: "95%",
+            margin: "3rem auto",
+            alignItems: "center",
+            display: "flex",
             borderRadius: "1rem",
+            justifyContent: "center",
+            flexDirection: useCurrentWidth() > 1000 ? "row" : "column",
         },
         sponsorCards: {
-            display: "inline-flex",
-            width: "76%",
+            display: "flex",
+            flexDirection: useCurrentWidth() > 1000 ? "row" : "column",
+            width: "0%",
             justifyContent: "space-evenly",
             padding: "1rem",
             boxShadow: "inset 0px 0px 9px 2px black",
             borderRadius: "0px 1rem 1rem 0px",
+            animationName: "growIn",
+            animationDuration: "1s",
+            animationDelay: "800ms",
+            animationFillMode: "forwards",
+            overflow: "hidden",
         },
     }),
 );
@@ -48,14 +58,12 @@ function Sponsors() {
                         Thank You To Our Sponsors For Their Support!
                     </Typography>
 
-                    <Divider style={{ backgroundColor: "#B3A369", marginTop: "10px" }} variant="middle" />
+                    <GoldDivider />
 
                     <div className={classes.levelSection} >
-                        <LevelCard
-                            level="Gold"
-                        />
+                        <LevelCard level="Gold" />
 
-                        <div className={classes.sponsorCards} style={{ backgroundColor: "#ead286" }} >
+                        <div className={classes.sponsorCards} style={{ backgroundColor: "#EAD286" }} >
                             <SponsorCard
                                 img={"https://img.pngio.com/walmart-logo-free-transparent-png-logos-walmart-logo-png-960_899.jpg"}
                                 orgName={"Walmart"}
@@ -74,11 +82,9 @@ function Sponsors() {
                     </div>
 
                     <div className={classes.levelSection}>
-                        <LevelCard
-                            level="Silver"
-                        />
+                        <LevelCard level="Silver" />
 
-                        <div className={classes.sponsorCards} style={{ backgroundColor: "#c1c0c0" }} >
+                        <div className={classes.sponsorCards} style={{ backgroundColor: "#C1C0C0" }} >
                             <SponsorCard
                                 img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
                                 orgName={"Envyntus Partners"}
@@ -92,11 +98,9 @@ function Sponsors() {
                     </div>
 
                     <div className={classes.levelSection}>
-                        <LevelCard
-                            level="Bronze"
-                        />
+                        <LevelCard level="Bronze" />
 
-                        <div className={classes.sponsorCards} style={{ backgroundColor: "#bda780" }} >
+                        <div className={classes.sponsorCards} style={{ backgroundColor: "#BDA780" }} >
                             <SponsorCard
                                 img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
                                 orgName={"Your logo here!"}

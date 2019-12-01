@@ -1,5 +1,6 @@
 import React from "react";
-import {Divider, Typography, Paper, withStyles} from "@material-ui/core";
+import { Typography, Paper, withStyles } from "@material-ui/core";
+import GoldDivider from "../Utils/GoldDivider";
 
 const TimerText = withStyles({
     root: {
@@ -16,13 +17,13 @@ const TimerBackground = withStyles({
     },
 })(Paper);
 
-export default function TimerDisplay(props: any){
-    return(
-        <TimerBackground style={{width: "1024px"}}>
+export default function TimerDisplay(props: any) {
+    return (
+        <TimerBackground style={{ width: "1024px" }}>
             <TimerText variant="h2" align="center">
                 Countdown to Competition!
             </TimerText>
-            <Divider style={{ backgroundColor: "#B3A369", margin: "1rem"}} variant="middle" />
+            <GoldDivider />
             <TimerText variant="h2" align="center">
                 {props.display}
             </TimerText>
