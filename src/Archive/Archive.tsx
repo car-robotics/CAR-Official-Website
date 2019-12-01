@@ -19,7 +19,6 @@ class Archive extends Component {
                         <div>
                             <ReactPlayer
                                 url="https://www.youtube.com/embed/QIC3dg53WWg"
-                                playing
                                 width="64rem"
                                 height="36rem"
                                 style={{ margin: "auto" }}
