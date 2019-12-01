@@ -20,7 +20,7 @@ class Competition extends Component {
         DocumentTitle({ title: "Competition" });
         return (
             <PageFade>
-                <div style={{ paddingTop: "5rem" }}>
+                <div style={{ marginTop: "5rem" }}>
                     <CountdownTimer />
                     <ContentBackground className="competition-content">
                         <Image src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"} style={{ backgroundColor: "transparent", height: "18rem", paddingTop: "0px", marginBottom: "32px" }} />

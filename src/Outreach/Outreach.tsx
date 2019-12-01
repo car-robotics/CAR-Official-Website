@@ -23,7 +23,7 @@ function Outreach() {
     return (
         <PageFade>
             <div>
-                <div style={{ paddingTop: "5rem" }}>
+                <div style={{ marginTop: "5rem" }}>
 
                     <ContentBackground className="header">
                         <Typography variant="h2" align="center">
