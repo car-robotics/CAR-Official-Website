@@ -7,9 +7,10 @@ import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import GoldDivider from "../Utils/GoldDivider";
 import { ContentBackground } from "../Utils/ContentBackground";
+import Iframe from "react-iframe";
 import "./Competition.scss";
 
-const GreenLink = withStyles({
+export const GreenLink = withStyles({
     root: {
         color: "#00713D",
     },
@@ -23,7 +24,11 @@ class Competition extends Component {
                 <div style={{ marginTop: "5rem" }}>
                     <CountdownTimer />
                     <ContentBackground className="competition-content">
-                        <Image src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"} style={{ backgroundColor: "transparent", height: "18rem", paddingTop: "0px", marginBottom: "32px" }} />
+                        <Image 
+                            src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"}
+                            style={{ backgroundColor: "transparent", paddingTop: "" }}
+                            imageStyle={{height: "", width: "100%", position: ""}}
+                        />
                         <Typography align="center" variant="h4" style={{ lineHeight: "3.5rem" }}>
                             The <EasyToSeeTooltip title="https://www.ieee.org/"><GreenLink target="_blank" href="https://www.ieee.org/"> Institute of Electrical and Electronics Engineers (IEEE) </GreenLink></EasyToSeeTooltip>
                             Region 3 annually hosts student competitions as part of the Southeast Conference.
@@ -37,7 +42,13 @@ class Competition extends Component {
                             The Rules: Pi Day 2020
                         </Typography>
                         <GoldDivider />
-                        <iframe title="rules" src="https://drive.google.com/file/d/1rc0wpz5IDh3fPyaSZwz_TqPAv9dnhEcB/preview" width="1024" height="768"></iframe>
+                        <Iframe 
+                            title="rules"
+                            url="https://drive.google.com/file/d/1rc0wpz5IDh3fPyaSZwz_TqPAv9dnhEcB/preview"
+                            width="100%"
+                            height="768px"
+                            styles={{height: "50rem"}} 
+                        />
                     </ContentBackground>
                 </div>
             </PageFade>

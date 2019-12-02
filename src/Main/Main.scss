@@ -15,14 +15,15 @@
 }
 
 .footer {
-    text-align: center;
-    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
     background-color: $dark-blue;
+    align-items: center;
+    justify-content: space-evenly;
     color: $school-gold;
-    position: static;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
+    box-shadow: 0px 0px 10px black;
+    text-align: center;
 }
 
 .icon {
