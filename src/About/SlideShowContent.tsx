@@ -28,22 +28,18 @@ const SlideShowContentItems = [
     {
         text: "Charlotte Area Robotics is an UNCC Student Organization that competes anually in the IEEE SoutheastCon Hardware Competition",
         img: Logo,
-        size: { width: "80%", height: "" }
     },
     {
         text: "We educate other students through workshops and demonstrations",
         img: ArduinoWksp,
-        size: { width: "100%", height: "100%" }
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned",
         img: SprintReview23,
-        size: { width: "100%", height: "100%" }
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region",
         img: Robot,
-        size: { width: "100%", height: "100%" }
     }
 ];
 
@@ -60,7 +56,6 @@ export default function SlideShowContent(props: SlideShowContentProps) {
 
             <Image
                 style={{
-                    flexBasis: "35%",
                     textAlign: "center",
                     backgroundColor: "transparent",
                     paddingTop: "0",
@@ -69,8 +64,8 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                     borderRadius: "1rem",
                     boxShadow: contentObject.img !== Logo ? "0px 0px 15px black" : "",
                     position: "inherit",
-                    width: contentObject.size.width,
-                    height: contentObject.size.height,
+                    width: "",
+                    height: "25rem",
                     minHeight: "30rem",
                 }}
                 aspectRatio={4 / 3}
