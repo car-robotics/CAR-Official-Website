@@ -4,9 +4,9 @@ import { Typography } from "@material-ui/core";
 
 export default function PayPal() {
     return (
-        <div style={{ padding: "1rem" }}>
+        <>
             <Typography variant="h5">
-                Support us by donating!
+                Support us by Donating!
             </Typography>
             <EasyToSeeTooltip title="PayPal - The safer, easier way to pay online!">
                 <form action="https://www.paypal.com/cgi-bin/webscr" target="_blank" method="post" style={{ padding: "12px" }}>
@@ -16,6 +16,6 @@ export default function PayPal() {
                     <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                 </form>
             </EasyToSeeTooltip>
-        </div>
+        </>
     );
 }

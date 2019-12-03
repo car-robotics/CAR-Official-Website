@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 
-function Sponsors() {
+export default function Sponsors() {
     const classes = useStyles();
 
     DocumentTitle({ title: "Sponsors" });
@@ -89,8 +89,8 @@ function Sponsors() {
                 </Paper>
 
                 <Paper className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
-                    <Typography align="center" variant="h5">
-                        To become a sponsor contact Sam Luu at <br />
+                    <Typography align="center" variant="h3" style={{lineHeight: "3.5rem"}}>
+                        Ineterested in sponsoring?<br/>Contact Sam Luu at<br />
                         <EasyToSeeTooltip title="mailto:car-robotics@uncc.edu">
                             <GreenLink href="mailto:car-robotics@uncc.edu">car-robotics@uncc.edu</GreenLink>
                         </EasyToSeeTooltip>
@@ -101,5 +101,3 @@ function Sponsors() {
         </PageFade>
     );
 }
-
-export default Sponsors;

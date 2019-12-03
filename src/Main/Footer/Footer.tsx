@@ -17,15 +17,25 @@ const FooterDivider = withStyles({
 
 export default function Footer() {
 
+    const footerContent = [
+        <Social />,
+        <Interest />,
+        <PayPal />,
+        <Contact />,
+    ]
+
     return (
         <div className="footer">
-            <Social />
-            <FooterDivider orientation="vertical" />
-            <Interest />
-            <FooterDivider orientation="vertical" />
-            <PayPal />
-            <FooterDivider orientation="vertical" />
-            <Contact />
+            {footerContent.map((element) => {
+                return (
+                    <>
+                        <div style={{ width: "20%" }}>
+                            {element}
+                        </div>
+                        <FooterDivider orientation="vertical"/>
+                    </>
+                );
+            })}
             <EasyToSeeTooltip title="Scroll to Top">
                 <IconButton className="scroll-to-top" onClick={() => window.scrollTo(0, 0)}>
                     <KeyboardArrowUp htmlColor="#FFF" />

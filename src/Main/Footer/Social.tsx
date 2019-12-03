@@ -5,7 +5,7 @@ import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 
 export default function Social() {
     return (
-        <div style={{ padding: "1rem" }}>
+        <>
             <Typography variant="h5">
                 Support us on Social Media!
             </Typography>
@@ -19,6 +19,6 @@ export default function Social() {
                     <Facebook fontSize="large" htmlColor="#B3A369" />
                 </IconButton>
             </EasyToSeeTooltip>
-        </div>
+        </>
     );
 }
