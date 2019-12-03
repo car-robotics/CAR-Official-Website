@@ -46,7 +46,7 @@ function Outreach() {
                     />
 
                     <EventSection
-                        eventName={"Bob's Bash 2018"}
+                        eventName={"Bob's Bash"}
                         supportingText={"Our club took some time during homecoming weekend to show off our progress on the robot for competition to UNCC Engineering faculty, staff, and alumni."}
                         images={[bobsBash1, bobsBash2, bobsBash3]}
                     />

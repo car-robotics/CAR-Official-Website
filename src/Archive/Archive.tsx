@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList, { ArchiveCategory } from './ImageGrid';
-import { Typography, MenuList, MenuItem, withStyles, IconButton } from "@material-ui/core";
+import { Typography, MenuList, MenuItem, withStyles, IconButton, Backdrop } from "@material-ui/core";
 // import ReactPlayer from "react-player";
+import Image from "material-ui-image";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
-import { KeyboardArrowUp } from "@material-ui/icons";
+import { KeyboardArrowUp, Close } from "@material-ui/icons";
+import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 
 const CollectionItem = withStyles({
     root: {
@@ -15,13 +17,17 @@ const CollectionItem = withStyles({
     },
 })(MenuItem);
 
-interface ArchiveState { selectedIndex: number }
+interface ArchiveState { 
+    selectedIndex: number, 
+    clickedImage: {clicked: boolean, img: string}
+}
 
-class Archive extends Component<{}, ArchiveState> {
+export default class Archive extends Component<{}, ArchiveState> {
     constructor(props: any) {
         super(props);
         this.state = {
             selectedIndex: 0,
+            clickedImage: {clicked: false, img: ""},
         };
     }
 
@@ -36,26 +42,41 @@ class Archive extends Component<{}, ArchiveState> {
         ]
 
         const collageDiv = document.getElementsByClassName('MuiGridList-root');
+
+        const handleImageClick = (clickedImg: string) => {
+            this.setState({ clickedImage: {clicked: true, img: clickedImg} });
+        }
         
         return (
             <PageFade>
                 <div className="archivePageContent">
-                    {/* <div id="msgs">
-                        <Typography variant='h1' id="archiveWelcome"> Welcome to The Archive</Typography>
-                        <Typography variant='h3' id="welcomeMsg">
-                            Check out our video compilation and photo gallery of previous competitions and club activities
-                        </Typography>
-                        <div>
-                            <ReactPlayer
-                                url="https://www.youtube.com/embed/QIC3dg53WWg"
-                                width="64rem"
-                                height="36rem"
-                                style={{ margin: "auto" }}
-                            />
-                        </div>
-                        <Typography variant='h3' id="checkoutMore">Watch more videos on <Link style={{ color: "#046A38" }} href="https://www.youtube.com/results?search_query=Charlotte+Area+Robotics+" target="_blank">YouTube </Link>
-                        </Typography>
-                    </div> */}
+                    <Backdrop style={{zIndex: 2000, overflow: "auto"}} open={this.state.clickedImage.clicked}>
+                        <EasyToSeeTooltip title="Close">
+                            <IconButton 
+                                className="close-backdrop-icon" 
+                                onClick={() => this.setState({ clickedImage: {clicked: false, img: ""} })} 
+                            >
+                                <Close htmlColor="#FFF"/>
+                            </IconButton>
+                        </EasyToSeeTooltip>
+                        <Image 
+                            src={this.state.clickedImage.img}
+                            style={{
+                                position: "",
+                                paddingTop: "",
+                                backgroundColor: "transparent",
+                                width: "60%",
+                                margin: "auto",
+                            }}
+                            imageStyle={{
+                                height: "",
+                                width: "100%",
+                                position: "",
+                                border: "0.5rem solid #FFF",
+                                borderRadius: "1rem",
+                            }}
+                        />
+                    </Backdrop>
                     <ContentBackground className="menu-container">
                         <MenuList>
                             {collectionItems.map((option, index) => {
@@ -77,15 +98,18 @@ class Archive extends Component<{}, ArchiveState> {
                             {" Photos"}
                         </Typography>
                         <GoldDivider />
-                        <AdvancedGridList section={this.state.selectedIndex} />
-                        <IconButton onClick={() => {if (collageDiv) collageDiv[0].scrollTop = 0}} className="collage-scroll-icon" >
-                            <KeyboardArrowUp/>
-                        </IconButton>
+                        <AdvancedGridList section={this.state.selectedIndex} handleImageClick={handleImageClick} />
+                        <div>
+                            <EasyToSeeTooltip title="Scroll to Top">
+                                <IconButton onClick={() => {if (collageDiv) collageDiv[0].scrollTop = 0}} className="collage-scroll-icon" >
+                                    <KeyboardArrowUp/>
+                                </IconButton>
+                            </EasyToSeeTooltip>
+                        </div>
                     </ContentBackground>
+
                 </div>
             </PageFade>
         );
     }
 }
-
-export default Archive;

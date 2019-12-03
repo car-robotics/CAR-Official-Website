@@ -1,8 +1,7 @@
 
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import { GridList, GridListTile, GridListTileBar, Backdrop, IconButton } from "@material-ui/core";
-import { Close } from "@material-ui/icons";
+import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
 import Image from "material-ui-image";
 import './Archive.scss';
 
@@ -177,25 +176,11 @@ const tileData: Tile[] = [
 
 interface ImageGridProps {
   section: ArchiveCategory;
+  handleImageClick: (clickedImg: string) => void;
 }
 
 export default function AdvancedGridList(props: ImageGridProps) {
   const classes = useStyles();
-
-  const [focusImage, setFocusImage] = React.useState<boolean>(false);
-
-  const handleImageClick = (img: string) => {
-    return (
-      <Backdrop open={focusImage}>
-        <IconButton onClick={() => setFocusImage(false)}>
-          <Close />
-        </IconButton>
-        <Image src={img}/>
-      </Backdrop>
-    );
-  }
-
-  console.log(focusImage);
 
   return (
     <div className={classes.root}>
@@ -205,7 +190,7 @@ export default function AdvancedGridList(props: ImageGridProps) {
           <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1} >
             <Image 
               src={tile.img}
-              onClick={() => {setFocusImage(true); handleImageClick(tile.img)}}
+              onClick={() => props.handleImageClick(tile.img)}
               style={{
                 backgroundColor: "transparent",
               }} 
