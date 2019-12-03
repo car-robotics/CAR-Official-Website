@@ -1,10 +1,12 @@
 import React from "react";
-import { Typography, Paper, makeStyles, createStyles, Theme, Link } from "@material-ui/core";
+import { Typography, Paper, makeStyles, createStyles, Theme } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 import PageFade from "../Utils/PageFade";
 import GoldDivider from "../Utils/GoldDivider";
+import { GreenLink } from "../Competition/Competition";
+import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -20,8 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 function Sponsors() {
-    //Set the default sizing only used for (mobile version)
-    // const width = useCurrentWidth();
     const classes = useStyles();
 
     DocumentTitle({ title: "Sponsors" });
@@ -90,7 +90,10 @@ function Sponsors() {
 
                 <Paper className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
                     <Typography align="center" variant="h5">
-                        To become a sponsor contact Sam Luu at <br /><Link href="mailto:car-robotics@uncc.edu" style={{ color: "#00713d" }}>car-robotics@uncc.edu</Link>
+                        To become a sponsor contact Sam Luu at <br />
+                        <EasyToSeeTooltip title="mailto:car-robotics@uncc.edu">
+                            <GreenLink href="mailto:car-robotics@uncc.edu">car-robotics@uncc.edu</GreenLink>
+                        </EasyToSeeTooltip>
                     </Typography>
                 </Paper>
 

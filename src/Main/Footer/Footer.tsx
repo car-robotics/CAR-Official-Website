@@ -4,7 +4,7 @@ import { KeyboardArrowUp } from '@material-ui/icons';
 import Social from "./Social";
 import Interest from "./Interest";
 import PayPal from "./PayPal";
-import { Email } from "@material-ui/icons";
+import Contact from "./Contact";
 import GoldDivider from "../../Utils/GoldDivider";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import "../Main.scss"
@@ -20,13 +20,15 @@ export default function Footer() {
     return (
         <div className="footer">
             <Social />
-            <FooterDivider orientation="vertical"/>
+            <FooterDivider orientation="vertical" />
             <Interest />
-            <FooterDivider orientation="vertical"/>
+            <FooterDivider orientation="vertical" />
             <PayPal />
+            <FooterDivider orientation="vertical" />
+            <Contact />
             <EasyToSeeTooltip title="Scroll to Top">
-                <IconButton onClick={() => window.scrollTo(0,0)}>
-                    <KeyboardArrowUp htmlColor="white"/>
+                <IconButton className="scroll-to-top" onClick={() => window.scrollTo(0, 0)}>
+                    <KeyboardArrowUp htmlColor="#FFF" />
                 </IconButton>
             </EasyToSeeTooltip>
         </div>

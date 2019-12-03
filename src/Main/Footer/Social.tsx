@@ -5,7 +5,7 @@ import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 
 export default function Social() {
     return (
-        <div>
+        <div style={{ padding: "1rem" }}>
             <Typography variant="h5">
                 Support us on Social Media!
             </Typography>

@@ -14,18 +14,25 @@
     overflow: hidden;
 }
 
+.icon {
+    vertical-align: middle;
+}
+
 .footer {
     display: flex;
     flex-direction: row;
     height: 30vh;
     background-color: $dark-blue;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     color: $school-gold;
     box-shadow: 0px 0px 10px black;
     text-align: center;
 }
 
-.icon {
-    vertical-align: middle;
+.scroll-to-top {
+    position: absolute !important;
+    right: 2rem;
+    background-color: $school-green !important;
+    box-shadow: 0px 0px 10px black;
 }
