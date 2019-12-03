@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList, { ArchiveCategory } from './ImageGrid';
-import { Typography, Link, MenuList, MenuItem, withStyles } from "@material-ui/core";
-import ReactPlayer from "react-player";
+import { Typography, MenuList, MenuItem, withStyles, IconButton } from "@material-ui/core";
+// import ReactPlayer from "react-player";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
+import { KeyboardArrowUp } from "@material-ui/icons";
 
 const CollectionItem = withStyles({
     root: {
@@ -34,6 +35,8 @@ class Archive extends Component<{}, ArchiveState> {
             "The Robot",
         ]
 
+        const collageDiv = document.getElementsByClassName('MuiGridList-root');
+        
         return (
             <PageFade>
                 <div className="archivePageContent">
@@ -60,7 +63,7 @@ class Archive extends Component<{}, ArchiveState> {
                                     <CollectionItem
                                         selected={index === this.state.selectedIndex}
                                         className="archive-selection"
-                                        onClick={() => this.setState({ selectedIndex: index })}
+                                        onClick={() => {this.setState({ selectedIndex: index }); if (collageDiv) collageDiv[0].scrollTop = 0}}
                                     >
                                         {option}
                                     </CollectionItem>
@@ -68,10 +71,16 @@ class Archive extends Component<{}, ArchiveState> {
                             })}
                         </MenuList>
                     </ContentBackground>
-                    <ContentBackground>
-                        <Typography variant='h3' className="collage-header">Photo Gallery</Typography>
+                    <ContentBackground className="collage-container">
+                        <Typography variant='h3' className="collage-header">
+                            {ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() + ArchiveCategory[this.state.selectedIndex].slice(1)}
+                            {" Photos"}
+                        </Typography>
                         <GoldDivider />
                         <AdvancedGridList section={this.state.selectedIndex} />
+                        <IconButton onClick={() => {if (collageDiv) collageDiv[0].scrollTop = 0}} className="collage-scroll-icon" >
+                            <KeyboardArrowUp/>
+                        </IconButton>
                     </ContentBackground>
                 </div>
             </PageFade>

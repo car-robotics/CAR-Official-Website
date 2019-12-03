@@ -1,3 +1,5 @@
+@import "../Themes.scss";
+
 .collage-header {
     text-align: center;
     padding-top: 1rem;
@@ -8,28 +10,55 @@
     width: 60%;
 }
 
-.archivePageContent {
-    margin: 5rem auto;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.collage-scroll-icon.MuiIconButton-root {
+    background-color: $school-green;
+    color: #FFF;
+    display: block;
+    margin: 0.5rem auto;
+    box-shadow: 0px 0px 10px black;
+    &:hover {
+        background-color: $school-green;
+        box-shadow: 0 0 10px $school-gold;
+    }
 }
 
-.archive-selection.Mui-selected {
-    color: #FFF;
-    border-color: green;
-    border-width: 5px;
+.archivePageContent {
+    margin: 5rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.archive-selection {
+    &:hover {
+        background-color: rgba(4, 106, 57, 0.404) !important;
+        border-radius: 0.5rem;
+    }
+}
+
+.archive-selection.Mui-selected.MuiListItem-root.Mui-selected {
+    color: #000;
+    background-color: $school-gold !important;
+    border-radius: 0.5rem;
 }
 
 .menu-container {
     width: fit-content;
     height: fit-content;
-    position: fixed;
-    left: 3rem;
-    top: 25%;
+    display: flex;
+    align-self: center;
+    margin: 5rem;
     border-radius: 0.5rem !important;
     padding: 1rem;
+    box-shadow: 0px 0px 10px black !important;
+}
+
+.collage-container {
+    padding: 1rem 3rem;
+    height: 85vh;
+    width: 70%;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px black !important;
 }
 
 #archiveWelcome {

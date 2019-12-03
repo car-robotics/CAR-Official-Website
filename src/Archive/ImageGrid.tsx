@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
+import { GridList, GridListTile, GridListTileBar, Backdrop, IconButton } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
 import Image from "material-ui-image";
 import './Archive.scss';
 
 export enum ArchiveCategory {
-  all,
+  all = 0,
   outreach,
   sprintReview,
   robot,
@@ -27,16 +28,17 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-around',
       overflow: 'hidden',
       backgroundColor: '#212B31',
+      height: "80%",
     },
     gridList: {
-      width: 1300,
-      height: 900,
+      width: "100%",
+      height: "100%",
       transform: 'translateZ(0)',
+      scrollBehavior: "smooth",
     },
     titleBar: {
       background:
-        'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-        'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+        'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.25))',
     },
     icon: {
       color: '#bfbfbf',
@@ -180,13 +182,37 @@ interface ImageGridProps {
 export default function AdvancedGridList(props: ImageGridProps) {
   const classes = useStyles();
 
+  const [focusImage, setFocusImage] = React.useState<boolean>(false);
+
+  const handleImageClick = (img: string) => {
+    return (
+      <Backdrop open={focusImage}>
+        <IconButton onClick={() => setFocusImage(false)}>
+          <Close />
+        </IconButton>
+        <Image src={img}/>
+      </Backdrop>
+    );
+  }
+
+  console.log(focusImage);
+
   return (
     <div className={classes.root}>
       <GridList cellHeight={340} spacing={1} className={classes.gridList}>
         {tileData.map(tile => (
           (tile.category === props.section || props.section === ArchiveCategory.all) &&
-          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
-            <img src={tile.img} />
+          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1} >
+            <Image 
+              src={tile.img}
+              onClick={() => {setFocusImage(true); handleImageClick(tile.img)}}
+              style={{
+                backgroundColor: "transparent",
+              }} 
+              imageStyle={{
+                height: "",
+              }}
+            />
             <GridListTileBar
               title={tile.title}
               titlePosition="top"
