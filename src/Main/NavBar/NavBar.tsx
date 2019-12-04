@@ -4,12 +4,13 @@ import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
 import "../Main.scss";
+import { COLORS } from "../../Utils/COLORS";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appbar: {
             zIndex: theme.zIndex.drawer + 1,
-            backgroundColor: "#212b31",
+            backgroundColor: COLORS.darkBlue,
             height: "max-content",
             position: "fixed",
         },
@@ -20,11 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom: "0",
         },
         paper: {
-            background: "#212b31",
-            color: "white",
+            background: COLORS.darkBlue,
+            color: COLORS.mainWhite,
         },
         hamburgerMenu: {
-            color: "white",
+            color: COLORS.mainWhite,
             position: "absolute",
         },
         mobileNavBar: {

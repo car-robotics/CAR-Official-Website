@@ -4,6 +4,7 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
 import Image from "material-ui-image";
 import './Archive.scss';
+import { COLORS } from '../Utils/COLORS';
 
 export enum ArchiveCategory {
   all = 0,
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: '#212B31',
+      backgroundColor: COLORS.darkBlue,
       height: "80%",
     },
     gridList: {
@@ -38,9 +39,6 @@ const useStyles = makeStyles((theme: Theme) =>
     titleBar: {
       background:
         'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.25))',
-    },
-    icon: {
-      color: '#bfbfbf',
     },
   }),
 );

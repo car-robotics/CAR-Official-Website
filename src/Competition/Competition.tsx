@@ -9,10 +9,11 @@ import GoldDivider from "../Utils/GoldDivider";
 import { ContentBackground } from "../Utils/ContentBackground";
 import Iframe from "react-iframe";
 import "./Competition.scss";
+import { COLORS } from "../Utils/COLORS";
 
 export const GreenLink = withStyles({
     root: {
-        color: "#00713D",
+        color: COLORS.schoolGreen,
     },
 })(Link);
 

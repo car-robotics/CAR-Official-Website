@@ -4,6 +4,7 @@ import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 import Image from "material-ui-image";
 import { ListItem } from "../Sponsors/LevelCard";
 import "./Sponsors.scss";
+import { COLORS } from "../Utils/COLORS";
 
 interface SponsorsCardProps {
     orgName: string;
@@ -42,7 +43,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                                     borderStyle: "solid",
                                     borderRadius: "10px",
                                     borderWidth: "12px",
-                                    borderColor: "#212b31",
+                                    borderColor: COLORS.darkBlue,
                                 }}
                                 style={{
                                     width: "14.5rem",
@@ -71,7 +72,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                             borderStyle: "solid",
                             borderRadius: "10px",
                             borderWidth: "12px",
-                            borderColor: "#212b31",
+                            borderColor: COLORS.darkBlue,
                         }}
                         style={{
                             width: "14.5rem",

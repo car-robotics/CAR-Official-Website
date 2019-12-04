@@ -6,11 +6,12 @@ import { DocumentTitle } from "../Utils/DocumentTitle";
 import logo from "../Images/CARLogoPrimary.png";
 import "./Home.scss";
 import PageFade from "../Utils/PageFade";
+import { COLORS } from "../Utils/COLORS";
 
 const CardDivider = withStyles({
     root: {
         margin: "1rem",
-        backgroundColor: "#B3A369",
+        backgroundColor: COLORS.schoolGold,
     },
 })(Divider);
 
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
         missionCard: {
             maxWidth: "60%",
             display: "inline-table",
-            backgroundColor: "#212b31",
+            backgroundColor: COLORS.darkBlue,
             padding: "2rem",
             margin: "auto",
             verticalAlign: "middle",

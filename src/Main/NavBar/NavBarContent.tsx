@@ -3,6 +3,7 @@ import { Tabs, Tab, IconButton, withStyles, makeStyles, Theme, createStyles } fr
 import { Feedback } from "@material-ui/icons";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import { Link } from "react-router-dom";
+import { COLORS } from "../../Utils/COLORS";
 
 interface NavBarContentProps {
     handleFeedbackClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
@@ -17,7 +18,7 @@ const NavTabs = withStyles({
         margin: "auto",
     },
     indicator: {
-        backgroundColor: '#B3A369',
+        backgroundColor: COLORS.schoolGold,
         height: "4px",
     },
 })(Tabs); //<- Uses Material UI Tabs component but overrides what's above
@@ -67,7 +68,7 @@ export default function NavBarContent(props: NavBarContentProps) {
                 </NavTabs>
                 <EasyToSeeTooltip title="Feedback Button">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>
-                        <Feedback style={{ color: "white" }} color="action" />
+                        <Feedback style={{ color: COLORS.mainWhite }} color="action" />
                     </IconButton>
                 </EasyToSeeTooltip>
             </div>

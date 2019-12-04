@@ -37,7 +37,7 @@
     background-color: $school-green;
     box-shadow: 0px 0px 10px black;
     &:hover {
-        box-shadow: 0px 0px 10px #B3A369;
+        box-shadow: 0px 0px 10px $school-gold;
         background-color: $school-green;
     }
 }

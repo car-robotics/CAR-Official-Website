@@ -6,6 +6,7 @@ import SprintReview23 from "../Images/SprintReviews/EndofSprint2-3.jpg";
 import ArduinoWksp from "../Images/Outreach/ArduinoWksp-2.jpg";
 import Logo from "../Images/CARLogoPrimary.png";
 import "./About.scss";
+import { COLORS } from "../Utils/COLORS";
 
 interface SlideShowContentProps {
     contentIndex: number,
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
         text: {
             padding: "0 2rem 1rem 2rem",
             textAlign: "center",
-            color: "#B3A369",
+            color: COLORS.schoolGold,
             alignSelf: "center",
             lineHeight: "1.5em",
             flexBasis: "35%",

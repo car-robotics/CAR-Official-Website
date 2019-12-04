@@ -1,3 +1,5 @@
+@import "../Themes.scss";
+
 @keyframes growIn {
     0% {
         width: 0%;
@@ -51,16 +53,16 @@
     left: 40%;
     transform: translate(-50%, -50%);
     white-space: nowrap;
-    color: #B3A369;
+    color: $school-gold;
     user-select: none;
 }
 
 .cBlack {
-    color: #212b31;
+    color:$dark-blue;
 }
 
 .backgroundBlack {
-    background-color: #212b31;
+    background-color: $dark-blue;
 }
 
 .levelSection {

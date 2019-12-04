@@ -7,14 +7,15 @@ import PageFade from "../Utils/PageFade";
 import GoldDivider from "../Utils/GoldDivider";
 import { GreenLink } from "../Competition/Competition";
 import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
+import { COLORS } from "../Utils/COLORS";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             padding: "2rem",
             margin: "auto",
-            backgroundColor: "#212b31",
-            color: "#B3A369",
+            backgroundColor: COLORS.darkBlue,
+            color: COLORS.schoolGold,
             borderRadius: "1rem",
         },
     }),

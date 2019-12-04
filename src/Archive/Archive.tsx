@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList, { ArchiveCategory } from './ImageGrid';
-import { Typography, MenuList, MenuItem, withStyles, IconButton, Backdrop } from "@material-ui/core";
+import { Typography, MenuList, MenuItem, withStyles } from "@material-ui/core";
 // import ReactPlayer from "react-player";
-import Image from "material-ui-image";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
-import { KeyboardArrowUp, Close } from "@material-ui/icons";
-import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
+import Lightbox from "./Lightbox";
+import ScrollToTop from "./ScrollToTop";
 
 const CollectionItem = withStyles({
     root: {
@@ -41,42 +40,21 @@ export default class Archive extends Component<{}, ArchiveState> {
             "The Robot",
         ]
 
-        const collageDiv = document.getElementsByClassName('MuiGridList-root');
-
         const handleImageClick = (clickedImg: string) => {
             this.setState({ clickedImage: {clicked: true, img: clickedImg} });
         }
+
+        const scrollToTopButton: HTMLElement = document.getElementsByClassName("collage-scroll-icon")[0] as HTMLElement;
         
         return (
             <PageFade>
                 <div className="archivePageContent">
-                    <Backdrop style={{zIndex: 2000, overflow: "auto"}} open={this.state.clickedImage.clicked}>
-                        <EasyToSeeTooltip title="Close">
-                            <IconButton 
-                                className="close-backdrop-icon" 
-                                onClick={() => this.setState({ clickedImage: {clicked: false, img: ""} })} 
-                            >
-                                <Close htmlColor="#FFF"/>
-                            </IconButton>
-                        </EasyToSeeTooltip>
-                        <Image 
-                            src={this.state.clickedImage.img}
-                            style={{
-                                position: "",
-                                paddingTop: "",
-                                backgroundColor: "transparent",
-                                width: "60%",
-                                margin: "auto",
-                            }}
-                            imageStyle={{
-                                height: "",
-                                width: "100%",
-                                position: "",
-                                border: "0.5rem solid #FFF",
-                                borderRadius: "1rem",
-                            }}
-                        />
-                    </Backdrop>
+
+                    <Lightbox 
+                        {...this.state.clickedImage} 
+                        handleClickedClose={() => this.setState({clickedImage: {clicked: false, img: ""}})} 
+                    />
+
                     <ContentBackground className="menu-container">
                         <MenuList>
                             {collectionItems.map((option, index) => {
@@ -84,7 +62,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                     <CollectionItem
                                         selected={index === this.state.selectedIndex}
                                         className="archive-selection"
-                                        onClick={() => {this.setState({ selectedIndex: index }); if (collageDiv) collageDiv[0].scrollTop = 0}}
+                                        onClick={() => {this.setState({ selectedIndex: index }); if (scrollToTopButton) scrollToTopButton.click()}}
                                     >
                                         {option}
                                     </CollectionItem>
@@ -92,20 +70,17 @@ export default class Archive extends Component<{}, ArchiveState> {
                             })}
                         </MenuList>
                     </ContentBackground>
+
                     <ContentBackground className="collage-container">
+
                         <Typography variant='h3' className="collage-header">
                             {ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() + ArchiveCategory[this.state.selectedIndex].slice(1)}
                             {" Photos"}
                         </Typography>
+
                         <GoldDivider />
                         <AdvancedGridList section={this.state.selectedIndex} handleImageClick={handleImageClick} />
-                        <div>
-                            <EasyToSeeTooltip title="Scroll to Top">
-                                <IconButton onClick={() => {if (collageDiv) collageDiv[0].scrollTop = 0}} className="collage-scroll-icon" >
-                                    <KeyboardArrowUp/>
-                                </IconButton>
-                            </EasyToSeeTooltip>
-                        </div>
+                        <ScrollToTop/>
                     </ContentBackground>
 
                 </div>

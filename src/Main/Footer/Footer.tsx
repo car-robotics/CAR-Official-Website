@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import GoldDivider from "../../Utils/GoldDivider";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import "../Main.scss"
+import { COLORS } from "../../Utils/COLORS";
 
 const FooterDivider = withStyles({
     root: {
@@ -38,7 +39,7 @@ export default function Footer() {
             })}
             <EasyToSeeTooltip title="Scroll to Top">
                 <IconButton className="scroll-to-top" onClick={() => window.scrollTo(0, 0)}>
-                    <KeyboardArrowUp htmlColor="#FFF" />
+                    <KeyboardArrowUp htmlColor={COLORS.mainWhite} />
                 </IconButton>
             </EasyToSeeTooltip>
         </div>

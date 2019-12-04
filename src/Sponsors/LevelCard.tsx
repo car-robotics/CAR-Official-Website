@@ -1,5 +1,6 @@
 import React from "react";
 import { Paper, makeStyles, Theme, createStyles, Typography, withStyles } from "@material-ui/core";
+import { COLORS } from "../Utils/COLORS";
 
 interface LevelCardProps{
     level: "Gold" | "Silver" | "Bronze";
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         sectionCard: {
             display: "flex",
-            color: "#212b31",
+            color: COLORS.darkBlue,
             boxShadow: "0px 0px 9px 2px black",
             padding: "10px",
             height: "21rem",
