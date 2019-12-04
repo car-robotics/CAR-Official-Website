@@ -13,7 +13,7 @@ import { COLORS } from "../Utils/COLORS";
 
 export const GreenLink = withStyles({
     root: {
-        color: COLORS.schoolGreen,
+        color: COLORS.linkGreen,
     },
 })(Link);
 

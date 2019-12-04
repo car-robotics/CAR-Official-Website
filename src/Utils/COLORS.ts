@@ -4,4 +4,5 @@ export const COLORS = {
     // darkBlue: "#212B31",
     schoolGreen: "#046A38",
     mainWhite: "#FFF",
+    linkGreen: "#5DA355",
 }

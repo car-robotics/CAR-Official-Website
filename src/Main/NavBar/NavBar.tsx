@@ -5,6 +5,7 @@ import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
 import "../Main.scss";
 import { COLORS } from "../../Utils/COLORS";
+import Iframe from "react-iframe";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -99,7 +100,7 @@ export default function NavBar(props: any) {
                 open={showFeedback}
                 onClose={handleFeedbackClose}
             >
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765">Loading…</iframe>
+                <Iframe url="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765"/>
             </Popover>
         </>
     )
