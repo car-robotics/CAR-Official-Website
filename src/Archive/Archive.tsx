@@ -60,6 +60,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                             {collectionItems.map((option, index) => {
                                 return (
                                     <CollectionItem
+                                        key={option}
                                         selected={index === this.state.selectedIndex}
                                         className="archive-selection"
                                         onClick={() => {this.setState({ selectedIndex: index }); if (scrollToTopButton) scrollToTopButton.click()}}

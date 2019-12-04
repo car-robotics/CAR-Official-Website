@@ -27,14 +27,15 @@ export default function Footer() {
 
     return (
         <div className="footer">
-            {footerContent.map((element) => {
+            {footerContent.map((element, index) => {
                 return (
-                    <>
+                    // Using React Fragment instead of empty tag as we need a key for the fragment
+                    <React.Fragment key={index}>
                         <div style={{ width: "20%" }}>
                             {element}
                         </div>
                         <FooterDivider orientation="vertical"/>
-                    </>
+                    </React.Fragment>
                 );
             })}
             <EasyToSeeTooltip title="Scroll to Top">
