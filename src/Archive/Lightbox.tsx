@@ -1,8 +1,19 @@
 import React from "react";
-import { Backdrop, IconButton } from "@material-ui/core";
+import { Backdrop, IconButton, makeStyles, createStyles, Theme } from "@material-ui/core";
 import { Close } from "@material-ui/icons";
 import Image from "material-ui-image";
 import { COLORS } from "../Utils/COLORS";
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        backdrop: {
+            zIndex: 2000,
+            overflow: "auto",
+            backgroundColor: "#000000bf",
+            userSelect: "none",
+        },
+    }),
+);
 
 interface LightboxProps {
     clicked: boolean;
@@ -11,9 +22,11 @@ interface LightboxProps {
     handleClickedClose: () => void;
 }
 
+
 export default function Lightbox(props: LightboxProps) {
+    const classes = useStyles();
     return (
-        <Backdrop style={{ zIndex: 2000, overflow: "auto", backgroundColor: "#000000bf" }} open={props.clicked}>
+        <Backdrop className={classes.backdrop} open={props.clicked}>
             <IconButton
                 className="close-backdrop-icon"
                 onClick={props.handleClickedClose}

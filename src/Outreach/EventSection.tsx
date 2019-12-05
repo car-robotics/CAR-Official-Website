@@ -10,6 +10,7 @@ interface EventSectionProps {
     eventName: string;
     supportingText: string;
     images: string[];
+    onClick: (img: string) => void;
 }
 
 export default function EventSection(props: EventSectionProps) {
@@ -25,6 +26,7 @@ export default function EventSection(props: EventSectionProps) {
                         return (
                             <Image
                                 key={img}
+                                onClick={() => props.onClick(img)}
                                 style={{
                                     textAlign: "center",
                                     backgroundColor: "transparent",
