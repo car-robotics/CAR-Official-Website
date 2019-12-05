@@ -26,7 +26,12 @@ const useStyles = makeStyles((theme: Theme) =>
             width: "250px",
             margin: "20px",
             backgroundColor: COLORS.schoolGold,
+            border: "0.5rem solid black",
+            borderRadius: "0.25rem",
             boxShadow: "0px 0px 10px black",
+            "&:hover": {
+                boxShadow: `0px 0px 10px ${COLORS.mainWhite}`,
+            }
         },
         officerPicture: {
             height: "300px",
@@ -41,7 +46,7 @@ export default function OfficerCard(props: OfficerCardProps) {
     return (
         <EasyToSeeTooltip title={props.linkedIn}>
             <Card className={classes.officerCard}>
-                <CardActionArea href={props.linkedIn} target="_blank">
+                <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank">
                     <CardMedia
                         image={props.image}
                         className={classes.officerPicture}
