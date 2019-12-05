@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appbar: {
             zIndex: theme.zIndex.drawer + 1,
-            backgroundColor: COLORS.darkBlue,
+            backgroundColor: COLORS.darkColor,
             height: "max-content",
             position: "fixed",
         },
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom: "0",
         },
         paper: {
-            background: COLORS.darkBlue,
+            background: COLORS.darkColor,
             color: COLORS.mainWhite,
         },
         hamburgerMenu: {
@@ -100,7 +100,7 @@ export default function NavBar(props: any) {
                 open={showFeedback}
                 onClose={handleFeedbackClose}
             >
-                <Iframe url="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765"/>
+                <Iframe url="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765" />
             </Popover>
         </>
     )

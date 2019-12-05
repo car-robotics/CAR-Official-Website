@@ -43,7 +43,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                                     borderStyle: "solid",
                                     borderRadius: "10px",
                                     borderWidth: "12px",
-                                    borderColor: COLORS.darkBlue,
+                                    borderColor: COLORS.darkColor,
                                 }}
                                 style={{
                                     width: "14.5rem",
@@ -72,7 +72,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                             borderStyle: "solid",
                             borderRadius: "10px",
                             borderWidth: "12px",
-                            borderColor: COLORS.darkBlue,
+                            borderColor: COLORS.darkColor,
                         }}
                         style={{
                             width: "14.5rem",

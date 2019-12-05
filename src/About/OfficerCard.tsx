@@ -52,11 +52,11 @@ export default function OfficerCard(props: OfficerCardProps) {
                         className={classes.officerPicture}
                     />
                     <CardContent>
-                        <Typography align="center" variant="h5" style={{ color: COLORS.darkBlue }}>
+                        <Typography align="center" variant="h5" style={{ color: COLORS.darkColor }}>
                             {props.officer}
                         </Typography>
                         <Divider />
-                        <Typography align="center" variant="h6" style={{ color: COLORS.darkBlue }}>
+                        <Typography align="center" variant="h6" style={{ color: COLORS.darkColor }}>
                             {props.name}
                         </Typography>
                     </CardContent>

@@ -4,7 +4,7 @@ import { COLORS } from "./COLORS";
 
 export const ContentBackground = withStyles({
     root: {
-        backgroundColor: COLORS.darkBlue,
+        backgroundColor: COLORS.darkColor,
         borderRadius: "1rem",
         color: COLORS.schoolGold,
     },

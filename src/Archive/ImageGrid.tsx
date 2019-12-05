@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: COLORS.darkBlue,
+      backgroundColor: COLORS.darkColor,
       height: "90%",
     },
     gridList: {

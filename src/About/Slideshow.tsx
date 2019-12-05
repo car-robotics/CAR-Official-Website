@@ -32,7 +32,7 @@ export default function Slideshow() {
         AboutBackground. I don't know why. */
     const AboutBackground = withStyles({
         root: {
-            backgroundColor: COLORS.darkBlue,
+            backgroundColor: COLORS.darkColor,
             borderRadius: "1rem",
             color: COLORS.schoolGold,
         },

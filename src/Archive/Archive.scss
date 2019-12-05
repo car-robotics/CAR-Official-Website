@@ -31,14 +31,14 @@
 
 .archive-selection {
     &:hover {
-        background-color: rgba(4, 106, 57, 0.404) !important;
+        background-color: rgba(55, 71, 82, 0.513) !important;
         border-radius: 0.5rem;
     }
 }
 
 .archive-selection.Mui-selected.MuiListItem-root.Mui-selected {
-    color: $dark-blue;
-    background-color: $school-gold !important;
+    color: $dark-color;
+    background-image: linear-gradient(to bottom right, $school-gold, #5f5f5f);
     border-radius: 0.5rem;
 }
 
