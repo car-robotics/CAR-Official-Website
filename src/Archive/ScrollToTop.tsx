@@ -1,7 +1,6 @@
 import React from "react";
-import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
-import { IconButton, Grow } from "@material-ui/core";
-import { KeyboardArrowUp } from "@material-ui/icons";
+import { Grow } from "@material-ui/core";
+import ScrollToTopButton from "../Utils/ScrollToTopButton";
 
 interface ScrollToTopProps { show: boolean }
 
@@ -11,11 +10,10 @@ export default function ScrollToTop(props: ScrollToTopProps) {
     return (
         <Grow in={props.show}>
             <div style={{ margin: "-4rem" }}>
-                <EasyToSeeTooltip title="Scroll to Top">
-                    <IconButton onClick={() => { collageDiv[0].scrollTop = 0 }} className="collage-scroll-icon" >
-                        <KeyboardArrowUp />
-                    </IconButton>
-                </EasyToSeeTooltip>
+                <ScrollToTopButton
+                    onClick={() => collageDiv[0].scrollTop = 0}
+                    style={{ display: "block", margin: "auto" }}
+                />
             </div>
         </Grow>
     );

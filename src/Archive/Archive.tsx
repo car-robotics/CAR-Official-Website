@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Archive.scss';
-import AdvancedGridList, { ArchiveCategory } from './ImageGrid';
+import AdvancedGridList from './ImageGrid';
+import { ArchiveCategory } from "./ImageList";
 import { Typography, MenuList, MenuItem, withStyles } from "@material-ui/core";
 // import ReactPlayer from "react-player";
 import PageFade from "../Utils/PageFade";
@@ -18,7 +19,7 @@ const CollectionItem = withStyles({
 
 interface ArchiveState {
     selectedIndex: number,
-    clickedImage: { clicked: boolean, img: string },
+    clickedImage: { clicked: boolean, img: string, orientation: "vertical" | "horizontal" },
     showSrollTopIcon: boolean,
 }
 
@@ -27,7 +28,7 @@ export default class Archive extends Component<{}, ArchiveState> {
         super(props);
         this.state = {
             selectedIndex: 0,
-            clickedImage: { clicked: false, img: "" },
+            clickedImage: { clicked: false, img: "", orientation: "horizontal" },
             showSrollTopIcon: false,
         };
     }
@@ -42,8 +43,8 @@ export default class Archive extends Component<{}, ArchiveState> {
             "The Robot",
         ]
 
-        const handleImageClick = (clickedImg: string) => {
-            this.setState({ clickedImage: { clicked: true, img: clickedImg } });
+        const handleImageClick = (clickedImg: string, orientation: "vertical" | "horizontal") => {
+            this.setState({ clickedImage: { clicked: true, img: clickedImg, orientation: orientation, } });
         }
 
         const handleScroll = (e: React.UIEvent<HTMLElement>) => {
@@ -63,7 +64,7 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                     <Lightbox
                         {...this.state.clickedImage}
-                        handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "" } })}
+                        handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "", orientation: "horizontal" } })}
                     />
 
                     <ContentBackground className="menu-container">

@@ -1,14 +1,12 @@
 import React from "react";
-import { withStyles, IconButton } from "@material-ui/core";
-import { KeyboardArrowUp } from '@material-ui/icons';
+import { withStyles } from "@material-ui/core";
 import Social from "./Social";
 import Interest from "./Interest";
 import PayPal from "./PayPal";
 import Contact from "./Contact";
 import GoldDivider from "../../Utils/GoldDivider";
-import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import "../Main.scss"
-import { COLORS } from "../../Utils/COLORS";
+import ScrollToTopButton from "../../Utils/ScrollToTopButton";
 
 const FooterDivider = withStyles({
     root: {
@@ -34,15 +32,14 @@ export default function Footer() {
                         <div style={{ width: "20%" }}>
                             {element}
                         </div>
-                        <FooterDivider orientation="vertical"/>
+                        <FooterDivider orientation="vertical" />
                     </React.Fragment>
                 );
             })}
-            <EasyToSeeTooltip title="Scroll to Top">
-                <IconButton className="scroll-to-top" onClick={() => window.scrollTo(0, 0)}>
-                    <KeyboardArrowUp htmlColor={COLORS.mainWhite} />
-                </IconButton>
-            </EasyToSeeTooltip>
+            <ScrollToTopButton
+                onClick={() => window.scrollTo(0, 0)}
+                style={{ position: "absolute", right: "2rem" }}
+            />
         </div>
     );
 }
