@@ -67,7 +67,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                         handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "", orientation: "horizontal" } })}
                     />
 
-                    <ContentBackground className="menu-container">
+                    <ContentBackground elevation={24} className="menu-container">
                         <MenuList>
                             {collectionItems.map((option, index) => {
                                 return (
@@ -84,7 +84,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                         </MenuList>
                     </ContentBackground>
 
-                    <ContentBackground className="collage-container">
+                    <ContentBackground elevation={24} className="collage-container">
 
                         <Typography variant='h3' className="collage-header">
                             {ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() + ArchiveCategory[this.state.selectedIndex].slice(1)}

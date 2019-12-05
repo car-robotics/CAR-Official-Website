@@ -6,12 +6,12 @@ import "./Competition.scss";
 
 export default function TimerDisplay(props: any) {
     return (
-        <ContentBackground className="countdown">
-            <Typography style={{lineHeight: "3.5rem"}} variant="h2" align="center">
+        <ContentBackground elevation={24} className="countdown">
+            <Typography style={{ lineHeight: "3.5rem" }} variant="h2" align="center">
                 Countdown to Competition!
             </Typography>
             <GoldDivider />
-            <Typography style={{lineHeight: "3.5rem"}} variant="h3" align="center">
+            <Typography style={{ lineHeight: "3.5rem" }} variant="h3" align="center">
                 {props.display}
             </Typography>
         </ContentBackground>

@@ -24,11 +24,11 @@ class Competition extends Component {
             <PageFade>
                 <div style={{ marginTop: "5rem" }}>
                     <CountdownTimer />
-                    <ContentBackground className="competition-content">
-                        <Image 
+                    <ContentBackground elevation={24} className="competition-content">
+                        <Image
                             src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"}
                             style={{ backgroundColor: "transparent", paddingTop: "" }}
-                            imageStyle={{height: "", width: "100%", position: ""}}
+                            imageStyle={{ height: "", width: "100%", position: "" }}
                         />
                         <Typography align="center" variant="h4" style={{ lineHeight: "3.5rem" }}>
                             The <EasyToSeeTooltip title="https://www.ieee.org/"><GreenLink target="_blank" href="https://www.ieee.org/"> Institute of Electrical and Electronics Engineers (IEEE) </GreenLink></EasyToSeeTooltip>
@@ -38,17 +38,17 @@ class Competition extends Component {
                             robots. This year the competition will be hosted in Raleigh North Carolina on March 14th (for <EasyToSeeTooltip title="https://attend.ieee.org/southeastcon-2020/student-program/student-hardware-competition/"><GreenLink target="_blank" href="https://attend.ieee.org/southeastcon-2020/student-program/student-hardware-competition/">Pi Day!</GreenLink></EasyToSeeTooltip>).
                         </Typography>
                     </ContentBackground>
-                    <ContentBackground className="competition-content">
+                    <ContentBackground elevation={24} className="competition-content">
                         <Typography variant="h2" align="center">
                             The Rules: Pi Day 2020
                         </Typography>
                         <GoldDivider />
-                        <Iframe 
+                        <Iframe
                             title="rules"
                             url="https://drive.google.com/file/d/1rc0wpz5IDh3fPyaSZwz_TqPAv9dnhEcB/preview"
                             width="100%"
                             height="768px"
-                            styles={{height: "50rem"}} 
+                            styles={{ height: "50rem" }}
                         />
                     </ContentBackground>
                 </div>

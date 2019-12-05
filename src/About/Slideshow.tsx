@@ -40,7 +40,7 @@ export default function Slideshow() {
 
     return (
         <>
-            <AboutBackground className="slideshow-container">
+            <AboutBackground elevation={24} className="slideshow-container">
 
                 <Typography align="center" variant="h2" >
                     Who We Are

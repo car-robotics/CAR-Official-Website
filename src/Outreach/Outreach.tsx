@@ -43,7 +43,7 @@ export default function Outreach() {
                         handleClickedClose={() => setClickedImage({ clicked: false, img: "" })}
                     />
 
-                    <ContentBackground className="header">
+                    <ContentBackground elevation={24} className="header">
                         <Typography variant="h2" align="center">
                             Outreach
                         </Typography>

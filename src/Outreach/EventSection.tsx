@@ -16,7 +16,7 @@ interface EventSectionProps {
 export default function EventSection(props: EventSectionProps) {
     return (
         <div style={{ margin: "4rem" }}>
-            <ContentBackground className="containers">
+            <ContentBackground elevation={24} className="containers">
                 <Typography align="center" variant="h2">
                     {props.eventName}
                 </Typography>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Paper, makeStyles, createStyles, Theme } from "@material-ui/core";
+import { Typography, makeStyles, createStyles, Theme } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
@@ -7,16 +7,13 @@ import PageFade from "../Utils/PageFade";
 import GoldDivider from "../Utils/GoldDivider";
 import { GreenLink } from "../Competition/Competition";
 import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
-import { COLORS } from "../Utils/COLORS";
+import { ContentBackground } from "../Utils/ContentBackground";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             padding: "2rem",
             margin: "auto",
-            backgroundColor: COLORS.darkBlue,
-            color: COLORS.schoolGold,
-            borderRadius: "1rem",
         },
     }),
 );
@@ -31,7 +28,7 @@ export default function Sponsors() {
         <PageFade>
             <div style={{ margin: "5rem auto", width: "95%" }}>
 
-                <Paper className={classes.container} >
+                <ContentBackground elevation={24} className={classes.container} >
                     <Typography align="center" variant="h2" >
                         Thank You To Our Sponsors For Their Support!
                     </Typography>
@@ -87,16 +84,16 @@ export default function Sponsors() {
                     </div>
 
 
-                </Paper>
+                </ContentBackground>
 
-                <Paper className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
-                    <Typography align="center" variant="h3" style={{lineHeight: "3.5rem"}}>
-                        Ineterested in sponsoring?<br/>Contact Sam Luu at<br />
+                <ContentBackground elevation={24} className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
+                    <Typography align="center" variant="h3" style={{ lineHeight: "3.5rem" }}>
+                        Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                         <EasyToSeeTooltip title="mailto:car-robotics@uncc.edu">
                             <GreenLink href="mailto:car-robotics@uncc.edu">car-robotics@uncc.edu</GreenLink>
                         </EasyToSeeTooltip>
                     </Typography>
-                </Paper>
+                </ContentBackground>
 
             </div>
         </PageFade>
