@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'space-around',
       overflow: 'hidden',
       backgroundColor: COLORS.darkBlue,
-      height: "80%",
+      height: "90%",
     },
     gridList: {
       width: "100%",
@@ -175,23 +175,24 @@ const tileData: Tile[] = [
 interface ImageGridProps {
   section: ArchiveCategory;
   handleImageClick: (clickedImg: string) => void;
+  handleScroll: (e: React.UIEvent<HTMLElement>) => void;
 }
 
 export default function AdvancedGridList(props: ImageGridProps) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onScroll={(e) => props.handleScroll(e)}>
       <GridList cellHeight={340} spacing={1} className={classes.gridList}>
         {tileData.map(tile => (
           (tile.category === props.section || props.section === ArchiveCategory.all) &&
           <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1} >
-            <Image 
+            <Image
               src={tile.img}
               onClick={() => props.handleImageClick(tile.img)}
               style={{
                 backgroundColor: "transparent",
-              }} 
+              }}
               imageStyle={{
                 height: "",
               }}

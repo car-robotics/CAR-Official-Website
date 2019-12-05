@@ -16,9 +16,10 @@ const CollectionItem = withStyles({
     },
 })(MenuItem);
 
-interface ArchiveState { 
-    selectedIndex: number, 
-    clickedImage: {clicked: boolean, img: string}
+interface ArchiveState {
+    selectedIndex: number,
+    clickedImage: { clicked: boolean, img: string },
+    showSrollTopIcon: boolean,
 }
 
 export default class Archive extends Component<{}, ArchiveState> {
@@ -26,7 +27,8 @@ export default class Archive extends Component<{}, ArchiveState> {
         super(props);
         this.state = {
             selectedIndex: 0,
-            clickedImage: {clicked: false, img: ""},
+            clickedImage: { clicked: false, img: "" },
+            showSrollTopIcon: false,
         };
     }
 
@@ -41,18 +43,27 @@ export default class Archive extends Component<{}, ArchiveState> {
         ]
 
         const handleImageClick = (clickedImg: string) => {
-            this.setState({ clickedImage: {clicked: true, img: clickedImg} });
+            this.setState({ clickedImage: { clicked: true, img: clickedImg } });
+        }
+
+        const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+            const collageDiv = e.currentTarget.children[0];
+            if (collageDiv.scrollTop > 500) {
+                this.setState({ showSrollTopIcon: true })
+            } else if (this.state.showSrollTopIcon === true) {
+                this.setState({ showSrollTopIcon: false })
+            }
         }
 
         const scrollToTopButton: HTMLElement = document.getElementsByClassName("collage-scroll-icon")[0] as HTMLElement;
-        
+
         return (
             <PageFade>
                 <div className="archivePageContent">
 
-                    <Lightbox 
-                        {...this.state.clickedImage} 
-                        handleClickedClose={() => this.setState({clickedImage: {clicked: false, img: ""}})} 
+                    <Lightbox
+                        {...this.state.clickedImage}
+                        handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "" } })}
                     />
 
                     <ContentBackground className="menu-container">
@@ -63,7 +74,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                         key={option}
                                         selected={index === this.state.selectedIndex}
                                         className="archive-selection"
-                                        onClick={() => {this.setState({ selectedIndex: index }); if (scrollToTopButton) scrollToTopButton.click()}}
+                                        onClick={() => { this.setState({ selectedIndex: index }); if (scrollToTopButton) scrollToTopButton.click() }}
                                     >
                                         {option}
                                     </CollectionItem>
@@ -80,8 +91,14 @@ export default class Archive extends Component<{}, ArchiveState> {
                         </Typography>
 
                         <GoldDivider />
-                        <AdvancedGridList section={this.state.selectedIndex} handleImageClick={handleImageClick} />
-                        <ScrollToTop/>
+
+                        <AdvancedGridList
+                            section={this.state.selectedIndex}
+                            handleImageClick={handleImageClick}
+                            handleScroll={handleScroll}
+                        />
+
+                        <ScrollToTop show={this.state.showSrollTopIcon} />
                     </ContentBackground>
 
                 </div>

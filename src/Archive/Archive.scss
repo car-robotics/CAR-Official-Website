@@ -26,11 +26,10 @@
     background-color: $school-green;
     color: $main-white;
     display: block;
-    margin: 0.5rem auto;
-    box-shadow: 0px 0px 10px black;
+    margin: auto;
     &:hover {
         background-color: $school-green;
-        box-shadow: 0 0 10px $school-gold;
+        box-shadow: 0px 0px 10px $main-white;
     }
 }
 
