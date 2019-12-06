@@ -21,6 +21,7 @@ interface ArchiveState {
     selectedIndex: number,
     clickedImage: { clicked: boolean, img: string, orientation: "vertical" | "horizontal" },
     showSrollTopIcon: boolean,
+    forceScrollToTop: boolean,
 }
 
 export default class Archive extends Component<{}, ArchiveState> {
@@ -30,6 +31,7 @@ export default class Archive extends Component<{}, ArchiveState> {
             selectedIndex: 0,
             clickedImage: { clicked: false, img: "", orientation: "horizontal" },
             showSrollTopIcon: false,
+            forceScrollToTop: false,
         };
     }
 
@@ -56,8 +58,6 @@ export default class Archive extends Component<{}, ArchiveState> {
             }
         }
 
-        const scrollToTopButton: HTMLElement = document.getElementsByClassName("collage-scroll-icon")[0] as HTMLElement;
-
         return (
             <PageFade>
                 <div className="archivePageContent">
@@ -75,7 +75,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                         key={option}
                                         selected={index === this.state.selectedIndex}
                                         className="archive-selection"
-                                        onClick={() => { this.setState({ selectedIndex: index }); if (scrollToTopButton) scrollToTopButton.click() }}
+                                        onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
                                     >
                                         {option}
                                     </CollectionItem>
@@ -99,7 +99,11 @@ export default class Archive extends Component<{}, ArchiveState> {
                             handleScroll={handleScroll}
                         />
 
-                        <ScrollToTop show={this.state.showSrollTopIcon} />
+                        <ScrollToTop
+                            show={this.state.showSrollTopIcon}
+                            forceScrollToTop={this.state.forceScrollToTop}
+                            resetForceToScroll={() => this.setState({ forceScrollToTop: false })}
+                        />
                     </ContentBackground>
 
                 </div>
