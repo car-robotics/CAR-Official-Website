@@ -67,7 +67,7 @@ export default function LevelCard(props: LevelCardProps) {
             <Typography className="levelTitle" align="center" variant="h4">
                 {cardTitle}
             </Typography>
-            <Typography variant="h5" className="leftAlign">
+            <Typography variant="h5" align="left">
                 Includes:
             </Typography>
             {listItems.map((x: string, i: number) => {

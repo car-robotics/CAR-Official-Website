@@ -13,46 +13,17 @@
     padding: 1rem 0;
 }
 
-.leftAlign {
-    text-align: left;
-    padding-left: 20px;
-}
-
 .container {
     position: relative;
-    width: 50%;
-
-    &:hover {
-        .overlay {
-            width: 14rem;
-        }
-    }
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: .9;
-    overflow: hidden;
-    width: 0;
+    width: 100%;
     height: 100%;
-    transition: .5s ease;
 }
 
-.middleText {
+.sponsorCover {
     position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    color: $school-gold;
-    user-select: none;
-}
-
-.backgroundBlack {
-    background-color: $dark-color;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
 }
 
 .levelSection {

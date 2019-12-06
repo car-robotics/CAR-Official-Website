@@ -2,9 +2,9 @@ import React from "react";
 import { Link, withStyles, Card } from "@material-ui/core";
 import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 import Image from "material-ui-image";
-import { ListItem } from "../Sponsors/LevelCard";
 import "./Sponsors.scss";
 import { COLORS } from "../Utils/COLORS";
+import SponsorCardCover from "./SponsorCardCover";
 
 interface SponsorsCardProps {
     orgName: string;
@@ -25,13 +25,16 @@ const OrgCard = withStyles({
 })(Card);
 
 export default function SponsorCard(props: SponsorsCardProps) {
+    const [showCover, setShowCover] = React.useState<boolean>(false);
+
     const { orgName, orgLink, img } = props;
     return (
         <>
-            <OrgCard>
+            <OrgCard onMouseEnter={() => setShowCover(true)} onMouseLeave={() => setShowCover(false)}>
                 {orgLink && <EasyToSeeTooltip title={`${orgName} - ${orgLink}`}>
                     <Link href={orgLink} target="_blank">
                         <div className="container">
+                            <SponsorCardCover show={showCover} text={"Learn More"} />
                             <Image
                                 src={img}
                                 imageStyle={{
@@ -51,16 +54,12 @@ export default function SponsorCard(props: SponsorsCardProps) {
                                     paddingTop: 0,
                                 }}
                             />
-                            <div className="overlay backgroundBlack">
-                                <ListItem align="center" className="middleText" style={{ fontSize: "1.5rem" }}>
-                                    Learn More
-                                </ListItem>
-                            </div>
                         </div>
                     </Link>
                 </EasyToSeeTooltip>}
 
                 {!orgLink && <div className="container">
+                    <SponsorCardCover show={showCover} text={orgName} />
                     <Image
                         src={img}
                         imageStyle={{
@@ -80,11 +79,6 @@ export default function SponsorCard(props: SponsorsCardProps) {
                             paddingTop: 0,
                         }}
                     />
-                    <div className="overlay backgroundBlack">
-                        <ListItem align="center" className="middleText" style={{ fontSize: "1.5rem" }}>
-                            {orgName}
-                        </ListItem>
-                    </div>
                 </div>}
             </OrgCard>
         </>
