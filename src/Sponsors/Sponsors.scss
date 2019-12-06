@@ -9,16 +9,10 @@
     }
 }
 
-.desc {
-    max-width: 20rem;
-    height: 100%;
-    padding-bottom: 1rem;
+.levelTitle {
+    padding: 1rem 0;
 }
 
-.secTitle {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 .leftAlign {
     text-align: left;
     padding-left: 20px;
@@ -55,10 +49,6 @@
     white-space: nowrap;
     color: $school-gold;
     user-select: none;
-}
-
-.cBlack {
-    color:$dark-color;
 }
 
 .backgroundBlack {

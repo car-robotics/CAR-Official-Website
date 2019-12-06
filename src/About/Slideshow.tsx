@@ -51,7 +51,7 @@ export default function Slideshow() {
                 <div className="slideshow-lower-container">
 
                     <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
-                        <KeyboardArrowLeft style={{ color: COLORS.mainWhite }} />
+                        <KeyboardArrowLeft fontSize="large" />
                     </IconButton>
 
                     <Slide in={true} direction={slideDirection} timeout={{ enter: 750, exit: 750 }}>
@@ -61,7 +61,7 @@ export default function Slideshow() {
                     </Slide>
 
                     <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
-                        <KeyboardArrowRight style={{ color: COLORS.mainWhite }} />
+                        <KeyboardArrowRight fontSize="large" />
                     </IconButton>
 
                 </div>

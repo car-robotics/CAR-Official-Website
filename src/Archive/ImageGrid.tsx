@@ -3,11 +3,9 @@ import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
 import Image from "material-ui-image";
-import './Archive.scss';
 import { COLORS } from '../Utils/COLORS';
 import { tileData, ArchiveCategory } from './ImageList';
-
-
+import './Archive.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

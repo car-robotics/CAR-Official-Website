@@ -59,8 +59,9 @@
     justify-content: space-between;
 }
 
-.slideshow-arrow, .slideshow-arrow {
+.slideshow-arrow.MuiIconButton-root {
     align-self: center;
     width: max-content;
     height: max-content;
+    color: $main-white;
 }

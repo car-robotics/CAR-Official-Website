@@ -12,7 +12,8 @@ export const ListItem = withStyles({
         fontSize: "1.25rem",
         fontWeight: "bold",
         textAlign: "left",
-        margin: "1.5rem",
+        paddingTop: "1rem",
+        paddingLeft: "1rem",
     },
 })(Typography);
 
@@ -20,10 +21,11 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         sectionCard: {
             display: "flex",
+            flexDirection: "column",
             color: COLORS.darkColor,
-            boxShadow: "0px 0px 9px 2px black",
-            padding: "10px",
-            height: "21rem",
+            boxShadow: "0px 0px 10px 2px black",
+            padding: "1rem",
+            height: "20rem",
             width: "15rem",
             zIndex: 1,
         },
@@ -62,21 +64,19 @@ export default function LevelCard(props: LevelCardProps) {
 
     return (
         <Paper className={classes.sectionCard} style={{ backgroundImage: backgroundGradient }}>
-            <div className="desc cBlack">
-                <Typography className="secTitle" align="center" variant="h4">
-                    {cardTitle}
-                </Typography>
-                <Typography variant="h5" className="leftAlign">
-                    Includes:
-                </Typography>
-                {listItems.map((x: string, i: number) => {
-                    return (
-                        <ListItem key={i}>
-                            {x}
-                        </ListItem>
-                    );
-                })}
-            </div>
+            <Typography className="levelTitle" align="center" variant="h4">
+                {cardTitle}
+            </Typography>
+            <Typography variant="h5" className="leftAlign">
+                Includes:
+            </Typography>
+            {listItems.map((x: string, i: number) => {
+                return (
+                    <ListItem key={i}>
+                        {x}
+                    </ListItem>
+                );
+            })}
         </Paper>
     );
 }
