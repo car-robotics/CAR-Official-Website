@@ -13,6 +13,7 @@ import elementary1 from "../Images/Outreach/Elementary1.jpg";
 import elementary2 from "../Images/Outreach/Elementary2.jpg";
 import explore1 from "../Images/Outreach/Explore1.jpg";
 import ncscience1 from "../Images/Outreach/NCScience1.jpg";
+import ncscience2 from "../Images/Outreach/NCScience2.jpg";
 import EventSection from "./EventSection";
 import GoldDivider from "../Utils/GoldDivider";
 import { ContentBackground } from "../Utils/ContentBackground";
@@ -93,8 +94,8 @@ export default function Outreach() {
                     <EventSection
                         onClick={handleImageClick}
                         eventName={"NC Science Festival - UNCC"}
-                        supportingText={"Our club volunteered to talk about robotics and provide some fun activities for kids of varying ages at a NC Science Festival sponsored event at UNCC’s campus."}
-                        images={[ncscience1]}
+                        supportingText={"Our club volunteered to provide some fun activities for kids of varying ages at a NC Science Festival sponsored event."}
+                        images={[ncscience1, ncscience2]}
                     />
 
                 </div>
