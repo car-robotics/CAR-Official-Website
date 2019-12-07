@@ -5,9 +5,8 @@ import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 import PageFade from "../Utils/PageFade";
 import GoldDivider from "../Utils/GoldDivider";
-import { GreenLink } from "../Competition/Competition";
-import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 import { ContentBackground } from "../Utils/ContentBackground";
+import GreenLink from "../Utils/GreenLink";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -89,9 +88,7 @@ export default function Sponsors() {
                 <ContentBackground elevation={24} className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
                     <Typography align="center" variant="h3" style={{ lineHeight: "3.5rem" }}>
                         Ineterested in sponsoring?<br />Contact Sam Luu at<br />
-                        <EasyToSeeTooltip title="mailto:car-robotics@uncc.edu">
-                            <GreenLink href="mailto:car-robotics@uncc.edu">car-robotics@uncc.edu</GreenLink>
-                        </EasyToSeeTooltip>
+                        <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />
                     </Typography>
                 </ContentBackground>
 

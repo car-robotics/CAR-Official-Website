@@ -22,12 +22,13 @@ const useStyles = makeStyles((theme: Theme) =>
 interface ScrollToTopButtonProps {
     onClick: () => void;
     style?: CSSProperties;
+    tooltipText?: string;
 }
 
 export default function ScrollToTopButton(props: ScrollToTopButtonProps) {
     const classes = useStyles();
     return (
-        <EasyToSeeTooltip title="Scroll to Top">
+        <EasyToSeeTooltip title={props.tooltipText ? props.tooltipText : "Scroll to Top"}>
             <IconButton onClick={props.onClick} className={classes.icon} style={props.style}>
                 <KeyboardArrowUp />
             </IconButton>

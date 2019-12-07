@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
             backgroundColor: COLORS.darkColor,
             height: "max-content",
             position: "fixed",
+            boxShadow: "0px 0px 10px black",
         },
         feedbackSidebar: {
             textAlign: "center",

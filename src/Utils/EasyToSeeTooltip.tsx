@@ -1,17 +1,18 @@
-import {withStyles} from "@material-ui/styles";
-import {Tooltip, Theme} from "@material-ui/core";
+import { withStyles } from "@material-ui/styles";
+import { Tooltip, Theme } from "@material-ui/core";
 import React from "react";
 
 const CustomTooltip = withStyles((theme: Theme) => ({
-    tooltip: {
-      fontSize: 15,
-      fontFamily: "Inconsolata",
-    },
+  tooltip: {
+    fontSize: "1.25rem",
+    fontFamily: "Inconsolata",
+    backgroundColor: "#5a5a5a",
+  },
 }))(Tooltip);
 
-export default function EasyToSeeTooltip(props: any){
+export default function EasyToSeeTooltip(props: any) {
   return (
-    <CustomTooltip title={props.title as String} >
+    <CustomTooltip {...props} title={props.title as String} >
       {props.children}
     </CustomTooltip>
   );
