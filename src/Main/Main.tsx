@@ -10,6 +10,7 @@ import Competition from "../Competition/Competition";
 import Archive from "../Archive/Archive";
 import NavBar from "./NavBar/NavBar";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import Footer from "./Footer/Footer";
 
 const theme = createMuiTheme({
   typography: {
@@ -63,6 +64,7 @@ class Main extends Component<{}, MainState> {
                 <Redirect to="/" />
               </Switch>
             </div>
+            <Footer/>
           </BreakpointProvider>
         </HashRouter>
       </ThemeProvider>

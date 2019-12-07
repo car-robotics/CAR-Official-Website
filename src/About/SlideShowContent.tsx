@@ -14,36 +14,35 @@ interface SlideShowContentProps {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         text: {
-            padding: "0 2rem 1rem 2rem",
+            padding: "2rem",
             textAlign: "center",
-            color: "#B3A369",
             alignSelf: "center",
             lineHeight: "1.5em",
             flexBasis: "35%",
+            animationName: "fadeIn",
+            animationDuration: "1s",
+            boxShadow: "0px 0px 10px black",
+            borderRadius: "0.25rem",
         },
     }),
 );
 
 const SlideShowContentItems = [
     {
-        text: "Charlotte Area Robotics is an UNCC Student Organization that competes anually in the IEEE SoutheastCon Hardware Competition",
+        text: "Charlotte Area Robotics is an UNCC Student Organization that competes anually in the IEEE SoutheastCon Hardware Competition.",
         img: Logo,
-        size: { width: "80%", height: "" }
     },
     {
-        text: "We educate other students through workshops and demonstrations",
+        text: "We educate other students through workshops and demonstrations.",
         img: ArduinoWksp,
-        size: { width: "100%", height: "100%" }
     },
     {
-        text: "We educate each other by working on multiple things at once and then sharing what we learned",
+        text: "We educate each other by working on multiple things at once and then sharing what we learned.",
         img: SprintReview23,
-        size: { width: "100%", height: "100%" }
     },
     {
-        text: "We design, build, and test a robot to compete against other schools in the region",
+        text: "We design, build, and test a robot to compete against other schools in the region.",
         img: Robot,
-        size: { width: "100%", height: "100%" }
     }
 ];
 
@@ -54,24 +53,24 @@ export default function SlideShowContent(props: SlideShowContentProps) {
 
     return (
         <div className="slideshow-content-container">
-            <Typography variant="h4" className={classes.text} style={{ animationName: "fadeIn", animationDuration: "1s" }}>
+            <Typography variant="h4" className={classes.text} >
                 {contentObject.text}
             </Typography>
 
             <Image
                 style={{
-                    flexBasis: "35%",
                     textAlign: "center",
                     backgroundColor: "transparent",
                     paddingTop: "0",
                 }}
                 imageStyle={{
-                    borderRadius: "1rem",
-                    boxShadow: contentObject.img !== Logo ? "0px 0px 15px black" : "",
+                    borderRadius: contentObject.img === Logo ? "15rem" : "1rem",
+                    boxShadow: "0px 0px 15px black",
                     position: "inherit",
-                    width: contentObject.size.width,
-                    height: contentObject.size.height,
+                    width: "",
+                    height: "25rem",
                     minHeight: "30rem",
+                    marginLeft: "2rem",
                 }}
                 aspectRatio={4 / 3}
                 src={contentObject.img}

@@ -4,14 +4,17 @@ import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
 import "../Main.scss";
+import { COLORS } from "../../Utils/COLORS";
+import Iframe from "react-iframe";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appbar: {
             zIndex: theme.zIndex.drawer + 1,
-            backgroundColor: "#212b31",
+            backgroundColor: COLORS.darkColor,
             height: "max-content",
             position: "fixed",
+            boxShadow: "0px 0px 10px black",
         },
         feedbackSidebar: {
             textAlign: "center",
@@ -20,11 +23,11 @@ const useStyles = makeStyles((theme: Theme) =>
             bottom: "0",
         },
         paper: {
-            background: "#212b31",
-            color: "white",
+            background: COLORS.darkColor,
+            color: COLORS.mainWhite,
         },
         hamburgerMenu: {
-            color: "white",
+            color: COLORS.mainWhite,
             position: "absolute",
         },
         mobileNavBar: {
@@ -98,7 +101,7 @@ export default function NavBar(props: any) {
                 open={showFeedback}
                 onClose={handleFeedbackClose}
             >
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765">Loading…</iframe>
+                <Iframe url="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true" title="Feedback" width="640px" height="765" />
             </Popover>
         </>
     )

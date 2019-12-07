@@ -9,6 +9,12 @@
     }
 }
 
+.about-website-container {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 60%;
+}
+
 .card-group {
     margin: 2rem auto;
     padding: 1rem;
@@ -44,7 +50,7 @@
 .slideshow-content-container {
     display: flex;
     height: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     @media screen and (min-width: 1000px) {
         flex-direction: row;
     }
@@ -56,10 +62,12 @@
 .slideshow-lower-container {
     height: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
-.slideshow-arrow, .slideshow-arrow {
+.slideshow-arrow.MuiIconButton-root {
     align-self: center;
     width: max-content;
     height: max-content;
+    color: $main-white;
 }

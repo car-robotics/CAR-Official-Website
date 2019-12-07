@@ -4,6 +4,8 @@ interface DocumentTitleProps {
 }
 
 export const DocumentTitle = (props: DocumentTitleProps) => {
-    window.document.title = "CAR | " + props.title
-    if (!props.noForceScroll) window.scrollTo(0, 0);
+    if (window.document.title !== "CAR | " + props.title){
+        window.document.title = "CAR | " + props.title
+        if (!props.noForceScroll) window.scrollTo(0, 0);
+    }
 }

@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
+import Image from "material-ui-image";
+import { COLORS } from '../Utils/COLORS';
+import { tileData, ArchiveCategory } from './ImageList';
 import './Archive.scss';
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,150 +14,57 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: '#212B31',
+      backgroundColor: COLORS.darkColor,
+      height: "90%",
     },
     gridList: {
-      width: 1300,
-      height: 900,
+      width: "100%",
+      height: "100%",
       transform: 'translateZ(0)',
+      scrollBehavior: "smooth",
+      cursor: "pointer",
     },
     titleBar: {
       background:
-        'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-        'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-      },
-    icon: {
-      color: '#bfbfbf',
+        'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.25))',
     },
   }),
 );
 
-const tileData = [
-  {
-    img: '/ReturningMembers.jpg',
-    title: 'Returning Members',
-    featured: true,
-  },
-  {
-    img: '/Robot1.jpg',
-    title: 'Robot',
-    featured: false,
-  },
-  {
-    img: '/Robot2.jpg',
-    title: 'Robot',
-    featured: false,
-  },
-  {
-    img: '/Outreach/ArduinoWksp-6.jpg',
-    title: 'Arduino WorkSpace',
-    featured: true,
-  },
-  {
-    img: '/Outreach/ArduinoWksp-5.jpg',
-    title: 'Arduino WorkSpace',
-    featured: false,
-  },  
-  {
-      img: '/Outreach/ArduinoWksp-2.jpg',
-      title: 'Arduino WorkSpace',
-      featured: false,
-  },
-  {
-    img: '/Outreach/ArduinoWksp-8.jpg',
-    title: 'Arduino WorkSpace',
-    featured: true,
-  },
-  {
-    img: '/Outreach/BobsBash1-2.jpg',
-    title: 'Bobs Bash',
-    featured: true,
-  },
-  {
-    img: '/Outreach/BobsBash1-1.jpg',
-    title: 'Bobs Bash',
-    featured: false,
-  },
-  {
-    img: '/Outreach/DiscoveryPlace2.jpg',
-    title: 'Discovery Place',
-    featured: false,
-  },
-  {
-    img: '/Outreach/DiscoveryPlace1.jpg',
-    title: 'Discovery Place',
-    featured: true,
-  },
-  {
-    img: '/Outreach/Elementary2.jpg',
-    title: 'Elementary',
-    featured: true,
-  },
-  {
-    img: '/Outreach/Elementary1.jpg',
-    title: 'Elementary',
-    featured: false,
-  },
-  {
-    img: '/Outreach/NCScience2.jpg',
-    title: 'NCScience',
-    featured: false,
-  },
-  {
-    img: '/Outreach/NCScience1.jpg',
-    title: 'NCScience',
-    featured: true,
-  },
-  {
-    img: '/SprintReviews/EndofSprint2-1.jpg',
-    title: 'Sprint Reviews',
-    featured: true,
-  },
-  {
-    img: '/SprintReviews/EndofSprint2-2.jpg',
-    title: 'Sprint Reviews',
-    featured: false,
-  },
-  {
-    img: '/SprintReviews/EndofSprint2-3.jpg',
-    title: 'Sprint Reviews',
-    featured: false,
-  },
-  {
-    img: '/SprintReviews/EndofSprint2-4.jpg',
-    title: 'Sprint Reviews',
-    featured: true,
-  },
-  {
-    img: '/SprintReviews/EndofSprint2-5.jpg',
-    title: 'Sprint Reviews',
-    featured: false,
-  },
-  {
-    img: '/SprintReviews/EndofSprint2-7.jpg',
-    title: 'Sprint Reviews',
-    featured: false,
-  },
-];
+interface ImageGridProps {
+  section: ArchiveCategory;
+  handleImageClick: (clickedImg: string, orientation: "vertical" | "horizontal") => void;
+  handleScroll: (e: React.UIEvent<HTMLElement>) => void;
+}
 
-export default function AdvancedGridList() {
+export default function AdvancedGridList(props: ImageGridProps) {
   const classes = useStyles();
-  
-    return (
-      <div className={classes.root}>
+
+  return (
+    <div className={classes.root} onScroll={(e) => props.handleScroll(e)}>
       <GridList cellHeight={340} spacing={1} className={classes.gridList}>
-          {tileData.map(tile => (
-          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
-            <img src={tile.img} alt={tile.title} />
-          <GridListTileBar
-            title={tile.title}
-            titlePosition="top"
-            actionPosition="left"
-            className={classes.titleBar}
-          />
+        {tileData.map(tile => (
+          (tile.category === props.section || props.section === ArchiveCategory.all) &&
+          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1} >
+            <Image
+              src={tile.img}
+              onClick={() => props.handleImageClick(tile.img, tile.orientation)}
+              style={{
+                backgroundColor: "transparent",
+              }}
+              imageStyle={{
+                height: "",
+              }}
+            />
+            <GridListTileBar
+              title={tile.title}
+              titlePosition="top"
+              actionPosition="left"
+              className={classes.titleBar}
+            />
           </GridListTile>
-          ))}
+        ))}
       </GridList>
-      </div>
-    );
-  }
+    </div>
+  );
+}

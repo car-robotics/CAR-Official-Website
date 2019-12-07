@@ -3,6 +3,7 @@ import { Tabs, Tab, IconButton, withStyles, makeStyles, Theme, createStyles } fr
 import { Feedback } from "@material-ui/icons";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import { Link } from "react-router-dom";
+import { COLORS } from "../../Utils/COLORS";
 
 interface NavBarContentProps {
     handleFeedbackClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
@@ -17,7 +18,7 @@ const NavTabs = withStyles({
         margin: "auto",
     },
     indicator: {
-        backgroundColor: '#B3A369',
+        backgroundColor: COLORS.schoolGold,
         height: "4px",
     },
 })(Tabs); //<- Uses Material UI Tabs component but overrides what's above
@@ -58,16 +59,16 @@ export default function NavBarContent(props: NavBarContentProps) {
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
                 <NavTabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab className="NavBarSelection" label="🏠Home" component={Link} to="/" />
-                    <Tab className="NavBarSelection" label="🤖About" component={Link} to="/about" />
-                    <Tab className="NavBarSelection" label="🤝Sponsors" component={Link} to="/sponsors" />
-                    <Tab className="NavBarSelection" label="⚔️Competition" component={Link} to="/competition" />
-                    <Tab className="NavBarSelection" label="👩‍💻Outreach" component={Link} to="/outreach" />
-                    <Tab className="NavBarSelection" label="🎞️Archive" component={Link} to="/archive" />
+                    <Tab className="NavBarSelection" label="Home" component={Link} to="/" />
+                    <Tab className="NavBarSelection" label="About" component={Link} to="/about" />
+                    <Tab className="NavBarSelection" label="Sponsors" component={Link} to="/sponsors" />
+                    <Tab className="NavBarSelection" label="Competition" component={Link} to="/competition" />
+                    <Tab className="NavBarSelection" label="Outreach" component={Link} to="/outreach" />
+                    <Tab className="NavBarSelection" label="Archive" component={Link} to="/archive" />
                 </NavTabs>
                 <EasyToSeeTooltip title="Feedback Button">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>
-                        <Feedback style={{ color: "white" }} color="action" />
+                        <Feedback style={{ color: COLORS.mainWhite }} color="action" />
                     </IconButton>
                 </EasyToSeeTooltip>
             </div>

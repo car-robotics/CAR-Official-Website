@@ -4,17 +4,19 @@ import { Typography } from "@material-ui/core";
 import "./Outreach.scss";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
+import { COLORS } from "../Utils/COLORS";
 
 interface EventSectionProps {
     eventName: string;
     supportingText: string;
     images: string[];
+    onClick: (img: string) => void;
 }
 
 export default function EventSection(props: EventSectionProps) {
     return (
         <div style={{ margin: "4rem" }}>
-            <ContentBackground className="containers">
+            <ContentBackground elevation={24} className="containers">
                 <Typography align="center" variant="h2">
                     {props.eventName}
                 </Typography>
@@ -24,6 +26,7 @@ export default function EventSection(props: EventSectionProps) {
                         return (
                             <Image
                                 key={img}
+                                onClick={() => props.onClick(img)}
                                 style={{
                                     textAlign: "center",
                                     backgroundColor: "transparent",
@@ -34,7 +37,7 @@ export default function EventSection(props: EventSectionProps) {
                                     width: "40rem",
                                     height: "30rem",
                                     margin: "0.75rem",
-                                    boxShadow: "0px 0px 10px #B3A369",
+                                    boxShadow: `0px 0px 10px ${COLORS.schoolGold}`,
                                     borderRadius: "0.5rem",
                                 }}
                                 aspectRatio={4 / 3}

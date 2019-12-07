@@ -13,19 +13,38 @@ import elementary1 from "../Images/Outreach/Elementary1.jpg";
 import elementary2 from "../Images/Outreach/Elementary2.jpg";
 import explore1 from "../Images/Outreach/Explore1.jpg";
 import ncscience1 from "../Images/Outreach/NCScience1.jpg";
+import ncscience2 from "../Images/Outreach/NCScience2.jpg";
 import EventSection from "./EventSection";
 import GoldDivider from "../Utils/GoldDivider";
 import { ContentBackground } from "../Utils/ContentBackground";
+import Lightbox from "../Archive/Lightbox";
 
+interface ClickedState {
+    clicked: boolean;
+    img: string;
+}
 
-function Outreach() {
+export default function Outreach() {
+    const [clickedImage, setClickedImage] = React.useState<ClickedState>({ clicked: false, img: "" });
+
     DocumentTitle({ title: "Outreach" });
+
+    const handleImageClick = (clickedImg: string) => {
+        setClickedImage({ clicked: true, img: clickedImg });
+    }
+
     return (
         <PageFade>
             <div>
                 <div style={{ marginTop: "5rem" }}>
 
-                    <ContentBackground className="header">
+                    <Lightbox
+                        {...clickedImage}
+                        orientation="horizontal"
+                        handleClickedClose={() => setClickedImage({ clicked: false, img: "" })}
+                    />
+
+                    <ContentBackground elevation={24} className="header">
                         <Typography variant="h2" align="center">
                             Outreach
                         </Typography>
@@ -37,42 +56,46 @@ function Outreach() {
                         </Typography>
                     </ContentBackground>
 
-
-
                     <EventSection
+                        onClick={handleImageClick}
                         eventName={"Arduino Workshop"}
                         supportingText={"We hosted an information session at the Freshman Engineering Learning Community on the basics of Arduino."}
                         images={[arduino1, arduino2]}
                     />
 
                     <EventSection
-                        eventName={"Bob's Bash 2018"}
+                        onClick={handleImageClick}
+                        eventName={"Bob's Bash"}
                         supportingText={"Our club took some time during homecoming weekend to show off our progress on the robot for competition to UNCC Engineering faculty, staff, and alumni."}
                         images={[bobsBash1, bobsBash2, bobsBash3]}
                     />
 
                     <EventSection
+                        onClick={handleImageClick}
                         eventName={"UNCC Explore"}
                         supportingText={"We attended Explore to show prospective students that UNCC is serious about robotics."}
                         images={[explore1]}
                     />
 
                     <EventSection
+                        onClick={handleImageClick}
                         eventName={"Disovery Place"}
                         supportingText={"Our club visited Charlotte’s Discovery Place to provide fun activities for kids of varying ages to excite them about STEM."}
                         images={[discoveryplace1, discoveryplace2]}
                     />
 
                     <EventSection
+                        onClick={handleImageClick}
                         eventName={"Hour of Code - Mallard Creek Elementary"}
                         supportingText={"We visited Mallard Creek Elementary to teach 5th graders how to code with Code.org and Snap."}
                         images={[elementary1, elementary2]}
                     />
 
                     <EventSection
+                        onClick={handleImageClick}
                         eventName={"NC Science Festival - UNCC"}
-                        supportingText={"Our club volunteered to talk about robotics and provide some fun activities for kids of varying ages at a NC Science Festival sponsored event at UNCC’s campus."}
-                        images={[ncscience1]}
+                        supportingText={"Our club volunteered to provide some fun activities for kids of varying ages at a NC Science Festival sponsored event."}
+                        images={[ncscience1, ncscience2]}
                     />
 
                 </div>
@@ -81,4 +104,3 @@ function Outreach() {
     );
 }
 
-export default Outreach;
