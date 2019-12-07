@@ -5,6 +5,7 @@ import "./Outreach.scss";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
 import { COLORS } from "../Utils/COLORS";
+import { useCurrentWidth } from "react-socks";
 
 interface EventSectionProps {
     eventName: string;
@@ -14,10 +15,13 @@ interface EventSectionProps {
 }
 
 export default function EventSection(props: EventSectionProps) {
+
+    const mobile = useCurrentWidth() < 1000;
+
     return (
-        <div style={{ margin: "4rem" }}>
-            <ContentBackground elevation={24} className="containers">
-                <Typography align="center" variant="h2">
+        <div style={{ margin: mobile ? "3rem 0" : "4rem 0" }}>
+            <ContentBackground elevation={24} className="containers" style={{ padding: mobile ? "1rem 0rem" : "" }}>
+                <Typography align="center" style={{ padding: "0 1rem" }} variant={mobile ? "h4" : "h2"}>
                     {props.eventName}
                 </Typography>
                 <GoldDivider />
@@ -34,8 +38,8 @@ export default function EventSection(props: EventSectionProps) {
                                 }}
                                 imageStyle={{
                                     position: "inherit",
-                                    width: "40rem",
-                                    height: "30rem",
+                                    width: mobile ? "20rem" : "40rem",
+                                    height: mobile ? "15rem" : "30rem",
                                     margin: "0.75rem",
                                     boxShadow: `0px 0px 10px ${COLORS.schoolGold}`,
                                     borderRadius: "0.5rem",
@@ -47,7 +51,7 @@ export default function EventSection(props: EventSectionProps) {
                     })}
                 </div>
                 <GoldDivider />
-                <Typography className="supporting-text" align="center" variant="h5" >
+                <Typography className="supporting-text" align="center" variant={mobile ? "h6" : "h5"} >
                     {props.supportingText}
                 </Typography>
             </ContentBackground>

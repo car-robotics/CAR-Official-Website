@@ -18,6 +18,7 @@ import EventSection from "./EventSection";
 import GoldDivider from "../Utils/GoldDivider";
 import { ContentBackground } from "../Utils/ContentBackground";
 import Lightbox from "../Archive/Lightbox";
+import { useCurrentWidth } from "react-socks";
 
 interface ClickedState {
     clicked: boolean;
@@ -26,6 +27,7 @@ interface ClickedState {
 
 export default function Outreach() {
     const [clickedImage, setClickedImage] = React.useState<ClickedState>({ clicked: false, img: "" });
+    const mobile = useCurrentWidth() < 1000;
 
     DocumentTitle({ title: "Outreach" });
 
@@ -45,11 +47,11 @@ export default function Outreach() {
                     />
 
                     <ContentBackground elevation={24} className="header">
-                        <Typography variant="h2" align="center">
+                        <Typography variant={mobile ? "h4" : "h2"} align="center">
                             Outreach
                         </Typography>
                         <GoldDivider />
-                        <Typography variant="h4" align="center">
+                        <Typography variant={mobile ? "h6" : "h4"} align="center">
                             We treat outreach very seriously throughout the school year.
                             As a club, we require volunteerig if members wish to to travel to competition.
                             Below are some of our past volunteering events, enjoy!

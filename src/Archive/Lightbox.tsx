@@ -3,6 +3,7 @@ import { Backdrop, IconButton, makeStyles, createStyles, Theme } from "@material
 import { Close } from "@material-ui/icons";
 import Image from "material-ui-image";
 import { COLORS } from "../Utils/COLORS";
+import { useCurrentWidth } from "react-socks";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -25,6 +26,8 @@ interface LightboxProps {
 
 export default function Lightbox(props: LightboxProps) {
     const classes = useStyles();
+    const mobile = useCurrentWidth() < 1000;
+
     return (
         <Backdrop className={classes.backdrop} open={props.clicked}>
             <IconButton
@@ -40,7 +43,7 @@ export default function Lightbox(props: LightboxProps) {
                     position: "",
                     paddingTop: "",
                     backgroundColor: "transparent",
-                    width: props.orientation === "horizontal" ? "60%" : "",
+                    width: props.orientation === "horizontal" ? (mobile ? "90%" : "60%") : "",
                     height: props.orientation === "horizontal" ? "" : "90%",
                     margin: "auto",
                 }}

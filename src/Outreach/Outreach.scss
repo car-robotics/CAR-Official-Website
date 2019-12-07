@@ -8,6 +8,9 @@
 .containers {
     padding: 2rem;
     width: fit-content;
+    @media screen and (min-width: 1000px) {
+        max-width: 90%;
+    }
     margin: auto;
     animation-name: crawlIn;
     animation-duration: 1s;
@@ -16,7 +19,12 @@
 .header {
     width: 90%;
     max-width: 100rem;
-    padding: 2rem;
+    @media screen and (min-width: 1000px) {
+        padding: 2rem;
+    }
+    @media screen and (max-width: 800px) {
+        padding: 1rem;
+    }
     margin: auto;
     animation-name: fallIn;
     animation-duration: 1s;
@@ -24,7 +32,12 @@
 
 .supporting-text {
     margin: auto !important;
-    width: 60%;
+    @media screen and (min-width: 1000px) {
+        width: 60%;
+    }
+    @media screen and (max-width: 800px) {
+        width: 90%;
+    }
 }
 
 @keyframes crawlIn {
