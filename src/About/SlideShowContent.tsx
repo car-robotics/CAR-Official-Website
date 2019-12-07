@@ -8,7 +8,8 @@ import Logo from "../Images/CARLogoPrimary.png";
 import "./About.scss";
 
 interface SlideShowContentProps {
-    contentIndex: number,
+    contentIndex: number;
+    mobile: boolean;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
             animationDuration: "1s",
             boxShadow: "0px 0px 10px black",
             borderRadius: "0.25rem",
+            width: "80%",
         },
     }),
 );
@@ -49,11 +51,13 @@ const SlideShowContentItems = [
 export default function SlideShowContent(props: SlideShowContentProps) {
     const classes = useStyles();
 
+    const { mobile } = props;
+
     const contentObject = SlideShowContentItems[props.contentIndex];
 
     return (
         <div className="slideshow-content-container">
-            <Typography variant="h4" className={classes.text} >
+            <Typography variant={mobile ? "h6" : "h4"} style={{ padding: mobile ? "1rem" : "" }} className={classes.text} >
                 {contentObject.text}
             </Typography>
 
@@ -68,9 +72,9 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                     boxShadow: "0px 0px 15px black",
                     position: "inherit",
                     width: "",
-                    height: "25rem",
-                    minHeight: "30rem",
-                    marginLeft: "2rem",
+                    maxWidth: "100%",
+                    height: mobile ? "20rem" : "25rem",
+                    marginLeft: mobile ? "" : "2rem",
                 }}
                 aspectRatio={4 / 3}
                 src={contentObject.img}

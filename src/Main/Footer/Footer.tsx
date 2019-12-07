@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import GoldDivider from "../../Utils/GoldDivider";
 import "../Main.scss"
 import ScrollToTopButton from "../../Utils/ScrollToTopButton";
+import { useCurrentWidth } from "react-socks";
 
 const FooterDivider = withStyles({
     root: {
@@ -16,12 +17,15 @@ const FooterDivider = withStyles({
 
 export default function Footer() {
 
+    const mobile = useCurrentWidth() < 1000;
+
     const footerContent = [
-        <Social />,
-        <Interest />,
-        <PayPal />,
-        <Contact />,
+        <Social mobile={mobile} />,
+        <Interest mobile={mobile} />,
+        <PayPal mobile={mobile} />,
+        <Contact mobile={mobile} />,
     ]
+
 
     return (
         <div className="footer">
@@ -29,16 +33,16 @@ export default function Footer() {
                 return (
                     // Using React Fragment instead of empty tag as we need a key for the fragment
                     <React.Fragment key={index}>
-                        <div style={{ width: "20%" }}>
+                        <div style={{ width: mobile ? "" : "20%" }}>
                             {element}
                         </div>
-                        <FooterDivider orientation="vertical" />
+                        {mobile === false && <FooterDivider orientation="vertical" />}
                     </React.Fragment>
                 );
             })}
             <ScrollToTopButton
                 onClick={() => window.scrollTo(0, 0)}
-                style={{ position: "absolute", right: "2rem" }}
+                style={mobile ? {} : { position: "absolute", right: "2rem" }}
             />
         </div>
     );

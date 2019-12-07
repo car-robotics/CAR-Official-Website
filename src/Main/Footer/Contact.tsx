@@ -3,11 +3,12 @@ import { Typography, IconButton } from "@material-ui/core";
 import { Email } from "@material-ui/icons";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import { COLORS } from "../../Utils/COLORS";
+import { FooterContentProps } from "./Social";
 
-export default function Contact() {
+export default function Contact(props: FooterContentProps) {
     return (
         <>
-            <Typography variant="h5">
+            <Typography variant={props.mobile ? "h6" : "h5"}>
                 Become a sponsor!
             </Typography>
             <EasyToSeeTooltip title="mailto:car-robotics@uncc.edu">

@@ -20,8 +20,14 @@
 
 .footer {
     display: flex;
-    flex-direction: row;
-    height: 30vh;
+    @media screen and (min-width: 1000px) {
+        flex-direction: row;
+        height: 30vh;
+    }
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+        height: 70vh;
+    }
     background-color: $dark-color;
     align-items: center;
     justify-content: center;

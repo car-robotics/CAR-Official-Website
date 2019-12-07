@@ -4,10 +4,14 @@ import { Instagram, Facebook } from "@material-ui/icons";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import { COLORS } from "../../Utils/COLORS";
 
-export default function Social() {
+export interface FooterContentProps {
+    mobile: boolean;
+}
+
+export default function Social(props: FooterContentProps) {
     return (
         <>
-            <Typography variant="h5">
+            <Typography variant={props.mobile ? "h6" : "h5"}>
                 Support us on Social Media!
             </Typography>
             <EasyToSeeTooltip title="https://www.instagram.com/car_robotics/">

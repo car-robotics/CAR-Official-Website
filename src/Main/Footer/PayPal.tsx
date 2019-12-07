@@ -1,11 +1,12 @@
 import React from "react";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
 import { Typography } from "@material-ui/core";
+import { FooterContentProps } from "./Social";
 
-export default function PayPal() {
+export default function PayPal(props: FooterContentProps) {
     return (
         <>
-            <Typography variant="h5">
+            <Typography variant={props.mobile ? "h6" : "h5"}>
                 Support us by Donating!
             </Typography>
             <EasyToSeeTooltip title="PayPal - The safer, easier way to pay online!">

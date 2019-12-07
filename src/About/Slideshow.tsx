@@ -5,6 +5,8 @@ import Slide, { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
 import GoldDivider from "../Utils/GoldDivider";
 import { COLORS } from "../Utils/COLORS";
+import { useCurrentWidth } from "react-socks";
+import { Swipeable } from "react-swipeable";
 
 export default function Slideshow() {
     const [slideIndex, setSlideIndex] = React.useState<number>(0);
@@ -28,6 +30,8 @@ export default function Slideshow() {
         setSlideDirection("left");
     }
 
+    const mobile = useCurrentWidth() < 1000;
+
     /* Slide animation does not work if we use the ContentBackground instead of 
         AboutBackground. I don't know why. */
     const AboutBackground = withStyles({
@@ -50,19 +54,25 @@ export default function Slideshow() {
 
                 <div className="slideshow-lower-container">
 
-                    <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
+                    {!mobile && <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
                         <KeyboardArrowLeft fontSize="large" />
-                    </IconButton>
+                    </IconButton>}
+                    <Swipeable
+                        onSwipedLeft={handleRightArrowClick}
+                        onSwipedRight={handleLeftArrowClick}
+                        onSwipedUp={() => null}
+                        onSwipedDown={() => null}
+                    >
+                        <Slide in={true} direction={slideDirection} timeout={{ enter: 750, exit: 750 }}>
+                            <div>
+                                <SlideShowContent contentIndex={slideIndex} mobile={mobile} />
+                            </div>
+                        </Slide>
+                    </Swipeable>
 
-                    <Slide in={true} direction={slideDirection} timeout={{ enter: 750, exit: 750 }}>
-                        <div>
-                            <SlideShowContent contentIndex={slideIndex} />
-                        </div>
-                    </Slide>
-
-                    <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
+                    {!mobile && <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
                         <KeyboardArrowRight fontSize="large" />
-                    </IconButton>
+                    </IconButton>}
 
                 </div>
 
