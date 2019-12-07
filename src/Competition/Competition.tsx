@@ -41,8 +41,7 @@ class Competition extends Component {
                             title="rules"
                             url="https://drive.google.com/file/d/1rc0wpz5IDh3fPyaSZwz_TqPAv9dnhEcB/preview"
                             width="100%"
-                            height="768px"
-                            styles={{ height: "50rem" }}
+                            height="900px"
                         />
                     </ContentBackground>
                 </div>
