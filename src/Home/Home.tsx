@@ -73,7 +73,7 @@ export default function Home() {
                                 The Club's Mission
                             </Typography>
                             <CardDivider />
-                            <Typography style={{ lineHeight: "2rem" }} align="center" variant="h6">
+                            <Typography style={{ lineHeight: "2.5rem" }} align="center" variant="h6">
                                 {missionStatement}
                             </Typography>
                         </Breakpoint>

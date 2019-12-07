@@ -7,11 +7,12 @@ import PageFade from "../Utils/PageFade";
 import GoldDivider from "../Utils/GoldDivider";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GreenLink from "../Utils/GreenLink";
+import { useCurrentWidth } from "react-socks";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            padding: "2rem",
+            padding: "2rem 0",
             margin: "auto",
         },
     }),
@@ -21,6 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Sponsors() {
     const classes = useStyles();
 
+    const mobile = useCurrentWidth() < 1000;
+
     DocumentTitle({ title: "Sponsors" });
 
     return (
@@ -28,7 +31,7 @@ export default function Sponsors() {
             <div style={{ margin: "5rem auto", width: "95%" }}>
 
                 <ContentBackground elevation={24} className={classes.container} >
-                    <Typography align="center" variant="h2" >
+                    <Typography align="center" variant={mobile ? "h4" : "h2"} >
                         Thank You To Our Sponsors For Their Support!
                     </Typography>
 
@@ -85,8 +88,8 @@ export default function Sponsors() {
 
                 </ContentBackground>
 
-                <ContentBackground elevation={24} className={classes.container} style={{ marginTop: "2rem", width: "60%" }}>
-                    <Typography align="center" variant="h3" style={{ lineHeight: "3.5rem" }}>
+                <ContentBackground elevation={24} className={classes.container} style={{ marginTop: "2rem", width: mobile ? "90%" : "60%" }}>
+                    <Typography align="center" variant={mobile ? "h5" : "h3"} style={{ lineHeight: "3.5rem" }}>
                         Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                         <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />
                     </Typography>

@@ -5,6 +5,7 @@ import Image from "material-ui-image";
 import "./Sponsors.scss";
 import { COLORS } from "../Utils/COLORS";
 import SponsorCardCover from "./SponsorCardCover";
+import { useCurrentWidth } from "react-socks";
 
 interface SponsorsCardProps {
     orgName: string;
@@ -30,7 +31,11 @@ export default function SponsorCard(props: SponsorsCardProps) {
     const { orgName, orgLink, img } = props;
     return (
         <>
-            <OrgCard onMouseEnter={() => setShowCover(true)} onMouseLeave={() => setShowCover(false)}>
+            <OrgCard
+                onMouseEnter={() => setShowCover(true)}
+                onMouseLeave={() => setShowCover(false)}
+                style={{ marginTop: useCurrentWidth() < 1000 ? "1rem" : "", }}
+            >
                 {orgLink && <EasyToSeeTooltip title={`${orgName} - ${orgLink}`}>
                     <Link href={orgLink} target="_blank">
                         <div className="container">

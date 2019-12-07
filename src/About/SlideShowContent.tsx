@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: "2rem",
             textAlign: "center",
             alignSelf: "center",
-            lineHeight: "1.5em",
+            lineHeight: "3.5rem",
             flexBasis: "35%",
             animationName: "fadeIn",
             animationDuration: "1s",
