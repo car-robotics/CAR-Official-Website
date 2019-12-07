@@ -34,10 +34,11 @@ export default function Home() {
 
     DocumentTitle({ title: "Home" });
 
-    const missionStatement = "Our mission is to educate and to learn about all aspects of mobile robotics.\
-    From the novice to the experienced, we welcome all students who are excited\
-    to learn more about the field of robotics and apply the concepts they learn\
-    in the classroom to real world applications."
+    const missionStatement =
+        `Our mission is to educate and to learn about all aspects of mobile robotics.
+    From the novice to the experienced, we welcome all students who are excited
+    to learn more about the field of robotics and apply the concepts they learn
+    in the classroom to real world applications.`
 
     return (
         <PageFade>
@@ -52,7 +53,7 @@ export default function Home() {
                         imageStyle={{
                             position: "relative",
                             display: "block",
-                            width: useCurrentWidth() > 1000 ? "40%" : "75%",
+                            width: useCurrentWidth() > 1000 ? "40%" : "100%",
                             margin: "2rem auto",
                         }}
                     />
