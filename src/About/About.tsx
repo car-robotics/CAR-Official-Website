@@ -126,7 +126,7 @@ class About extends Component<{}, AboutState> {
                         <ScrollToTopButton
                             onClick={() => this.setState({ showAboutWebsite: !this.state.showAboutWebsite })}
                             tooltipText={this.state.showAboutWebsite ? "Show Less" : "Show More"}
-                            style={this.state.showAboutWebsite ? { transform: "rotate(180deg)", transition: "transform 0.5s" } : { transition: "transform 0.5s" }}
+                            style={!this.state.showAboutWebsite ? { transform: "rotate(180deg)", transition: "transform 0.5s" } : { transition: "transform 0.5s" }}
                         />
                         <Typography align="center" variant="h2" style={{ marginTop: "-3rem" }}>
                             About the Website
