@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             padding: "1rem",
             margin: "auto",
-            width: "90%",
+            width: "85%",
         },
     }),
 );
@@ -89,7 +89,7 @@ export default function Sponsors() {
 
                         </ContentBackground>
 
-                        <ContentBackground elevation={24} className={classes.container} style={{ margin: "2rem auto", width: mobile ? "90%" : "60%" }}>
+                        <ContentBackground elevation={24} className={classes.container} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%" }}>
                             <Typography align="center" variant="h3" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
                                 Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                                 <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />

@@ -20,7 +20,11 @@
 
 .competition-content {
     margin: 2rem auto;
-    @include checkMobile((width, padding), (90%, 1rem), (70%, 2rem));
+    @include checkMobile(
+        (width, padding),
+        (85%, 1rem),
+        (70%, 2rem)
+    );
     animation-name: crawlIn;
     animation-duration: 1s;
 }

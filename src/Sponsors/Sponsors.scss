@@ -27,12 +27,15 @@
 }
 
 .levelSection {
-    margin: 3rem auto;
+    @include checkMobile(
+        (flex-direction, margin), 
+        (column, "1rem auto 3rem auto"), 
+        (row, "3rem auto")
+    );
     align-items: center;
     display: flex;
     border-radius: 1rem;
     justify-content: center;
-    @include checkMobile(flex-direction, column, row);
 }
 
 .orgCard {
