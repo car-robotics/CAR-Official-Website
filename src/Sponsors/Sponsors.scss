@@ -35,6 +35,10 @@
     @include checkMobile(flex-direction, column, row);
 }
 
+.orgCard {
+    @include checkMobile((margin, margin-top), (auto, 1rem), (auto, ""));
+}
+
 .sponsorCards {
     display: flex;
     width: 0%;

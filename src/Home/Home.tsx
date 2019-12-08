@@ -1,13 +1,14 @@
 import React from "react";
 import { Typography, makeStyles, withStyles, createStyles, Theme, Divider } from "@material-ui/core";
 import Image from "material-ui-image";
-import { useCurrentWidth, Breakpoint } from "react-socks";
+import { Breakpoint } from "react-socks";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import logo from "../Images/CARLogoPrimary.png";
 import "./Home.scss";
 import PageFade from "../Utils/PageFade";
 import { COLORS } from "../Utils/COLORS";
 import { ContentBackground } from "../Utils/ContentBackground";
+import { MobileContext } from "../Context/MobileContext";
 
 const CardDivider = withStyles({
     root: {
@@ -19,8 +20,6 @@ const CardDivider = withStyles({
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         missionCard: {
-            maxWidth: useCurrentWidth() > 1000 ? "60%" : "80%",
-            padding: useCurrentWidth() > 1000 ? "2rem" : "1rem",
             margin: "auto",
         },
         divider: {
@@ -41,46 +40,57 @@ export default function Home() {
     in the classroom to real world applications.`
 
     return (
-        <PageFade>
-            <div>
-                <div className="electrical">
-                    <Image
-                        src={logo}
-                        style={{
-                            backgroundColor: "transparent",
-                            paddingTop: "5rem",
-                        }}
-                        imageStyle={{
-                            position: "relative",
-                            display: "block",
-                            width: useCurrentWidth() > 1000 ? "40%" : "100%",
-                            margin: "2rem auto",
-                        }}
-                    />
-                </div>
-                <div className="mechanical">
-                    <ContentBackground elevation={24} className={classes.missionCard} >
-                        <Breakpoint large up>
-                            <Typography variant="h3" align="center">
-                                The Club's Mission
-                            </Typography>
-                            <CardDivider />
-                            <Typography style={{ lineHeight: "3.5rem" }} align="center" variant="h4">
-                                {missionStatement}
-                            </Typography>
-                        </Breakpoint>
-                        <Breakpoint medium down>
-                            <Typography variant="h5" align="center">
-                                The Club's Mission
-                            </Typography>
-                            <CardDivider />
-                            <Typography style={{ lineHeight: "2.5rem" }} align="center" variant="h6">
-                                {missionStatement}
-                            </Typography>
-                        </Breakpoint>
-                    </ContentBackground>
-                </div>
-            </div>
-        </PageFade>
+        <MobileContext.Consumer>
+            {mobile => (
+                <PageFade>
+                    <div>
+                        <div className="electrical">
+                            <Image
+                                src={logo}
+                                style={{
+                                    backgroundColor: "transparent",
+                                    paddingTop: "5rem",
+                                }}
+                                imageStyle={{
+                                    position: "relative",
+                                    display: "block",
+                                    width: mobile ? "100%" : "40%",
+                                    margin: "2rem auto",
+                                }}
+                            />
+                        </div>
+                        <div className="mechanical">
+                            <ContentBackground
+                                elevation={24}
+                                className={classes.missionCard}
+                                style={{
+                                    maxWidth: mobile ? "80%" : "60%",
+                                    padding: mobile ? "1rem" : "2rem",
+                                }}
+                            >
+                                <Breakpoint large up>
+                                    <Typography variant="h3" align="center">
+                                        The Club's Mission
+                                    </Typography>
+                                    <CardDivider />
+                                    <Typography style={{ lineHeight: "3.5rem" }} align="center" variant="h4">
+                                        {missionStatement}
+                                    </Typography>
+                                </Breakpoint>
+                                <Breakpoint medium down>
+                                    <Typography variant="h5" align="center">
+                                        The Club's Mission
+                                    </Typography>
+                                    <CardDivider />
+                                    <Typography style={{ lineHeight: "2.5rem" }} align="center" variant="h6">
+                                        {missionStatement}
+                                    </Typography>
+                                </Breakpoint>
+                            </ContentBackground>
+                        </div>
+                    </div>
+                </PageFade>
+            )}
+        </MobileContext.Consumer>
     );
 }

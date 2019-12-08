@@ -5,8 +5,8 @@ import { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
 import GoldDivider from "../Utils/GoldDivider";
 import { COLORS } from "../Utils/COLORS";
-import { useCurrentWidth } from "react-socks";
 import { Swipeable } from "react-swipeable";
+import { MobileContext } from "../Context/MobileContext";
 
 export default function Slideshow() {
     const [slideIndex, setSlideIndex] = React.useState<number>(0);
@@ -30,8 +30,6 @@ export default function Slideshow() {
         setSlideDirection("left");
     }
 
-    const mobile = useCurrentWidth() < 1000;
-
     /* Slide animation does not work if we use the ContentBackground instead of 
         AboutBackground. I don't know why. */
     const AboutBackground = withStyles({
@@ -43,36 +41,40 @@ export default function Slideshow() {
     })(Paper);
 
     return (
-        <>
-            <AboutBackground elevation={24} className="slideshow-container">
+        <MobileContext.Consumer>
+            {mobile => (
+                <>
+                    <AboutBackground elevation={24} className="slideshow-container">
 
-                <Typography align="center" variant="h2" >
-                    Who We Are
-                </Typography>
+                        <Typography align="center" variant="h2" >
+                            Who We Are
+                        </Typography>
 
-                <GoldDivider />
+                        <GoldDivider />
 
-                <div className="slideshow-lower-container">
+                        <div className="slideshow-lower-container">
 
-                    {!mobile && <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
-                        <KeyboardArrowLeft fontSize="large" />
-                    </IconButton>}
+                            {!mobile && <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
+                                <KeyboardArrowLeft fontSize="large" />
+                            </IconButton>}
 
-                    <Swipeable
-                        onSwipedLeft={handleRightArrowClick}
-                        onSwipedRight={handleLeftArrowClick}
-                        preventDefaultTouchmoveEvent={true}
-                    >
-                        <SlideShowContent slideDirection={slideDirection} contentIndex={slideIndex} mobile={mobile} />
-                    </Swipeable>
+                            <Swipeable
+                                onSwipedLeft={handleRightArrowClick}
+                                onSwipedRight={handleLeftArrowClick}
+                                preventDefaultTouchmoveEvent={true}
+                            >
+                                <SlideShowContent slideDirection={slideDirection} contentIndex={slideIndex} mobile={mobile} />
+                            </Swipeable>
 
-                    {!mobile && <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
-                        <KeyboardArrowRight fontSize="large" />
-                    </IconButton>}
+                            {!mobile && <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
+                                <KeyboardArrowRight fontSize="large" />
+                            </IconButton>}
 
-                </div>
+                        </div>
 
-            </AboutBackground>
-        </>
+                    </AboutBackground>
+                </>
+            )}
+        </MobileContext.Consumer>
     );
 }

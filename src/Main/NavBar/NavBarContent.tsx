@@ -20,6 +20,7 @@ const NavTabs = withStyles({
     indicator: {
         backgroundColor: COLORS.schoolGold,
         height: "4px",
+        width: "4px",
     },
 })(Tabs); //<- Uses Material UI Tabs component but overrides what's above
 

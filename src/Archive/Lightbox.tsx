@@ -3,7 +3,7 @@ import { Backdrop, IconButton, makeStyles, createStyles, Theme } from "@material
 import { Close } from "@material-ui/icons";
 import Image from "material-ui-image";
 import { COLORS } from "../Utils/COLORS";
-import { useCurrentWidth } from "react-socks";
+import { MobileContext } from "../Context/MobileContext";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -26,35 +26,38 @@ interface LightboxProps {
 
 export default function Lightbox(props: LightboxProps) {
     const classes = useStyles();
-    const mobile = useCurrentWidth() < 1000;
 
     return (
-        <Backdrop onClick={props.handleClickedClose} className={classes.backdrop} open={props.clicked}>
-            <IconButton
-                className="close-backdrop-icon"
-                onClick={props.handleClickedClose}
-                title="Close"
-            >
-                <Close htmlColor={COLORS.mainWhite} />
-            </IconButton>
-            <Image
-                src={props.img}
-                style={{
-                    position: "",
-                    paddingTop: "",
-                    backgroundColor: "transparent",
-                    width: props.orientation === "horizontal" ? (mobile ? "90%" : "60%") : "",
-                    height: props.orientation === "horizontal" ? "" : "90%",
-                    margin: "auto",
-                }}
-                imageStyle={{
-                    height: props.orientation === "horizontal" ? "" : "100%",
-                    width: props.orientation === "horizontal" ? "100%" : "",
-                    position: "",
-                    border: `0.5rem solid ${COLORS.mainWhite}`,
-                    borderRadius: "1rem",
-                }}
-            />
-        </Backdrop>
+        <MobileContext.Consumer>
+            {mobile => (
+                <Backdrop onClick={props.handleClickedClose} className={classes.backdrop} open={props.clicked}>
+                    <IconButton
+                        className="close-backdrop-icon"
+                        onClick={props.handleClickedClose}
+                        title="Close"
+                    >
+                        <Close htmlColor={COLORS.mainWhite} />
+                    </IconButton>
+                    <Image
+                        src={props.img}
+                        style={{
+                            position: "",
+                            paddingTop: "",
+                            backgroundColor: "transparent",
+                            width: props.orientation === "horizontal" ? (mobile ? "90%" : "60%") : "",
+                            height: props.orientation === "horizontal" ? "" : "90%",
+                            margin: "auto",
+                        }}
+                        imageStyle={{
+                            height: props.orientation === "horizontal" ? "" : "100%",
+                            width: props.orientation === "horizontal" ? "100%" : "",
+                            position: "",
+                            border: `0.5rem solid ${COLORS.mainWhite}`,
+                            borderRadius: "1rem",
+                        }}
+                    />
+                </Backdrop>
+            )}
+        </MobileContext.Consumer>
     );
 }

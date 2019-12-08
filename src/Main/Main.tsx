@@ -11,6 +11,7 @@ import Archive from "../Archive/Archive";
 import NavBar from "./NavBar/NavBar";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
+import MobileContextProvider from "../Context/MobileContext";
 
 const theme = responsiveFontSizes(createMuiTheme({
   typography: {
@@ -21,35 +22,28 @@ const theme = responsiveFontSizes(createMuiTheme({
   },
 }));
 
-interface MainState { pageIndex: number }
 
-class Main extends Component<{}, MainState> {
-
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      pageIndex: 0,
-    };
-  }
-
+class Main extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
         <HashRouter>
           <BreakpointProvider>
-            <NavBar />
-            <div className="content">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/sponsors" component={Sponsors} />
-                <Route path="/competition" component={Competition} />
-                <Route path="/outreach" component={Outreach} />
-                <Route path="/archive" component={Archive} />
-                <Redirect to="/" />
-              </Switch>
-            </div>
-            <Footer />
+            <MobileContextProvider>
+              <NavBar />
+              <div className="content">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/about" component={About} />
+                  <Route path="/sponsors" component={Sponsors} />
+                  <Route path="/competition" component={Competition} />
+                  <Route path="/outreach" component={Outreach} />
+                  <Route path="/archive" component={Archive} />
+                  <Redirect to="/" />
+                </Switch>
+              </div>
+              <Footer />
+            </MobileContextProvider>
           </BreakpointProvider>
         </HashRouter>
       </ThemeProvider>
