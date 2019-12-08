@@ -10,7 +10,7 @@
 .containers {
     padding: 2rem;
     width: fit-content;
-    @include checkMobile(max-width, "", 90%);
+    @include checkMobile(max-width, 95%, 90%);
     margin: auto;
     animation-name: crawlIn;
     animation-duration: 1s;

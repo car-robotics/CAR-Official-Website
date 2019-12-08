@@ -86,14 +86,14 @@ export default function Outreach() {
 
                     <EventSection
                         onClick={handleImageClick}
-                        eventName={"Hour of Code - Mallard Creek Elementary"}
+                        eventName={"Hour of Code at Mallard Creek Elementary"}
                         supportingText={"We visited Mallard Creek Elementary to teach 5th graders how to code with Code.org and Snap."}
                         images={[elementary1, elementary2]}
                     />
 
                     <EventSection
                         onClick={handleImageClick}
-                        eventName={"NC Science Festival - UNCC"}
+                        eventName={"NC Science Festival at UNCC"}
                         supportingText={"Our club volunteered to provide some fun activities for kids of varying ages at a NC Science Festival sponsored event."}
                         images={[ncscience1, ncscience2]}
                     />

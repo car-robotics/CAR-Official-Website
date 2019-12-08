@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
         container: {
             padding: "1rem",
             margin: "auto",
+            width: "90%",
         },
     }),
 );
@@ -28,7 +29,7 @@ export default function Sponsors() {
         <MobileContext.Consumer>
             {mobile => (
                 <PageFade>
-                    <div style={{ margin: "auto", width: "95%" }}>
+                    <div>
 
                         <ContentBackground elevation={24} className={classes.container} >
                             <Typography align="center" variant="h2" >
