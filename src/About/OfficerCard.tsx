@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Theme, createStyles, Divider } from "@material-ui/core";
 import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
 import { COLORS } from "../Utils/COLORS";
+import { useCurrentWidth } from "react-socks";
 
 export enum Officer {
     President = "President",
@@ -22,9 +23,6 @@ export interface OfficerCardProps {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         officerCard: {
-            height: "400px",
-            width: "250px",
-            margin: "20px",
             backgroundColor: COLORS.schoolGold,
             border: "0.5rem solid black",
             borderRadius: "0.25rem",
@@ -34,29 +32,35 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         officerPicture: {
-            height: "300px",
+            height: "20rem",
             backgroundColor: "#424242",
         },
     }),
 );
 
 export default function OfficerCard(props: OfficerCardProps) {
-
+    const mobile = useCurrentWidth() < 1000;
     const classes = useStyles();
     return (
         <EasyToSeeTooltip title={props.linkedIn}>
-            <Card className={classes.officerCard}>
+            <Card
+                className={classes.officerCard}
+                style={{
+                    flexBasis: mobile ? "" : "20%",
+                    margin: mobile ? "1rem 0" : "1rem",
+                }}
+            >
                 <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank">
                     <CardMedia
                         image={props.image}
                         className={classes.officerPicture}
                     />
                     <CardContent>
-                        <Typography align="center" variant="h5" style={{ color: COLORS.darkColor }}>
+                        <Typography align="center" variant="h4" style={{ color: COLORS.darkColor }}>
                             {props.officer}
                         </Typography>
                         <Divider />
-                        <Typography align="center" variant="h6" style={{ color: COLORS.darkColor }}>
+                        <Typography align="center" variant="h5" style={{ color: COLORS.darkColor }}>
                             {props.name}
                         </Typography>
                     </CardContent>

@@ -31,7 +31,7 @@ export default function Sponsors() {
             <div style={{ margin: "5rem auto", width: "95%" }}>
 
                 <ContentBackground elevation={24} className={classes.container} >
-                    <Typography align="center" variant={mobile ? "h4" : "h2"} >
+                    <Typography align="center" variant="h2" >
                         Thank You To Our Sponsors For Their Support!
                     </Typography>
 
@@ -89,7 +89,7 @@ export default function Sponsors() {
                 </ContentBackground>
 
                 <ContentBackground elevation={24} className={classes.container} style={{ marginTop: "2rem", width: mobile ? "90%" : "60%" }}>
-                    <Typography align="center" variant={mobile ? "h5" : "h3"} style={{ lineHeight: "3.5rem" }}>
+                    <Typography align="center" variant="h3" style={{ lineHeight: "3.5rem" }}>
                         Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                         <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />
                     </Typography>

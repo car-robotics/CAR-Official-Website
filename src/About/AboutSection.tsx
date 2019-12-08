@@ -16,7 +16,7 @@ export default function AboutSection(props: AboutSectionProps) {
             <Typography variant="h2" align="center">
                 {props.title}
             </Typography>
-            <Typography style={{ paddingTop: "1rem" }} variant="h5" align="center">
+            <Typography style={{ paddingTop: "1rem" }} variant="h4" align="center">
                 {props.subtitle}
             </Typography>
             <GoldDivider />

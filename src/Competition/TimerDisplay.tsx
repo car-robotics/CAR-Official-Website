@@ -11,11 +11,11 @@ export default function TimerDisplay(props: any) {
 
     return (
         <ContentBackground elevation={24} className="countdown">
-            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant={mobile ? "h4" : "h2"} align="center">
+            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h2" align="center">
                 Countdown to Competition!
             </Typography>
             <GoldDivider />
-            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant={mobile ? "h5" : "h3"} align="center">
+            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="center">
                 {props.display}
             </Typography>
         </ContentBackground>

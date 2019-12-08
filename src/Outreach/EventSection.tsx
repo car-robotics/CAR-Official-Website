@@ -21,7 +21,7 @@ export default function EventSection(props: EventSectionProps) {
     return (
         <div style={{ margin: mobile ? "3rem 0" : "4rem 0" }}>
             <ContentBackground elevation={24} className="containers" style={{ padding: mobile ? "1rem 0rem" : "" }}>
-                <Typography align="center" style={{ padding: "0 1rem" }} variant={mobile ? "h4" : "h2"}>
+                <Typography align="center" style={{ padding: "0 1rem" }} variant="h2">
                     {props.eventName}
                 </Typography>
                 <GoldDivider />
@@ -51,7 +51,7 @@ export default function EventSection(props: EventSectionProps) {
                     })}
                 </div>
                 <GoldDivider />
-                <Typography className="supporting-text" align="center" variant={mobile ? "h6" : "h5"} >
+                <Typography className="supporting-text" align="center" variant="h5" >
                     {props.supportingText}
                 </Typography>
             </ContentBackground>

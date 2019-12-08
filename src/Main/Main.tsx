@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
@@ -12,29 +12,14 @@ import NavBar from "./NavBar/NavBar";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
 
-const theme = createMuiTheme({
+const theme = responsiveFontSizes(createMuiTheme({
   typography: {
     allVariants: {
       fontFamily: "Inconsolata",
       fontWeight: 700,
     },
-    h2: {
-      fontSize: "2.75rem",
-    },
-    h3: {
-      fontSize: "2.5rem",
-    },
-    h4: {
-      fontSize: "2rem",
-    },
-    h5: {
-      fontSize: "1.75rem",
-    },
-    h6: {
-      fontSize: "1.5rem",
-    },
   },
-});
+}));
 
 interface MainState { pageIndex: number }
 
@@ -64,7 +49,7 @@ class Main extends Component<{}, MainState> {
                 <Redirect to="/" />
               </Switch>
             </div>
-            <Footer/>
+            <Footer />
           </BreakpointProvider>
         </HashRouter>
       </ThemeProvider>
