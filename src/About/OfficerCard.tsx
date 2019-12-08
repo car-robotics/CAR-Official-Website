@@ -23,6 +23,7 @@ export interface OfficerCardProps {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         officerCard: {
+            maxWidth: "25rem",
             backgroundColor: COLORS.schoolGold,
             border: "0.5rem solid black",
             borderRadius: "0.25rem",
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
             }
         },
         officerPicture: {
-            height: "20rem",
+            height: "30vh",
             backgroundColor: "#424242",
         },
     }),
@@ -47,7 +48,7 @@ export default function OfficerCard(props: OfficerCardProps) {
                 className={classes.officerCard}
                 style={{
                     flexBasis: mobile ? "" : "20%",
-                    margin: mobile ? "1rem 0" : "1rem",
+                    margin: mobile ? "1rem auto" : "1rem",
                 }}
             >
                 <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank">

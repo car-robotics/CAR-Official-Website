@@ -73,5 +73,5 @@ export default function NavBarContent(props: NavBarContentProps) {
                 </EasyToSeeTooltip>
             </div>
         </>
-    )
+    );
 }

@@ -26,7 +26,8 @@
     }
     @media screen and (max-width: 800px) {
         flex-direction: column;
-        height: 70vh;
+        height: fit-content;
+        padding: 2rem;
     }
     background-color: $dark-color;
     align-items: center;

@@ -23,7 +23,7 @@ export default function TimerDisplay(props: TimerDisplayProps) {
             <GoldDivider />
             <div style={
                 mobile ?
-                    { display: "flex", flexDirection: "column", marginLeft: "25%" }
+                    { display: "flex", flexDirection: "column", width: "fit-content", margin: "auto" }
                     : { display: "flex", justifyContent: "space-evenly" }
             }
             >
