@@ -45,7 +45,7 @@ export default function Lightbox(props: LightboxProps) {
                             paddingTop: "",
                             backgroundColor: "transparent",
                             width: props.orientation === "horizontal" ? (mobile ? "90%" : "60%") : "",
-                            height: props.orientation === "horizontal" ? "" : "90%",
+                            height: props.orientation === "horizontal" ? "" : (mobile ? "70%" : "90%"),
                             margin: "auto",
                         }}
                         imageStyle={{

@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList from './ImageGrid';
 import { ArchiveCategory } from "./ImageList";
-import { Typography, MenuList, MenuItem, withStyles } from "@material-ui/core";
-// import ReactPlayer from "react-player";
+import { Typography, MenuList, MenuItem, withStyles, IconButton, Grow, ClickAwayListener } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
 import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
+import { MobileContext } from "../Context/MobileContext";
+import { MoreVert } from "@material-ui/icons";
+import { COLORS } from "../Utils/COLORS";
 
 const CollectionItem = withStyles({
     root: {
@@ -22,6 +24,7 @@ interface ArchiveState {
     clickedImage: { clicked: boolean, img: string, orientation: "vertical" | "horizontal" },
     showSrollTopIcon: boolean,
     forceScrollToTop: boolean,
+    showMenu: boolean,
 }
 
 export default class Archive extends Component<{}, ArchiveState> {
@@ -32,6 +35,7 @@ export default class Archive extends Component<{}, ArchiveState> {
             clickedImage: { clicked: false, img: "", orientation: "horizontal" },
             showSrollTopIcon: false,
             forceScrollToTop: false,
+            showMenu: false,
         };
     }
 
@@ -59,55 +63,89 @@ export default class Archive extends Component<{}, ArchiveState> {
         }
 
         return (
-            <PageFade>
-                <div className="archivePageContent">
+            <MobileContext.Consumer>
+                {mobile => (
+                    <PageFade>
+                        <div className="archivePageContent">
 
-                    <Lightbox
-                        {...this.state.clickedImage}
-                        handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "", orientation: "horizontal" } })}
-                    />
+                            <Lightbox
+                                {...this.state.clickedImage}
+                                handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "", orientation: "horizontal" } })}
+                            />
 
-                    <ContentBackground elevation={24} className="menu-container">
-                        <MenuList>
-                            {collectionItems.map((option, index) => {
-                                return (
-                                    <CollectionItem
-                                        key={option}
-                                        selected={index === this.state.selectedIndex}
-                                        className="archive-selection"
-                                        onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
-                                    >
-                                        {option}
-                                    </CollectionItem>
-                                )
-                            })}
-                        </MenuList>
-                    </ContentBackground>
+                            {!mobile && <ContentBackground elevation={24} className="menu-container">
+                                <MenuList>
+                                    {collectionItems.map((option, index) => {
+                                        return (
+                                            <CollectionItem
+                                                key={option}
+                                                selected={index === this.state.selectedIndex}
+                                                className="archive-selection"
+                                                onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
+                                            >
+                                                {option}
+                                            </CollectionItem>
+                                        )
+                                    })}
+                                </MenuList>
+                            </ContentBackground>}
 
-                    <ContentBackground elevation={24} className="collage-container">
+                            <Grow in={mobile && this.state.showMenu}>
+                                <ContentBackground className="menu-container-popout">
+                                    <MenuList>
+                                        {collectionItems.map((option, index) => {
+                                            return (
+                                                <CollectionItem
+                                                    key={option}
+                                                    selected={index === this.state.selectedIndex}
+                                                    className="archive-selection"
+                                                    onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
+                                                >
+                                                    {option}
+                                                </CollectionItem>
+                                            )
+                                        })}
+                                    </MenuList>
+                                </ContentBackground>
+                            </Grow>
 
-                        <Typography variant='h3' className="collage-header">
-                            {ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() + ArchiveCategory[this.state.selectedIndex].slice(1)}
-                            {" Photos"}
-                        </Typography>
+                            <ContentBackground elevation={24} className="collage-container">
 
-                        <GoldDivider />
+                                <Typography variant='h3' className="collage-header">
+                                    {ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() + ArchiveCategory[this.state.selectedIndex].slice(1)}
+                                    {mobile ? <br /> : " "}
+                                    Photos
+                                </Typography>
 
-                        <AdvancedGridList
-                            section={this.state.selectedIndex}
-                            handleImageClick={handleImageClick}
-                            handleScroll={handleScroll}
-                        />
+                                {mobile &&
+                                    <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
+                                        <IconButton title={this.state.showMenu ? "Show Menu" : "Close Menu"} onClick={() => this.setState({ showMenu: !this.state.showMenu })} style={{ position: "absolute", right: "1rem", top: "10%" }}>
+                                            <MoreVert fontSize="default" htmlColor={COLORS.mainWhite} />
+                                        </IconButton>
+                                    </ClickAwayListener>}
 
-                        <ScrollToTop
-                            show={this.state.showSrollTopIcon}
-                            forceScrollToTop={this.state.forceScrollToTop}
-                            resetForceToScroll={() => this.setState({ forceScrollToTop: false })}
-                        />
-                    </ContentBackground>
+                                <GoldDivider />
 
-                </div>
-            </PageFade>
+                                <AdvancedGridList
+                                    section={this.state.selectedIndex}
+                                    handleImageClick={handleImageClick}
+                                    handleScroll={handleScroll}
+                                    mobile={mobile}
+                                />
+
+                                <ScrollToTop
+                                    show={this.state.showSrollTopIcon}
+                                    forceScrollToTop={this.state.forceScrollToTop}
+                                    resetForceToScroll={() => this.setState({ forceScrollToTop: false })}
+                                    style={{ padding: mobile ? "6px" : "" }}
+                                />
+                            </ContentBackground>
+
+                        </div>
+                    </PageFade>
+                )
+                }
+            </MobileContext.Consumer>
         );
     }
 }

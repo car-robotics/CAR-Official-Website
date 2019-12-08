@@ -23,7 +23,11 @@
 
 .card-container {
     margin: 0 auto;
-    @include checkMobile((display, justify-content, width), ("", "", 90%), (flex, space-evenly, ""));
+    @include checkMobile(
+        (display, justify-content, width), 
+        ("", "", 90%), 
+        (flex, space-evenly, "")
+    );
 }
 
 .slideshow-container {

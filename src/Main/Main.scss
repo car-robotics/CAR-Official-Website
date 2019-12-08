@@ -19,7 +19,11 @@
 }
 
 .footer {
-    @include checkMobile((flex-direction, height, padding), (column, fit-content, 2rem), (row, 30vh, ""));
+    @include checkMobile(
+        (flex-direction, height, padding), 
+        (column, fit-content, 2rem), 
+        (row, 30vh, "")
+    );
     display: flex;
     background-color: $dark-color;
     align-items: center;

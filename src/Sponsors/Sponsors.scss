@@ -36,7 +36,11 @@
 }
 
 .orgCard {
-    @include checkMobile((margin, margin-top), (auto, 1rem), (auto, ""));
+    @include checkMobile(
+        (margin, margin-top), 
+        (auto, 1rem), 
+        (auto, "")
+    );
 }
 
 .sponsorCards {
