@@ -102,7 +102,7 @@ function About() {
     return (
         <PageFade>
             <div>
-                <Slideshow />
+                <Slideshow mobile={mobile} />
 
                 <AboutSection
                     title={"Officers"}
@@ -117,18 +117,23 @@ function About() {
                 />
 
                 <ContentBackground elevation={24} className="about-website-container">
-                    <ScrollToTopButton
-                        onClick={() => setShowAboutWebsite(!showAboutWebsite)}
-                        tooltipText={showAboutWebsite ? "Show Less" : "Show More"}
-                        style={
-                            { transform: !showAboutWebsite ? "rotate(180deg)" : "", transition: "transform 0.5s", padding: mobile ? "6px" : "" }}
-                    />
-                    <Typography align="center" variant={mobile ? "h5" : "h2"} style={{ marginTop: mobile ? "-2rem" : "-3rem" }}>
+                    <Typography align="center" variant="h2" >
                         About the Website
                     </Typography>
                     <GoldDivider />
+                    <ScrollToTopButton
+                        onClick={() => setShowAboutWebsite(!showAboutWebsite)}
+                        tooltipText={showAboutWebsite ? "Show Less" : "Show More"}
+                        style={{
+                            display: "flex",
+                            transition: "transform 0.5s",
+                            transform: !showAboutWebsite ? "rotate(180deg)" : "",
+                            padding: mobile ? "6px" : "",
+                            margin: "auto",
+                        }}
+                    />
                     <Collapse in={showAboutWebsite} unmountOnExit>
-                        <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant={mobile ? "h6" : "h4"}>
+                        <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="h4">
                             This website was built using
                             {aboutWebsiteLinks.map((website) => {
                                 return (
