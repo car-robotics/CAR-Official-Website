@@ -21,7 +21,7 @@ const renderer = (props: CountdownFormat) => {
   } else {
     const weeks = Math.floor(props.days / 7);
     props.days = props.days % 7;
-    const timeToDisplay = [formatNumber(weeks), formatNumber(props.days), formatNumber(props.hours), formatNumber(props.minutes), formatNumber(props.seconds)];
+    const timeToDisplay: string[] = [formatNumber(weeks), formatNumber(props.days), formatNumber(props.hours), formatNumber(props.minutes), formatNumber(props.seconds)];
     return <TimerDisplay display={timeToDisplay} />;
   }
 };

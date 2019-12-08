@@ -5,7 +5,11 @@ import { ContentBackground } from "../Utils/ContentBackground";
 import "./Competition.scss";
 import { useCurrentWidth } from "react-socks";
 
-export default function TimerDisplay(props: any) {
+interface TimerDisplayProps {
+    display: string[] | string;
+}
+
+export default function TimerDisplay(props: TimerDisplayProps) {
 
     const mobile = useCurrentWidth() < 1000;
 
@@ -23,13 +27,21 @@ export default function TimerDisplay(props: any) {
                     : { display: "flex", justifyContent: "space-evenly" }
             }
             >
-                {props.display.map((unitOfTime: number, index: number) => {
-                    return (
-                        <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="left">
-                            {unitOfTime === 1 ? unitOfTime + " " + units[index].slice(0, -1) : unitOfTime + " " + units[index]}
-                        </Typography>
-                    );
-                })}
+                {(typeof props.display === "string") ?
+
+                    <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="left">
+                        {props.display}
+                    </Typography>
+
+                    :
+
+                    props.display.map((unitOfTime: string, index: number) => {
+                        return (
+                            <Typography key={index} style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="left">
+                                {parseInt(unitOfTime) === 1 ? unitOfTime + " " + units[index].slice(0, -1) : unitOfTime + " " + units[index]}
+                            </Typography>
+                        );
+                    })}
             </div>
         </ContentBackground>
     );
