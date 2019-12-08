@@ -55,8 +55,6 @@ export default function SlideShowContent(props: SlideShowContentProps) {
 
     const { mobile, slideDirection } = props;
 
-    // const contentObject = SlideShowContentItems[props.contentIndex];
-
     return (
         <>
             {SlideShowContentItems.map((contentObject, index) => {

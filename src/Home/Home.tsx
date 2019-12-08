@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         missionCard: {
             maxWidth: useCurrentWidth() > 1000 ? "60%" : "80%",
-            padding: "2rem",
+            padding: useCurrentWidth() > 1000 ? "2rem" : "1rem",
             margin: "auto",
         },
         divider: {
