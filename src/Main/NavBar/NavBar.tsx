@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, makeStyles, Theme, createStyles, Popover, SwipeableDrawer, IconButton, Typography } from "@material-ui/core";
+import { AppBar, makeStyles, Theme, createStyles, Popover, SwipeableDrawer, IconButton, Typography, ClickAwayListener } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function NavBar(props: any) {
+export default function NavBar() {
     const [showFeedback, setShowFeedback] = React.useState<boolean>(false);
     const [showSidebar, setShowSidebar] = React.useState<boolean>(false);
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
@@ -71,14 +71,16 @@ export default function NavBar(props: any) {
                 </AppBar>
             </Breakpoint>
             <Breakpoint medium down>
-                <AppBar className={classes.appbar}>
-                    <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
-                        <Menu fontSize="inherit" />
-                    </IconButton>
-                    <Typography className={classes.mobileNavBar} variant="h6">
-                        Charlotte Area Robotics
+                <ClickAwayListener onClickAway={() => setShowSidebar(false)}>
+                    <AppBar className={classes.appbar}>
+                        <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
+                            <Menu fontSize="inherit" />
+                        </IconButton>
+                        <Typography className={classes.mobileNavBar} variant="h5">
+                            Charlotte Area Robotics
                     </Typography>
-                </AppBar>
+                    </AppBar>
+                </ClickAwayListener>
                 <SwipeableDrawer
                     onOpen={() => setShowSidebar(true)}
                     onClose={() => setShowSidebar(false)}

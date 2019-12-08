@@ -18,8 +18,14 @@
 
 .competition-content {
     margin: 2rem auto;
-    width: 70%;
-    padding: 2rem;
+    @media screen and (min-width: 1000px) {
+        width: 70%;
+        padding: 2rem;
+    }
+    @media screen and (max-width: 800px) {
+        width: 90%;
+        padding: 1rem;
+    }
     animation-name: crawlIn;
     animation-duration: 1s;
 }

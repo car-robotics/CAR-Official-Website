@@ -46,12 +46,12 @@ const getTabWithPath = () => {
 
 export default function NavBarContent(props: NavBarContentProps) {
     const [value, setValue] = React.useState<number>(getTabWithPath()); //set index of 1 for default value which is Home tab
-    const { handleFeedbackClick, classes, isSidebar, showSidebar } = props;
+    const { handleFeedbackClick, classes, isSidebar } = props;
 
     const styles = useStyles();
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-        if (showSidebar) showSidebar(false);
+        // if (showSidebar) showSidebar(false);
         setValue(newValue);
     };
 

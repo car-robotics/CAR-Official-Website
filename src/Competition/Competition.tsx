@@ -24,7 +24,7 @@ function Competition() {
                         style={{ backgroundColor: "transparent", paddingTop: "" }}
                         imageStyle={{ height: "", width: "100%", position: "" }}
                     />
-                    <Typography align="center" variant="h4" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
+                    <Typography align="center" variant="h4" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem", whiteSpace: "pre-wrap" }}>
                         The <GreenLink text="Institute of Electrical and Electronics Engineers (IEEE)" link="https://www.ieee.org/" />{" "}
                         Region 3 annually hosts student competitions as part of the Southeast Conference.
                         Of these competitions, the hardware competition involves students from different

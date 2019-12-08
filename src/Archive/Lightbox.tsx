@@ -29,7 +29,7 @@ export default function Lightbox(props: LightboxProps) {
     const mobile = useCurrentWidth() < 1000;
 
     return (
-        <Backdrop className={classes.backdrop} open={props.clicked}>
+        <Backdrop onClick={props.handleClickedClose} className={classes.backdrop} open={props.clicked}>
             <IconButton
                 className="close-backdrop-icon"
                 onClick={props.handleClickedClose}

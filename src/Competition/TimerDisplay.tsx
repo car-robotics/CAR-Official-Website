@@ -9,15 +9,28 @@ export default function TimerDisplay(props: any) {
 
     const mobile = useCurrentWidth() < 1000;
 
+    const units = ["weeks", "days", "hours", "minutes", "seconds"]
+
     return (
         <ContentBackground elevation={24} className="countdown">
             <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h2" align="center">
                 Countdown to Competition!
             </Typography>
             <GoldDivider />
-            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="center">
-                {props.display}
-            </Typography>
+            <div style={
+                mobile ?
+                    { display: "flex", flexDirection: "column", marginLeft: "25%" }
+                    : { display: "flex", justifyContent: "space-evenly" }
+            }
+            >
+                {props.display.map((unitOfTime: number, index: number) => {
+                    return (
+                        <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="left">
+                            {unitOfTime === 1 ? unitOfTime + " " + units[index].slice(0, -1) : unitOfTime + " " + units[index]}
+                        </Typography>
+                    );
+                })}
+            </div>
         </ContentBackground>
     );
 }
