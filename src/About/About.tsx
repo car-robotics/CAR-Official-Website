@@ -102,7 +102,7 @@ function About() {
     return (
         <PageFade>
             <div>
-                <Slideshow mobile={mobile} />
+                <Slideshow />
 
                 <AboutSection
                     title={"Officers"}

@@ -1,7 +1,7 @@
 import React from "react";
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@material-ui/icons";
 import { IconButton, Paper, withStyles, Typography } from "@material-ui/core";
-import Slide, { SlideProps } from "@material-ui/core/Slide";
+import { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
 import GoldDivider from "../Utils/GoldDivider";
 import { COLORS } from "../Utils/COLORS";
@@ -57,17 +57,13 @@ export default function Slideshow() {
                     {!mobile && <IconButton className="slideshow-arrow" onClick={handleLeftArrowClick}>
                         <KeyboardArrowLeft fontSize="large" />
                     </IconButton>}
+
                     <Swipeable
                         onSwipedLeft={handleRightArrowClick}
                         onSwipedRight={handleLeftArrowClick}
-                        onSwipedUp={() => null}
-                        onSwipedDown={() => null}
+                        preventDefaultTouchmoveEvent={true}
                     >
-                        <Slide in={true} direction={slideDirection} timeout={{ enter: 750, exit: 750 }}>
-                            <div>
-                                <SlideShowContent contentIndex={slideIndex} mobile={mobile} />
-                            </div>
-                        </Slide>
+                        <SlideShowContent slideDirection={slideDirection} contentIndex={slideIndex} mobile={mobile} />
                     </Swipeable>
 
                     {!mobile && <IconButton className="slideshow-arrow" onClick={handleRightArrowClick}>
