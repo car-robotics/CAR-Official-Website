@@ -3,4 +3,20 @@ $school-gold: #B3A369;
 $dark-color: #212B31;
 $school-green: #046A38;
 $main-white: #FFF;
-$link-green: #5DA355,
+$link-green: #5DA355;
+
+@mixin getProperty($property){
+}
+
+@mixin checkMobile($properties, $valuesTrue, $valuesFalse) {
+    @media screen and (max-width: 800px) {
+        @for $i from 1 to length($properties)+1 {
+            #{nth($properties, $i)}: nth($valuesTrue, $i);
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        @for $i from 1 to length($properties)+1 {
+            #{nth($properties, $i)}: nth($valuesFalse, $i);
+        }
+    }
+}

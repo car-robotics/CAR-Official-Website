@@ -4,9 +4,9 @@
     background-image: url("../Images/Electrical.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    padding-top: 4rem; 
     padding-bottom: 1rem;
     background-size: cover;
+    @include checkMobile(margin-top, -20%, -5%);
 }
 
 .mechanical {

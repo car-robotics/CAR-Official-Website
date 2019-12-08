@@ -1,3 +1,5 @@
+@import "../Themes.scss";
+
 @keyframes fallIn {
     0% {
         transform: translateY(-100%);
@@ -18,14 +20,7 @@
 
 .competition-content {
     margin: 2rem auto;
-    @media screen and (min-width: 1000px) {
-        width: 70%;
-        padding: 2rem;
-    }
-    @media screen and (max-width: 800px) {
-        width: 90%;
-        padding: 1rem;
-    }
+    @include checkMobile((width, padding), (90%, 1rem), (70%, 2rem));
     animation-name: crawlIn;
     animation-duration: 1s;
 }

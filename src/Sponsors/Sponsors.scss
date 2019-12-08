@@ -32,12 +32,7 @@
     display: flex;
     border-radius: 1rem;
     justify-content: center;
-    @media screen and (min-width: 1000px) {
-        flex-direction: row;
-    }
-    @media screen and (max-width: 800px) {
-        flex-direction: column;
-    }
+    @include checkMobile(flex-direction, column, row);
 }
 
 .sponsorCards {
@@ -52,10 +47,5 @@
     animation-delay: 100ms;
     animation-fill-mode: forwards;
     overflow: hidden;
-    @media screen and (min-width: 1000px) {
-        flex-direction: row;
-    }
-    @media screen and (max-width: 800px) {
-        flex-direction: column;
-    }
+    @include checkMobile(flex-direction, column, row);
 }

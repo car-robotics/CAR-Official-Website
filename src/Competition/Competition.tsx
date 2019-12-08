@@ -16,7 +16,7 @@ function Competition() {
     const mobile = useCurrentWidth() < 1000;
     return (
         <PageFade>
-            <div style={{ marginTop: "5rem" }}>
+            <div>
                 <CountdownTimer />
                 <ContentBackground elevation={24} className="competition-content">
                     <Image

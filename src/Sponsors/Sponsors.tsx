@@ -28,7 +28,7 @@ export default function Sponsors() {
 
     return (
         <PageFade>
-            <div style={{ margin: "5rem auto", width: "95%" }}>
+            <div style={{ margin: "auto", width: "95%" }}>
 
                 <ContentBackground elevation={24} className={classes.container} >
                     <Typography align="center" variant="h2" >
@@ -88,7 +88,7 @@ export default function Sponsors() {
 
                 </ContentBackground>
 
-                <ContentBackground elevation={24} className={classes.container} style={{ marginTop: "2rem", width: mobile ? "90%" : "60%" }}>
+                <ContentBackground elevation={24} className={classes.container} style={{ margin: "2rem auto", width: mobile ? "90%" : "60%" }}>
                     <Typography align="center" variant="h3" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
                         Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                         <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />

@@ -36,7 +36,7 @@ export default function Outreach() {
     return (
         <PageFade>
             <div>
-                <div style={{ marginTop: "5rem" }}>
+                <div>
 
                     <Lightbox
                         {...clickedImage}

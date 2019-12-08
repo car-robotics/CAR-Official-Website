@@ -48,7 +48,7 @@ export default function Home() {
                         src={logo}
                         style={{
                             backgroundColor: "transparent",
-                            paddingTop: "0",
+                            paddingTop: "5rem",
                         }}
                         imageStyle={{
                             position: "relative",
