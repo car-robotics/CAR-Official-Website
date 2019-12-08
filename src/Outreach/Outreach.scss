@@ -12,7 +12,7 @@
     width: fit-content;
     @include checkMobile(max-width, 95%, 90%);
     margin: auto;
-    animation-name: crawlIn;
+    animation-name: slideInUp;
     animation-duration: 1s;
 }
 
@@ -21,29 +21,11 @@
     max-width: 100rem;
     @include checkMobile(padding, 1rem, 2rem);
     margin: auto;
-    animation-name: fallIn;
+    animation-name: slideInDown;
     animation-duration: 1s;
 }
 
 .supporting-text {
     margin: auto !important;
     @include checkMobile(width, 90%, 60%);
-}
-
-@keyframes crawlIn {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
-
-@keyframes fallIn {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
 }
