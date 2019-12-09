@@ -37,7 +37,7 @@ function Competition() {
                         <ContentBackground elevation={24} className="competition-content">
                             <Typography variant="h2" align="center">
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
-                        </Typography>
+                            </Typography>
                             <GoldDivider />
                             <iframe
                                 title="rules"

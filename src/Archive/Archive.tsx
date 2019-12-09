@@ -62,6 +62,12 @@ export default class Archive extends Component<{}, ArchiveState> {
             }
         }
 
+        // Capitalize the first letter and add a space before every subsequent capital letter
+        const collageHeaderString =
+            ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() +
+            ArchiveCategory[this.state.selectedIndex].slice(1).replace(/([A-Z])/g, " $1") +
+            " Photos";
+
         return (
             <MobileContext.Consumer>
                 {mobile => (
@@ -112,9 +118,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                             <ContentBackground elevation={24} className="collage-container">
 
                                 <Typography variant='h3' className="collage-header">
-                                    {ArchiveCategory[this.state.selectedIndex].charAt(0).toUpperCase() + ArchiveCategory[this.state.selectedIndex].slice(1)}
-                                    {mobile ? <br /> : " "}
-                                    Photos
+                                    {collageHeaderString}
                                 </Typography>
 
                                 {mobile &&

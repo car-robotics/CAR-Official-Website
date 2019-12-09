@@ -51,7 +51,7 @@ export default function EventSection(props: EventSectionProps) {
                             })}
                         </div>
                         <GoldDivider />
-                        <Typography className="supporting-text" align="center" variant="h5" >
+                        <Typography className="supporting-text" align="center" variant="h4" >
                             {props.supportingText}
                         </Typography>
                     </ContentBackground>
