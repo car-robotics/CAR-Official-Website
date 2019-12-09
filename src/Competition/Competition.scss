@@ -7,12 +7,10 @@
         (85%, 1rem),
         (70%, 2rem)
     );
-    animation-name: slideInUp;
-    animation-duration: 1s;
+    animation: slideInUp 1s;
 }
 
 .countdown {
     @extend .competition-content;
-    animation-name: slideInDown;
-    animation-duration: 1s;
+    animation: slideInDown 1s;
 }

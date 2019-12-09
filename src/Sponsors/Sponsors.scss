@@ -42,11 +42,9 @@
     width: 0%;
     justify-content: space-evenly;
     padding: 1rem;
-    box-shadow: inset 0px 0px 9px 2px black;
+    box-shadow: inset 0px 0px 10px 2px black;
     border-radius: 0px 1rem 1rem 0px;
-    animation-name: growIn;
-    animation-duration: 1s;
-    animation-delay: 100ms;
+    animation: growIn 750ms linear 100ms;
     animation-fill-mode: forwards;
     overflow: hidden;
     @include checkMobile(flex-direction, column, row);

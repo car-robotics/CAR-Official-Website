@@ -12,8 +12,7 @@
     width: fit-content;
     @include checkMobile(max-width, 95%, 90%);
     margin: auto;
-    animation-name: slideInUp;
-    animation-duration: 1s;
+    animation: slideInUp 1s;
 }
 
 .header {
@@ -21,8 +20,7 @@
     max-width: 100rem;
     @include checkMobile(padding, 1rem, 2rem);
     margin: auto;
-    animation-name: slideInDown;
-    animation-duration: 1s;
+    animation: slideInDown 1s;
 }
 
 .supporting-text {
