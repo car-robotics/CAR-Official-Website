@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography, makeStyles, withStyles, createStyles, Theme, Divider } from "@material-ui/core";
 import Image from "material-ui-image";
-import { Breakpoint } from "react-socks";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import logo from "../Images/CARLogoPrimary.png";
 import "./Home.scss";
@@ -49,7 +48,7 @@ export default function Home() {
                                 src={logo}
                                 style={{
                                     backgroundColor: "transparent",
-                                    paddingTop: "5rem",
+                                    paddingTop: mobile ? "2rem" : "5rem",
                                 }}
                                 imageStyle={{
                                     position: "relative",
@@ -68,24 +67,13 @@ export default function Home() {
                                     padding: mobile ? "1rem" : "2rem",
                                 }}
                             >
-                                <Breakpoint large up>
-                                    <Typography variant="h3" align="center">
-                                        The Club's Mission
+                                <Typography variant="h3" align="center">
+                                    The Club's Mission
                                     </Typography>
-                                    <CardDivider />
-                                    <Typography style={{ lineHeight: "3.5rem" }} align="center" variant="h4">
-                                        {missionStatement}
-                                    </Typography>
-                                </Breakpoint>
-                                <Breakpoint medium down>
-                                    <Typography variant="h5" align="center">
-                                        The Club's Mission
-                                    </Typography>
-                                    <CardDivider />
-                                    <Typography style={{ lineHeight: "2.5rem" }} align="center" variant="h6">
-                                        {missionStatement}
-                                    </Typography>
-                                </Breakpoint>
+                                <CardDivider />
+                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="h4">
+                                    {missionStatement}
+                                </Typography>
                             </ContentBackground>
                         </div>
                     </div>
