@@ -67,7 +67,7 @@
 }
 
 .gridList {
-    @include checkMobile(height, 90%, 100%);
+    @include checkMobile(height, 80vh, 100%);
     width: 100%;
     transform: translateZ(0);
     scroll-behavior: smooth;

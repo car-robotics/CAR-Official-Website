@@ -11,7 +11,7 @@
 }
 
 .content {
-    @include checkMobile(margin-top, 20%, 5%);
+    @include checkMobile(margin-top, 10vh, 5%);
 }
 
 .icon {

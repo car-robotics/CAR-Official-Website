@@ -123,7 +123,11 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                                 {mobile &&
                                     <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
-                                        <IconButton title={this.state.showMenu ? "Show Menu" : "Close Menu"} onClick={() => this.setState({ showMenu: !this.state.showMenu })} style={{ position: "absolute", right: "1rem", top: "10%" }}>
+                                        <IconButton
+                                            title={this.state.showMenu ? "Show Menu" : "Close Menu"}
+                                            onClick={() => this.setState({ showMenu: !this.state.showMenu })}
+                                            style={{ position: "absolute", right: "6vw", top: "10%" }}
+                                        >
                                             <MoreVert fontSize="default" htmlColor={COLORS.mainWhite} />
                                         </IconButton>
                                     </ClickAwayListener>}
