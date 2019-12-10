@@ -54,10 +54,10 @@ export default function FooterContent(props: FooterContentProps) {
                     Support us by Donating!
                 </Typography>
                 <EasyToSeeTooltip title="PayPal - The safer, easier way to pay online!">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" target="_blank" method="post" style={{ padding: "12px" }}>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" target="_blank" method="post" style={{ padding: "0.5rem" }}>
                         <input type="hidden" name="cmd" value="_s-xclick" />
                         <input type="hidden" name="hosted_button_id" value="FBMKDCDK2PUXN" />
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="Donate with PayPal button" />
+                        <input className="paypal" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="Donate with PayPal button" />
                         <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                     </form>
                 </EasyToSeeTooltip>
@@ -73,7 +73,7 @@ export default function FooterContent(props: FooterContentProps) {
                     <IconButton href="mailto:car-robotics@uncc.edu">
                         <Typography variant="h6" style={{ color: COLORS.schoolGold, paddingRight: "10px" }}>
                             Email us:
-                    </Typography>
+                        </Typography>
                         <Email fontSize="large" htmlColor={COLORS.schoolGold} />
                     </IconButton>
                 </EasyToSeeTooltip>

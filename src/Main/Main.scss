@@ -37,3 +37,11 @@
 .footer-section {
     @include checkMobile(width, "", 20%);
 }
+
+.paypal {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    &:hover {
+        box-shadow: 0 0 10px 0 white;
+    }
+}
