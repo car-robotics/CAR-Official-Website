@@ -20,6 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         missionCard: {
             margin: "auto",
+            maxHeight: "90vh",
+            overflow: "auto",
         },
         divider: {
             margin: "2rem",
@@ -63,7 +65,7 @@ export default function Home() {
                                 elevation={24}
                                 className={classes.missionCard}
                                 style={{
-                                    maxWidth: mobile ? "80%" : "60%",
+                                    maxWidth: mobile ? "85%" : "60%",
                                     padding: mobile ? "1rem" : "2rem",
                                 }}
                             >
