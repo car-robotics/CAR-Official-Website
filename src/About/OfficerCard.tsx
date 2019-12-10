@@ -56,7 +56,7 @@ export default function OfficerCard(props: OfficerCardProps) {
                             margin: mobile ? "1rem auto" : "1rem",
                         }}
                     >
-                        <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank">
+                        <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank" style={{ height: "100%" }}>
                             <CardMedia
                                 image={props.image}
                                 className={classes.officerPicture}

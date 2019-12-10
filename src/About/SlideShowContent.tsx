@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
             textAlign: "center",
             alignSelf: "center",
             lineHeight: "3.5rem",
-            flexBasis: "35%",
             animationName: "fadeIn",
             animationDuration: "1s",
             borderRadius: "0.25rem",
@@ -65,10 +64,19 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                         in={index === props.contentIndex}
                         direction={slideDirection}
                         timeout={{ enter: 750, exit: 750 }}
+                        style={{ height: "100%" }}
                     >
                         <div>
                             <div className="slideshow-content-container">
-                                <Typography variant="h4" style={{ padding: mobile ? "1rem" : "", lineHeight: mobile ? "2.5rem" : "3.5rem" }} className={classes.text} >
+                                <Typography
+                                    variant="h4"
+                                    className={classes.text}
+                                    style={{
+                                        padding: mobile ? "1rem" : "",
+                                        lineHeight: mobile ? "2.5rem" : "3.5rem",
+                                        flexBasis: mobile ? "" : "35%",
+                                    }}
+                                >
                                     {contentObject.text}
                                 </Typography>
 
@@ -77,15 +85,15 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         textAlign: "center",
                                         backgroundColor: "transparent",
                                         padding: mobile ? "0" : "1rem",
+                                        margin: mobile ? "1rem" : "auto 1rem",
                                     }}
                                     imageStyle={{
                                         borderRadius: contentObject.img === Logo ? "15rem" : "1rem",
                                         boxShadow: "0px 0px 15px black",
                                         position: "inherit",
-                                        width: "",
+                                        width: mobile ? "100%" : "",
                                         maxWidth: "100%",
-                                        height: mobile ? "20rem" : "25rem",
-                                        marginLeft: mobile ? "" : "2rem",
+                                        height: mobile ? "" : "35vh",
                                     }}
                                     aspectRatio={4 / 3}
                                     src={contentObject.img}
