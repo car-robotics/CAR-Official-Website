@@ -34,7 +34,7 @@ export default function Sponsors() {
                         <ContentBackground elevation={24} className={classes.container} >
                             <Typography align="center" variant="h2" >
                                 Thank You To Our Sponsors For Their Support!
-                    </Typography>
+                            </Typography>
 
                             <GoldDivider />
 
