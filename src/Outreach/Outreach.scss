@@ -25,5 +25,5 @@
 
 .supporting-text {
     margin: auto !important;
-    @include checkMobile(width, 90%, 60%);
+    @include checkMobile(width, 90%, 50vw);
 }
