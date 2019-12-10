@@ -43,9 +43,9 @@ export default function Slideshow() {
     let slideIndicators: ReactElement[] = [];
     for (var i = 0; i < 4; i++) {
         if (slideIndex === i) {
-            slideIndicators.push(<FiberManualRecordOutlined fontSize="small" />)
+            slideIndicators.push(<FiberManualRecordOutlined key={i} fontSize="small" />)
         } else {
-            slideIndicators.push(<FiberManualRecord fontSize="small" />)
+            slideIndicators.push(<FiberManualRecord key={i} fontSize="small" />)
         }
     }
 
