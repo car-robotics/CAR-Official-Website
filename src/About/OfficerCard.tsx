@@ -36,6 +36,10 @@ const useStyles = makeStyles((theme: Theme) =>
             height: "30vh",
             backgroundColor: "#424242",
         },
+        officerText: {
+            borderTop: "0.5rem solid black",
+            boxShadow: "inset 0 0 10px black",
+        }
     }),
 );
 
@@ -57,7 +61,7 @@ export default function OfficerCard(props: OfficerCardProps) {
                                 image={props.image}
                                 className={classes.officerPicture}
                             />
-                            <CardContent>
+                            <CardContent className={classes.officerText}>
                                 <Typography align="center" variant="h4" style={{ color: COLORS.darkColor }}>
                                     {props.officer}
                                 </Typography>

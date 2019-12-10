@@ -36,69 +36,65 @@ export default function Outreach() {
     return (
         <PageFade>
             <div>
-                <div>
+                <Lightbox
+                    {...clickedImage}
+                    orientation="horizontal"
+                    handleClickedClose={() => setClickedImage({ clicked: false, img: "" })}
+                />
 
-                    <Lightbox
-                        {...clickedImage}
-                        orientation="horizontal"
-                        handleClickedClose={() => setClickedImage({ clicked: false, img: "" })}
-                    />
+                <ContentBackground elevation={24} className="header">
+                    <Typography variant="h2" align="center">
+                        Outreach
+                    </Typography>
+                    <GoldDivider />
+                    <Typography variant="h4" align="center">
+                        We treat outreach very seriously throughout the school year.
+                        As a club, we require volunteerig if members wish to to travel to competition.
+                        Below are some of our past volunteering events, enjoy!
+                    </Typography>
+                </ContentBackground>
 
-                    <ContentBackground elevation={24} className="header">
-                        <Typography variant="h2" align="center">
-                            Outreach
-                        </Typography>
-                        <GoldDivider />
-                        <Typography variant="h4" align="center">
-                            We treat outreach very seriously throughout the school year.
-                            As a club, we require volunteerig if members wish to to travel to competition.
-                            Below are some of our past volunteering events, enjoy!
-                        </Typography>
-                    </ContentBackground>
+                <EventSection
+                    onClick={handleImageClick}
+                    eventName={"Arduino Workshop"}
+                    supportingText={"We hosted an information session at the Freshman Engineering Learning Community on the basics of Arduino."}
+                    images={[arduino1, arduino2]}
+                />
 
-                    <EventSection
-                        onClick={handleImageClick}
-                        eventName={"Arduino Workshop"}
-                        supportingText={"We hosted an information session at the Freshman Engineering Learning Community on the basics of Arduino."}
-                        images={[arduino1, arduino2]}
-                    />
+                <EventSection
+                    onClick={handleImageClick}
+                    eventName={"Bob's Bash"}
+                    supportingText={"Our club took some time during homecoming weekend to show off our progress on the robot for competition to UNCC Engineering faculty, staff, and alumni."}
+                    images={[bobsBash1, bobsBash2, bobsBash3]}
+                />
 
-                    <EventSection
-                        onClick={handleImageClick}
-                        eventName={"Bob's Bash"}
-                        supportingText={"Our club took some time during homecoming weekend to show off our progress on the robot for competition to UNCC Engineering faculty, staff, and alumni."}
-                        images={[bobsBash1, bobsBash2, bobsBash3]}
-                    />
+                <EventSection
+                    onClick={handleImageClick}
+                    eventName={"UNCC Explore"}
+                    supportingText={"We attended Explore to show prospective students that UNCC is serious about robotics."}
+                    images={[explore1]}
+                />
 
-                    <EventSection
-                        onClick={handleImageClick}
-                        eventName={"UNCC Explore"}
-                        supportingText={"We attended Explore to show prospective students that UNCC is serious about robotics."}
-                        images={[explore1]}
-                    />
+                <EventSection
+                    onClick={handleImageClick}
+                    eventName={"Disovery Place"}
+                    supportingText={"Our club visited Charlotte’s Discovery Place to provide fun activities for kids of varying ages to excite them about STEM."}
+                    images={[discoveryplace1, discoveryplace2]}
+                />
 
-                    <EventSection
-                        onClick={handleImageClick}
-                        eventName={"Disovery Place"}
-                        supportingText={"Our club visited Charlotte’s Discovery Place to provide fun activities for kids of varying ages to excite them about STEM."}
-                        images={[discoveryplace1, discoveryplace2]}
-                    />
+                <EventSection
+                    onClick={handleImageClick}
+                    eventName={"Hour of Code at Mallard Creek Elementary"}
+                    supportingText={"We visited Mallard Creek Elementary to teach 5th graders how to code with Code.org and Snap."}
+                    images={[elementary1, elementary2]}
+                />
 
-                    <EventSection
-                        onClick={handleImageClick}
-                        eventName={"Hour of Code at Mallard Creek Elementary"}
-                        supportingText={"We visited Mallard Creek Elementary to teach 5th graders how to code with Code.org and Snap."}
-                        images={[elementary1, elementary2]}
-                    />
-
-                    <EventSection
-                        onClick={handleImageClick}
-                        eventName={"NC Science Festival at UNCC"}
-                        supportingText={"Our club volunteered to provide some fun activities for kids of varying ages at a NC Science Festival sponsored event."}
-                        images={[ncscience1, ncscience2]}
-                    />
-
-                </div>
+                <EventSection
+                    onClick={handleImageClick}
+                    eventName={"NC Science Festival at UNCC"}
+                    supportingText={"Our club volunteered to provide some fun activities for kids of varying ages at a NC Science Festival sponsored event."}
+                    images={[ncscience1, ncscience2]}
+                />
             </div>
         </PageFade>
     );

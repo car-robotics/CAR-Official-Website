@@ -1,5 +1,5 @@
-import React from "react";
-import { KeyboardArrowRight, KeyboardArrowLeft } from "@material-ui/icons";
+import React, { ReactElement } from "react";
+import { KeyboardArrowRight, KeyboardArrowLeft, FiberManualRecord, FiberManualRecordOutlined } from "@material-ui/icons";
 import { IconButton, Paper, withStyles, Typography } from "@material-ui/core";
 import { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
@@ -40,6 +40,15 @@ export default function Slideshow() {
         },
     })(Paper);
 
+    let slideIndicators: ReactElement[] = [];
+    for (var i = 0; i < 4; i++) {
+        if (slideIndex === i) {
+            slideIndicators.push(<FiberManualRecordOutlined fontSize="small" />)
+        } else {
+            slideIndicators.push(<FiberManualRecord fontSize="small" />)
+        }
+    }
+
     return (
         <MobileContext.Consumer>
             {mobile => (
@@ -70,6 +79,10 @@ export default function Slideshow() {
                                 <KeyboardArrowRight fontSize="large" />
                             </IconButton>}
 
+                        </div>
+
+                        <div className="slide-Indicators">
+                            {slideIndicators}
                         </div>
 
                     </AboutBackground>

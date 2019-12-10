@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
             flexBasis: "35%",
             animationName: "fadeIn",
             animationDuration: "1s",
-            boxShadow: "0px 0px 10px black",
             borderRadius: "0.25rem",
             width: "80%",
         },
@@ -77,7 +76,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                     style={{
                                         textAlign: "center",
                                         backgroundColor: "transparent",
-                                        paddingTop: "0",
+                                        padding: mobile ? "0" : "1rem",
                                     }}
                                     imageStyle={{
                                         borderRadius: contentObject.img === Logo ? "15rem" : "1rem",
