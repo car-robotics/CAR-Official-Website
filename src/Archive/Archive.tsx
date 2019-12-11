@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList from './ImageGrid';
-import { ArchiveCategory } from "./ImageList";
+import { ArchiveCategory, Tile, defaultTileProps } from "./ImageList";
 import { Typography, MenuList, MenuItem, withStyles, IconButton, Grow, ClickAwayListener } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
@@ -21,7 +21,7 @@ const CollectionItem = withStyles({
 
 interface ArchiveState {
     selectedIndex: number,
-    clickedImage: { clicked: boolean, img: string, orientation: "vertical" | "horizontal" },
+    clickedImage: { clicked: boolean, imgProps: Tile },
     showSrollTopIcon: boolean,
     forceScrollToTop: boolean,
     showMenu: boolean,
@@ -32,7 +32,7 @@ export default class Archive extends Component<{}, ArchiveState> {
         super(props);
         this.state = {
             selectedIndex: 0,
-            clickedImage: { clicked: false, img: "", orientation: "horizontal" },
+            clickedImage: { clicked: false, imgProps: defaultTileProps },
             showSrollTopIcon: false,
             forceScrollToTop: false,
             showMenu: false,
@@ -49,8 +49,8 @@ export default class Archive extends Component<{}, ArchiveState> {
             "The Robot",
         ]
 
-        const handleImageClick = (clickedImg: string, orientation: "vertical" | "horizontal") => {
-            this.setState({ clickedImage: { clicked: true, img: clickedImg, orientation: orientation, } });
+        const handleImageClick = (clickedImg: Tile) => {
+            this.setState({ clickedImage: { clicked: true, imgProps: clickedImg } });
         }
 
         const handleScroll = (e: React.UIEvent<HTMLElement>) => {
@@ -75,8 +75,9 @@ export default class Archive extends Component<{}, ArchiveState> {
                         <div className="archivePageContent">
 
                             <Lightbox
-                                {...this.state.clickedImage}
-                                handleClickedClose={() => this.setState({ clickedImage: { clicked: false, img: "", orientation: "horizontal" } })}
+                                clicked={this.state.clickedImage.clicked}
+                                clickedImg={this.state.clickedImage.imgProps}
+                                handleClickedClose={() => this.setState({ clickedImage: { clicked: false, imgProps: defaultTileProps } })}
                             />
 
                             {!mobile && <ContentBackground elevation={24} className="menu-container">

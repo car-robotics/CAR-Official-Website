@@ -73,3 +73,11 @@
     scroll-behavior: smooth;
     cursor: pointer;
 }
+
+.lightBox-text.MuiTypography-root {
+    color: $dark-color;
+    background-color: $main-white;
+    margin: auto;
+    width: 50%;
+    border-radius: 0.5rem 0.5rem 0 0;
+}

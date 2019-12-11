@@ -6,12 +6,13 @@ import { ContentBackground } from "../Utils/ContentBackground";
 import GoldDivider from "../Utils/GoldDivider";
 import { COLORS } from "../Utils/COLORS";
 import { MobileContext } from "../Context/MobileContext";
+import { Tile } from "../Archive/ImageList";
 
 interface EventSectionProps {
     eventName: string;
     supportingText: string;
-    images: string[];
-    onClick: (img: string) => void;
+    images: Tile[];
+    onClick: (img: Tile) => void;
 }
 
 export default function EventSection(props: EventSectionProps) {
@@ -29,7 +30,7 @@ export default function EventSection(props: EventSectionProps) {
                             {props.images.map((img) => {
                                 return (
                                     <Image
-                                        key={img}
+                                        key={img.img}
                                         onClick={() => props.onClick(img)}
                                         style={{
                                             textAlign: "center",
@@ -45,7 +46,7 @@ export default function EventSection(props: EventSectionProps) {
                                             borderRadius: "0.5rem",
                                         }}
                                         aspectRatio={4 / 3}
-                                        src={img}
+                                        src={img.img}
                                     />
                                 );
                             })}
