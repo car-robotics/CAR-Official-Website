@@ -23,7 +23,6 @@
 }
 
 .slideshow-container {
-    @include checkMobile(height, "", 50vh);
     margin: auto;
     width: 85%;
     display: flex;

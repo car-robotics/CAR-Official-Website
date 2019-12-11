@@ -88,7 +88,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         margin: mobile ? "1rem" : "auto 1rem",
                                     }}
                                     imageStyle={{
-                                        borderRadius: contentObject.img === Logo ? "15rem" : "1rem",
+                                        borderRadius: contentObject.img === Logo ? "100%" : "1rem",
                                         boxShadow: "0px 0px 15px black",
                                         position: "inherit",
                                         width: mobile ? "100%" : "",
