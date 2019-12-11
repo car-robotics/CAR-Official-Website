@@ -29,22 +29,33 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
+const IEEE = "https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png";
+
 const SlideShowContentItems = [
     {
-        text: "Charlotte Area Robotics is an UNCC Student Organization that competes anually in the IEEE SoutheastCon Hardware Competition.",
+        text: "Charlotte Area Robotics is an UNCC Student Organization.",
         img: Logo,
+        width: "25%",
+    },
+    {
+        text: "We compete anually in the IEEE SoutheastCon Hardware Competition.",
+        img: IEEE,
+        width: "50%",
     },
     {
         text: "We educate other students through workshops and demonstrations.",
         img: ArduinoWksp,
+        width: "35%",
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned.",
         img: SprintReview23,
+        width: "35%",
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region.",
         img: Robot,
+        width: "35%",
     }
 ];
 
@@ -86,14 +97,15 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         backgroundColor: "transparent",
                                         padding: mobile ? "0" : "1rem",
                                         margin: mobile ? "1rem" : "auto 1rem",
+                                        width: mobile ? "" : contentObject.width,
                                     }}
                                     imageStyle={{
                                         borderRadius: contentObject.img === Logo ? "100%" : "1rem",
-                                        boxShadow: "0px 0px 15px black",
+                                        boxShadow: contentObject.img !== IEEE ? "0px 0px 15px black" : "",
                                         position: "inherit",
-                                        width: mobile ? "100%" : "",
+                                        width: "100%",
                                         maxWidth: "100%",
-                                        height: mobile ? "" : "35vh",
+                                        height: "",
                                     }}
                                     aspectRatio={4 / 3}
                                     src={contentObject.img}

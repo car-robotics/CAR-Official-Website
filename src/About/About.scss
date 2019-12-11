@@ -35,14 +35,17 @@
 .slideshow-content-container {
     display: flex;
     height: 100%;
-    justify-content: center;
     box-shadow: 0 0 10px black;
     border-radius: 0.5rem;
-    @include checkMobile(flex-direction, column, row);
+    @include checkMobile(
+        (flex-direction, justify-content), 
+        (column, space-evenly), 
+        (row, center)
+    );
 }
 
 .slideshow-lower-container {
-    height: 100%;
+    @include checkMobile(height, 80vh, 45vh);
     display: flex;
     justify-content: space-between;
 }

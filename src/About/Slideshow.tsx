@@ -15,14 +15,14 @@ export default function Slideshow() {
     const handleLeftArrowClick = () => {
 
         if (slideIndex === 0)
-            setSlideIndex(3);
+            setSlideIndex(4);
         else
             setSlideIndex(slideIndex - 1);
 
         setSlideDirection("right");
     }
     const handleRightArrowClick = () => {
-        if (slideIndex === 3)
+        if (slideIndex === 4)
             setSlideIndex(0);
         else
             setSlideIndex(slideIndex + 1);
@@ -41,7 +41,7 @@ export default function Slideshow() {
     })(Paper);
 
     let slideIndicators: ReactElement[] = [];
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < 5; i++) {
         if (slideIndex === i) {
             slideIndicators.push(<FiberManualRecordOutlined key={i} fontSize="small" />)
         } else {
