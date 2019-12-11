@@ -56,6 +56,11 @@ export default function NavBarContent(props: NavBarContentProps) {
         setValue(newValue);
     };
 
+    // Used to make sure we update NavBar selection on page forward or page backward
+    window.onhashchange = () => {
+        setValue(getTabWithPath());
+    }
+
     return (
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
