@@ -1,20 +1,13 @@
 import React from "react";
-import { Typography, makeStyles, withStyles, createStyles, Theme, Divider } from "@material-ui/core";
+import { Typography, makeStyles, createStyles, Theme, Divider } from "@material-ui/core";
 import Image from "material-ui-image";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import logo from "../Images/CARLogoPrimary.png";
 import "./Home.scss";
 import PageFade from "../Utils/PageFade";
-import { COLORS } from "../Utils/COLORS";
 import { ContentBackground } from "../Utils/ContentBackground";
 import { MobileContext } from "../Context/MobileContext";
-
-const CardDivider = withStyles({
-    root: {
-        margin: "1rem",
-        backgroundColor: COLORS.schoolGold,
-    },
-})(Divider);
+import GoldDivider from "../Utils/GoldDivider";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -22,9 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: "auto",
             maxHeight: "90vh",
             overflow: "auto",
-        },
-        divider: {
-            margin: "2rem",
         },
     }),
 );
@@ -72,7 +62,7 @@ export default function Home() {
                                 <Typography variant="h3" align="center">
                                     The Club's Mission
                                     </Typography>
-                                <CardDivider />
+                                <GoldDivider />
                                 <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="h4">
                                     {missionStatement}
                                 </Typography>

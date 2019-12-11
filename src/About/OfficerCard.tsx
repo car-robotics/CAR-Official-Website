@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 boxShadow: `0px 0px 10px ${COLORS.mainWhite}`,
             }
         },
+        divider: {
+            backgroundColor: theme.palette.background.paper,
+        },
         officerPicture: {
             height: "30vh",
             backgroundColor: "#424242",
@@ -39,6 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
         officerText: {
             borderTop: "0.5rem solid black",
             boxShadow: "inset 0 0 10px black",
+            color: theme.palette.text.secondary,
         }
     }),
 );
@@ -62,11 +66,11 @@ export default function OfficerCard(props: OfficerCardProps) {
                                 className={classes.officerPicture}
                             />
                             <CardContent className={classes.officerText}>
-                                <Typography align="center" variant="h4" style={{ color: COLORS.darkColor }}>
+                                <Typography align="center" variant="h4">
                                     {props.officer}
                                 </Typography>
-                                <Divider />
-                                <Typography align="center" variant="h5" style={{ color: COLORS.darkColor }}>
+                                <Divider className={classes.divider} />
+                                <Typography align="center" variant="h5">
                                     {props.name}
                                 </Typography>
                             </CardContent>

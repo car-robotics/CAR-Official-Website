@@ -3,7 +3,6 @@ import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
 import Image from "material-ui-image";
-import { COLORS } from '../Utils/COLORS';
 import { tileData, ArchiveCategory, Tile } from './ImageList';
 import './Archive.scss';
 
@@ -14,7 +13,6 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: COLORS.darkColor,
       height: "90%",
     },
     titleBar: {

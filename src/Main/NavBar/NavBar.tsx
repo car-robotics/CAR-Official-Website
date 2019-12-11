@@ -4,13 +4,12 @@ import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
 import "../Main.scss";
-import { COLORS } from "../../Utils/COLORS";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appbar: {
             zIndex: theme.zIndex.drawer + 1,
-            backgroundColor: COLORS.darkColor,
+            backgroundColor: theme.palette.background.paper,
             height: "max-content",
             position: "fixed",
             boxShadow: "0px 0px 10px black",
@@ -21,12 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
             left: "35%",
             bottom: "0",
         },
-        paper: {
-            background: COLORS.darkColor,
-            color: COLORS.mainWhite,
-        },
         hamburgerMenu: {
-            color: COLORS.mainWhite,
             position: "absolute",
         },
         mobileNavBar: {
@@ -97,7 +91,6 @@ export default function NavBar() {
                     onOpen={() => setShowSidebar(true)}
                     onClose={() => setShowSidebar(false)}
                     open={showSidebar}
-                    classes={{ paper: classes.paper }}
                     variant="persistent"
                     anchor="left"
                 >

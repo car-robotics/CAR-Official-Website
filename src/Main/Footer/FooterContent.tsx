@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, IconButton, withStyles } from "@material-ui/core";
 import { Instagram, Facebook, Email } from "@material-ui/icons";
 import EasyToSeeTooltip from "../../Utils/EasyToSeeTooltip";
-import { COLORS } from "../../Utils/COLORS";
 import GoldDivider from "../../Utils/GoldDivider";
 import GreenLink from "../../Utils/GreenLink";
 
@@ -26,12 +25,12 @@ export default function FooterContent(props: FooterContentProps) {
                 </Typography>
                 <EasyToSeeTooltip title="https://www.instagram.com/car_robotics/">
                     <IconButton href="https://www.instagram.com/car_robotics/" target="_blank">
-                        <Instagram fontSize="large" htmlColor={COLORS.schoolGold} />
+                        <Instagram fontSize="large" />
                     </IconButton>
                 </EasyToSeeTooltip>
                 <EasyToSeeTooltip title="https://www.facebook.com/CharlotteAreaRobotics/">
                     <IconButton href="https://www.facebook.com/CharlotteAreaRobotics/" target="_blank">
-                        <Facebook fontSize="large" htmlColor={COLORS.schoolGold} />
+                        <Facebook fontSize="large" />
                     </IconButton>
                 </EasyToSeeTooltip>
             </div>
@@ -71,10 +70,10 @@ export default function FooterContent(props: FooterContentProps) {
                 </Typography>
                 <EasyToSeeTooltip title="mailto:car-robotics@uncc.edu">
                     <IconButton href="mailto:car-robotics@uncc.edu">
-                        <Typography variant="h6" style={{ color: COLORS.schoolGold, paddingRight: "10px" }}>
+                        <Typography variant="h6" style={{ paddingRight: "10px" }}>
                             Email us:
                         </Typography>
-                        <Email fontSize="large" htmlColor={COLORS.schoolGold} />
+                        <Email fontSize="large" />
                     </IconButton>
                 </EasyToSeeTooltip>
             </div>

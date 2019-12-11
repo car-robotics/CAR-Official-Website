@@ -12,6 +12,7 @@ import NavBar from "./NavBar/NavBar";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import MobileContextProvider from "../Context/MobileContext";
+import { COLORS } from "../Utils/COLORS";
 
 const theme = responsiveFontSizes(createMuiTheme({
   typography: {
@@ -19,6 +20,20 @@ const theme = responsiveFontSizes(createMuiTheme({
       fontFamily: "Inconsolata",
       fontWeight: 700,
     },
+  },
+  palette: {
+    divider: COLORS.schoolGold,
+    text: {
+      primary: COLORS.schoolGold,
+      secondary: COLORS.darkColor,
+    },
+    background: {
+      paper: COLORS.darkColor,
+      default: COLORS.schoolGreen,
+    },
+    action: {
+      active: COLORS.mainWhite,
+    }
   },
 }));
 

@@ -17,7 +17,6 @@ const OrgCard = withStyles({
         display: "flex",
         fontFamily: "Inconsolata",
         textAlign: "center",
-        backgroundColor: "inherit",
         borderRadius: "1rem",
         alignItems: "Center",
     },

@@ -4,7 +4,6 @@ import { IconButton, Paper, withStyles, Typography } from "@material-ui/core";
 import { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
 import GoldDivider from "../Utils/GoldDivider";
-import { COLORS } from "../Utils/COLORS";
 import { Swipeable } from "react-swipeable";
 import { MobileContext } from "../Context/MobileContext";
 
@@ -34,9 +33,7 @@ export default function Slideshow() {
         AboutBackground. I don't know why. */
     const AboutBackground = withStyles({
         root: {
-            backgroundColor: COLORS.darkColor,
             borderRadius: "1rem",
-            color: COLORS.schoolGold,
         },
     })(Paper);
 

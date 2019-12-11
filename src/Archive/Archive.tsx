@@ -11,7 +11,6 @@ import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
 import { MobileContext } from "../Context/MobileContext";
 import { MoreVert } from "@material-ui/icons";
-import { COLORS } from "../Utils/COLORS";
 
 const CollectionItem = withStyles({
     root: {
@@ -129,7 +128,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                             onClick={() => this.setState({ showMenu: !this.state.showMenu })}
                                             style={{ position: "absolute", right: "6vw", top: "10%" }}
                                         >
-                                            <MoreVert fontSize="default" htmlColor={COLORS.mainWhite} />
+                                            <MoreVert fontSize="default" color="action" />
                                         </IconButton>
                                     </ClickAwayListener>}
 

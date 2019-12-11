@@ -74,7 +74,7 @@ export default function NavBarContent(props: NavBarContentProps) {
                 </NavTabs>
                 <EasyToSeeTooltip title="Feedback Button">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>
-                        <Feedback style={{ color: COLORS.mainWhite }} color="action" />
+                        <Feedback />
                     </IconButton>
                 </EasyToSeeTooltip>
             </div>

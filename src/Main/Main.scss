@@ -4,6 +4,7 @@
     font-size: 1.5rem;
     font-family: Inconsolata;
     font-weight: bolder;
+    color: $main-white;
 }
 
 .NavBarSelection.Mui-selected {
@@ -36,6 +37,9 @@
 
 .footer-section {
     @include checkMobile(width, "", 20%);
+    .MuiIconButton-root {
+        color: $school-gold;
+    }
 }
 
 .paypal {

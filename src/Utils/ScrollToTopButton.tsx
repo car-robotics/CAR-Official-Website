@@ -8,11 +8,10 @@ import EasyToSeeTooltip from "./EasyToSeeTooltip";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         icon: {
-            backgroundColor: COLORS.schoolGreen,
+            backgroundColor: theme.palette.background.default,
             boxShadow: "0px 0px 10px black",
-            color: COLORS.mainWhite,
             "&:hover": {
-                backgroundColor: COLORS.schoolGreen,
+                backgroundColor: theme.palette.background.default,
                 boxShadow: `0px 0px 10px ${COLORS.mainWhite}`,
             },
         },

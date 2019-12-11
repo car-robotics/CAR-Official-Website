@@ -38,7 +38,7 @@ export default function Lightbox(props: LightboxProps) {
                         onClick={props.handleClickedClose}
                         title="Close"
                     >
-                        <Close htmlColor={COLORS.mainWhite} />
+                        <Close color="action" />
                     </IconButton>
 
                     <div>
