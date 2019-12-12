@@ -1,16 +1,43 @@
 import React from "react";
 import CountdownTimer from "./CountdownTimer";
 import Image from "material-ui-image";
-import { Typography, Paper, Divider } from "@material-ui/core";
+import { Typography, Paper, Divider, Button, Tooltip, makeStyles, Theme, createStyles } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
-
 import "./Competition.scss";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
+import { COLORS } from "../Utils/COLORS";
+import { PictureAsPdf } from "@material-ui/icons";
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        mobileRulesBackground: {
+            background: `linear-gradient(to bottom right, ${theme.palette.primary.main}, #5f5f5f 70%)`,
+            height: "30vh",
+            display: "flex",
+        },
+        rulesButton: {
+            backgroundColor: theme.palette.background.default,
+            color: COLORS.mainWhite,
+            margin: "auto",
+            textTransform: "none",
+            boxShadow: "-2px 2px 2px 0 black",
+            "&:hover": {
+                backgroundColor: theme.palette.background.default,
+                boxShadow: `-2px 2px 2px 0 ${theme.palette.action.active}`,
+            },
+        },
+        rulesPdfIcon: {
+            paddingRight: "1rem",
+        }
+    }),
+);
 
 function Competition() {
     DocumentTitle({ title: "Competition" });
+
+    const classes = useStyles();
 
     return (
         <MobileContext.Consumer>
@@ -38,13 +65,27 @@ function Competition() {
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
                             </Typography>
                             <Divider />
-                            <iframe
-                                title="rules"
-                                src="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
-                                // type="application/pdf"
-                                width="100%"
-                                style={{ height: mobile ? "50vh" : "85vh" }}
-                            />
+                            {mobile ?
+                                <Tooltip title="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf">
+                                    <div className={classes.mobileRulesBackground} >
+                                        <Button
+                                            href="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
+                                            className={classes.rulesButton}
+                                        >
+                                            <><PictureAsPdf color="action" className={classes.rulesPdfIcon} /></>
+                                            Download the Rules!
+                                        </Button>
+                                    </div>
+                                </Tooltip>
+                                :
+                                <object
+                                    title="rules"
+                                    data="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
+                                    type="application/pdf"
+                                    width="100%"
+                                    style={{ height: mobile ? "50vh" : "85vh" }}
+                                />
+                            }
                         </Paper>
                     </div>
                 </PageFade>

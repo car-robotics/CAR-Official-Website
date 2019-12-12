@@ -8,10 +8,31 @@ export const theme = responsiveFontSizes(createMuiTheme({
             fontWeight: 700,
         },
     },
+    palette: {
+        primary: {
+            main: COLORS.schoolGold,
+        },
+        secondary: {
+            main: COLORS.darkColor,
+        },
+        divider: COLORS.schoolGold,
+        text: {
+            primary: COLORS.schoolGold,
+            secondary: COLORS.darkColor,
+        },
+        background: {
+            paper: COLORS.darkColor,
+            default: COLORS.schoolGreen,
+        },
+        action: {
+            active: COLORS.mainWhite,
+        }
+    },
     overrides: {
         MuiLink: {
             root: {
                 color: COLORS.linkGreen,
+                fontFamily: "Inconsolata",
             },
         },
         MuiDrawer: {
@@ -56,6 +77,7 @@ export const theme = responsiveFontSizes(createMuiTheme({
             },
             colorPrimary: {
                 backgroundColor: COLORS.darkColor,
+                color: COLORS.mainWhite,
             },
         },
         MuiPaper: {
@@ -66,19 +88,5 @@ export const theme = responsiveFontSizes(createMuiTheme({
                 borderRadius: "1rem",
             }
         },
-    },
-    palette: {
-        divider: COLORS.schoolGold,
-        text: {
-            primary: COLORS.schoolGold,
-            secondary: COLORS.darkColor,
-        },
-        background: {
-            paper: COLORS.darkColor,
-            default: COLORS.schoolGreen,
-        },
-        action: {
-            active: COLORS.mainWhite,
-        }
     },
 }));
