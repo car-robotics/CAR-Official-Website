@@ -1,0 +1,76 @@
+/* Colors */
+$school-gold: #B3A369;
+// $dark-color: #2a2a2a;
+$dark-color: #212B31;
+$school-green: #046A38;
+$main-white: #FFF;
+$link-green: #5DA355;
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }  
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes growIn {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Mobile Conditional Properties */
+@mixin checkMobile($properties, $valuesTrue, $valuesFalse) {
+    @media screen and (max-width: 999px) {
+        @for $i from 1 to length($properties)+1 {
+            #{nth($properties, $i)}: #{nth($valuesTrue, $i)};
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        @for $i from 1 to length($properties)+1 {
+            #{nth($properties, $i)}: #{nth($valuesFalse, $i)};
+        }
+    }
+}

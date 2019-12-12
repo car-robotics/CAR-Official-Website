@@ -1,27 +1,19 @@
-@import "../Themes.scss";
-.electrical {
+@import "../Themes/Themes.scss";
+
+@mixin homePageConstants($image) {
     height: 100vh;
-    background-image: url("../Images/Electrical.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    padding-top: 4rem; 
-    padding-bottom: 1rem;
     background-size: cover;
+    background-image: radial-gradient(circle, #000000, #00000055), $image;
+}
+
+.electrical {
+    @include homePageConstants(url("../Images/Electrical.jpg"));
+    @include checkMobile(margin-top, -10vh, -5%);
 }
 
 .mechanical {
-    background-image: url("../Images/Mechanical.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
-    background-size: cover;
+    @include homePageConstants(url("../Images/Mechanical.jpg"));
     display: flex;
-}
-
-.computer {
-    background-image: url("../Images/Code.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100vh;
-    background-size: cover;
 }

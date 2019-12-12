@@ -1,3 +1,5 @@
+@import "../Themes/Themes.scss";
+
 .img {
     display: flex;
     justify-content: center;
@@ -8,39 +10,20 @@
 .containers {
     padding: 2rem;
     width: fit-content;
+    @include checkMobile(max-width, 95%, 90%);
     margin: auto;
-    animation-name: crawlIn;
-    animation-duration: 1s;
+    animation: slideInUp 1s;
 }
 
 .header {
-    width: 90%;
+    width: 85%;
     max-width: 100rem;
-    padding: 2rem;
+    @include checkMobile(padding, 1rem, 2rem);
     margin: auto;
-    animation-name: fallIn;
-    animation-duration: 1s;
+    animation: slideInDown 1s;
 }
 
 .supporting-text {
     margin: auto !important;
-    width: 60%;
-}
-
-@keyframes crawlIn {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
-
-@keyframes fallIn {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
+    @include checkMobile(width, 90%, 50vw);
 }

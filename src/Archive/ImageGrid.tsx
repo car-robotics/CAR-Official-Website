@@ -3,8 +3,7 @@ import React from 'react';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { GridList, GridListTile, GridListTileBar } from "@material-ui/core";
 import Image from "material-ui-image";
-import { COLORS } from '../Utils/COLORS';
-import { tileData, ArchiveCategory } from './ImageList';
+import { tileData, ArchiveCategory, Tile } from './ImageList';
 import './Archive.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -14,27 +13,22 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      backgroundColor: COLORS.darkColor,
       height: "90%",
-    },
-    gridList: {
-      width: "100%",
-      height: "100%",
-      transform: 'translateZ(0)',
-      scrollBehavior: "smooth",
-      cursor: "pointer",
     },
     titleBar: {
       background:
         'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.25))',
+      height: "15%",
+      fontFamily: "Inconsolata",
     },
   }),
 );
 
 interface ImageGridProps {
   section: ArchiveCategory;
-  handleImageClick: (clickedImg: string, orientation: "vertical" | "horizontal") => void;
+  handleImageClick: (clickedImg: Tile) => void;
   handleScroll: (e: React.UIEvent<HTMLElement>) => void;
+  mobile: boolean;
 }
 
 export default function AdvancedGridList(props: ImageGridProps) {
@@ -42,15 +36,16 @@ export default function AdvancedGridList(props: ImageGridProps) {
 
   return (
     <div className={classes.root} onScroll={(e) => props.handleScroll(e)}>
-      <GridList cellHeight={340} spacing={1} className={classes.gridList}>
+      <GridList spacing={1} cellHeight="auto" className="gridList">
         {tileData.map(tile => (
           (tile.category === props.section || props.section === ArchiveCategory.all) &&
-          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1} >
+          <GridListTile key={tile.img} cols={tile.orientation === "horizontal" ? 2 : 1} rows={tile.orientation === "vertical" ? 2 : 1} >
             <Image
               src={tile.img}
-              onClick={() => props.handleImageClick(tile.img, tile.orientation)}
+              onClick={() => props.handleImageClick(tile)}
               style={{
                 backgroundColor: "transparent",
+                paddingTop: "calc(50%)"
               }}
               imageStyle={{
                 height: "",

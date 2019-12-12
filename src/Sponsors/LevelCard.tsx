@@ -1,33 +1,30 @@
 import React from "react";
-import { Paper, makeStyles, Theme, createStyles, Typography, withStyles } from "@material-ui/core";
-import { COLORS } from "../Utils/COLORS";
+import { MobileContext } from "../Context/MobileContext";
+import { Paper, makeStyles, Theme, createStyles, Typography } from "@material-ui/core";
 
 interface LevelCardProps {
     level: "Gold" | "Silver" | "Bronze";
 }
-
-export const ListItem = withStyles({
-    root: {
-        fontFamily: "Inconsolata",
-        fontSize: "1.25rem",
-        fontWeight: "bold",
-        textAlign: "left",
-        paddingTop: "1rem",
-        paddingLeft: "1rem",
-    },
-})(Typography);
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         sectionCard: {
             display: "flex",
             flexDirection: "column",
-            color: COLORS.darkColor,
+            color: theme.palette.text.secondary,
             boxShadow: "0px 0px 10px 2px black",
             padding: "1rem",
             height: "20rem",
-            width: "15rem",
             zIndex: 1,
+            borderRadius: "0.25rem",
+        },
+        listItem: {
+            fontFamily: "Inconsolata",
+            fontSize: "1.25rem",
+            fontWeight: "bold",
+            textAlign: "left",
+            paddingTop: "1rem",
+            paddingLeft: "1rem",
         },
     }),
 );
@@ -37,7 +34,7 @@ export default function LevelCard(props: LevelCardProps) {
     const classes = useStyles();
 
     let backgroundGradient: string;
-    let cardTitle;
+    let cardTitle: React.ReactNode;
     let listItems: string[];
 
     if (props.level === "Gold") {
@@ -63,20 +60,32 @@ export default function LevelCard(props: LevelCardProps) {
     }
 
     return (
-        <Paper className={classes.sectionCard} style={{ backgroundImage: backgroundGradient }}>
-            <Typography className="levelTitle" align="center" variant="h4">
-                {cardTitle}
-            </Typography>
-            <Typography variant="h5" align="left">
-                Includes:
-            </Typography>
-            {listItems.map((x: string, i: number) => {
-                return (
-                    <ListItem key={i}>
-                        {x}
-                    </ListItem>
-                );
-            })}
-        </Paper>
+        <MobileContext.Consumer>
+            {mobile => (
+                <Paper
+                    className={classes.sectionCard}
+                    style={{
+                        backgroundImage: backgroundGradient,
+                        width: "80%",
+                        maxWidth: "20rem",
+                    }}
+                >
+                    <Typography className="levelTitle" align="center" variant="h4">
+                        {cardTitle}
+                    </Typography>
+                    <Typography variant="h5" align="left">
+                        Includes:
+                    </Typography>
+                    {listItems.map((x: string, i: number) => {
+                        return (
+                            <Typography className={classes.listItem} key={i}>
+                                {x}
+                            </Typography>
+                        );
+                    })}
+                </Paper>
+
+            )}
+        </MobileContext.Consumer>
     );
 }

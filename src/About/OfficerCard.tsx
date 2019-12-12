@@ -1,7 +1,18 @@
 import React from "react";
-import { Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Theme, createStyles, Divider } from "@material-ui/core";
-import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
+import {
+    Card,
+    CardActionArea,
+    CardMedia,
+    CardContent,
+    Typography,
+    makeStyles,
+    Theme,
+    createStyles,
+    Divider,
+    Tooltip
+} from "@material-ui/core";
 import { COLORS } from "../Utils/COLORS";
+import { MobileContext } from "../Context/MobileContext";
 
 export enum Officer {
     President = "President",
@@ -22,9 +33,7 @@ export interface OfficerCardProps {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         officerCard: {
-            height: "400px",
-            width: "250px",
-            margin: "20px",
+            maxWidth: "25rem",
             backgroundColor: COLORS.schoolGold,
             border: "0.5rem solid black",
             borderRadius: "0.25rem",
@@ -33,35 +42,53 @@ const useStyles = makeStyles((theme: Theme) =>
                 boxShadow: `0px 0px 10px ${COLORS.mainWhite}`,
             }
         },
+        divider: {
+            backgroundColor: theme.palette.background.paper,
+            margin: "0.25rem",
+        },
         officerPicture: {
-            height: "300px",
+            height: "30vh",
             backgroundColor: "#424242",
         },
+        officerText: {
+            borderTop: "0.5rem solid black",
+            boxShadow: "inset 0 0 10px black",
+            color: theme.palette.text.secondary,
+        }
     }),
 );
 
 export default function OfficerCard(props: OfficerCardProps) {
-
     const classes = useStyles();
     return (
-        <EasyToSeeTooltip title={props.linkedIn}>
-            <Card className={classes.officerCard}>
-                <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank">
-                    <CardMedia
-                        image={props.image}
-                        className={classes.officerPicture}
-                    />
-                    <CardContent>
-                        <Typography align="center" variant="h5" style={{ color: COLORS.darkColor }}>
-                            {props.officer}
-                        </Typography>
-                        <Divider />
-                        <Typography align="center" variant="h6" style={{ color: COLORS.darkColor }}>
-                            {props.name}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        </EasyToSeeTooltip >
+        <MobileContext.Consumer>
+            {mobile => (
+                <Tooltip title={props.linkedIn}>
+                    <Card
+                        className={classes.officerCard}
+                        style={{
+                            flexBasis: mobile ? "" : "20%",
+                            margin: mobile ? "1rem auto" : "1rem",
+                        }}
+                    >
+                        <CardActionArea disableRipple focusRipple={false} href={props.linkedIn} target="_blank" style={{ height: "100%" }}>
+                            <CardMedia
+                                image={props.image}
+                                className={classes.officerPicture}
+                            />
+                            <CardContent className={classes.officerText}>
+                                <Typography align="center" variant="h4">
+                                    {props.officer}
+                                </Typography>
+                                <Divider className={classes.divider} />
+                                <Typography align="center" variant="h5">
+                                    {props.name}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                </Tooltip >
+            )}
+        </MobileContext.Consumer >
     );
 }
