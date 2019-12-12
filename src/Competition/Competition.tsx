@@ -69,6 +69,7 @@ function Competition() {
                                 <Tooltip title="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf">
                                     <div className={classes.mobileRulesBackground} >
                                         <Button
+                                            target="_blank"
                                             href="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
                                             className={classes.rulesButton}
                                         >
@@ -83,7 +84,7 @@ function Competition() {
                                     data="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
                                     type="application/pdf"
                                     width="100%"
-                                    style={{ height: mobile ? "50vh" : "85vh" }}
+                                    style={{ height: "85vh" }}
                                 />
                             }
                         </Paper>
