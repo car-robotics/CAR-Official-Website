@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, makeStyles, Theme, createStyles, Popover, SwipeableDrawer, IconButton, Typography, ClickAwayListener } from "@material-ui/core";
+import { AppBar, makeStyles, Theme, createStyles, Popover, IconButton, Typography, ClickAwayListener, Drawer } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
@@ -83,20 +83,14 @@ export default function NavBar() {
                     </Typography>
                     </AppBar>
                 </ClickAwayListener>
-                <SwipeableDrawer
-                    onOpen={() => setShowSidebar(true)}
-                    onClose={() => setShowSidebar(false)}
-                    open={showSidebar}
-                    variant="persistent"
-                    anchor="left"
-                >
+                <Drawer open={showSidebar}>
                     <NavBarContent
                         showSidebar={setShowSidebar}
                         isSidebar={true}
                         handleFeedbackClick={handleFeedbackClick}
                         classes={classes}
                     />
-                </SwipeableDrawer>
+                </Drawer>
                 <Popover
                     anchorEl={anchorEl}
                     anchorOrigin={{ vertical: "center", horizontal: "center" }}

@@ -11,21 +11,20 @@ export default function Slideshow() {
     const [slideDirection, setSlideDirection] = React.useState<SlideProps["direction"]>("up");
 
     const handleLeftArrowClick = () => {
+        setSlideDirection("right");
 
         if (slideIndex === 0)
             setSlideIndex(4);
         else
             setSlideIndex(slideIndex - 1);
-
-        setSlideDirection("right");
     }
     const handleRightArrowClick = () => {
+        setSlideDirection("left");
+
         if (slideIndex === 4)
             setSlideIndex(0);
         else
             setSlideIndex(slideIndex + 1);
-
-        setSlideDirection("left");
     }
 
     let slideIndicators: ReactElement[] = [];

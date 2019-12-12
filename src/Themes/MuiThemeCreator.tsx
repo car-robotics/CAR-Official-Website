@@ -14,6 +14,12 @@ export const theme = responsiveFontSizes(createMuiTheme({
                 color: COLORS.linkGreen,
             },
         },
+        MuiDrawer: {
+            paper: {
+                boxShadow: "inset 0 0 10px 0 black",
+                borderRadius: "0",
+            },
+        },
         MuiTooltip: {
             tooltip: {
                 fontSize: "1.25rem",
@@ -29,11 +35,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
         MuiPopover: {
             paper: {
                 backgroundColor: COLORS.mainWhite,
-            },
-        },
-        MuiDrawer: {
-            paper: {
-                borderRadius: "0",
             },
         },
         MuiTabs: {
