@@ -74,7 +74,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                         unmountOnExit
                         in={index === props.contentIndex}
                         direction={slideDirection}
-                        timeout={{ enter: 750, exit: 750 }}
+                        timeout={{ enter: 750, exit: 0 }}
                         style={{ height: "100%" }}
                     >
                         <div>

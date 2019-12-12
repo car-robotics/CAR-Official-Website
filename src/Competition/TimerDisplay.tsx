@@ -1,7 +1,6 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import GoldDivider from "../Utils/GoldDivider";
-import { ContentBackground } from "../Utils/ContentBackground";
+import { Typography, Paper, Divider } from "@material-ui/core";
+
 import "./Competition.scss";
 import { MobileContext } from "../Context/MobileContext";
 
@@ -16,11 +15,11 @@ export default function TimerDisplay(props: TimerDisplayProps) {
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <ContentBackground elevation={24} className="countdown">
+                <Paper elevation={24} className="countdown">
                     <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h2" align="center">
                         Countdown to Competition!
-            </Typography>
-                    <GoldDivider />
+                    </Typography>
+                    <Divider />
                     <div style={
                         mobile ?
                             { display: "flex", flexDirection: "column", width: "fit-content", margin: "auto" }
@@ -43,7 +42,7 @@ export default function TimerDisplay(props: TimerDisplayProps) {
                                 );
                             })}
                     </div>
-                </ContentBackground>
+                </Paper>
             )}
         </MobileContext.Consumer>
     );

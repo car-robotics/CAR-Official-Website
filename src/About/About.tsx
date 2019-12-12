@@ -16,9 +16,7 @@ import Slideshow from "./Slideshow";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import PageFade from "../Utils/PageFade";
 import AboutSection from "./AboutSection";
-import { ContentBackground } from "../Utils/ContentBackground";
-import { Typography, Collapse } from "@material-ui/core";
-import GoldDivider from "../Utils/GoldDivider";
+import { Typography, Collapse, Paper, Divider } from "@material-ui/core";
 import GreenLink from "../Utils/GreenLink";
 import ScrollToTopButton from "../Utils/ScrollToTopButton";
 import { MobileContext } from "../Context/MobileContext";
@@ -116,11 +114,11 @@ function About() {
                             content={webTeam}
                         />
 
-                        <ContentBackground elevation={24} className="about-website-container">
+                        <Paper elevation={24} className="about-website-container">
                             <Typography align="center" variant="h2" >
                                 About the Website
                                 </Typography>
-                            <GoldDivider />
+                            <Divider />
                             <ScrollToTopButton
                                 onClick={() => setShowAboutWebsite(!showAboutWebsite)}
                                 tooltipText={showAboutWebsite ? "Show Less" : "Show More"}
@@ -160,7 +158,7 @@ function About() {
                                     reference when styling/coding your own components.
                                     </Typography>
                             </Collapse>
-                        </ContentBackground>
+                        </Paper>
                     </div>
                 </PageFade>
             )}

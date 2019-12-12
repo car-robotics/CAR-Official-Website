@@ -1,6 +1,6 @@
 import React from "react";
-import { ContentBackground } from "../Utils/ContentBackground";
-import { Slide, Typography, makeStyles, Theme, createStyles } from "@material-ui/core";
+
+import { Slide, Typography, makeStyles, Theme, createStyles, Paper } from "@material-ui/core";
 
 interface SponsorCardCoverProps {
     text: string;
@@ -25,11 +25,11 @@ export default function SponsorCardCover(props: SponsorCardCoverProps) {
     return (
         <Slide in={props.show} direction="right" mountOnEnter unmountOnExit timeout={{ enter: 750, exit: 1000 }}>
             <div className="sponsorCover">
-                <ContentBackground className={classes.container} >
+                <Paper className={classes.container} >
                     <Typography align="center" variant="h4">
                         {props.text}
                     </Typography>
-                </ContentBackground>
+                </Paper>
             </div>
         </Slide>
     );

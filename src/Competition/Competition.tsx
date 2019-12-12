@@ -1,11 +1,10 @@
 import React from "react";
 import CountdownTimer from "./CountdownTimer";
 import Image from "material-ui-image";
-import { Typography } from "@material-ui/core";
+import { Typography, Paper, Divider } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
-import GoldDivider from "../Utils/GoldDivider";
-import { ContentBackground } from "../Utils/ContentBackground";
+
 import "./Competition.scss";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
@@ -19,7 +18,7 @@ function Competition() {
                 <PageFade>
                     <div>
                         <CountdownTimer />
-                        <ContentBackground elevation={24} className="competition-content">
+                        <Paper elevation={24} className="competition-content">
                             <Image
                                 src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"}
                                 style={{ backgroundColor: "transparent", paddingTop: "" }}
@@ -33,12 +32,12 @@ function Competition() {
                                 robots. This year the competition will be hosted in Raleigh North Carolina on March 14th
                             (for <GreenLink link="https://attend.ieee.org/southeastcon-2020/student-program/student-hardware-competition/" text="Pi Day!" />).
                         </Typography>
-                        </ContentBackground>
-                        <ContentBackground elevation={24} className="competition-content">
+                        </Paper>
+                        <Paper elevation={24} className="competition-content">
                             <Typography variant="h2" align="center">
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
                             </Typography>
-                            <GoldDivider />
+                            <Divider />
                             <object
                                 title="rules"
                                 data="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
@@ -46,7 +45,7 @@ function Competition() {
                                 width="100%"
                                 style={{ height: mobile ? "50vh" : "85vh" }}
                             />
-                        </ContentBackground>
+                        </Paper>
                     </div>
                 </PageFade>
             )}

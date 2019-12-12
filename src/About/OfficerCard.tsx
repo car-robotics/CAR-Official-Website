@@ -1,6 +1,16 @@
 import React from "react";
-import { Card, CardActionArea, CardMedia, CardContent, Typography, makeStyles, Theme, createStyles, Divider } from "@material-ui/core";
-import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
+import {
+    Card,
+    CardActionArea,
+    CardMedia,
+    CardContent,
+    Typography,
+    makeStyles,
+    Theme,
+    createStyles,
+    Divider,
+    Tooltip
+} from "@material-ui/core";
 import { COLORS } from "../Utils/COLORS";
 import { MobileContext } from "../Context/MobileContext";
 
@@ -34,6 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         divider: {
             backgroundColor: theme.palette.background.paper,
+            margin: "0.25rem",
         },
         officerPicture: {
             height: "30vh",
@@ -52,7 +63,7 @@ export default function OfficerCard(props: OfficerCardProps) {
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <EasyToSeeTooltip title={props.linkedIn}>
+                <Tooltip title={props.linkedIn}>
                     <Card
                         className={classes.officerCard}
                         style={{
@@ -76,8 +87,8 @@ export default function OfficerCard(props: OfficerCardProps) {
                             </CardContent>
                         </CardActionArea>
                     </Card>
-                </EasyToSeeTooltip >
+                </Tooltip >
             )}
-        </MobileContext.Consumer>
+        </MobileContext.Consumer >
     );
 }

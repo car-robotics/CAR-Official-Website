@@ -1,9 +1,8 @@
 import React, { ReactElement } from "react";
 import { KeyboardArrowRight, KeyboardArrowLeft, FiberManualRecord, FiberManualRecordOutlined } from "@material-ui/icons";
-import { IconButton, Paper, withStyles, Typography } from "@material-ui/core";
+import { IconButton, Paper, Typography, Divider } from "@material-ui/core";
 import { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
-import GoldDivider from "../Utils/GoldDivider";
 import { Swipeable } from "react-swipeable";
 import { MobileContext } from "../Context/MobileContext";
 
@@ -29,14 +28,6 @@ export default function Slideshow() {
         setSlideDirection("left");
     }
 
-    /* Slide animation does not work if we use the ContentBackground instead of 
-        AboutBackground. I don't know why. */
-    const AboutBackground = withStyles({
-        root: {
-            borderRadius: "1rem",
-        },
-    })(Paper);
-
     let slideIndicators: ReactElement[] = [];
     for (var i = 0; i < 5; i++) {
         if (slideIndex === i) {
@@ -50,13 +41,13 @@ export default function Slideshow() {
         <MobileContext.Consumer>
             {mobile => (
                 <>
-                    <AboutBackground elevation={24} className="slideshow-container">
+                    <Paper elevation={24} className="slideshow-container">
 
                         <Typography align="center" variant="h2" >
                             Who We Are
                         </Typography>
 
-                        <GoldDivider />
+                        <Divider />
 
                         <div className="slideshow-lower-container">
 
@@ -82,7 +73,7 @@ export default function Slideshow() {
                             {slideIndicators}
                         </div>
 
-                    </AboutBackground>
+                    </Paper>
                 </>
             )}
         </MobileContext.Consumer>

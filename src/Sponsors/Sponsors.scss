@@ -1,4 +1,4 @@
-@import "../Themes.scss";
+@import "../Themes/Themes.scss";
 
 .levelTitle {
     padding: 1rem 0;
@@ -30,6 +30,9 @@
 }
 
 .orgCard {
+    display: flex;
+    text-align: center;
+    align-items: center;
     @include checkMobile(
         (margin, margin-top), 
         (auto, 1rem), 

@@ -1,11 +1,9 @@
 import React from "react";
-import { Typography, makeStyles, createStyles, Theme } from "@material-ui/core";
+import { Typography, makeStyles, createStyles, Theme, Paper, Divider } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
 import PageFade from "../Utils/PageFade";
-import GoldDivider from "../Utils/GoldDivider";
-import { ContentBackground } from "../Utils/ContentBackground";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
 
@@ -31,12 +29,12 @@ export default function Sponsors() {
                 <PageFade>
                     <div>
 
-                        <ContentBackground elevation={24} className={classes.container} >
+                        <Paper elevation={24} className={classes.container} >
                             <Typography align="center" variant="h2" >
                                 Thank You To Our Sponsors For Their Support!
                             </Typography>
 
-                            <GoldDivider />
+                            <Divider />
 
                             <div className="levelSection" >
                                 <LevelCard level="Gold" />
@@ -86,15 +84,14 @@ export default function Sponsors() {
                                 </div>
                             </div>
 
+                        </Paper>
 
-                        </ContentBackground>
-
-                        <ContentBackground elevation={24} className={classes.container} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%" }}>
+                        <Paper elevation={24} className={classes.container} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%" }}>
                             <Typography align="center" variant="h3" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
                                 Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                                 <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />
                             </Typography>
-                        </ContentBackground>
+                        </Paper>
 
                     </div>
                 </PageFade>

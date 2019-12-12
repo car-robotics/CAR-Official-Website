@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Paper, Divider } from "@material-ui/core";
 import OfficerCard, { OfficerCardProps } from "./OfficerCard";
-import GoldDivider from "../Utils/GoldDivider";
-import { ContentBackground } from "../Utils/ContentBackground";
+
 
 interface AboutSectionProps {
     title: string,
@@ -12,14 +11,14 @@ interface AboutSectionProps {
 
 export default function AboutSection(props: AboutSectionProps) {
     return (
-        <ContentBackground elevation={24} className="card-group">
+        <Paper elevation={24} className="card-group">
             <Typography variant="h2" align="center">
                 {props.title}
             </Typography>
             <Typography style={{ paddingTop: "1rem" }} variant="h4" align="center">
                 {props.subtitle}
             </Typography>
-            <GoldDivider />
+            <Divider />
             <div className="card-container">
                 {
                     props.content.map((cardContent: OfficerCardProps) => {
@@ -35,6 +34,6 @@ export default function AboutSection(props: AboutSectionProps) {
                     })
                 }
             </div>
-        </ContentBackground>
+        </Paper>
     );
 }

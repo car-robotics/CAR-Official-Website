@@ -1,4 +1,4 @@
-@import "../Themes.scss";
+@import "../Themes/Themes.scss";
 
 .collage-header {
     text-align: center;
@@ -12,7 +12,8 @@
     overflow-x: hidden;
 }
 
-.archive-selection {
+.archive-selection.MuiMenuItem-root {
+    font-size: 1.5rem;
     &:hover {
         background-color: rgba(55, 71, 82, 0.513) !important;
         border-radius: 0.5rem;

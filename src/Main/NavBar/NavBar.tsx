@@ -9,10 +9,6 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appbar: {
             zIndex: theme.zIndex.drawer + 1,
-            backgroundColor: theme.palette.background.paper,
-            height: "max-content",
-            position: "fixed",
-            boxShadow: "0px 0px 10px black",
         },
         feedbackSidebar: {
             textAlign: "center",
@@ -112,7 +108,7 @@ export default function NavBar() {
                         title="Feedback"
                         width="640px"
                         height="765"
-                        style={{ width: "90vw", height: "77vh" }}
+                        style={{ width: "90vw", height: "77vh", border: 0 }}
                     />
                 </Popover>
             </Breakpoint>

@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, withStyles, Card } from "@material-ui/core";
-import EasyToSeeTooltip from "../Utils/EasyToSeeTooltip";
+import { Link, Card, Tooltip } from "@material-ui/core";
 import Image from "material-ui-image";
 import "./Sponsors.scss";
 import { COLORS } from "../Utils/COLORS";
@@ -12,28 +11,18 @@ interface SponsorsCardProps {
     img: string;
 }
 
-const OrgCard = withStyles({
-    root: {
-        display: "flex",
-        fontFamily: "Inconsolata",
-        textAlign: "center",
-        borderRadius: "1rem",
-        alignItems: "Center",
-    },
-})(Card);
-
 export default function SponsorCard(props: SponsorsCardProps) {
     const [showCover, setShowCover] = React.useState<boolean>(false);
 
     const { orgName, orgLink, img } = props;
     return (
         <>
-            <OrgCard
+            <Card
                 onMouseEnter={() => setShowCover(true)}
                 onMouseLeave={() => setShowCover(false)}
                 className="orgCard"
             >
-                {orgLink && <EasyToSeeTooltip title={`${orgName} - ${orgLink}`}>
+                {orgLink && <Tooltip title={`${orgName} - ${orgLink}`}>
                     <Link href={orgLink} target="_blank">
                         <div className="container">
                             <SponsorCardCover show={showCover} text={"Learn More"} />
@@ -58,7 +47,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                             />
                         </div>
                     </Link>
-                </EasyToSeeTooltip>}
+                </Tooltip>}
 
                 {!orgLink && <div className="container">
                     <SponsorCardCover show={showCover} text={orgName} />
@@ -82,7 +71,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                         }}
                     />
                 </div>}
-            </OrgCard>
+            </Card>
         </>
     );
 }    

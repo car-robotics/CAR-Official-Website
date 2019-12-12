@@ -2,21 +2,14 @@ import React, { Component } from "react";
 import './Archive.scss';
 import AdvancedGridList from './ImageGrid';
 import { ArchiveCategory, Tile, defaultTileProps } from "./ImageList";
-import { Typography, MenuList, MenuItem, withStyles, IconButton, Grow, ClickAwayListener } from "@material-ui/core";
+import { Typography, MenuList, MenuItem, IconButton, Grow, ClickAwayListener, Paper, Divider } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
-import { ContentBackground } from "../Utils/ContentBackground";
-import GoldDivider from "../Utils/GoldDivider";
+
 import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
 import { MobileContext } from "../Context/MobileContext";
 import { MoreVert } from "@material-ui/icons";
-
-const CollectionItem = withStyles({
-    root: {
-        fontSize: "1.5rem",
-    },
-})(MenuItem);
 
 interface ArchiveState {
     selectedIndex: number,
@@ -79,43 +72,43 @@ export default class Archive extends Component<{}, ArchiveState> {
                                 handleClickedClose={() => this.setState({ clickedImage: { clicked: false, imgProps: defaultTileProps } })}
                             />
 
-                            {!mobile && <ContentBackground elevation={24} className="menu-container">
+                            {!mobile && <Paper elevation={24} className="menu-container">
                                 <MenuList>
                                     {collectionItems.map((option, index) => {
                                         return (
-                                            <CollectionItem
+                                            <MenuItem
                                                 key={option}
                                                 selected={index === this.state.selectedIndex}
                                                 className="archive-selection"
                                                 onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
                                             >
                                                 {option}
-                                            </CollectionItem>
+                                            </MenuItem>
                                         )
                                     })}
                                 </MenuList>
-                            </ContentBackground>}
+                            </Paper>}
 
                             <Grow in={mobile && this.state.showMenu}>
-                                <ContentBackground className="menu-container-popout">
+                                <Paper className="menu-container-popout">
                                     <MenuList>
                                         {collectionItems.map((option, index) => {
                                             return (
-                                                <CollectionItem
+                                                <MenuItem
                                                     key={option}
                                                     selected={index === this.state.selectedIndex}
                                                     className="archive-selection"
                                                     onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
                                                 >
                                                     {option}
-                                                </CollectionItem>
+                                                </MenuItem>
                                             )
                                         })}
                                     </MenuList>
-                                </ContentBackground>
+                                </Paper>
                             </Grow>
 
-                            <ContentBackground elevation={24} className="collage-container">
+                            <Paper elevation={24} className="collage-container">
 
                                 <Typography variant='h3' className="collage-header">
                                     {collageHeaderString}
@@ -132,7 +125,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                         </IconButton>
                                     </ClickAwayListener>}
 
-                                <GoldDivider />
+                                <Divider />
 
                                 <AdvancedGridList
                                     section={this.state.selectedIndex}
@@ -147,7 +140,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                     resetForceToScroll={() => this.setState({ forceScrollToTop: false })}
                                     style={{ padding: mobile ? "6px" : "" }}
                                 />
-                            </ContentBackground>
+                            </Paper>
 
                         </div>
                     </PageFade>

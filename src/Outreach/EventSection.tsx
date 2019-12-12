@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "material-ui-image";
-import { Typography } from "@material-ui/core";
+import { Typography, Paper, Divider } from "@material-ui/core";
 import "./Outreach.scss";
-import { ContentBackground } from "../Utils/ContentBackground";
-import GoldDivider from "../Utils/GoldDivider";
+
 import { COLORS } from "../Utils/COLORS";
 import { MobileContext } from "../Context/MobileContext";
 import { Tile } from "../Archive/ImageList";
@@ -21,11 +20,11 @@ export default function EventSection(props: EventSectionProps) {
         <MobileContext.Consumer>
             {mobile => (
                 <div style={{ margin: mobile ? "3rem 0" : "4rem 0" }}>
-                    <ContentBackground elevation={24} className="containers" style={{ padding: mobile ? "1rem 0rem" : "" }}>
+                    <Paper elevation={24} className="containers" style={{ padding: mobile ? "1rem 0rem" : "" }}>
                         <Typography align="center" style={{ padding: "0 1rem" }} variant="h2">
                             {props.eventName}
                         </Typography>
-                        <GoldDivider />
+                        <Divider />
                         <div className="img">
                             {props.images.map((img) => {
                                 return (
@@ -51,11 +50,11 @@ export default function EventSection(props: EventSectionProps) {
                                 );
                             })}
                         </div>
-                        <GoldDivider />
+                        <Divider />
                         <Typography className="supporting-text" align="center" variant="h4" >
                             {props.supportingText}
                         </Typography>
-                    </ContentBackground>
+                    </Paper>
                 </div>
             )}
         </MobileContext.Consumer>

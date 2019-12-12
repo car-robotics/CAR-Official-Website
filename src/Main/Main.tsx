@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
@@ -12,31 +11,7 @@ import NavBar from "./NavBar/NavBar";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import Footer from "./Footer/Footer";
 import MobileContextProvider from "../Context/MobileContext";
-import { COLORS } from "../Utils/COLORS";
-
-const theme = responsiveFontSizes(createMuiTheme({
-  typography: {
-    allVariants: {
-      fontFamily: "Inconsolata",
-      fontWeight: 700,
-    },
-  },
-  palette: {
-    divider: COLORS.schoolGold,
-    text: {
-      primary: COLORS.schoolGold,
-      secondary: COLORS.darkColor,
-    },
-    background: {
-      paper: COLORS.darkColor,
-      default: COLORS.schoolGreen,
-    },
-    action: {
-      active: COLORS.mainWhite,
-    }
-  },
-}));
-
+import { theme } from "../Themes/MuiThemeCreator";
 
 class Main extends Component {
   render() {

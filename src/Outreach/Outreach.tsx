@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Paper, Divider } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import PageFade from "../Utils/PageFade";
 import arduino1 from "../Images/Outreach/ArduinoWksp-1.jpg";
@@ -15,8 +15,7 @@ import explore1 from "../Images/Outreach/Explore1.jpg";
 import ncscience1 from "../Images/Outreach/NCScience1.jpg";
 import ncscience2 from "../Images/Outreach/NCScience2.jpg";
 import EventSection from "./EventSection";
-import GoldDivider from "../Utils/GoldDivider";
-import { ContentBackground } from "../Utils/ContentBackground";
+
 import Lightbox from "../Archive/Lightbox";
 import { ArchiveCategory, Tile, defaultTileProps } from "../Archive/ImageList";
 
@@ -58,17 +57,17 @@ export default function Outreach() {
                     handleClickedClose={() => setClickedImage({ clicked: false, img: defaultTileProps })}
                 />
 
-                <ContentBackground elevation={24} className="header">
+                <Paper elevation={24} className="header">
                     <Typography variant="h2" align="center">
                         Outreach
                     </Typography>
-                    <GoldDivider />
+                    <Divider />
                     <Typography variant="h4" align="center">
                         We treat outreach very seriously throughout the school year.
                         As a club, we require volunteerig if members wish to to travel to competition.
                         Below are some of our past volunteering events, enjoy!
                     </Typography>
-                </ContentBackground>
+                </Paper>
 
                 <EventSection
                     onClick={handleImageClick}
