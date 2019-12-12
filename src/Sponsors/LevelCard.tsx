@@ -66,7 +66,8 @@ export default function LevelCard(props: LevelCardProps) {
                     className={classes.sectionCard}
                     style={{
                         backgroundImage: backgroundGradient,
-                        width: mobile ? "80%" : "20rem",
+                        width: "80%",
+                        maxWidth: "20rem",
                     }}
                 >
                     <Typography className="levelTitle" align="center" variant="h4">

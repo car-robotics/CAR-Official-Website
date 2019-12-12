@@ -38,10 +38,10 @@ function Competition() {
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
                             </Typography>
                             <Divider />
-                            <object
+                            <iframe
                                 title="rules"
-                                data="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
-                                type="application/pdf"
+                                src="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
+                                // type="application/pdf"
                                 width="100%"
                                 style={{ height: mobile ? "50vh" : "85vh" }}
                             />

@@ -43,10 +43,6 @@ export default function Lightbox(props: LightboxProps) {
 
                     <div>
 
-                        <Typography variant="h4" align="center" className="lightBox-text" >
-                            {clickedImg.title}
-                        </Typography>
-
                         <Image
                             src={clickedImg.img}
                             style={{
@@ -59,12 +55,16 @@ export default function Lightbox(props: LightboxProps) {
                             imageStyle={{
                                 height: clickedImg.orientation === "horizontal" ? "" : "80vh",
                                 width: clickedImg.orientation === "horizontal" ? "100%" : "",
-                                maxWidth: "95%",
+                                maxWidth: clickedImg.orientation === "horizontal" ? "100%" : "95%",
                                 position: "",
-                                border: `0.5rem solid ${COLORS.mainWhite}`,
-                                borderRadius: "1rem",
+                                border: `0.2rem solid ${COLORS.schoolGold}`,
+                                borderRadius: "0.25rem",
                             }}
                         />
+
+                        <Typography variant="h4" align="center" className="lightBox-text" >
+                            {clickedImg.title}
+                        </Typography>
 
                     </div>
                 </Backdrop>
