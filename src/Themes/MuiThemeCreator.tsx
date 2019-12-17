@@ -37,7 +37,7 @@ export const theme = responsiveFontSizes(createMuiTheme({
         },
         MuiDrawer: {
             paper: {
-                boxShadow: "inset 0 0 10px 0 black",
+                boxShadow: "0 0 0 1px",
                 borderRadius: "0",
             },
         },

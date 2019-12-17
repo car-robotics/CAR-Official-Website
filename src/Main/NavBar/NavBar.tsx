@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, makeStyles, Theme, createStyles, Popover, IconButton, Typography, ClickAwayListener, Drawer } from "@material-ui/core";
+import { AppBar, makeStyles, Theme, createStyles, Popover, IconButton, Typography, Drawer } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
@@ -8,7 +8,7 @@ import "../Main.scss";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appbar: {
-            zIndex: theme.zIndex.drawer + 1,
+            zIndex: theme.zIndex.drawer + 101,
         },
         feedbackSidebar: {
             textAlign: "center",
@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         hamburgerMenu: {
             position: "absolute",
+            padding: "6px",
+            top: "10%",
+            left: "1%",
         },
         mobileNavBar: {
             alignSelf: "center",
@@ -73,17 +76,18 @@ export default function NavBar() {
                 </Popover>
             </Breakpoint>
             <Breakpoint medium down>
-                <ClickAwayListener onClickAway={() => setShowSidebar(false)}>
-                    <AppBar className={classes.appbar}>
-                        <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
-                            <Menu fontSize="inherit" />
-                        </IconButton>
-                        <Typography className={classes.mobileNavBar} variant="h5">
-                            Charlotte Area Robotics
+                <AppBar className={classes.appbar}>
+                    <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
+                        <Menu fontSize="inherit" />
+                    </IconButton>
+                    <Typography className={classes.mobileNavBar} variant="h5">
+                        Charlotte Area Robotics
                     </Typography>
-                    </AppBar>
-                </ClickAwayListener>
-                <Drawer open={showSidebar}>
+                </AppBar>
+                <Drawer
+                    open={showSidebar}
+                    onClose={() => setShowSidebar(false)}
+                >
                     <NavBarContent
                         showSidebar={setShowSidebar}
                         isSidebar={true}

@@ -66,8 +66,8 @@ function Competition() {
                             </Typography>
                             <Divider />
                             {mobile ?
-                                <Tooltip title="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf">
-                                    <div className={classes.mobileRulesBackground} >
+                                <div className={classes.mobileRulesBackground} >
+                                    <Tooltip title="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf">
                                         <Button
                                             target="_blank"
                                             href="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
@@ -76,8 +76,8 @@ function Competition() {
                                             <><PictureAsPdf color="action" className={classes.rulesPdfIcon} /></>
                                             Download the Rules!
                                         </Button>
-                                    </div>
-                                </Tooltip>
+                                    </Tooltip>
+                                </div>
                                 :
                                 <object
                                     title="rules"
