@@ -72,58 +72,41 @@ export default class Archive extends Component<{}, ArchiveState> {
                                 handleClickedClose={() => this.setState({ clickedImage: { clicked: false, imgProps: defaultTileProps } })}
                             />
 
-                            {!mobile && <Paper elevation={24} className="menu-container">
-                                <MenuList>
-                                    {collectionItems.map((option, index) => {
-                                        return (
-                                            <MenuItem
-                                                key={option}
-                                                selected={index === this.state.selectedIndex}
-                                                className="archive-selection"
-                                                onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
-                                            >
-                                                {option}
-                                            </MenuItem>
-                                        )
-                                    })}
-                                </MenuList>
-                            </Paper>}
-
-                            <Grow in={mobile && this.state.showMenu}>
-                                <Paper className="menu-container-popout">
-                                    <MenuList>
-                                        {collectionItems.map((option, index) => {
-                                            return (
-                                                <MenuItem
-                                                    key={option}
-                                                    selected={index === this.state.selectedIndex}
-                                                    className="archive-selection"
-                                                    onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
-                                                >
-                                                    {option}
-                                                </MenuItem>
-                                            )
-                                        })}
-                                    </MenuList>
-                                </Paper>
-                            </Grow>
-
                             <Paper elevation={24} className="collage-container">
 
-                                <Typography variant='h3' className="collage-header">
-                                    {collageHeaderString}
-                                </Typography>
+                                <div style={{ display: "flex" }}>
+                                    <Typography variant='h3' className="collage-header">
+                                        {collageHeaderString}
+                                    </Typography>
 
-                                {mobile &&
                                     <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
                                         <IconButton
                                             title={this.state.showMenu ? "Show Menu" : "Close Menu"}
                                             onClick={() => this.setState({ showMenu: !this.state.showMenu })}
-                                            style={{ position: "absolute", right: "6vw", top: "10%" }}
                                         >
                                             <MoreVert fontSize="default" color="action" />
                                         </IconButton>
-                                    </ClickAwayListener>}
+                                    </ClickAwayListener>
+                                </div>
+
+                                <Grow unmountOnExit mountOnEnter in={this.state.showMenu}>
+                                    <Paper className="menu-container-popout">
+                                        <MenuList>
+                                            {collectionItems.map((option, index) => {
+                                                return (
+                                                    <MenuItem
+                                                        key={option}
+                                                        selected={index === this.state.selectedIndex}
+                                                        className="archive-selection"
+                                                        onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
+                                                    >
+                                                        {option}
+                                                    </MenuItem>
+                                                )
+                                            })}
+                                        </MenuList>
+                                    </Paper>
+                                </Grow>
 
                                 <Divider />
 
