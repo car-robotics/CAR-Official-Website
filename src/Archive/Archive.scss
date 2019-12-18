@@ -59,13 +59,18 @@
     overflow: hidden;
     animation-duration: 1s;
     position: relative;
+    margin-bottom: 3rem;
 }
 
-.close-backdrop-icon {
-    position: fixed !important;
+.close-backdrop-icon.MuiIconButton-root {
+    position: fixed;
     top: 1rem;
     left: 1rem;
-    background-color: $school-green !important;
+    background-color: $school-green;
+    &:hover {
+        background-color: $school-green;
+        box-shadow: 0 0 10px 0 $main-white;
+    }
 }
 
 .gridList {

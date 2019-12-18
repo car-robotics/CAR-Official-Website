@@ -32,10 +32,10 @@ export default function Lightbox(props: LightboxProps) {
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <Backdrop onClick={handleClickedClose} className={classes.backdrop} open={clicked}>
+                <Backdrop className={classes.backdrop} open={clicked}>
                     <IconButton
                         className="close-backdrop-icon"
-                        onClick={props.handleClickedClose}
+                        onClick={handleClickedClose}
                         title="Close"
                     >
                         <Close color="action" />

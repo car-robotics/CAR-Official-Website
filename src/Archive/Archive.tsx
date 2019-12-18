@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import './Archive.scss';
 import ImageGrid from './ImageGrid';
 import { ArchiveCategory, Tile, defaultTileProps } from "./ImageList";
-import { Typography, MenuList, MenuItem, IconButton, Grow, ClickAwayListener, Paper, Divider } from "@material-ui/core";
+import { Typography, MenuList, MenuItem, IconButton, Grow, ClickAwayListener, Paper, Divider, Tooltip } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 
@@ -80,12 +80,13 @@ export default class Archive extends Component<{}, ArchiveState> {
                                     </Typography>
 
                                     <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
-                                        <IconButton
-                                            title={this.state.showMenu ? "Show Menu" : "Close Menu"}
-                                            onClick={() => this.setState({ showMenu: !this.state.showMenu })}
-                                        >
-                                            <MoreVert fontSize="default" color="action" />
-                                        </IconButton>
+                                        <Tooltip enterDelay={500} title={this.state.showMenu ? "Close Menu" : "Show Menu"}>
+                                            <IconButton
+                                                onClick={() => this.setState({ showMenu: !this.state.showMenu })}
+                                            >
+                                                <MoreVert fontSize="default" color="action" />
+                                            </IconButton>
+                                        </Tooltip>
                                     </ClickAwayListener>
                                 </div>
 
