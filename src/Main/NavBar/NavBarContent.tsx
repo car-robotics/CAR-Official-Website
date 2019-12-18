@@ -58,7 +58,7 @@ export default function NavBarContent(props: NavBarContentProps) {
                     <Tab className="NavBarSelection" label="Outreach" component={Link} to="/outreach" />
                     <Tab className="NavBarSelection" label="Archive" component={Link} to="/archive" />
                 </Tabs>
-                <Tooltip title="Feedback Button">
+                <Tooltip title="Feedback">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>
                         <Feedback />
                     </IconButton>
