@@ -111,12 +111,6 @@ export const tileData: Tile[] = [
         orientation: "horizontal",
     },
     {
-        img: '/SprintReviews/EndofSprint2-1.jpg',
-        title: 'Sprint Reviews',
-        category: ArchiveCategory.sprintReview,
-        orientation: "vertical",
-    },
-    {
         img: '/SprintReviews/EndofSprint2-2.jpg',
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
@@ -135,13 +129,19 @@ export const tileData: Tile[] = [
         orientation: "vertical",
     },
     {
+        img: '/SprintReviews/EndofSprint2-7.jpg',
+        title: 'Sprint Reviews',
+        category: ArchiveCategory.sprintReview,
+        orientation: "vertical",
+    },
+    {
         img: '/SprintReviews/EndofSprint2-5.jpg',
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
         orientation: "horizontal",
     },
     {
-        img: '/SprintReviews/EndofSprint2-7.jpg',
+        img: '/SprintReviews/EndofSprint2-1.jpg',
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
         orientation: "vertical",

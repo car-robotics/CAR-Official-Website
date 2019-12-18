@@ -9,7 +9,7 @@ import { Tile } from "./ImageList";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         backdrop: {
-            zIndex: theme.zIndex.modal,
+            zIndex: theme.zIndex.drawer + 201,
             overflow: "auto",
             backgroundColor: "#000000bf",
             userSelect: "none",

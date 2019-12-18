@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Archive.scss';
-import AdvancedGridList from './ImageGrid';
+import ImageGrid from './ImageGrid';
 import { ArchiveCategory, Tile, defaultTileProps } from "./ImageList";
 import { Typography, MenuList, MenuItem, IconButton, Grow, ClickAwayListener, Paper, Divider } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
@@ -74,7 +74,7 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                             <Paper elevation={24} className="collage-container">
 
-                                <div style={{ display: "flex" }}>
+                                <div style={{ display: "flex", alignItems: "center" }}>
                                     <Typography variant='h3' className="collage-header">
                                         {collageHeaderString}
                                     </Typography>
@@ -108,9 +108,9 @@ export default class Archive extends Component<{}, ArchiveState> {
                                     </Paper>
                                 </Grow>
 
-                                <Divider />
+                                <Divider style={{ margin: mobile ? "0.5rem" : "1rem" }} />
 
-                                <AdvancedGridList
+                                <ImageGrid
                                     section={this.state.selectedIndex}
                                     handleImageClick={handleImageClick}
                                     handleScroll={handleScroll}

@@ -10,7 +10,7 @@
 }
 
 .content {
-    @include checkMobile(margin-top, 10vh, 5%);
+    @include checkMobile(margin-top, 10vh, 8vh);
 }
 
 .icon {
