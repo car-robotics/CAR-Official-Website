@@ -42,7 +42,7 @@
     width: fit-content;
     height: fit-content;
     position: absolute;
-    right: 5%;
+    right: 45%;
     z-index: 2;
     border-radius: 0.5rem !important;
     padding: 1rem;
@@ -89,5 +89,8 @@
     background-color: $school-gold;
     margin: -0.5rem auto auto auto;
     width: 50%;
+    position: absolute;
+    left: 25%;
+    z-index: 5;
     border-radius: 0.25rem;
 }
