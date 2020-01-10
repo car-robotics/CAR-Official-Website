@@ -24,7 +24,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
             >
                 {orgLink && <Tooltip title={`${orgName} - ${orgLink}`}>
                     <Link href={orgLink} target="_blank">
-                        <div className="container">
+                        <div className="card-cover-container">
                             <SponsorCardCover show={showCover} text={"Learn More"} />
                             <Image
                                 src={img}
@@ -49,7 +49,7 @@ export default function SponsorCard(props: SponsorsCardProps) {
                     </Link>
                 </Tooltip>}
 
-                {!orgLink && <div className="container">
+                {!orgLink && <div className="card-cover-container">
                     <SponsorCardCover show={showCover} text={orgName} />
                     <Image
                         src={img}

@@ -1,10 +1,17 @@
 @import "../Themes/Themes.scss";
 
+.container {
+    padding: 1rem;
+    margin: auto;
+    width: 85%;
+    @include checkMobile(max-width, 25rem, "");
+}
+
 .levelTitle {
     padding: 1rem 0;
 }
 
-.container {
+.card-cover-container {
     position: relative;
     width: 100%;
     height: 100%;

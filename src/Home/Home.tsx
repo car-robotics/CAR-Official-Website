@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Home() {
     const classes = useStyles();
 
-    const [isWindowHeightGreaterThanWidth, setIsWindowHeightGreaterThanWidth] = React.useState<boolean>();
+    const [isWindowHeightGreaterThanWidth, setIsWindowHeightGreaterThanWidth] = React.useState<boolean>(window.innerHeight > window.innerWidth);
 
     DocumentTitle({ title: "Home" });
 

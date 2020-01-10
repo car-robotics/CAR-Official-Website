@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, makeStyles, createStyles, Theme, Paper, Divider } from "@material-ui/core";
+import { Typography, Paper, Divider } from "@material-ui/core";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import SponsorCard from "./SponsorCard";
 import LevelCard from "./LevelCard";
@@ -7,19 +7,7 @@ import PageFade from "../Utils/PageFade";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        container: {
-            padding: "1rem",
-            margin: "auto",
-            width: "85%",
-        },
-    }),
-);
-
-
 export default function Sponsors() {
-    const classes = useStyles();
 
     DocumentTitle({ title: "Sponsors" });
 
@@ -29,7 +17,7 @@ export default function Sponsors() {
                 <PageFade>
                     <div>
 
-                        <Paper elevation={24} className={classes.container} >
+                        <Paper elevation={24} className="container" >
                             <Typography align="center" variant="h2" >
                                 Thank You To Our Sponsors For Their Support!
                             </Typography>
@@ -86,7 +74,7 @@ export default function Sponsors() {
 
                         </Paper>
 
-                        <Paper elevation={24} className={classes.container} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%" }}>
+                        <Paper elevation={24} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%", padding: "1rem" }}>
                             <Typography align="center" variant="h3" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
                                 Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                                 <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />

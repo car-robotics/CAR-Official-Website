@@ -10,7 +10,7 @@
 
 .electrical {
     @include homePageConstants(url("../Images/Electrical.jpg"));
-    @include checkMobile(margin-top, -10vh, -8vh);
+    margin-top: -5rem;
 }
 
 .mechanical {
