@@ -81,7 +81,7 @@ function Competition() {
                                 :
                                 <object
                                     title="rules"
-                                    data="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
+                                    data="/Rules.pdf"
                                     type="application/pdf"
                                     width="100%"
                                     style={{ height: "85vh" }}

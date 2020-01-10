@@ -2,9 +2,9 @@ import React from "react";
 import { Typography, makeStyles, Theme, createStyles } from "@material-ui/core";
 import Slide, { SlideProps } from "@material-ui/core/Slide";
 import Image from 'material-ui-image';
-import Robot from "../Images/Robot2.jpg";
-import SprintReview23 from "../Images/SprintReviews/EndofSprint2-3.jpg";
-import ArduinoWksp from "../Images/Outreach/ArduinoWksp-2.jpg";
+// import Robot from "/Images/Robot2.jpg";
+// import SprintReview23 from "/Images/SprintReviews/EndofSprint2-3.jpg";
+// import ArduinoWksp from "/Images/Outreach/ArduinoWksp-2.jpg";
 import Logo from "../Images/CARLogoPrimary.png";
 import "./About.scss";
 
@@ -44,17 +44,17 @@ const SlideShowContentItems = [
     },
     {
         text: "We educate other students through workshops and demonstrations.",
-        img: ArduinoWksp,
+        img: "/Images/Outreach/ArduinoWksp-2.jpg",
         width: "35%",
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned.",
-        img: SprintReview23,
+        img: "/Images/SprintReviews/EndofSprint2-3.jpg",
         width: "35%",
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region.",
-        img: Robot,
+        img: "/Images/Robot2.jpg",
         width: "35%",
     }
 ];
@@ -104,7 +104,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         boxShadow: contentObject.img !== IEEE ? "0px 0px 15px black" : "",
                                         position: "inherit",
                                         width: "100%",
-                                        maxWidth: "100%",
+                                        maxHeight: "35rem",
                                         height: "",
                                     }}
                                     aspectRatio={4 / 3}

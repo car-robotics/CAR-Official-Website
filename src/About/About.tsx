@@ -4,7 +4,7 @@ import NathanL from "../Images/Officers/NathanL.jpg";
 import SamL from "../Images/Officers/SamL.jpg";
 import NoelM from "../Images/Officers/NoelM.jpg";
 import MattW from "../Images/Officers/MattW.jpg";
-import NathanielB from "../Images/Officers/NathanielB.gif";
+import NathanielB from "../Images/Officers/NathanielB.jpg";
 import Matt from "../Images/DevTeam/Matt.jpg";
 import Ash from "../Images/DevTeam/Ash.jpg";
 import Pedro from "../Images/DevTeam/Pedro.jpg";

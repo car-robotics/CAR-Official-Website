@@ -44,7 +44,7 @@ export default function Home() {
                                 imageStyle={{
                                     position: "relative",
                                     display: "block",
-                                    width: mobile ? "90%" : "50rem",
+                                    width: mobile ? "90%" : "35vw",
                                     margin: "2rem auto",
                                 }}
                             />

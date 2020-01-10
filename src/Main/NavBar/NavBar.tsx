@@ -66,6 +66,7 @@ export default function NavBar() {
                     anchorOrigin={{ vertical: "center", horizontal: "center" }}
                     open={showFeedback}
                     onClose={handleFeedbackClose}
+                    style={{ top: "2rem" }}
                 >
                     <iframe
                         src="https://docs.google.com/forms/d/e/1FAIpQLSeqmdcJt44fExwl5vgHrPZiYbLhaC70UGmg38OEvopaNqbISQ/viewform?embedded=true"
