@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Home() {
     const classes = useStyles();
 
+    const [isWindowHeightGreaterThanWidth, setIsWindowHeightGreaterThanWidth] = React.useState<boolean>();
+
     DocumentTitle({ title: "Home" });
 
     const missionStatement =
@@ -28,6 +30,26 @@ export default function Home() {
     From the novice to the experienced, we welcome all students who are excited
     to learn more about the field of robotics and apply the concepts they learn
     in the classroom to real world applications.`
+
+    let logo_height: string, logo_width: string;
+
+    if (isWindowHeightGreaterThanWidth){
+        logo_height = "";
+        logo_width = "90%";
+    } else {
+        logo_height = "75vh";
+        logo_width = "";
+    }
+
+    const checkWindowSize = () => {
+        if (window.innerHeight < window.innerWidth && isWindowHeightGreaterThanWidth){
+            setIsWindowHeightGreaterThanWidth(false);
+        } else if (window.innerHeight > window.innerWidth && !isWindowHeightGreaterThanWidth){
+            setIsWindowHeightGreaterThanWidth(true);
+        }
+    }
+
+    window.addEventListener("resize", checkWindowSize);
 
     return (
         <MobileContext.Consumer>
@@ -44,8 +66,8 @@ export default function Home() {
                                 imageStyle={{
                                     position: "relative",
                                     display: "block",
-                                    width: "",
-                                    height: "75vh",
+                                    width: logo_width,
+                                    height: logo_height,
                                     margin: "2rem auto",
                                 }}
                             />
