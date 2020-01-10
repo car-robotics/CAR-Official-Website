@@ -42,7 +42,7 @@
     width: fit-content;
     height: fit-content;
     position: absolute;
-    right: 45%;
+    @include checkMobile(right, "", 45%);
     z-index: 2;
     border-radius: 0.5rem !important;
     padding: 1rem;
