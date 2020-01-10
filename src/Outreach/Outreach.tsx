@@ -38,7 +38,7 @@ export default function Outreach() {
 
     const getData = (category: string) => {
         let data: string[] = []
-        for (let i = 0; i < tileData.length; i++) {
+        for (let i = 0; i < tileData.length && data.length < 3; i++) {
             if (tileData[i].title === category) data.push(tileData[i].img);
         }
         return data;
