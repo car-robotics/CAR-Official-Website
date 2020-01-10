@@ -38,7 +38,7 @@ export default function ImageGrid(props: ImageGridProps) {
   return (
     <div className={classes.root} onScroll={(e) => props.handleScroll(e)}>
       <GridList spacing={1} cellHeight="auto" className="gridList">
-        {tileData.map(tile => (
+        {tileData.map((tile, index) => (
           (tile.category === props.section || props.section === ArchiveCategory.all) &&
           <GridListTile
             key={tile.img}
@@ -51,7 +51,9 @@ export default function ImageGrid(props: ImageGridProps) {
               onClick={() => props.handleImageClick(tile)}
               style={{
                 backgroundColor: "transparent",
-                paddingTop: tile.orientation === "horizontal" ? "calc(75%)" : "calc(100%)",
+                paddingTop:
+                  index === 0 ? "40%" :
+                    tile.orientation === "horizontal" ? "75%" : "100%",
               }}
               imageStyle={{
                 height: "",

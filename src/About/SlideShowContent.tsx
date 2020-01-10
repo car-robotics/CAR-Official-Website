@@ -2,9 +2,6 @@ import React from "react";
 import { Typography, makeStyles, Theme, createStyles } from "@material-ui/core";
 import Slide, { SlideProps } from "@material-ui/core/Slide";
 import Image from 'material-ui-image';
-// import Robot from "/Images/Robot2.jpg";
-// import SprintReview23 from "/Images/SprintReviews/EndofSprint2-3.jpg";
-// import ArduinoWksp from "/Images/Outreach/ArduinoWksp-2.jpg";
 import Logo from "../Images/CARLogoPrimary.png";
 import "./About.scss";
 
@@ -44,17 +41,17 @@ const SlideShowContentItems = [
     },
     {
         text: "We educate other students through workshops and demonstrations.",
-        img: "/Images/Outreach/ArduinoWksp-2.jpg",
+        img: "https://drive.google.com/uc?export=view&id=1AVeRmitYuQB4BQdR4NOg59dGbaUxzVpv",
         width: "35%",
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned.",
-        img: "/Images/SprintReviews/EndofSprint2-3.jpg",
+        img: "https://drive.google.com/uc?export=view&id=1i-WJpFZ6KzuXA5SQG046VmU8-92O0TmR",
         width: "35%",
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region.",
-        img: "/Images/Robot2.jpg",
+        img: "https://drive.google.com/uc?export=view&id=15WVitc2Vo_QnkJqFmrMxNm2LLTHmTBo_",
         width: "35%",
     }
 ];
