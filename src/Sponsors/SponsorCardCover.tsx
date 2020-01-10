@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function SponsorCardCover(props: SponsorCardCoverProps) {
     const classes = useStyles();
     return (
-        <Slide in={props.show} direction="right" mountOnEnter unmountOnExit timeout={{ enter: 750, exit: 1000 }}>
+        <Slide in={props.show} direction="right" mountOnEnter unmountOnExit timeout={{ enter: 450, exit: 1000 }}>
             <div className="sponsorCover">
                 <Paper className={classes.container} >
                     <Typography align="center" variant="h4">

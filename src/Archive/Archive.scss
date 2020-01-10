@@ -2,6 +2,7 @@
 
 .collage-header {
     text-align: center;
+    flex: 2;
 }
 
 .archivePageContent {
@@ -9,7 +10,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .archive-selection.MuiMenuItem-root {
@@ -41,8 +42,7 @@
     width: fit-content;
     height: fit-content;
     position: absolute;
-    right: 15%;
-    top: 12%;
+    @include checkMobile(right, "", 45%);
     z-index: 2;
     border-radius: 0.5rem !important;
     padding: 1rem;
@@ -53,23 +53,32 @@
     @include checkMobile(
         (padding, width, animation-name),
         (1rem, 85%, fadeIn),
-        ("1rem 3rem", 70%, slideInRight)
+        ("1rem 3rem", 90%, slideInUp)
     );
     height: 85vh;
     overflow: hidden;
     animation-duration: 1s;
+    position: relative;
+    margin-bottom: 3rem;
 }
 
-.close-backdrop-icon {
-    position: fixed !important;
+.close-backdrop-icon.MuiIconButton-root {
+    position: fixed;
     top: 1rem;
     left: 1rem;
-    background-color: $school-green !important;
+    background-color: $school-green;
+    &:hover {
+        background-color: $school-green;
+        box-shadow: 0 0 10px 0 $main-white;
+    }
 }
 
 .gridList {
-    @include checkMobile(height, 80vh, 100%);
-    width: 100%;
+    @include checkMobile(
+        (height, width), 
+        (80vh, 100%), 
+        (100%, 75%)
+    );
     transform: translateZ(0);
     scroll-behavior: smooth;
     cursor: pointer;
@@ -80,5 +89,8 @@
     background-color: $school-gold;
     margin: -0.5rem auto auto auto;
     width: 50%;
+    position: absolute;
+    left: 25%;
+    z-index: 5;
     border-radius: 0.25rem;
 }

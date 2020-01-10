@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import './Archive.scss';
-import AdvancedGridList from './ImageGrid';
+import ImageGrid from './ImageGrid';
 import { ArchiveCategory, Tile, defaultTileProps } from "./ImageList";
-import { Typography, MenuList, MenuItem, IconButton, Grow, ClickAwayListener, Paper, Divider } from "@material-ui/core";
+import { Typography, MenuList, MenuItem, Grow, ClickAwayListener, Paper, Divider, Tooltip, Button } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 
 import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
 import { MobileContext } from "../Context/MobileContext";
-import { MoreVert } from "@material-ui/icons";
 
 interface ArchiveState {
     selectedIndex: number,
@@ -72,62 +71,48 @@ export default class Archive extends Component<{}, ArchiveState> {
                                 handleClickedClose={() => this.setState({ clickedImage: { clicked: false, imgProps: defaultTileProps } })}
                             />
 
-                            {!mobile && <Paper elevation={24} className="menu-container">
-                                <MenuList>
-                                    {collectionItems.map((option, index) => {
-                                        return (
-                                            <MenuItem
-                                                key={option}
-                                                selected={index === this.state.selectedIndex}
-                                                className="archive-selection"
-                                                onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
-                                            >
-                                                {option}
-                                            </MenuItem>
-                                        )
-                                    })}
-                                </MenuList>
-                            </Paper>}
-
-                            <Grow in={mobile && this.state.showMenu}>
-                                <Paper className="menu-container-popout">
-                                    <MenuList>
-                                        {collectionItems.map((option, index) => {
-                                            return (
-                                                <MenuItem
-                                                    key={option}
-                                                    selected={index === this.state.selectedIndex}
-                                                    className="archive-selection"
-                                                    onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
-                                                >
-                                                    {option}
-                                                </MenuItem>
-                                            )
-                                        })}
-                                    </MenuList>
-                                </Paper>
-                            </Grow>
-
                             <Paper elevation={24} className="collage-container">
 
-                                <Typography variant='h3' className="collage-header">
-                                    {collageHeaderString}
-                                </Typography>
-
-                                {mobile &&
+                                <div style={{ display: "flex", alignItems: "center" }}>
                                     <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
-                                        <IconButton
-                                            title={this.state.showMenu ? "Show Menu" : "Close Menu"}
-                                            onClick={() => this.setState({ showMenu: !this.state.showMenu })}
-                                            style={{ position: "absolute", right: "6vw", top: "10%" }}
-                                        >
-                                            <MoreVert fontSize="default" color="action" />
-                                        </IconButton>
-                                    </ClickAwayListener>}
+                                        <Tooltip title="Picture Filter Menu" enterDelay={300}>
+                                            <Button
+                                                onClick={() => this.setState({ showMenu: !this.state.showMenu })}
+                                                style={{
+                                                    margin: "auto",
+                                                    textTransform: "none"
+                                                }}
+                                            >
+                                                <Typography variant='h3' className="collage-header">
+                                                    {collageHeaderString}
+                                                </Typography>
+                                            </Button>
+                                        </Tooltip>
+                                    </ClickAwayListener>
+                                </div>
 
-                                <Divider />
+                                <Grow unmountOnExit mountOnEnter in={this.state.showMenu}>
+                                    <Paper className="menu-container-popout">
+                                        <MenuList>
+                                            {collectionItems.map((option, index) => {
+                                                return (
+                                                    <MenuItem
+                                                        key={option}
+                                                        selected={index === this.state.selectedIndex}
+                                                        className="archive-selection"
+                                                        onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
+                                                    >
+                                                        {option}
+                                                    </MenuItem>
+                                                )
+                                            })}
+                                        </MenuList>
+                                    </Paper>
+                                </Grow>
 
-                                <AdvancedGridList
+                                <Divider style={{ margin: mobile ? "0.5rem" : "1rem" }} />
+
+                                <ImageGrid
                                     section={this.state.selectedIndex}
                                     handleImageClick={handleImageClick}
                                     handleScroll={handleScroll}

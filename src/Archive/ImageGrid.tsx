@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme: Theme) =>
     titleBar: {
       background:
         'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.25))',
-      height: "15%",
+      height: "fit-content",
       fontFamily: "Inconsolata",
+      padding: "0.5rem",
     },
   }),
 );
@@ -31,21 +32,28 @@ interface ImageGridProps {
   mobile: boolean;
 }
 
-export default function AdvancedGridList(props: ImageGridProps) {
+export default function ImageGrid(props: ImageGridProps) {
   const classes = useStyles();
 
   return (
     <div className={classes.root} onScroll={(e) => props.handleScroll(e)}>
       <GridList spacing={1} cellHeight="auto" className="gridList">
-        {tileData.map(tile => (
+        {tileData.map((tile, index) => (
           (tile.category === props.section || props.section === ArchiveCategory.all) &&
-          <GridListTile key={tile.img} cols={tile.orientation === "horizontal" ? 2 : 1} rows={tile.orientation === "vertical" ? 2 : 1} >
+          <GridListTile
+            key={tile.img}
+            cols={tile.orientation === "horizontal" ? 2 : 1}
+            rows={tile.orientation === "horizontal" ? 1 : 2}
+            style={{ padding: "0.25rem" }}
+          >
             <Image
               src={tile.img}
               onClick={() => props.handleImageClick(tile)}
               style={{
                 backgroundColor: "transparent",
-                paddingTop: "calc(50%)"
+                paddingTop:
+                  index === 0 ? "40%" :
+                    tile.orientation === "horizontal" ? "75%" : "100%",
               }}
               imageStyle={{
                 height: "",

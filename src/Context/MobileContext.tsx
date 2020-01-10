@@ -5,7 +5,7 @@ export const MobileContext = React.createContext(false);
 
 export default function MobileContextProvider(props: any) {
     return (
-        <MobileContext.Provider value={useCurrentWidth() < 1000}>
+        <MobileContext.Provider value={useCurrentWidth() < 1250}>
             {props.children}
         </MobileContext.Provider>
     );

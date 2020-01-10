@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: "0.25rem",
         },
         officerPicture: {
-            height: "30vh",
+            height: "40vh",
             backgroundColor: "#424242",
         },
         officerText: {

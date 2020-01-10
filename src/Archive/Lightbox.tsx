@@ -9,7 +9,7 @@ import { Tile } from "./ImageList";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         backdrop: {
-            zIndex: theme.zIndex.modal,
+            zIndex: theme.zIndex.drawer + 201,
             overflow: "auto",
             backgroundColor: "#000000bf",
             userSelect: "none",
@@ -29,19 +29,29 @@ export default function Lightbox(props: LightboxProps) {
 
     const { clicked, clickedImg, handleClickedClose } = props;
 
+    let image_width: string, image_height: string;
+
+    if (clickedImg.orientation === "vertical") {
+        image_width = "";
+        image_height = "90vh";
+    } else {
+        image_height = "";
+        image_width = window.innerHeight > window.innerWidth ? "95vw" : "60vw";
+    }
+
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <Backdrop onClick={handleClickedClose} className={classes.backdrop} open={clicked}>
+                <Backdrop className={classes.backdrop} open={clicked}>
                     <IconButton
                         className="close-backdrop-icon"
-                        onClick={props.handleClickedClose}
+                        onClick={handleClickedClose}
                         title="Close"
                     >
                         <Close color="action" />
                     </IconButton>
 
-                    <div>
+                    <div style={{ position: "relative" }}>
 
                         <Image
                             src={clickedImg.img}
@@ -49,13 +59,13 @@ export default function Lightbox(props: LightboxProps) {
                                 position: "",
                                 paddingTop: "",
                                 backgroundColor: "transparent",
-                                width: clickedImg.orientation === "horizontal" ? (mobile ? "90%" : "60%") : "fit-content",
+                                width: image_width,
+                                height: image_height,
                                 margin: "auto",
                             }}
                             imageStyle={{
-                                height: clickedImg.orientation === "horizontal" ? "" : "80vh",
+                                height: image_height,
                                 width: clickedImg.orientation === "horizontal" ? "100%" : "",
-                                maxWidth: clickedImg.orientation === "horizontal" ? "100%" : "95%",
                                 position: "",
                                 border: `0.2rem solid ${COLORS.schoolGold}`,
                                 borderRadius: "0.25rem",
