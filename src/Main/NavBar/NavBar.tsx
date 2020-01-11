@@ -4,6 +4,7 @@ import { Menu } from "@material-ui/icons";
 import { Breakpoint } from "react-socks";
 import NavBarContent from "./NavBarContent";
 import "../Main.scss";
+import { COLORS } from "../../Utils/COLORS";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -26,6 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
             alignSelf: "center",
             margin: "auto",
             padding: "0.5rem",
+            color: COLORS.schoolGold,
         },
     }),
 );

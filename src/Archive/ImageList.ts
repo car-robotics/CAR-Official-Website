@@ -36,7 +36,7 @@ export const tileData: Tile[] = [
         img: 'https://drive.google.com/uc?export=view&id=15WVitc2Vo_QnkJqFmrMxNm2LLTHmTBo_',
         title: 'Robot',
         category: ArchiveCategory.robot,
-        orientation: "vertical",
+        orientation: "horizontal",
     },
     {
         img: 'https://drive.google.com/uc?export=view&id=1L_yE-z63yWyykQFGuj9slNJKXvw87GCO',

@@ -1,5 +1,5 @@
 import React from "react";
-import { Backdrop, IconButton, makeStyles, createStyles, Theme, Typography, Zoom, Fade } from "@material-ui/core";
+import { Backdrop, IconButton, makeStyles, createStyles, Theme, Typography, Zoom } from "@material-ui/core";
 import { Close } from "@material-ui/icons";
 import { MobileContext } from "../Context/MobileContext";
 import { Tile } from "./ImageList";
@@ -42,36 +42,33 @@ export default function Lightbox(props: LightboxProps) {
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <Fade mountOnEnter unmountOnExit in={clicked} timeout={{ enter: 500, exit: 500 }}>
-                    <Backdrop className={classes.backdrop} open={true}>
-                        <IconButton
-                            className="close-backdrop-icon"
-                            onClick={handleClickedClose}
-                            title="Close"
-                        >
-                            <Close color="action" />
-                        </IconButton>
+                <Backdrop unmountOnExit mountOnEnter className={classes.backdrop} open={clicked} transitionDuration={500}>
+                    <IconButton
+                        className="close-backdrop-icon"
+                        onClick={handleClickedClose}
+                        title="Close"
+                    >
+                        <Close color="action" />
+                    </IconButton>
 
-                        <Zoom mountOnEnter unmountOnExit in={clicked} timeout={{ enter: 500 }}>
-                            <div>
-                                <img
-                                    alt={clickedImg.title}
-                                    src={clickedImg.img}
-                                    style={{
-                                        width: image_width,
-                                        height: image_height,
-                                        border: `0.25rem solid ${COLORS.schoolGold}`
-                                    }}
-                                />
+                    <Zoom mountOnEnter unmountOnExit in={clicked} timeout={{ enter: 500 }}>
+                        <div>
+                            <img
+                                alt={clickedImg.title}
+                                src={clickedImg.img}
+                                style={{
+                                    width: image_width,
+                                    height: image_height,
+                                    border: `0.25rem solid ${COLORS.schoolGold}`
+                                }}
+                            />
 
-                                <Typography variant="h4" align="center" className="lightBox-text" >
-                                    {clickedImg.title}
-                                </Typography>
-                            </div>
-                        </Zoom>
-
-                    </Backdrop>
-                </Fade>
+                            <Typography variant="h4" align="center" className="lightBox-text" >
+                                {clickedImg.title}
+                            </Typography>
+                        </div>
+                    </Zoom>
+                </Backdrop>
             )}
         </MobileContext.Consumer>
     );
