@@ -28,9 +28,8 @@ export default function EventSection(props: EventSectionProps) {
                         <div className="img">
                             {props.images.map((img) => {
                                 return (
-                                    <Tooltip title="Click to enlarge">
+                                    <Tooltip key={img.img} title="Click to enlarge">
                                         <Image
-                                            key={img.img}
                                             onClick={() => props.onClick(img)}
                                             style={{
                                                 textAlign: "center",

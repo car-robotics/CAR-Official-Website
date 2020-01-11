@@ -37,7 +37,7 @@ export default function NavBar() {
 
     const handleFeedbackClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         setAnchorEl(event.currentTarget);
-        setShowFeedback(true);
+        setShowFeedback(!showFeedback);
     }
 
     const handleFeedbackClose = () => {

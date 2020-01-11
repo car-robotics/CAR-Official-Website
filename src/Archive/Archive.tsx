@@ -100,7 +100,13 @@ export default class Archive extends Component<{}, ArchiveState> {
                                                         key={option}
                                                         selected={index === this.state.selectedIndex}
                                                         className="archive-selection"
-                                                        onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
+                                                        onClick={
+                                                            () => {
+                                                                // Scroll to top of image collage on menu selection
+                                                                document.getElementById('image-collage')!.scrollTop = 0;
+                                                                this.setState({ selectedIndex: index });
+                                                            }
+                                                        }
                                                     >
                                                         {option}
                                                     </MenuItem>
@@ -121,8 +127,6 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                                 <ScrollToTop
                                     show={this.state.showSrollTopIcon}
-                                    forceScrollToTop={this.state.forceScrollToTop}
-                                    resetForceToScroll={() => this.setState({ forceScrollToTop: false })}
                                     style={{ padding: mobile ? "6px" : "" }}
                                 />
                             </Paper>
