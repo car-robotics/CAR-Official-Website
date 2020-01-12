@@ -3,7 +3,6 @@ import Image from "material-ui-image";
 import { Typography, Paper, Divider, Tooltip } from "@material-ui/core";
 import "./Outreach.scss";
 
-import { COLORS } from "../Utils/COLORS";
 import { MobileContext } from "../Context/MobileContext";
 import { Tile } from "../Archive/ImageList";
 
@@ -41,7 +40,6 @@ export default function EventSection(props: EventSectionProps) {
                                                 width: mobile ? "20rem" : "40rem",
                                                 height: mobile ? "15rem" : "30rem",
                                                 margin: "0.75rem",
-                                                boxShadow: `0px 0px 10px ${COLORS.schoolGold}`,
                                                 borderRadius: "0.5rem",
                                             }}
                                             aspectRatio={4 / 3}

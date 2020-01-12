@@ -19,6 +19,7 @@
 .card-container {
     margin: 0 auto;
     align-items: center;
+    flex-wrap: wrap;
     @include checkMobile(
         (display, justify-content, width), 
         ("", "", 90%), 

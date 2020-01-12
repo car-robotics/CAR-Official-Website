@@ -68,6 +68,7 @@ export default function OfficerCard(props: OfficerCardProps) {
                         className={classes.officerCard}
                         style={{
                             flexBasis: mobile ? "" : "20%",
+                            minWidth: "17rem",
                             margin: mobile ? "1rem auto" : "1rem",
                         }}
                     >

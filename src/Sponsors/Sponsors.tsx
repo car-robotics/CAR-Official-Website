@@ -38,10 +38,6 @@ export default function Sponsors() {
                                         orgName={"SolidWorks"}
                                         orgLink={"https://www.solidworks.com/"}
                                     />
-                                    <SponsorCard
-                                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                                        orgName={"Your logo here!"}
-                                    />
                                 </div>
                             </div>
 
@@ -53,10 +49,6 @@ export default function Sponsors() {
                                         img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
                                         orgName={"Envyntus Partners"}
                                         orgLink={"https://enventyspartners.com/"}
-                                    />
-                                    <SponsorCard
-                                        img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
-                                        orgName={"Your logo here!"}
                                     />
                                 </div>
                             </div>

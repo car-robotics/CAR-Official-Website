@@ -46,9 +46,9 @@ export default class Archive extends Component<{}, ArchiveState> {
 
         const handleScroll = (e: React.UIEvent<HTMLElement>) => {
             const collageDiv = e.currentTarget.children[0];
-            if (collageDiv.scrollTop > 500) {
+            if (collageDiv.scrollTop > 500 && !this.state.showSrollTopIcon) {
                 this.setState({ showSrollTopIcon: true })
-            } else if (this.state.showSrollTopIcon === true) {
+            } else if (collageDiv.scrollTop <= 500 && this.state.showSrollTopIcon) {
                 this.setState({ showSrollTopIcon: false })
             }
         }
