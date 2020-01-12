@@ -111,7 +111,6 @@ export default function NavBar() {
                                 title="Feedback"
                                 width="640px"
                                 height="765"
-                                style={{ width: "90vw", height: "77vh", border: 0 }}
                             />
                         </Popover>
                     </>}
