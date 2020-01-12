@@ -51,12 +51,12 @@ export default function NavBarContent(props: NavBarContentProps) {
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
                 <Tabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab className="NavBarSelection" label="Home" component={Link} to="/" />
-                    <Tab className="NavBarSelection" label="About" component={Link} to="/about" />
-                    <Tab className="NavBarSelection" label="Sponsors" component={Link} to="/sponsors" />
-                    <Tab className="NavBarSelection" label="Competition" component={Link} to="/competition" />
-                    <Tab className="NavBarSelection" label="Outreach" component={Link} to="/outreach" />
-                    <Tab className="NavBarSelection" label="Archive" component={Link} to="/archive" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Home" component={Link} to="/" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="About" component={Link} to="/about" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Sponsors" component={Link} to="/sponsors" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Competition" component={Link} to="/competition" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Outreach" component={Link} to="/outreach" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Archive" component={Link} to="/archive" />
                 </Tabs>
                 <Tooltip title="Feedback">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>

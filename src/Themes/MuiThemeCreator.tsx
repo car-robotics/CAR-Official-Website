@@ -64,8 +64,11 @@ export const theme = responsiveFontSizes(createMuiTheme({
             },
             indicator: {
                 backgroundColor: COLORS.schoolGold,
-                height: "4px",
+                height: "2rem",
                 width: "4px",
+                bottom: "10px",
+                zIndex: -1,
+                borderRadius: "1rem",
             },
         },
         MuiAppBar: {

@@ -6,7 +6,11 @@
 }
 
 .NavBarSelection.Mui-selected {
-    color: $school-gold;
+    @include checkMobile(color, $school-gold, $dark-color);
+}
+
+.NavBarSelection {
+    transition: color linear 250ms;
 }
 
 .content {
