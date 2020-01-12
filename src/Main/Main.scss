@@ -11,6 +11,9 @@
 
 .NavBarSelection {
     transition: color linear 250ms;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .content {
