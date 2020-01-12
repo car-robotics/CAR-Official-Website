@@ -117,7 +117,7 @@ function About() {
                         <Paper elevation={24} className="about-website-container">
                             <Typography align="center" variant="h2" >
                                 About the Website
-                                </Typography>
+                            </Typography>
                             <Divider />
                             <ScrollToTopButton
                                 onClick={() => setShowAboutWebsite(!showAboutWebsite)}
