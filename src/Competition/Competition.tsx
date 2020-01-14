@@ -67,10 +67,10 @@ function Competition() {
                             <Divider />
                             {mobile ?
                                 <div className={classes.mobileRulesBackground} >
-                                    <Tooltip title="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf">
+                                    <Tooltip title="car-robotics.com/Rules.pdf">
                                         <Button
                                             target="_blank"
-                                            href="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
+                                            href="http://car-robotics.com/Rules.pdf"
                                             className={classes.rulesButton}
                                         >
                                             <><PictureAsPdf color="action" className={classes.rulesPdfIcon} /></>

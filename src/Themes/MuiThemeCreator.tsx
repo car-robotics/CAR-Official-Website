@@ -55,8 +55,7 @@ export const theme = responsiveFontSizes(createMuiTheme({
         },
         MuiPopover: {
             paper: {
-                backgroundColor: "transparent",
-                boxShadow: "none",
+                backgroundColor: COLORS.mainWhite,
             },
         },
         MuiTabs: {
