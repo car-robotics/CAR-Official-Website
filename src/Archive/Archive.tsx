@@ -116,7 +116,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                     </Paper>
                                 </Grow>
 
-                                <Divider style={{ margin: mobile ? "0.5rem" : "1rem" }} />
+                                <Divider style={{ margin: "0", marginBottom: "0.5rem" }} />
 
                                 <ImageGrid
                                     section={this.state.selectedIndex}
