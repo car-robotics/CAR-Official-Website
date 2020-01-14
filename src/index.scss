@@ -4,7 +4,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: radial-gradient($school-gold, $school-green);
+  // background: linear-gradient(to bottom right, $school-green, $school-gold);
+  background: url(Images/fancy-background.png);
+  background-size: contain;
 }
 
 ::-webkit-scrollbar {

@@ -3,7 +3,7 @@ import { AppBar, makeStyles, Theme, createStyles, Popover, IconButton, Typograph
 import { Menu } from "@material-ui/icons";
 import NavBarContent from "./NavBarContent";
 import "../Main.scss";
-import { COLORS } from "../../Utils/COLORS";
+import { COLORS } from "../../Themes/COLORS";
 import { MobileContext } from "../../Context/MobileContext";
 
 const useStyles = makeStyles((theme: Theme) =>

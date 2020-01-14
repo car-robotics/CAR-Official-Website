@@ -4,7 +4,7 @@ import { Close } from "@material-ui/icons";
 import { MobileContext } from "../Context/MobileContext";
 import { Tile } from "./ImageList";
 import "./Archive.scss";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "../Themes/COLORS";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

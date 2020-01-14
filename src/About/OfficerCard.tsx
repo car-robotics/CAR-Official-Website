@@ -11,7 +11,7 @@ import {
     Divider,
     Tooltip
 } from "@material-ui/core";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "../Themes/COLORS";
 import { MobileContext } from "../Context/MobileContext";
 
 export enum Officer {

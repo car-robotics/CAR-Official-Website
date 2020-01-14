@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Card, Tooltip } from "@material-ui/core";
 import Image from "material-ui-image";
 import "./Sponsors.scss";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "../Themes/COLORS";
 import SponsorCardCover from "./SponsorCardCover";
 
 interface SponsorsCardProps {

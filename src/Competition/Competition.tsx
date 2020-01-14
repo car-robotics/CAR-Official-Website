@@ -7,7 +7,7 @@ import { DocumentTitle } from "../Utils/DocumentTitle";
 import "./Competition.scss";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "../Themes/COLORS";
 import { PictureAsPdf } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
