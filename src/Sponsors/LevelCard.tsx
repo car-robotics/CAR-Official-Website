@@ -52,7 +52,7 @@ export default function LevelCard(props: LevelCardProps) {
             "Same benefits as Bronze",
         ];
     } else {
-        cardTitle = <>Bronze Level<br />($-100)</>;
+        cardTitle = <>Bronze Level<br />($50+)</>;
         backgroundGradient = "linear-gradient(to top right, #5f3d00, #bda780, #6d4700)";
         listItems = [
             "A spot here on the sponsors page",

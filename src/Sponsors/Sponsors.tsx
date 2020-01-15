@@ -50,6 +50,11 @@ export default function Sponsors() {
                                         orgName={"Envyntus Partners"}
                                         orgLink={"https://enventyspartners.com/"}
                                     />
+                                    <SponsorCard
+                                        img={"https://drive.google.com/uc?export=view&id=1mCYLxvfSS1UQHPbeNTDPV2BPph6y01Q9"}
+                                        orgName={"UNCC Makerspace"}
+                                        orgLink={"https://sites.google.com/uncc.edu/makerspace/home"}
+                                    />
                                 </div>
                             </div>
 
