@@ -29,7 +29,7 @@ export default function Slideshow() {
     }
 
     let slideIndicators: ReactElement[] = [];
-    for (var i = 0; i < 5; i++) {
+    for (let i: number = 0; i < 5; i++) {
         slideIndicators.push(
             <SvgIcon key={"slideIndicators" + i}>
                 <circle
@@ -39,6 +39,7 @@ export default function Slideshow() {
                     stroke={COLORS.schoolGold}
                     fill={slideIndex === i ? COLORS.darkColor : COLORS.schoolGold}
                     style={{ transition: "fill linear 250ms" }}
+                    onClick={() => { setSlideDirection("up"); setSlideIndex(i)}}
                 >
                 </circle>
             </SvgIcon>
