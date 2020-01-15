@@ -20,8 +20,9 @@ const useStyles = makeStyles((theme: Theme) =>
         hamburgerMenu: {
             position: "absolute",
             padding: "6px",
-            top: "10%",
-            left: "1%",
+            top: "3px",
+            bottom: "3px",
+            left: "6px",
         },
         mobileNavBar: {
             alignSelf: "center",
