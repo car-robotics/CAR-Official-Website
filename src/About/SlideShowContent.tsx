@@ -117,6 +117,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         height: "",
                                     }}
                                     aspectRatio={4 / 3}
+                                    disableError
                                     src={contentObject.img}
                                 />
                             </div>

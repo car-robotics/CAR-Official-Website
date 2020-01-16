@@ -48,6 +48,7 @@ export default function ImageGrid(props: ImageGridProps) {
           >
             <Image
               src={tile.img}
+              disableError
               onClick={() => props.handleImageClick(tile)}
               style={{
                 backgroundColor: "transparent",

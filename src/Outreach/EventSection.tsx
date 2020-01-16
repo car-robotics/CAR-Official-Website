@@ -43,6 +43,7 @@ export default function EventSection(props: EventSectionProps) {
                                                 borderRadius: "0.5rem",
                                             }}
                                             aspectRatio={4 / 3}
+                                            disableError
                                             src={img.img}
                                         />
                                     </Tooltip>
