@@ -38,8 +38,10 @@ const useStyles = makeStyles((theme: Theme) =>
             border: "0.5rem solid black",
             borderRadius: "0.25rem",
             boxShadow: "0px 0px 10px black",
+            transition: "transform linear 250ms, box-shadow linear 250ms",
             "&:hover": {
-                boxShadow: `0px 0px 10px ${COLORS.mainWhite}`,
+                boxShadow: `-5px 5px 5px 2px ${COLORS.mainWhite}`,
+                transform: "translate(10px, -10px)",
             }
         },
         divider: {

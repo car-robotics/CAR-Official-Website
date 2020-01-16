@@ -46,9 +46,9 @@ export default function Sponsors() {
 
                                 <div className="sponsorCards" style={{ backgroundColor: "#C1C0C0" }} >
                                     <SponsorCard
-                                        img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
-                                        orgName={"Envyntus Partners"}
-                                        orgLink={"https://enventyspartners.com/"}
+                                        img={"https://pbs.twimg.com/profile_images/1037097665312354304/Fu1Ung3u_400x400.jpg"}
+                                        orgName={"goBILDA"}
+                                        orgLink={"https://www.gobilda.com/"}
                                     />
                                     <SponsorCard
                                         img={"https://drive.google.com/uc?export=view&id=1mCYLxvfSS1UQHPbeNTDPV2BPph6y01Q9"}
@@ -63,6 +63,11 @@ export default function Sponsors() {
                                 <LevelCard level="Bronze" />
 
                                 <div className="sponsorCards" style={{ backgroundColor: "#BDA780" }} >
+                                    <SponsorCard
+                                        img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
+                                        orgName={"Envyntus Partners"}
+                                        orgLink={"https://enventyspartners.com/"}
+                                    />
                                     <SponsorCard
                                         img={"https://retohercules.com/images/office-people-clipart-9.jpg"}
                                         orgName={"Your logo here!"}

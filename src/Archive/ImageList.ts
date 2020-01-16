@@ -153,6 +153,12 @@ export const tileData: Tile[] = [
         orientation: "horizontal",
     },
     {
+        img: 'https://drive.google.com/uc?export=view&id=1DsEHEO2ETW8uSMoSuVc4YF_Sd53EdxVf',
+        title: 'Mechanical Button Pushing',
+        category: ArchiveCategory.robot,
+        orientation: "horizontal",
+    },
+    {
         img: 'https://drive.google.com/uc?export=view&id=1i-WJpFZ6KzuXA5SQG046VmU8-92O0TmR',
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
@@ -199,5 +205,11 @@ export const tileData: Tile[] = [
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
         orientation: "horizontal",
+    },
+    {
+        img: 'https://drive.google.com/uc?export=view&id=1DpbLZzWOnnqztb7d6F3h_XxQNMuteKhc',
+        title: 'Drive Electrical',
+        category: ArchiveCategory.robot,
+        orientation: "vertical",
     },
 ];
