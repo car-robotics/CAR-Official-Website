@@ -9,12 +9,13 @@ interface SponsorsCardProps {
     orgName: string;
     orgLink?: string;
     img: string;
+    square?: boolean;
 }
 
 export default function SponsorCard(props: SponsorsCardProps) {
     const [showCover, setShowCover] = React.useState<boolean>(false);
 
-    const { orgName, orgLink, img } = props;
+    const { orgName, orgLink, img, square } = props;
     return (
         <>
             <Card
@@ -30,18 +31,16 @@ export default function SponsorCard(props: SponsorsCardProps) {
                                 src={img}
                                 imageStyle={{
                                     display: "block",
-                                    width: "13rem",
-                                    height: "15rem",
+                                    position: "static",
                                     transition: ".5s ease",
                                     backfaceVisibility: "hidden",
-                                    borderStyle: "solid",
-                                    borderRadius: "10px",
-                                    borderWidth: "12px",
-                                    borderColor: COLORS.darkColor,
                                 }}
                                 style={{
+                                    border: `12px solid ${COLORS.darkColor}`,
+                                    borderRadius: "1rem",
                                     width: "14.5rem",
-                                    height: "16.5rem",
+                                    height: square ? "14.5rem" : "16.5rem",
+                                    padding: square ? "1rem 0" : "",
                                     paddingTop: 0,
                                 }}
                             />
@@ -55,16 +54,13 @@ export default function SponsorCard(props: SponsorsCardProps) {
                         src={img}
                         imageStyle={{
                             display: "block",
-                            width: "13rem",
-                            height: "15rem",
+                            position: "static",
                             transition: ".5s ease",
                             backfaceVisibility: "hidden",
-                            borderStyle: "solid",
-                            borderRadius: "10px",
-                            borderWidth: "12px",
-                            borderColor: COLORS.darkColor,
                         }}
                         style={{
+                            border: `12px solid ${COLORS.darkColor}`,
+                            borderRadius: "1rem",
                             width: "14.5rem",
                             height: "16.5rem",
                             paddingTop: 0,
