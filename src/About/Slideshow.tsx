@@ -38,8 +38,10 @@ export default function Slideshow() {
                     r="7"
                     stroke={COLORS.schoolGold}
                     fill={slideIndex === i ? COLORS.darkColor : COLORS.schoolGold}
-                    style={{ transition: "fill linear 250ms" }}
-                    onClick={() => { setSlideDirection("up"); setSlideIndex(i)}}
+                    style={{
+                        transition: "fill linear 250ms", cursor: "pointer"
+                    }}
+                    onClick={() => { setSlideDirection("up"); setSlideIndex(i) }}
                 >
                 </circle>
             </SvgIcon>
