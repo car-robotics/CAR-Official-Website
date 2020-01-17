@@ -43,9 +43,9 @@ function Competition() {
         <MobileContext.Consumer>
             {mobile => (
                 <PageFade>
-                    <div>
+                    <main>
                         <CountdownTimer />
-                        <Paper elevation={24} className="competition-content">
+                        <Paper component="section" elevation={24} className="competition-content">
                             <Image
                                 src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"}
                                 style={{ backgroundColor: "transparent", paddingTop: "" }}
@@ -60,7 +60,7 @@ function Competition() {
                             (for <GreenLink link="https://attend.ieee.org/southeastcon-2020/student-program/student-hardware-competition/" text="Pi Day!" />).
                         </Typography>
                         </Paper>
-                        <Paper elevation={24} className="competition-content">
+                        <Paper component="section" elevation={24} className="competition-content">
                             <Typography variant="h2" align="center">
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
                             </Typography>
@@ -88,7 +88,7 @@ function Competition() {
                                 />
                             }
                         </Paper>
-                    </div>
+                    </main>
                 </PageFade>
             )}
         </MobileContext.Consumer>

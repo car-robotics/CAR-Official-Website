@@ -15,9 +15,8 @@ export default function Sponsors() {
         <MobileContext.Consumer>
             {mobile => (
                 <PageFade>
-                    <div>
-
-                        <Paper elevation={24} className="container" >
+                    <main>
+                        <Paper component="section" elevation={24} className="container" >
                             <Typography align="center" variant="h2" >
                                 Thank You To Our Sponsors For Their Support!
                             </Typography>
@@ -77,14 +76,13 @@ export default function Sponsors() {
 
                         </Paper>
 
-                        <Paper elevation={24} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%", padding: "1rem" }}>
+                        <Paper component="section" elevation={24} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%", padding: "1rem" }}>
                             <Typography align="center" variant="h3" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
                                 Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                                 <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />
                             </Typography>
                         </Paper>
-
-                    </div>
+                    </main>
                 </PageFade>
             )}
         </MobileContext.Consumer>

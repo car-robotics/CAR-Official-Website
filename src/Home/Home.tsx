@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, makeStyles, createStyles, Theme, Paper, Divider } from "@material-ui/core";
 import Image from "material-ui-image";
 import { DocumentTitle } from "../Utils/DocumentTitle";
-import logo from "../Images/CARLogoPrimary.png";
 import "./Home.scss";
 import PageFade from "../Utils/PageFade";
 
@@ -33,10 +32,10 @@ export default function Home() {
         <MobileContext.Consumer>
             {mobile => (
                 <PageFade>
-                    <div>
-                        <div className="electrical">
+                    <main>
+                        <section className="electrical">
                             <Image
-                                src={logo}
+                                src={"/CARLogoPrimary.png"}
                                 style={{
                                     backgroundColor: "transparent",
                                     paddingTop: mobile ? "2rem" : "5rem",
@@ -49,8 +48,8 @@ export default function Home() {
                                     margin: "2rem auto",
                                 }}
                             />
-                        </div>
-                        <div className="mechanical">
+                        </section>
+                        <section className="mechanical">
                             <Paper
                                 elevation={24}
                                 className={classes.missionCard}
@@ -67,8 +66,8 @@ export default function Home() {
                                     {missionStatement}
                                 </Typography>
                             </Paper>
-                        </div>
-                    </div>
+                        </section>
+                    </main>
                 </PageFade>
             )}
         </MobileContext.Consumer>

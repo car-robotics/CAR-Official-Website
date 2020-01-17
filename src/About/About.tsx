@@ -99,7 +99,7 @@ function About() {
         <MobileContext.Consumer>
             {mobile => (
                 <PageFade>
-                    <div>
+                    <main>
                         <Slideshow />
 
                         <AboutSection
@@ -114,7 +114,7 @@ function About() {
                             content={webTeam}
                         />
 
-                        <Paper elevation={24} className="about-website-container">
+                        <Paper component="section" elevation={24} className="about-website-container">
                             <Typography align="center" variant="h2" >
                                 About the Website
                             </Typography>
@@ -159,7 +159,7 @@ function About() {
                                     </Typography>
                             </Collapse>
                         </Paper>
-                    </div>
+                    </main>
                 </PageFade>
             )}
         </MobileContext.Consumer >

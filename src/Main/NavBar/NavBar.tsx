@@ -57,7 +57,7 @@ export default function NavBar() {
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <>
+                <nav>
                     {!mobile && <>
                         <AppBar className={classes.appbar}>
                             <NavBarContent
@@ -115,7 +115,7 @@ export default function NavBar() {
                             />
                         </Popover>
                     </>}
-                </>
+                </nav>
             )}
         </MobileContext.Consumer >
     )

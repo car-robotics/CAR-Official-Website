@@ -51,7 +51,7 @@ export default function Slideshow() {
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <>
+                <section>
                     <Paper elevation={24} className="slideshow-container">
 
                         <Typography align="center" variant="h2" >
@@ -85,7 +85,7 @@ export default function Slideshow() {
                         </div>
 
                     </Paper>
-                </>
+                </section>
             )}
         </MobileContext.Consumer>
     );

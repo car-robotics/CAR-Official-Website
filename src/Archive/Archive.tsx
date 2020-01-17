@@ -63,7 +63,7 @@ export default class Archive extends Component<{}, ArchiveState> {
             <MobileContext.Consumer>
                 {mobile => (
                     <PageFade>
-                        <div className="archivePageContent">
+                        <main className="archivePageContent">
 
                             <Lightbox
                                 clicked={this.state.clickedImage.clicked}
@@ -131,7 +131,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                 />
                             </Paper>
 
-                        </div>
+                        </main>
                     </PageFade>
                 )
                 }
