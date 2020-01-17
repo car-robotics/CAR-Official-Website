@@ -41,7 +41,7 @@ export default function Lightbox(props: LightboxProps) {
         }
     } else {
         image_height = "";
-        image_width = window.innerHeight > window.innerWidth ? "95vw" : "60vw";
+        image_width = "90vw";
     }
 
     return (
