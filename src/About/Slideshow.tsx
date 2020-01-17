@@ -1,10 +1,11 @@
 import React, { ReactElement } from "react";
-import { KeyboardArrowRight, KeyboardArrowLeft, FiberManualRecord, FiberManualRecordOutlined } from "@material-ui/icons";
-import { IconButton, Paper, Typography, Divider } from "@material-ui/core";
+import { KeyboardArrowRight, KeyboardArrowLeft } from "@material-ui/icons";
+import { IconButton, Paper, Typography, Divider, SvgIcon } from "@material-ui/core";
 import { SlideProps } from "@material-ui/core/Slide";
 import SlideShowContent from "./SlideShowContent";
 import { Swipeable } from "react-swipeable";
 import { MobileContext } from "../Context/MobileContext";
+import { COLORS } from "../Themes/COLORS";
 
 export default function Slideshow() {
     const [slideIndex, setSlideIndex] = React.useState<number>(0);
@@ -28,18 +29,29 @@ export default function Slideshow() {
     }
 
     let slideIndicators: ReactElement[] = [];
-    for (var i = 0; i < 5; i++) {
-        if (slideIndex === i) {
-            slideIndicators.push(<FiberManualRecordOutlined key={i} fontSize="small" />)
-        } else {
-            slideIndicators.push(<FiberManualRecord key={i} fontSize="small" />)
-        }
+    for (let i: number = 0; i < 5; i++) {
+        slideIndicators.push(
+            <SvgIcon key={"slideIndicators" + i}>
+                <circle
+                    cx="9"
+                    cy="9"
+                    r="7"
+                    stroke={COLORS.schoolGold}
+                    fill={slideIndex === i ? COLORS.darkColor : COLORS.schoolGold}
+                    style={{
+                        transition: "fill linear 250ms", cursor: "pointer"
+                    }}
+                    onClick={() => { setSlideDirection("up"); setSlideIndex(i) }}
+                >
+                </circle>
+            </SvgIcon>
+        )
     }
 
     return (
         <MobileContext.Consumer>
             {mobile => (
-                <>
+                <section>
                     <Paper elevation={24} className="slideshow-container">
 
                         <Typography align="center" variant="h2" >
@@ -73,7 +85,7 @@ export default function Slideshow() {
                         </div>
 
                     </Paper>
-                </>
+                </section>
             )}
         </MobileContext.Consumer>
     );

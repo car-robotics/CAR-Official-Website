@@ -46,9 +46,9 @@ export default class Archive extends Component<{}, ArchiveState> {
 
         const handleScroll = (e: React.UIEvent<HTMLElement>) => {
             const collageDiv = e.currentTarget.children[0];
-            if (collageDiv.scrollTop > 500) {
+            if (collageDiv.scrollTop > 500 && !this.state.showSrollTopIcon) {
                 this.setState({ showSrollTopIcon: true })
-            } else if (this.state.showSrollTopIcon === true) {
+            } else if (collageDiv.scrollTop <= 500 && this.state.showSrollTopIcon) {
                 this.setState({ showSrollTopIcon: false })
             }
         }
@@ -63,7 +63,7 @@ export default class Archive extends Component<{}, ArchiveState> {
             <MobileContext.Consumer>
                 {mobile => (
                     <PageFade>
-                        <div className="archivePageContent">
+                        <main className="archivePageContent">
 
                             <Lightbox
                                 clicked={this.state.clickedImage.clicked}
@@ -100,7 +100,13 @@ export default class Archive extends Component<{}, ArchiveState> {
                                                         key={option}
                                                         selected={index === this.state.selectedIndex}
                                                         className="archive-selection"
-                                                        onClick={() => { this.setState({ selectedIndex: index }); if (!this.state.forceScrollToTop) this.setState({ forceScrollToTop: true }) }}
+                                                        onClick={
+                                                            () => {
+                                                                // Scroll to top of image collage on menu selection
+                                                                document.getElementById('image-collage')!.scrollTop = 0;
+                                                                this.setState({ selectedIndex: index });
+                                                            }
+                                                        }
                                                     >
                                                         {option}
                                                     </MenuItem>
@@ -110,7 +116,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                     </Paper>
                                 </Grow>
 
-                                <Divider style={{ margin: mobile ? "0.5rem" : "1rem" }} />
+                                <Divider style={{ margin: "0", marginBottom: "0.5rem" }} />
 
                                 <ImageGrid
                                     section={this.state.selectedIndex}
@@ -121,13 +127,11 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                                 <ScrollToTop
                                     show={this.state.showSrollTopIcon}
-                                    forceScrollToTop={this.state.forceScrollToTop}
-                                    resetForceToScroll={() => this.setState({ forceScrollToTop: false })}
                                     style={{ padding: mobile ? "6px" : "" }}
                                 />
                             </Paper>
 
-                        </div>
+                        </main>
                     </PageFade>
                 )
                 }

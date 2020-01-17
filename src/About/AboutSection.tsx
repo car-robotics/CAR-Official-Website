@@ -11,7 +11,7 @@ interface AboutSectionProps {
 
 export default function AboutSection(props: AboutSectionProps) {
     return (
-        <Paper elevation={24} className="card-group">
+        <Paper component="section" elevation={24} className="card-group">
             <Typography variant="h2" align="center">
                 {props.title}
             </Typography>

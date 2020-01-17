@@ -2,6 +2,7 @@ import React from "react";
 import { Tabs, Tab, IconButton, makeStyles, Theme, createStyles, Tooltip } from "@material-ui/core";
 import { Feedback } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import Crown from "../../Images/UNCC-Crown.png";
 
 interface NavBarContentProps {
     handleFeedbackClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
@@ -23,12 +24,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const getTabWithPath = () => {
     const path = window.location.hash;
-    if (path === "#/about") return 1;
-    if (path === "#/sponsors") return 2;
-    if (path === "#/competition") return 3;
-    if (path === "#/outreach") return 4;
-    if (path === "#/archive") return 5;
-    return 0;
+    if (path === "#/about") return 2;
+    if (path === "#/sponsors") return 3;
+    if (path === "#/competition") return 4;
+    if (path === "#/outreach") return 5;
+    if (path === "#/archive") return 6;
+    return 1;
 }
 
 export default function NavBarContent(props: NavBarContentProps) {
@@ -39,7 +40,7 @@ export default function NavBarContent(props: NavBarContentProps) {
 
     const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
         if (showSidebar) showSidebar(false);
-        setValue(newValue);
+        if (newValue !== 0) setValue(newValue);
     };
 
     // Used to make sure we update NavBar selection on page forward or page backward
@@ -51,12 +52,13 @@ export default function NavBarContent(props: NavBarContentProps) {
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
                 <Tabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab className="NavBarSelection" label="Home" component={Link} to="/" />
-                    <Tab className="NavBarSelection" label="About" component={Link} to="/about" />
-                    <Tab className="NavBarSelection" label="Sponsors" component={Link} to="/sponsors" />
-                    <Tab className="NavBarSelection" label="Competition" component={Link} to="/competition" />
-                    <Tab className="NavBarSelection" label="Outreach" component={Link} to="/outreach" />
-                    <Tab className="NavBarSelection" label="Archive" component={Link} to="/archive" />
+                    <Tab icon={<img alt="UNCC Crown" title="https://www.uncc.edu" src={Crown} style={{height: "2.5rem"}} />} href="https://www.uncc.edu" target="_blank" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Home" component={Link} to="/" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="About" component={Link} to="/about" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Sponsors" component={Link} to="/sponsors" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Competition" component={Link} to="/competition" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Outreach" component={Link} to="/outreach" />
+                    <Tab className="NavBarSelection" disableTouchRipple label="Archive" component={Link} to="/archive" />
                 </Tabs>
                 <Tooltip title="Feedback">
                     <IconButton onClick={handleFeedbackClick} className={isSidebar ? classes.feedbackSidebar : ""}>

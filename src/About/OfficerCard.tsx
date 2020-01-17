@@ -11,7 +11,7 @@ import {
     Divider,
     Tooltip
 } from "@material-ui/core";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "../Themes/COLORS";
 import { MobileContext } from "../Context/MobileContext";
 
 export enum Officer {
@@ -38,8 +38,10 @@ const useStyles = makeStyles((theme: Theme) =>
             border: "0.5rem solid black",
             borderRadius: "0.25rem",
             boxShadow: "0px 0px 10px black",
+            transition: "transform linear 250ms, box-shadow linear 250ms",
             "&:hover": {
-                boxShadow: `0px 0px 10px ${COLORS.mainWhite}`,
+                boxShadow: `-5px 5px 5px 2px ${COLORS.mainWhite}`,
+                transform: "translate(10px, -10px)",
             }
         },
         divider: {
@@ -68,6 +70,7 @@ export default function OfficerCard(props: OfficerCardProps) {
                         className={classes.officerCard}
                         style={{
                             flexBasis: mobile ? "" : "20%",
+                            minWidth: "17rem",
                             margin: mobile ? "1rem auto" : "1rem",
                         }}
                     >

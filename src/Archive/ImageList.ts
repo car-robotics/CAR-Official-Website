@@ -33,10 +33,16 @@ export const tileData: Tile[] = [
         orientation: "vertical",
     },
     {
+        img: 'https://drive.google.com/uc?export=view&id=1unQMJQMQakVr2b8YTP4aEojAfjHrtcM3',
+        title: 'Soldering',
+        category: ArchiveCategory.robot,
+        orientation: "vertical",
+    },
+    {
         img: 'https://drive.google.com/uc?export=view&id=15WVitc2Vo_QnkJqFmrMxNm2LLTHmTBo_',
         title: 'Robot',
         category: ArchiveCategory.robot,
-        orientation: "vertical",
+        orientation: "horizontal",
     },
     {
         img: 'https://drive.google.com/uc?export=view&id=1L_yE-z63yWyykQFGuj9slNJKXvw87GCO',
@@ -141,6 +147,18 @@ export const tileData: Tile[] = [
         orientation: "horizontal",
     },
     {
+        img: 'https://drive.google.com/uc?export=view&id=1e3Zhr9Xwqf2ub2nFomB9JnohmGBK_Tvk',
+        title: 'Mechanical Button Pushing',
+        category: ArchiveCategory.robot,
+        orientation: "horizontal",
+    },
+    {
+        img: 'https://drive.google.com/uc?export=view&id=1DsEHEO2ETW8uSMoSuVc4YF_Sd53EdxVf',
+        title: 'Mechanical Button Pushing',
+        category: ArchiveCategory.robot,
+        orientation: "horizontal",
+    },
+    {
         img: 'https://drive.google.com/uc?export=view&id=1i-WJpFZ6KzuXA5SQG046VmU8-92O0TmR',
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
@@ -187,5 +205,11 @@ export const tileData: Tile[] = [
         title: 'Sprint Reviews',
         category: ArchiveCategory.sprintReview,
         orientation: "horizontal",
+    },
+    {
+        img: 'https://drive.google.com/uc?export=view&id=1DpbLZzWOnnqztb7d6F3h_XxQNMuteKhc',
+        title: 'Drive Electrical',
+        category: ArchiveCategory.robot,
+        orientation: "vertical",
     },
 ];

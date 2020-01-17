@@ -7,7 +7,7 @@ import { DocumentTitle } from "../Utils/DocumentTitle";
 import "./Competition.scss";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "../Themes/COLORS";
 import { PictureAsPdf } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -43,9 +43,9 @@ function Competition() {
         <MobileContext.Consumer>
             {mobile => (
                 <PageFade>
-                    <div>
+                    <main>
                         <CountdownTimer />
-                        <Paper elevation={24} className="competition-content">
+                        <Paper component="section" elevation={24} className="competition-content">
                             <Image
                                 src={"https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png"}
                                 style={{ backgroundColor: "transparent", paddingTop: "" }}
@@ -60,17 +60,17 @@ function Competition() {
                             (for <GreenLink link="https://attend.ieee.org/southeastcon-2020/student-program/student-hardware-competition/" text="Pi Day!" />).
                         </Typography>
                         </Paper>
-                        <Paper elevation={24} className="competition-content">
+                        <Paper component="section" elevation={24} className="competition-content">
                             <Typography variant="h2" align="center">
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
                             </Typography>
                             <Divider />
                             {mobile ?
                                 <div className={classes.mobileRulesBackground} >
-                                    <Tooltip title="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf">
+                                    <Tooltip title="car-robotics.com/Rules.pdf">
                                         <Button
                                             target="_blank"
-                                            href="https://s3.amazonaws.com/car-robotics.uncc.edu/Rules.pdf"
+                                            href="http://car-robotics.com/Rules.pdf"
                                             className={classes.rulesButton}
                                         >
                                             <><PictureAsPdf color="action" className={classes.rulesPdfIcon} /></>
@@ -88,7 +88,7 @@ function Competition() {
                                 />
                             }
                         </Paper>
-                    </div>
+                    </main>
                 </PageFade>
             )}
         </MobileContext.Consumer>

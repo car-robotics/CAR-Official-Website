@@ -6,11 +6,19 @@
 }
 
 .NavBarSelection.Mui-selected {
-    color: $school-gold;
+    @include checkMobile(color, $school-gold, $dark-color);
+    cursor: default;
+}
+
+.NavBarSelection {
+    transition: color linear 250ms;
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .content {
-    @include checkMobile(margin-top, 10vh, 8vh);
+    margin-top: 5rem;
 }
 
 .icon {
@@ -46,4 +54,10 @@
     &:hover {
         box-shadow: 0 0 10px 0 white;
     }
+}
+
+iframe {
+    border: none;
+    max-width: 90vw;
+    max-height: 80vh;
 }

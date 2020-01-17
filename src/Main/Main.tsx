@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ThemeProvider } from "@material-ui/styles";
-import { BreakpointProvider } from "react-socks";
 import Home from "../Home/Home";
 import About from "../About/About";
 import Outreach from "../Outreach/Outreach";
@@ -18,23 +17,21 @@ class Main extends Component {
     return (
       <ThemeProvider theme={theme}>
         <HashRouter>
-          <BreakpointProvider>
-            <MobileContextProvider>
-              <NavBar />
-              <div className="content">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/about" component={About} />
-                  <Route path="/sponsors" component={Sponsors} />
-                  <Route path="/competition" component={Competition} />
-                  <Route path="/outreach" component={Outreach} />
-                  <Route path="/archive" component={Archive} />
-                  <Redirect to="/" />
-                </Switch>
-              </div>
-              <Footer />
-            </MobileContextProvider>
-          </BreakpointProvider>
+          <MobileContextProvider>
+            <NavBar />
+            <div className="content">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/sponsors" component={Sponsors} />
+                <Route path="/competition" component={Competition} />
+                <Route path="/outreach" component={Outreach} />
+                <Route path="/archive" component={Archive} />
+                <Redirect to="/" />
+              </Switch>
+            </div>
+            <Footer />
+          </MobileContextProvider>
         </HashRouter>
       </ThemeProvider>
     );

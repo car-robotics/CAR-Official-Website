@@ -1,6 +1,6 @@
 import React from "react";
 import { IconButton, makeStyles, Theme, createStyles, Tooltip } from "@material-ui/core";
-import { COLORS } from "./COLORS";
+import { COLORS } from "../Themes/COLORS";
 import { KeyboardArrowUp } from "@material-ui/icons";
 import { CSSProperties } from "@material-ui/styles";
 

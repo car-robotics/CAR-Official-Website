@@ -51,10 +51,11 @@
 
 .collage-container {
     @include checkMobile(
-        (padding, width, animation-name),
-        (1rem, 85%, fadeIn),
-        ("1rem 3rem", 90%, slideInUp)
+        (width, animation-name),
+        (85%, fadeIn),
+        (90%, slideInUp)
     );
+    padding: 1rem;
     height: 85vh;
     overflow: hidden;
     animation-duration: 1s;
@@ -74,11 +75,8 @@
 }
 
 .gridList {
-    @include checkMobile(
-        (height, width), 
-        (80vh, 100%), 
-        (100%, 75%)
-    );
+    @include checkMobile(width, 100%, 75%);
+    height: 100%;
     transform: translateZ(0);
     scroll-behavior: smooth;
     cursor: pointer;
@@ -87,10 +85,13 @@
 .lightBox-text.MuiTypography-root {
     color: $dark-color;
     background-color: $school-gold;
-    margin: -0.5rem auto auto auto;
-    width: 50%;
+    margin: auto;
+    width: fit-content;
+    padding: 0 2rem;
     position: absolute;
-    left: 25%;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 5;
     border-radius: 0.25rem;
 }

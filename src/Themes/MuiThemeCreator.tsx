@@ -1,5 +1,5 @@
 import { responsiveFontSizes, createMuiTheme } from "@material-ui/core";
-import { COLORS } from "../Utils/COLORS";
+import { COLORS } from "./COLORS";
 
 export const theme = responsiveFontSizes(createMuiTheme({
     typography: {
@@ -56,6 +56,7 @@ export const theme = responsiveFontSizes(createMuiTheme({
         MuiPopover: {
             paper: {
                 backgroundColor: COLORS.mainWhite,
+                top: "3vh !important",
             },
         },
         MuiTabs: {
@@ -64,8 +65,11 @@ export const theme = responsiveFontSizes(createMuiTheme({
             },
             indicator: {
                 backgroundColor: COLORS.schoolGold,
-                height: "4px",
+                height: "2rem",
                 width: "4px",
+                bottom: "10px",
+                zIndex: -1,
+                borderRadius: "1rem",
             },
         },
         MuiAppBar: {

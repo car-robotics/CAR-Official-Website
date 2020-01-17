@@ -9,12 +9,17 @@
 .card-group {
     margin: 2rem auto;
     padding: 1rem;
-    @include checkMobile(width, 85%, 95%);
+    @include checkMobile(
+        (width, max-width),
+        (85%, 25rem),
+        (95%, "")
+    );
 }
 
 .card-container {
     margin: 0 auto;
     align-items: center;
+    flex-wrap: wrap;
     @include checkMobile(
         (display, justify-content, width), 
         ("", "", 90%), 
@@ -25,6 +30,7 @@
 .slideshow-container {
     margin: auto;
     width: 85%;
+    @include checkMobile(max-width, 25rem, "");
     display: flex;
     flex-direction: column;
     align-content: space-evenly;

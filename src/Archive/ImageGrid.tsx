@@ -37,7 +37,7 @@ export default function ImageGrid(props: ImageGridProps) {
 
   return (
     <div className={classes.root} onScroll={(e) => props.handleScroll(e)}>
-      <GridList spacing={1} cellHeight="auto" className="gridList">
+      <GridList id="image-collage" spacing={1} cellHeight="auto" className="gridList">
         {tileData.map((tile, index) => (
           (tile.category === props.section || props.section === ArchiveCategory.all) &&
           <GridListTile
@@ -48,6 +48,7 @@ export default function ImageGrid(props: ImageGridProps) {
           >
             <Image
               src={tile.img}
+              disableError
               onClick={() => props.handleImageClick(tile)}
               style={{
                 backgroundColor: "transparent",

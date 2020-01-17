@@ -59,7 +59,19 @@ const SlideShowContentItems = [
 export default function SlideShowContent(props: SlideShowContentProps) {
     const classes = useStyles();
 
+    const [isWindowHeightGreaterThanWidth, setIsWindowHeightGreaterThanWidth] = React.useState<boolean>(window.innerHeight > window.innerWidth);
+
     const { mobile, slideDirection } = props;
+
+    const checkWindowSize = () => {
+        if (window.innerHeight < window.innerWidth && isWindowHeightGreaterThanWidth) {
+            setIsWindowHeightGreaterThanWidth(false);
+        } else if (window.innerHeight > window.innerWidth && !isWindowHeightGreaterThanWidth) {
+            setIsWindowHeightGreaterThanWidth(true);
+        }
+    }
+
+    window.addEventListener("resize", checkWindowSize);
 
     return (
         <>
@@ -94,7 +106,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         backgroundColor: "transparent",
                                         padding: mobile ? "0" : "1rem",
                                         margin: mobile ? "1rem" : "auto 1rem",
-                                        width: mobile ? "" : contentObject.width,
+                                        width: mobile ? "" : isWindowHeightGreaterThanWidth ? "50%" : contentObject.width,
                                     }}
                                     imageStyle={{
                                         borderRadius: contentObject.img === Logo ? "100%" : "1rem",
@@ -105,6 +117,7 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         height: "",
                                     }}
                                     aspectRatio={4 / 3}
+                                    disableError
                                     src={contentObject.img}
                                 />
                             </div>
