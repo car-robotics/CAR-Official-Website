@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: "0.25rem",
         },
         listItem: {
-            fontFamily: "Inconsolata",
             fontSize: "1.25rem",
             fontWeight: "bold",
             textAlign: "left",

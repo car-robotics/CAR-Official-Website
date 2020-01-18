@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
       background:
         'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.25))',
       height: "fit-content",
-      fontFamily: "Inconsolata",
       padding: "0.5rem",
     },
   }),

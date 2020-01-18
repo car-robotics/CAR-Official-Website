@@ -3,8 +3,8 @@ import { COLORS } from "./COLORS";
 
 export const theme = responsiveFontSizes(createMuiTheme({
     typography: {
+        fontFamily: "Inconsolata, Roboto",
         allVariants: {
-            fontFamily: "Inconsolata",
             fontWeight: 700,
         },
     },
@@ -32,7 +32,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
         MuiLink: {
             root: {
                 color: COLORS.linkGreen,
-                fontFamily: "Inconsolata",
             },
         },
         MuiDrawer: {
@@ -44,7 +43,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
         MuiTooltip: {
             tooltip: {
                 fontSize: "1.25rem",
-                fontFamily: "Inconsolata",
                 backgroundColor: "#5a5a5a",
             },
         },
