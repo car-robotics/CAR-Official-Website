@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: "auto",
             maxHeight: "90vh",
             overflow: "auto",
+            maxWidth: "90rem",
         },
     }),
 );
@@ -54,7 +55,7 @@ export default function Home() {
                                 elevation={24}
                                 className={classes.missionCard}
                                 style={{
-                                    maxWidth: mobile ? "85%" : "60%",
+                                    width: mobile ? "85%" : "60%",
                                     padding: mobile ? "1rem" : "2rem",
                                 }}
                             >

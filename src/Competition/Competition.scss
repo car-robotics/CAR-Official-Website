@@ -8,6 +8,7 @@
         (70%, 2rem)
     );
     animation: slideInUp 1s;
+    max-width: $global-max-width;
 }
 
 .countdown {

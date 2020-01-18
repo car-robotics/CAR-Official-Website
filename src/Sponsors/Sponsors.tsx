@@ -76,7 +76,7 @@ export default function Sponsors() {
 
                         </Paper>
 
-                        <Paper component="section" elevation={24} style={{ margin: "2rem auto", width: mobile ? "85%" : "60%", padding: "1rem" }}>
+                        <Paper component="section" elevation={24} className="interested-container">
                             <Typography align="center" variant="h3" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }}>
                                 Ineterested in sponsoring?<br />Contact Sam Luu at<br />
                                 <GreenLink link="mailto:car-robotics@uncc.edu" text="car-robotics@uncc.edu" />

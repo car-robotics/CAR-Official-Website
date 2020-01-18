@@ -3,6 +3,7 @@
 .about-website-container {
     margin: 2rem auto;
     padding: 1rem;
+    max-width: $global-max-width;
     @include checkMobile(width, 85%, 60%);
 }
 
@@ -30,7 +31,7 @@
 .slideshow-container {
     margin: auto;
     width: 85%;
-    @include checkMobile(max-width, 25rem, "");
+    @include checkMobile(max-width, 25rem, $global-max-width);
     display: flex;
     flex-direction: column;
     align-content: space-evenly;

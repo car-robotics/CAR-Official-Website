@@ -18,14 +18,14 @@
 .containers {
     padding: 2rem;
     width: fit-content;
-    @include checkMobile(max-width, 95%, 90%);
+    @include checkMobile(max-width, 95%, $global-max-width);
     margin: auto;
     animation: slideInUp 1s;
 }
 
 .header {
     width: 85%;
-    max-width: 100rem;
+    max-width: 90rem;
     @include checkMobile(padding, 1rem, 2rem);
     margin: auto;
     animation: slideInDown 1s;

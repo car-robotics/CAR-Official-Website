@@ -55,6 +55,7 @@
         (85%, fadeIn),
         (90%, slideInUp)
     );
+    max-width: $global-max-width;
     padding: 1rem;
     height: 85vh;
     overflow: hidden;
