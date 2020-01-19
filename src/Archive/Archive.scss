@@ -1,8 +1,8 @@
 @import "../Themes/Themes.scss";
 
 .collage-header {
-    text-align: center;
-    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .archivePageContent {
@@ -42,7 +42,7 @@
     width: fit-content;
     height: fit-content;
     position: absolute;
-    @include checkMobile(right, "", 45%);
+    @include checkMobile(right, "", 35%);
     z-index: 2;
     border-radius: 0.5rem !important;
     padding: 1rem;

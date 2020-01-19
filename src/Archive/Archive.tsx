@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import './Archive.scss';
 import ImageGrid from './ImageGrid';
 import { ArchiveCategory, Tile, defaultTileProps } from "./ImageList";
-import { Typography, MenuList, MenuItem, Grow, ClickAwayListener, Paper, Divider, Tooltip, Button } from "@material-ui/core";
+import { Typography, MenuList, MenuItem, Grow, ClickAwayListener, Paper, Divider, Tooltip, IconButton } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 
 import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
 import { MobileContext } from "../Context/MobileContext";
+import { ArrowDropDown } from "@material-ui/icons";
 
 interface ArchiveState {
     selectedIndex: number,
@@ -73,20 +74,18 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                             <Paper elevation={24} className="collage-container">
 
-                                <div style={{ display: "flex", alignItems: "center" }}>
+                                <div className="collage-header">
+                                    <Typography variant='h3' >
+                                        {collageHeaderString}
+                                    </Typography>
                                     <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
-                                        <Tooltip title="Picture Filter Menu" enterDelay={300}>
-                                            <Button
+                                        <Tooltip title="Picture Filter Menu" enterDelay={500}>
+                                            <IconButton
+                                                style={{ borderRadius: "0 1rem 1rem 0" }}
                                                 onClick={() => this.setState({ showMenu: !this.state.showMenu })}
-                                                style={{
-                                                    margin: "auto",
-                                                    textTransform: "none"
-                                                }}
                                             >
-                                                <Typography variant='h3' className="collage-header">
-                                                    {collageHeaderString}
-                                                </Typography>
-                                            </Button>
+                                                <ArrowDropDown />
+                                            </IconButton>
                                         </Tooltip>
                                     </ClickAwayListener>
                                 </div>
