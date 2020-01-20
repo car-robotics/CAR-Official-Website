@@ -89,12 +89,13 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                         <div>
                             <div className="slideshow-content-container">
                                 <Typography
-                                    variant="h4"
+                                    variant="h2"
                                     className={classes.text}
                                     style={{
                                         padding: mobile ? "1rem" : "",
                                         lineHeight: mobile ? "2.5rem" : "3.5rem",
                                         flexBasis: mobile ? "" : "35%",
+                                        fontWeight: 400,
                                     }}
                                 >
                                     {contentObject.text}

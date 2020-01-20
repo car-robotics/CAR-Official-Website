@@ -81,7 +81,7 @@ export default class Archive extends Component<{}, ArchiveState> {
                                                 onClick={() => this.setState({ showMenu: !this.state.showMenu })}
                                                 style={{ textTransform: "none" }}
                                             >
-                                                <Typography variant='h3'>
+                                                <Typography variant='h1'>
                                                     {collageHeaderString}
                                                 </Typography>
                                                 <ArrowDropDown color="action" />

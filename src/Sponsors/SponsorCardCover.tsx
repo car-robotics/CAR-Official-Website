@@ -27,7 +27,7 @@ export default function SponsorCardCover(props: SponsorCardCoverProps) {
         <Slide in={props.show} direction="right" mountOnEnter unmountOnExit timeout={{ enter: 450, exit: 1000 }}>
             <div className="sponsorCover">
                 <Paper className={classes.container} >
-                    <Typography align="center" variant="h4">
+                    <Typography align="center" variant="h2">
                         {props.text}
                     </Typography>
                 </Paper>

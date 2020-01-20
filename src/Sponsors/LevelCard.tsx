@@ -19,8 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
             borderRadius: "0.25rem",
         },
         listItem: {
-            fontSize: "1.25rem",
-            fontWeight: "bold",
             textAlign: "left",
             paddingTop: "1rem",
             paddingLeft: "1rem",
@@ -69,15 +67,15 @@ export default function LevelCard(props: LevelCardProps) {
                         maxWidth: "20rem",
                     }}
                 >
-                    <Typography className="levelTitle" align="center" variant="h4">
+                    <Typography className="levelTitle" align="center" variant="h2">
                         {cardTitle}
                     </Typography>
-                    <Typography variant="h5" align="left">
+                    <Typography align="left">
                         Includes:
                     </Typography>
                     {listItems.map((x: string, i: number) => {
                         return (
-                            <Typography className={classes.listItem} key={i}>
+                            <Typography variant="body1" className={classes.listItem} key={i}>
                                 {x}
                             </Typography>
                         );

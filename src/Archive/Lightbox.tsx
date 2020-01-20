@@ -32,7 +32,7 @@ export default function Lightbox(props: LightboxProps) {
     let image_width: string, image_height: string;
 
     if (clickedImg.orientation === "vertical") {
-        if (window.innerHeight > window.innerWidth){
+        if (window.innerHeight > window.innerWidth) {
             image_width = "90vw";
             image_height = "";
         } else {
@@ -57,7 +57,7 @@ export default function Lightbox(props: LightboxProps) {
                     </IconButton>
 
                     <Zoom mountOnEnter unmountOnExit in={clicked} timeout={{ enter: 500 }}>
-                        <div style={{position: "relative"}}>
+                        <div style={{ position: "relative" }}>
                             <img
                                 alt={clickedImg.title}
                                 src={clickedImg.img}
@@ -68,7 +68,7 @@ export default function Lightbox(props: LightboxProps) {
                                 }}
                             />
 
-                            <Typography variant="h4" align="center" className="lightBox-text" >
+                            <Typography variant="h2" align="center" className="lightBox-text" >
                                 {clickedImg.title}
                             </Typography>
                         </div>

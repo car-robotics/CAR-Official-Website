@@ -80,11 +80,11 @@ export default function OfficerCard(props: OfficerCardProps) {
                                 className={classes.officerPicture}
                             />
                             <CardContent className={classes.officerText}>
-                                <Typography align="center" variant="h4">
+                                <Typography align="center" variant="h3">
                                     {props.officer}
                                 </Typography>
                                 <Divider className={classes.divider} />
-                                <Typography align="center" variant="h5">
+                                <Typography align="center" variant="body1">
                                     {props.name}
                                 </Typography>
                             </CardContent>

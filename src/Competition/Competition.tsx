@@ -51,7 +51,7 @@ function Competition() {
                                 style={{ backgroundColor: "transparent", paddingTop: "" }}
                                 imageStyle={{ height: "", width: "100%", position: "" }}
                             />
-                            <Typography align="center" variant="h4" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem", whiteSpace: "pre-wrap" }}>
+                            <Typography align="center" variant="body1" style={{ lineHeight: mobile ? "2.5rem" : "3.5rem", whiteSpace: "pre-wrap" }}>
                                 The <GreenLink text="Institute of Electrical and Electronics Engineers (IEEE)" link="https://www.ieee.org/" />{" "}
                                 Region 3 annually hosts student competitions as part of the Southeast Conference.
                                 Of these competitions, the hardware competition involves students from different
@@ -61,7 +61,7 @@ function Competition() {
                         </Typography>
                         </Paper>
                         <Paper component="section" elevation={24} className="competition-content">
-                            <Typography variant="h2" align="center">
+                            <Typography variant="h1" align="center">
                                 The Rules:{mobile ? <br /> : " "}Pi Day 2020
                             </Typography>
                             <Divider />

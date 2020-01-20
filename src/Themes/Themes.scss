@@ -8,6 +8,67 @@ $link-green: #5DA355;
 /* Global Constants */
 $global-max-width: 90rem;
 
+/* Dynamic Fonts */
+h1.MuiTypography-h1 {
+    @media (min-width:0px) {
+        font-size: 2rem;
+    }
+    @media (min-width:768px) {
+        font-size: 2.25rem;
+    }
+    @media (min-width:992px) {
+        font-size: 2.5rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 3rem;
+    }
+}
+
+h2.MuiTypography-h2 {
+    @media (min-width:0px) {
+        font-size: 1.5rem;
+    }
+    @media (min-width:768px) {
+        font-size: 1.75rem;
+    }
+    @media (min-width:992px) {
+        font-size: 2rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 2.25rem;
+    }
+}
+
+h3.MuiTypography-h3 {
+    @media (min-width:0px) {
+        font-size: 1.25rem;
+    }
+    @media (min-width:768px) {
+        font-size: 1.5rem;
+    }
+    @media (min-width:992px) {
+        font-size: 1.75rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 2rem;
+    }
+}
+
+p.MuiTypography-body1 {
+    @media (min-width:0px) {
+        font-size: 1rem;
+    }
+    @media (min-width:768px) {
+        font-size: 1.25rem;
+    }
+    @media (min-width:992px) {
+        font-size: 1.5rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 1.75rem;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     0% {
