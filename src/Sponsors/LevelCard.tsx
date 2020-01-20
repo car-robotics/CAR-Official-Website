@@ -70,12 +70,12 @@ export default function LevelCard(props: LevelCardProps) {
                     <Typography className="levelTitle" align="center" variant="h2">
                         {cardTitle}
                     </Typography>
-                    <Typography align="left">
+                    <Typography variant="body1" align="left">
                         Includes:
                     </Typography>
                     {listItems.map((x: string, i: number) => {
                         return (
-                            <Typography variant="body1" className={classes.listItem} key={i}>
+                            <Typography variant="body2" className={classes.listItem} key={i}>
                                 {x}
                             </Typography>
                         );

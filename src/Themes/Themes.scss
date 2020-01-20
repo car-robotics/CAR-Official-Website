@@ -54,18 +54,21 @@ h3.MuiTypography-h3 {
     }
 }
 
-p.MuiTypography-body1 {
+p.MuiTypography-body1, h6.MuiTypography-subtitle1 {
     @media (min-width:0px) {
-        font-size: 1rem;
-    }
-    @media (min-width:768px) {
-        font-size: 1.25rem;
-    }
-    @media (min-width:992px) {
         font-size: 1.5rem;
     }
     @media (min-width:1200px) {
         font-size: 1.75rem;
+    }
+}
+
+p.MuiTypography-body2 {
+    @media (min-width:0px) {
+        font-size: 1.25rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 1.5rem;
     }
 }
 

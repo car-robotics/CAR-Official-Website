@@ -15,7 +15,7 @@ export default function AboutSection(props: AboutSectionProps) {
             <Typography variant="h1" align="center">
                 {props.title}
             </Typography>
-            <Typography style={{ paddingTop: "1rem", fontWeight: 300 }} variant="h2" align="center">
+            <Typography style={{ paddingTop: "1rem", fontWeight: 300 }} variant="subtitle1" align="center">
                 {props.subtitle}
             </Typography>
             <Divider />
