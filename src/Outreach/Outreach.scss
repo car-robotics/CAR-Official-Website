@@ -6,12 +6,11 @@
     flex-wrap: wrap-reverse;
     cursor: pointer;
     img {
-        transition: box-shadow linear 250ms, transform linear 250ms !important;
+        transition: box-shadow linear 150ms, transform linear 250ms !important;
         box-shadow: 0px 0px 10px $school-gold;
     }
     img:hover {
-        box-shadow: -5px 5px 5px 2px $main-white;
-        transform: translate(10px, -10px);
+        box-shadow: 0px 0px 10px 2px $main-white;
     }
 }
 
