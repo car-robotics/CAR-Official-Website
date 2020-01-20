@@ -96,3 +96,12 @@
     z-index: 5;
     border-radius: 0.25rem;
 }
+
+.MuiGridListTileBar-title {
+    @media (min-width:0px) {
+        font-size: 0.75rem !important;
+    }
+    @media (min-width:1200px) {
+        font-size: 1rem !important;
+    }
+}

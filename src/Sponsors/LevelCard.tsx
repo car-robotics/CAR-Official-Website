@@ -75,7 +75,7 @@ export default function LevelCard(props: LevelCardProps) {
                     </Typography>
                     {listItems.map((x: string, i: number) => {
                         return (
-                            <Typography className={classes.listItem} key={i}>
+                            <Typography variant="body1" className={classes.listItem} key={i}>
                                 {x}
                             </Typography>
                         );

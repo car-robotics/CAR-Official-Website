@@ -44,7 +44,7 @@ export default function FooterContent(props: FooterContentProps) {
                 <Typography variant="body1">
                     Interested in joining CAR?
                 </Typography>
-                <Typography variant="h6" style={{ padding: "12px" }}>
+                <Typography variant="body1" style={{ padding: "12px" }}>
                     <GreenLink link="https://ninerengage.uncc.edu/organization/car-robotics" text="Niner Engage!" />
                 </Typography>
             </div>
@@ -73,7 +73,7 @@ export default function FooterContent(props: FooterContentProps) {
                 </Typography>
                 <Tooltip title="mailto:car-robotics@uncc.edu">
                     <IconButton href="mailto:car-robotics@uncc.edu">
-                        <Typography variant="h6" style={{ paddingRight: "10px" }}>
+                        <Typography variant="body1" style={{ paddingRight: "10px" }}>
                             Email us:
                         </Typography>
                         <Email fontSize="large" />

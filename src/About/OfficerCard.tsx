@@ -84,7 +84,7 @@ export default function OfficerCard(props: OfficerCardProps) {
                                     {props.officer}
                                 </Typography>
                                 <Divider className={classes.divider} />
-                                <Typography align="center" variant="h4">
+                                <Typography align="center" variant="body1">
                                     {props.name}
                                 </Typography>
                             </CardContent>

@@ -16,7 +16,7 @@ export default function TimerDisplay(props: TimerDisplayProps) {
         <MobileContext.Consumer>
             {mobile => (
                 <Paper component="section" elevation={24} className="countdown">
-                    <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h2" align="center">
+                    <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h1" align="center">
                         Countdown to Competition!
                     </Typography>
                     <Divider />

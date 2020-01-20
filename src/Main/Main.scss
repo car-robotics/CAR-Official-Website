@@ -1,13 +1,24 @@
 @import "../Themes/Themes.scss";
 
 .NavBarSelection.MuiTab-textColorInherit {
-    font-size: 1.5rem;
     color: $main-white;
 }
 
 .NavBarSelection.Mui-selected {
     @include checkMobile(color, $school-gold, $dark-color);
     cursor: default;
+}
+
+.NavBarSelection.MuiTab-root {
+    @media (min-width:0px) {
+        font-size: 1rem;
+    }
+    @media (min-width:768px) {
+        font-size: 1.25rem;
+    }
+    @media (min-width:992px) {
+        font-size: 1.5rem;
+    }
 }
 
 .NavBarSelection {

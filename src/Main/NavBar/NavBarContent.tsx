@@ -52,7 +52,7 @@ export default function NavBarContent(props: NavBarContentProps) {
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
                 <Tabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab icon={<img alt="UNCC Crown" title="https://www.uncc.edu" src={Crown} style={{height: "2.5rem"}} />} href="https://www.uncc.edu" target="_blank" />
+                    <Tab icon={<img alt="UNCC Crown" title="https://www.uncc.edu" src={Crown} style={{ height: "2.5rem" }} />} href="https://www.uncc.edu" target="_blank" />
                     <Tab className="NavBarSelection" disableTouchRipple label="Home" component={Link} to="/" />
                     <Tab className="NavBarSelection" disableTouchRipple label="About" component={Link} to="/about" />
                     <Tab className="NavBarSelection" disableTouchRipple label="Sponsors" component={Link} to="/sponsors" />
