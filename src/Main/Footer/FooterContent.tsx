@@ -73,7 +73,7 @@ export default function FooterContent(props: FooterContentProps) {
                 </Typography>
                 <Tooltip title="mailto:car-robotics@uncc.edu">
                     <IconButton href="mailto:car-robotics@uncc.edu">
-                        <Typography variant="body1" style={{ paddingRight: "10px" }}>
+                        <Typography variant="body1" style={{ paddingRight: "10px", fontWeight: 600 }}>
                             Email us:
                         </Typography>
                         <Email fontSize="large" />

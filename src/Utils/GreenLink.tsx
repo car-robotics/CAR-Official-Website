@@ -11,7 +11,7 @@ interface GreenLinkProps {
 export default function GreenLink(props: GreenLinkProps) {
     return (
         <Tooltip placement={props.placement ? props.placement : "bottom"} title={props.link} >
-            <Link target="_blank" href={props.link}>
+            <Link target="_blank" href={props.link} style={{ fontWeight: 600 }}>
                 {props.text}
             </Link>
         </Tooltip>
