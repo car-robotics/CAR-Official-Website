@@ -3,10 +3,35 @@ import { COLORS } from "./COLORS";
 
 export const theme = responsiveFontSizes(createMuiTheme({
     typography: {
-        fontFamily: "Inconsolata, Roboto",
-        allVariants: {
-            fontWeight: 700,
+        fontFamily: "Noto Sans KR, sans-serif",
+        // allVariants: {
+        //     // fontWeight: 700,
+        //     letterSpacing: "1px",
+        // },
+        h1: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+            fontSize: "3.5rem",
         },
+        h2: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+            fontSize: "2.6rem",
+        },
+        h3: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+            fontSize: "2rem",
+        },
+        h4: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+            fontSize: "1.4rem",
+        },
+        body1: {
+            fontSize: "1.5rem",
+            fontWeight: 300,
+        }
     },
     palette: {
         primary: {
@@ -69,6 +94,12 @@ export const theme = responsiveFontSizes(createMuiTheme({
                 zIndex: -1,
                 borderRadius: "1rem",
             },
+        },
+        MuiTab: {
+            root: {
+                fontWeight: 600,
+                letterSpacing: "1px",
+            }
         },
         MuiAppBar: {
             root: {

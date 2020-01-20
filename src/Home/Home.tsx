@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: "auto",
             maxHeight: "90vh",
             overflow: "auto",
-            maxWidth: "90rem",
+            maxWidth: "60rem",
         },
     }),
 );
@@ -59,11 +59,11 @@ export default function Home() {
                                     padding: mobile ? "1rem" : "2rem",
                                 }}
                             >
-                                <Typography variant="h3" align="center">
+                                <Typography variant="h1" align="center">
                                     The Club's Mission
                                     </Typography>
                                 <Divider />
-                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="h4">
+                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="body1">
                                     {missionStatement}
                                 </Typography>
                             </Paper>

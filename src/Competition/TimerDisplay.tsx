@@ -28,7 +28,7 @@ export default function TimerDisplay(props: TimerDisplayProps) {
                     >
                         {(typeof props.display === "string") ?
 
-                            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h3" align="left">
+                            <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} variant="h2" align="left">
                                 {props.display}
                             </Typography>
 
@@ -36,7 +36,7 @@ export default function TimerDisplay(props: TimerDisplayProps) {
 
                             props.display.map((unitOfTime: string, index: number) => {
                                 return (
-                                    <Typography key={index} style={{ lineHeight: mobile ? "2.5rem" : "3.5rem", margin: mobile ? "" : "auto 1rem" }} variant="h3" align={mobile ? "left" : "center"}>
+                                    <Typography key={index} style={{ lineHeight: mobile ? "2.5rem" : "3.5rem", margin: mobile ? "" : "auto 1rem" }} variant="h2" align={mobile ? "left" : "center"}>
                                         {parseInt(unitOfTime) === 1 ? unitOfTime + " " + units[index].slice(0, -1) : unitOfTime + " " + units[index]}
                                     </Typography>
                                 );

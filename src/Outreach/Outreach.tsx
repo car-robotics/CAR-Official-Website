@@ -54,13 +54,13 @@ export default function Outreach() {
                 />
 
                 <Paper elevation={24} className="header">
-                    <Typography variant="h2" align="center">
+                    <Typography variant="h1" align="center">
                         Outreach
                     </Typography>
                     <Divider />
-                    <Typography variant="h4" align="center">
+                    <Typography variant="body1" align="center">
                         We treat outreach very seriously throughout the school year.
-                        As a club, we require volunteerig if members wish to to travel to competition.
+                        As a club, we require volunteering if members wish to to travel to competition.
                         Below are some of our past volunteering events, enjoy!
                     </Typography>
                 </Paper>

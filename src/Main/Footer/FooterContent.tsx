@@ -22,7 +22,7 @@ export default function FooterContent(props: FooterContentProps) {
     return (
         <>
             <div className="footer-section">
-                <Typography variant="h5">
+                <Typography variant="body1">
                     Support us on Social Media!
                 </Typography>
                 <Tooltip title="https://www.instagram.com/car_robotics/">
@@ -41,7 +41,7 @@ export default function FooterContent(props: FooterContentProps) {
             }
 
             <div className="footer-section">
-                <Typography variant="h5">
+                <Typography variant="body1">
                     Interested in joining CAR?
                 </Typography>
                 <Typography variant="h6" style={{ padding: "12px" }}>
@@ -52,7 +52,7 @@ export default function FooterContent(props: FooterContentProps) {
             {!mobile && <Divider className={classes.divider} orientation="vertical" />}
 
             <div className="footer-section">
-                <Typography variant="h5">
+                <Typography variant="body1">
                     Support us by Donating!
                 </Typography>
                 <Tooltip title="PayPal - The safer, easier way to pay online!">
@@ -68,7 +68,7 @@ export default function FooterContent(props: FooterContentProps) {
             {!mobile && <Divider className={classes.divider} orientation="vertical" />}
 
             <div className="footer-section">
-                <Typography variant="h5">
+                <Typography variant="body1">
                     Become a sponsor!
                 </Typography>
                 <Tooltip title="mailto:car-robotics@uncc.edu">
