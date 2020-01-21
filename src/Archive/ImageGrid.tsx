@@ -53,7 +53,7 @@ export default function ImageGrid(props: ImageGridProps) {
                   style={{
                     backgroundColor: "transparent",
                     paddingTop:
-                      index === 0 ? "40%" :
+                      index === 0 && props.section === ArchiveCategory.all ? "40%" :
                         tile.orientation === "horizontal" ? "75%" : "100%",
                   }}
                   imageStyle={{

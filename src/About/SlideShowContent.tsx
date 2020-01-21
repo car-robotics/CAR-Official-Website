@@ -41,17 +41,17 @@ const SlideShowContentItems = [
     },
     {
         text: "We educate other students through workshops and demonstrations.",
-        img: "https://drive.google.com/uc?export=view&id=1AVeRmitYuQB4BQdR4NOg59dGbaUxzVpv",
+        img: "/Photos/Outreach/ArduinoWksp-3.jpg",
         width: "35%",
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned.",
-        img: "https://drive.google.com/uc?export=view&id=1i-WJpFZ6KzuXA5SQG046VmU8-92O0TmR",
+        img: "/Photos/SprintReviews/EndofSprint2-3.jpg",
         width: "35%",
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region.",
-        img: "https://drive.google.com/uc?export=view&id=15WVitc2Vo_QnkJqFmrMxNm2LLTHmTBo_",
+        img: "/Photos/Robot/Robot2.jpg",
         width: "35%",
     }
 ];

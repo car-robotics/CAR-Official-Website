@@ -32,13 +32,8 @@ export default function Lightbox(props: LightboxProps) {
     let image_width: string, image_height: string;
 
     if (clickedImg.orientation === "vertical") {
-        if (window.innerHeight > window.innerWidth) {
-            image_width = "90vw";
-            image_height = "";
-        } else {
-            image_width = "";
-            image_height = "90vh";
-        }
+        image_width = "";
+        image_height = "90vh";
     } else {
         image_height = "";
         image_width = window.innerHeight > window.innerWidth ? "95vw" : "60vw";
@@ -62,8 +57,8 @@ export default function Lightbox(props: LightboxProps) {
                                 alt={clickedImg.title}
                                 src={clickedImg.img}
                                 style={{
-                                    width: image_width,
-                                    height: image_height,
+                                    width: mobile ? "90vw" : image_width,
+                                    height: mobile ? "" : image_height,
                                     border: `0.25rem solid ${COLORS.schoolGold}`
                                 }}
                             />
