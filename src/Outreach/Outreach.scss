@@ -16,15 +16,20 @@
 
 .containers {
     padding: 2rem;
-    width: fit-content;
     @include checkMobile(max-width, 95%, $global-max-width);
+    @media (min-width:0px){
+        width: 45rem;
+    }
+    @media (min-width:1500px){
+        width: fit-content;
+    }
     margin: auto;
     animation: slideInUp 1s;
 }
 
 .header {
     width: 85%;
-    max-width: 90rem;
+    max-width: $global-max-width;
     @include checkMobile(padding, 1rem, 2rem);
     margin: auto;
     animation: slideInDown 1s;
