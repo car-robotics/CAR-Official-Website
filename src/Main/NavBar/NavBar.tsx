@@ -87,7 +87,7 @@ export default function NavBar() {
                             <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
                                 <Menu fontSize="inherit" />
                             </IconButton>
-                            <Typography className={classes.mobileNavBar} variant="body1">
+                            <Typography className={classes.mobileNavBar} variant="body2">
                                 Charlotte Area Robotics
                             </Typography>
                         </AppBar>
