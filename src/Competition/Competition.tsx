@@ -1,14 +1,14 @@
 import React from "react";
 import CountdownTimer from "./CountdownTimer";
 import Image from "material-ui-image";
-import { Typography, Paper, Divider, Button, Tooltip, makeStyles, Theme, createStyles } from "@material-ui/core";
+import { Typography, Paper, Divider, Button, Tooltip, makeStyles, Theme, createStyles, IconButton } from "@material-ui/core";
 import PageFade from "../Utils/PageFade";
 import { DocumentTitle } from "../Utils/DocumentTitle";
 import "./Competition.scss";
 import GreenLink from "../Utils/GreenLink";
 import { MobileContext } from "../Context/MobileContext";
 import { COLORS } from "../Themes/COLORS";
-import { PictureAsPdf } from "@material-ui/icons";
+import { PictureAsPdf, OpenInNew } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -61,9 +61,18 @@ function Competition() {
                         </Typography>
                         </Paper>
                         <Paper component="section" elevation={24} className="competition-content">
-                            <Typography variant="h1" align="center">
-                                The Rules:{mobile ? <br /> : " "}Pi Day 2020
-                            </Typography>
+                            <div style={{ display: "flex", justifyContent: "center" }}>
+                                <Typography variant="h1" align="center">
+                                    The Rules:{mobile ? <br /> : " "}Pi Day 2020
+                                </Typography>
+                                {!mobile &&
+                                    <Tooltip title="Open rules in new tab">
+                                        <IconButton href="/Rules.pdf" target="_blank" style={{ marginLeft: "1rem" }}>
+                                            <OpenInNew color="action" />
+                                        </IconButton>
+                                    </Tooltip>
+                                }
+                            </div>
                             <Divider />
                             {mobile ?
                                 <div className={classes.mobileRulesBackground} >

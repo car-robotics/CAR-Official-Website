@@ -66,6 +66,7 @@ export default function Sponsors() {
                                         img={"https://enventyspartners.com/wp-content/uploads/2017/09/cropped-en-favicon.gif"}
                                         orgName={"Envyntus Partners"}
                                         orgLink={"https://enventyspartners.com/"}
+                                        square
                                     />
                                     <SponsorCard
                                         img={"https://retohercules.com/images/office-people-clipart-9.jpg"}

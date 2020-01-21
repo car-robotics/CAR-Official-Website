@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       overflow: 'hidden',
-      height: "90%",
+      height: "94%",
     },
     titleBar: {
       background:
