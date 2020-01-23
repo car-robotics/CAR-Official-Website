@@ -52,7 +52,7 @@
 }
 
 .slideshow-lower-container {
-    @include checkMobile(height, 80vh, 45vh);
+    @include checkMobile(height, 40rem, 25rem);
     display: flex;
     justify-content: space-between;
 }
