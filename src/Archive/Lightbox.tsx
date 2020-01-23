@@ -63,7 +63,7 @@ export default function Lightbox(props: LightboxProps) {
                                 }}
                             />
 
-                            <Typography variant="h2" align="center" className="lightBox-text" >
+                            <Typography variant="subtitle1" align="center" className="lightBox-text" >
                                 {clickedImg.title}
                             </Typography>
                         </div>
