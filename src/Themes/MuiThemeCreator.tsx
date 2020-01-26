@@ -1,12 +1,28 @@
-import { responsiveFontSizes, createMuiTheme } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core";
 import { COLORS } from "./COLORS";
 
-export const theme = responsiveFontSizes(createMuiTheme({
+export const theme = createMuiTheme({
     typography: {
-        allVariants: {
-            fontFamily: "Inconsolata",
-            fontWeight: 700,
+        fontFamily: "Noto Sans KR, sans-serif",
+        h1: {
+            fontWeight: 600,
+            letterSpacing: "1px",
         },
+        h2: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+        },
+        h3: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+        },
+        h4: {
+            fontWeight: 600,
+            letterSpacing: "1px",
+        },
+        body1: {
+            fontWeight: 300,
+        }
     },
     palette: {
         primary: {
@@ -32,7 +48,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
         MuiLink: {
             root: {
                 color: COLORS.linkGreen,
-                fontFamily: "Inconsolata",
             },
         },
         MuiDrawer: {
@@ -44,7 +59,6 @@ export const theme = responsiveFontSizes(createMuiTheme({
         MuiTooltip: {
             tooltip: {
                 fontSize: "1.25rem",
-                fontFamily: "Inconsolata",
                 backgroundColor: "#5a5a5a",
             },
         },
@@ -72,6 +86,12 @@ export const theme = responsiveFontSizes(createMuiTheme({
                 borderRadius: "1rem",
             },
         },
+        MuiTab: {
+            root: {
+                fontWeight: 600,
+                letterSpacing: "1px",
+            }
+        },
         MuiAppBar: {
             root: {
                 borderRadius: "0",
@@ -93,4 +113,4 @@ export const theme = responsiveFontSizes(createMuiTheme({
             }
         },
     },
-}));
+});

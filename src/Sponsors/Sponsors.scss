@@ -4,11 +4,12 @@
     padding: 2rem 1rem 1rem 1rem;
     margin: auto;
     width: 85%;
-    @include checkMobile(max-width, 25rem, "");
+    @include checkMobile(max-width, 25rem, $global-max-width);
 }
 
 .levelTitle {
     padding: 1rem 0;
+    line-height: 3rem !important;
 }
 
 .card-cover-container {
@@ -57,4 +58,11 @@
     animation-fill-mode: forwards;
     overflow: hidden;
     @include checkMobile(flex-direction, column, row);
+}
+
+.interested-container {
+    margin: 2rem auto;
+    @include checkMobile(width, 85%, 60%);
+    padding: 1rem;
+    max-width: $global-max-width;
 }

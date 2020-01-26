@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: "auto",
             maxHeight: "90vh",
             overflow: "auto",
+            maxWidth: "60rem",
         },
     }),
 );
@@ -54,15 +55,15 @@ export default function Home() {
                                 elevation={24}
                                 className={classes.missionCard}
                                 style={{
-                                    maxWidth: mobile ? "85%" : "60%",
+                                    width: mobile ? "85%" : "60%",
                                     padding: mobile ? "1rem" : "2rem",
                                 }}
                             >
-                                <Typography variant="h3" align="center">
+                                <Typography variant="h1" align="center">
                                     The Club's Mission
                                     </Typography>
                                 <Divider />
-                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="h4">
+                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="body1">
                                     {missionStatement}
                                 </Typography>
                             </Paper>

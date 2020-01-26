@@ -6,26 +6,30 @@
     flex-wrap: wrap-reverse;
     cursor: pointer;
     img {
-        transition: box-shadow linear 250ms, transform linear 250ms !important;
+        transition: box-shadow linear 150ms, transform linear 250ms !important;
         box-shadow: 0px 0px 10px $school-gold;
     }
     img:hover {
-        box-shadow: -5px 5px 5px 2px $main-white;
-        transform: translate(10px, -10px);
+        box-shadow: 0px 0px 10px 2px $main-white;
     }
 }
 
 .containers {
     padding: 2rem;
-    width: fit-content;
-    @include checkMobile(max-width, 95%, 90%);
+    @include checkMobile(max-width, 95%, $global-max-width);
+    @media (min-width:0px){
+        width: 45rem;
+    }
+    @media (min-width:1500px){
+        width: fit-content;
+    }
     margin: auto;
     animation: slideInUp 1s;
 }
 
 .header {
     width: 85%;
-    max-width: 100rem;
+    max-width: $global-max-width;
     @include checkMobile(padding, 1rem, 2rem);
     margin: auto;
     animation: slideInDown 1s;

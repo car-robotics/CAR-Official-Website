@@ -1,8 +1,8 @@
 @import "../Themes/Themes.scss";
 
 .collage-header {
-    text-align: center;
-    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .archivePageContent {
@@ -14,7 +14,12 @@
 }
 
 .archive-selection.MuiMenuItem-root {
-    font-size: 1.5rem;
+    @media (min-width:0px) {
+        font-size: 1.25rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 1.75rem;
+    }
     &:hover {
         background-color: rgba(55, 71, 82, 0.513) !important;
         border-radius: 0.5rem;
@@ -42,7 +47,7 @@
     width: fit-content;
     height: fit-content;
     position: absolute;
-    @include checkMobile(right, "", 45%);
+    @include checkMobile(right, "", 35%);
     z-index: 2;
     border-radius: 0.5rem !important;
     padding: 1rem;
@@ -55,8 +60,9 @@
         (85%, fadeIn),
         (90%, slideInUp)
     );
+    max-width: $global-max-width;
     padding: 1rem;
-    height: 85vh;
+    height: 90vh;
     overflow: hidden;
     animation-duration: 1s;
     position: relative;
@@ -75,7 +81,7 @@
 }
 
 .gridList {
-    @include checkMobile(width, 100%, 75%);
+    width: 100%;
     height: 100%;
     transform: translateZ(0);
     scroll-behavior: smooth;
@@ -85,6 +91,7 @@
 .lightBox-text.MuiTypography-root {
     color: $dark-color;
     background-color: $school-gold;
+    font-weight: 600;
     margin: auto;
     width: fit-content;
     padding: 0 2rem;
@@ -94,4 +101,13 @@
     right: 0;
     z-index: 5;
     border-radius: 0.25rem;
+}
+
+.MuiGridListTileBar-title {
+    @media (min-width:0px) {
+        font-size: 0.75rem !important;
+    }
+    @media (min-width:1200px) {
+        font-size: 1rem !important;
+    }
 }

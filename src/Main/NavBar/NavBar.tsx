@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: "auto",
             padding: "0.5rem",
             color: COLORS.schoolGold,
+            fontWeight: 600,
         },
     }),
 );
@@ -86,7 +87,7 @@ export default function NavBar() {
                             <IconButton className={classes.hamburgerMenu} onClick={handleDrawerToggle}>
                                 <Menu fontSize="inherit" />
                             </IconButton>
-                            <Typography className={classes.mobileNavBar} variant="h5">
+                            <Typography className={classes.mobileNavBar} variant="body2">
                                 Charlotte Area Robotics
                             </Typography>
                         </AppBar>

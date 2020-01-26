@@ -115,7 +115,7 @@ function About() {
                         />
 
                         <Paper component="section" elevation={24} className="about-website-container">
-                            <Typography align="center" variant="h2" >
+                            <Typography align="center" variant="h1" >
                                 About the Website
                             </Typography>
                             <Divider />
@@ -131,7 +131,7 @@ function About() {
                                 }}
                             />
                             <Collapse in={showAboutWebsite} unmountOnExit>
-                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="h4">
+                                <Typography style={{ lineHeight: mobile ? "2.5rem" : "3.5rem" }} align="center" variant="body1">
                                     This website was built using
                                         {aboutWebsiteLinks.map((website) => {
                                         return (

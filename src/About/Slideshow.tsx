@@ -54,7 +54,7 @@ export default function Slideshow() {
                 <section>
                     <Paper elevation={24} className="slideshow-container">
 
-                        <Typography align="center" variant="h2" >
+                        <Typography align="center" variant="h1" >
                             Who We Are
                         </Typography>
 

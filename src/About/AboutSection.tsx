@@ -12,10 +12,10 @@ interface AboutSectionProps {
 export default function AboutSection(props: AboutSectionProps) {
     return (
         <Paper component="section" elevation={24} className="card-group">
-            <Typography variant="h2" align="center">
+            <Typography variant="h1" align="center">
                 {props.title}
             </Typography>
-            <Typography style={{ paddingTop: "1rem" }} variant="h4" align="center">
+            <Typography style={{ paddingTop: "1rem", fontWeight: 300 }} variant="subtitle1" align="center">
                 {props.subtitle}
             </Typography>
             <Divider />

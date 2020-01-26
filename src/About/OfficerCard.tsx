@@ -40,8 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
             boxShadow: "0px 0px 10px black",
             transition: "transform linear 250ms, box-shadow linear 250ms",
             "&:hover": {
-                boxShadow: `-5px 5px 5px 2px ${COLORS.mainWhite}`,
-                transform: "translate(10px, -10px)",
+                boxShadow: `0 0 5px 2px ${COLORS.mainWhite}`,
             }
         },
         divider: {
@@ -80,11 +79,11 @@ export default function OfficerCard(props: OfficerCardProps) {
                                 className={classes.officerPicture}
                             />
                             <CardContent className={classes.officerText}>
-                                <Typography align="center" variant="h4">
+                                <Typography align="center" variant="h3">
                                     {props.officer}
                                 </Typography>
                                 <Divider className={classes.divider} />
-                                <Typography align="center" variant="h5">
+                                <Typography align="center" variant="body1">
                                     {props.name}
                                 </Typography>
                             </CardContent>

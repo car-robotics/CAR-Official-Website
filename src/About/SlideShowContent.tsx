@@ -41,17 +41,17 @@ const SlideShowContentItems = [
     },
     {
         text: "We educate other students through workshops and demonstrations.",
-        img: "https://drive.google.com/uc?export=view&id=1AVeRmitYuQB4BQdR4NOg59dGbaUxzVpv",
+        img: "/Photos/Outreach/ArduinoWksp-3.jpg",
         width: "35%",
     },
     {
         text: "We educate each other by working on multiple things at once and then sharing what we learned.",
-        img: "https://drive.google.com/uc?export=view&id=1i-WJpFZ6KzuXA5SQG046VmU8-92O0TmR",
+        img: "/Photos/SprintReviews/EndofSprint2-3.jpg",
         width: "35%",
     },
     {
         text: "We design, build, and test a robot to compete against other schools in the region.",
-        img: "https://drive.google.com/uc?export=view&id=15WVitc2Vo_QnkJqFmrMxNm2LLTHmTBo_",
+        img: "/Photos/Robot/Robot2.jpg",
         width: "35%",
     }
 ];
@@ -89,12 +89,13 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                         <div>
                             <div className="slideshow-content-container">
                                 <Typography
-                                    variant="h4"
+                                    variant="h2"
                                     className={classes.text}
                                     style={{
                                         padding: mobile ? "1rem" : "",
                                         lineHeight: mobile ? "2.5rem" : "3.5rem",
                                         flexBasis: mobile ? "" : "35%",
+                                        fontWeight: 400,
                                     }}
                                 >
                                     {contentObject.text}
@@ -106,7 +107,21 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         backgroundColor: "transparent",
                                         padding: mobile ? "0" : "1rem",
                                         margin: mobile ? "1rem" : "auto 1rem",
-                                        width: mobile ? "" : isWindowHeightGreaterThanWidth ? "50%" : contentObject.width,
+
+                                        /*
+                                            Before you look at width and cry, let me explain:
+                                            If the user is on mobile, we want to leave the width unset
+                                            If not mobile and the height of the window is greater than the width,
+                                            then we want to set the width of every image to 50% of it's container;
+                                            except for the logo (which is more square than the others). We set the
+                                            width of the logo to only 35%. If the width of the screen is greater than
+                                            the height, we set the width in the object itself up above.
+                                        */
+
+                                        width: mobile ? "" :
+                                            isWindowHeightGreaterThanWidth ?
+                                                contentObject.img === Logo ? "35%" : "50%"
+                                                : contentObject.width,
                                     }}
                                     imageStyle={{
                                         borderRadius: contentObject.img === Logo ? "100%" : "1rem",

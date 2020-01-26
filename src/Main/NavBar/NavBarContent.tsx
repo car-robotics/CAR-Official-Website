@@ -24,12 +24,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const getTabWithPath = () => {
     const path = window.location.hash;
-    if (path === "#/about") return 2;
-    if (path === "#/sponsors") return 3;
-    if (path === "#/competition") return 4;
-    if (path === "#/outreach") return 5;
-    if (path === "#/archive") return 6;
-    return 1;
+    if (path === "#/about") return 1;
+    if (path === "#/sponsors") return 2;
+    if (path === "#/competition") return 3;
+    if (path === "#/outreach") return 4;
+    if (path === "#/archive") return 5;
+    return 0;
 }
 
 export default function NavBarContent(props: NavBarContentProps) {
@@ -51,8 +51,26 @@ export default function NavBarContent(props: NavBarContentProps) {
     return (
         <>
             <div className={isSidebar ? styles.mobile : styles.desktop}>
+                <Tooltip title="https://www.uncc.edu">
+                    <IconButton href="https://www.uncc.edu"
+                        style={isSidebar ?
+                            {
+                                position: "absolute",
+                                top: "3rem",
+                                left: "3rem",
+                                right: "3rem",
+                            } : {
+                                position: "absolute",
+                                left: "1rem",
+                                top: "0",
+                                bottom: "0",
+                            }
+                        }
+                    >
+                        <img src={Crown} alt="UNCC" style={{ height: "2.5rem" }} />
+                    </IconButton>
+                </Tooltip>
                 <Tabs orientation={isSidebar ? "vertical" : "horizontal"} scrollButtons="auto" variant="scrollable" value={value} onChange={handleChange}>
-                    <Tab icon={<img alt="UNCC Crown" title="https://www.uncc.edu" src={Crown} style={{height: "2.5rem"}} />} href="https://www.uncc.edu" target="_blank" />
                     <Tab className="NavBarSelection" disableTouchRipple label="Home" component={Link} to="/" />
                     <Tab className="NavBarSelection" disableTouchRipple label="About" component={Link} to="/about" />
                     <Tab className="NavBarSelection" disableTouchRipple label="Sponsors" component={Link} to="/sponsors" />

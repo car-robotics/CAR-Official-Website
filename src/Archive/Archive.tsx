@@ -9,6 +9,7 @@ import { DocumentTitle } from "../Utils/DocumentTitle";
 import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
 import { MobileContext } from "../Context/MobileContext";
+import { ArrowDropDown } from "@material-ui/icons";
 
 interface ArchiveState {
     selectedIndex: number,
@@ -73,19 +74,17 @@ export default class Archive extends Component<{}, ArchiveState> {
 
                             <Paper elevation={24} className="collage-container">
 
-                                <div style={{ display: "flex", alignItems: "center" }}>
+                                <div className="collage-header">
                                     <ClickAwayListener onClickAway={() => this.setState({ showMenu: false })}>
-                                        <Tooltip title="Picture Filter Menu" enterDelay={300}>
+                                        <Tooltip title="Picture Filter Menu" enterDelay={500}>
                                             <Button
                                                 onClick={() => this.setState({ showMenu: !this.state.showMenu })}
-                                                style={{
-                                                    margin: "auto",
-                                                    textTransform: "none"
-                                                }}
+                                                style={{ textTransform: "none" }}
                                             >
-                                                <Typography variant='h3' className="collage-header">
+                                                <Typography variant='h1'>
                                                     {collageHeaderString}
                                                 </Typography>
+                                                <ArrowDropDown color="action" />
                                             </Button>
                                         </Tooltip>
                                     </ClickAwayListener>
