@@ -14,7 +14,12 @@
 }
 
 .archive-selection.MuiMenuItem-root {
-    font-size: 1.5rem;
+    @media (min-width:0px) {
+        font-size: 1.25rem;
+    }
+    @media (min-width:1200px) {
+        font-size: 1.75rem;
+    }
     &:hover {
         background-color: rgba(55, 71, 82, 0.513) !important;
         border-radius: 0.5rem;

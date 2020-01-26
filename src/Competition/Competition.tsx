@@ -79,7 +79,7 @@ function Competition() {
                                     <Tooltip title="car-robotics.com/Rules.pdf">
                                         <Button
                                             target="_blank"
-                                            href="http://car-robotics.com/Rules.pdf"
+                                            href="/Rules.pdf"
                                             className={classes.rulesButton}
                                         >
                                             <><PictureAsPdf color="action" className={classes.rulesPdfIcon} /></>

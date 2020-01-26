@@ -107,7 +107,21 @@ export default function SlideShowContent(props: SlideShowContentProps) {
                                         backgroundColor: "transparent",
                                         padding: mobile ? "0" : "1rem",
                                         margin: mobile ? "1rem" : "auto 1rem",
-                                        width: mobile ? "" : isWindowHeightGreaterThanWidth ? "50%" : contentObject.width,
+
+                                        /*
+                                            Before you look at width and cry, let me explain:
+                                            If the user is on mobile, we want to leave the width unset
+                                            If not mobile and the height of the window is greater than the width,
+                                            then we want to set the width of every image to 50% of it's container;
+                                            except for the logo (which is more square than the others). We set the
+                                            width of the logo to only 35%. If the width of the screen is greater than
+                                            the height, we set the width in the object itself up above.
+                                        */
+
+                                        width: mobile ? "" :
+                                            isWindowHeightGreaterThanWidth ?
+                                                contentObject.img === Logo ? "35%" : "50%"
+                                                : contentObject.width,
                                     }}
                                     imageStyle={{
                                         borderRadius: contentObject.img === Logo ? "100%" : "1rem",
