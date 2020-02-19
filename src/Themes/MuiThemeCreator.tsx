@@ -64,7 +64,8 @@ export const theme = createMuiTheme({
     },
     MuiDivider: {
       root: {
-        margin: "1rem"
+        margin: "1rem",
+        height: "2px"
       }
     },
     MuiPopover: {
@@ -81,7 +82,7 @@ export const theme = createMuiTheme({
         backgroundColor: COLORS.schoolGold,
         height: "2rem",
         width: "4px",
-        bottom: "0.5rem",
+        bottom: "20%",
         zIndex: -1,
         borderRadius: "1rem"
       }

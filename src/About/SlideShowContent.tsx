@@ -26,8 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const IEEE =
-  "https://www.ieeeuncc.com/uploads/1/2/4/2/124254028/ieeefulllogo_orig.png";
+const IEEE = "/Photos/ieee_logo.jpg";
 
 const SlideShowContentItems = [
   {
