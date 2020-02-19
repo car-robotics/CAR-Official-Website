@@ -68,7 +68,7 @@ function Competition() {
                   width: mobile ? "100%" : "65%",
                   position: "",
                   display: "block",
-                  margin: "auto"
+                  margin: "1rem auto"
                 }}
               />
               <Divider />
