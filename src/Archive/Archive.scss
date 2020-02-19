@@ -1,113 +1,131 @@
 @import "../Themes/Themes.scss";
 
 .collage-header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .archivePageContent {
-    @include checkMobile(margin, "-1rem auto 1rem auto", "0 2rem 2rem 2rem");
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    overflow: hidden;
+  @include checkMobile(margin, "-1rem auto 1rem auto", "0 2rem 2rem 2rem");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.archive-video {
+  @include checkMobile(
+    (width, animation-name),
+    (85%, fadeIn),
+    (90%, slideInUp)
+  );
+  width: fit-content;
+  padding: 1rem;
+  margin: 3rem auto;
+  max-width: $global-max-width;
+  animation-duration: 1s;
+  iframe {
+    border: 0;
+    width: 100%;
+    height: 70vh;
+  }
 }
 
 .archive-selection.MuiMenuItem-root {
-    @media (min-width:0px) {
-        font-size: 1.25rem;
-    }
-    @media (min-width:1200px) {
-        font-size: 1.75rem;
-    }
-    &:hover {
-        background-color: rgba(55, 71, 82, 0.513) !important;
-        border-radius: 0.5rem;
-    }
+  @media (min-width: 0px) {
+    font-size: 1.25rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 1.75rem;
+  }
+  &:hover {
+    background-color: rgba(55, 71, 82, 0.513) !important;
+    border-radius: 0.5rem;
+  }
 }
 
 .archive-selection.Mui-selected.MuiListItem-root.Mui-selected {
-    color: $dark-color;
-    background-image: linear-gradient(to bottom right, $school-gold, #5f5f5f);
-    border-radius: 0.5rem;
+  color: $dark-color;
+  background-image: linear-gradient(to bottom right, $school-gold, #5f5f5f);
+  border-radius: 0.5rem;
 }
 
 .menu-container {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-self: center;
-    margin: 5rem;
-    border-radius: 0.5rem !important;
-    padding: 1rem;
-    animation: slideInLeft 1s;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-self: center;
+  margin: 5rem;
+  border-radius: 0.5rem !important;
+  padding: 1rem;
+  animation: slideInLeft 1s;
 }
 
 .menu-container-popout {
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    @include checkMobile(right, "", 35%);
-    z-index: 2;
-    border-radius: 0.5rem !important;
-    padding: 1rem;
-    box-shadow: 0px 0px 10px 5px black !important;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  @include checkMobile(right, "", 35%);
+  z-index: 2;
+  border-radius: 0.5rem !important;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px 5px black !important;
 }
 
 .collage-container {
-    @include checkMobile(
-        (width, animation-name),
-        (85%, fadeIn),
-        (90%, slideInUp)
-    );
-    max-width: $global-max-width;
-    padding: 1rem;
-    height: 90vh;
-    overflow: hidden;
-    animation-duration: 1s;
-    position: relative;
-    margin-bottom: 3rem;
+  @include checkMobile(
+    (width, animation-name),
+    (85%, fadeIn),
+    (90%, slideInUp)
+  );
+  max-width: $global-max-width;
+  padding: 1rem;
+  height: 90vh;
+  overflow: hidden;
+  animation-duration: 1s;
+  position: relative;
+  margin: auto;
 }
 
 .close-backdrop-icon.MuiIconButton-root {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background-color: $school-green;
+  &:hover {
     background-color: $school-green;
-    &:hover {
-        background-color: $school-green;
-        box-shadow: 0 0 10px 0 $main-white;
-    }
+    box-shadow: 0 0 10px 0 $main-white;
+  }
 }
 
 .gridList {
-    width: 100%;
-    height: 100%;
-    transform: translateZ(0);
-    scroll-behavior: smooth;
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0);
+  scroll-behavior: smooth;
+  cursor: pointer;
 }
 
 .lightBox-text.MuiTypography-root {
-    color: $dark-color;
-    background-color: $school-gold;
-    font-weight: 600;
-    margin: auto;
-    width: fit-content;
-    padding: 0 2rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    border-radius: 0.25rem;
+  color: $dark-color;
+  background-color: $school-gold;
+  font-weight: 600;
+  margin: auto;
+  width: fit-content;
+  padding: 0 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  border-radius: 0.25rem;
 }
 
 .MuiGridListTileBar-title {
-    @media (min-width:0px) {
-        font-size: 0.75rem !important;
-    }
-    @media (min-width:1200px) {
-        font-size: 1rem !important;
-    }
+  @media (min-width: 0px) {
+    font-size: 0.75rem !important;
+  }
+  @media (min-width: 1200px) {
+    font-size: 1rem !important;
+  }
 }

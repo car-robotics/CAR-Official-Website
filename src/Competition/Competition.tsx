@@ -63,8 +63,15 @@ function Competition() {
               <Image
                 src={"/Photos/ieee_logo.jpg"}
                 style={{ backgroundColor: "transparent", paddingTop: "" }}
-                imageStyle={{ height: "", width: "100%", position: "" }}
+                imageStyle={{
+                  height: "",
+                  width: mobile ? "100%" : "65%",
+                  position: "",
+                  display: "block",
+                  margin: "auto"
+                }}
               />
+              <Divider />
               <Typography
                 align="center"
                 variant="body1"
