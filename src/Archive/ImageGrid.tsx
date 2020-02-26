@@ -49,7 +49,7 @@ export default function ImageGrid(props: ImageGridProps) {
                   props.section === ArchiveCategory.all) && (
                   <GridListTile
                     key={tile.img}
-                    cols={index === 0 ? 2 : 1}
+                    cols={tile.wide ? 2 : 1}
                     style={{ padding: "0.25rem" }}
                   >
                     <Image
