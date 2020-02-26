@@ -29,6 +29,42 @@ export const tileData: Tile[] = [
     orientation: "horizontal"
   },
   {
+    img: prefix + "Outreach/Discovery2020_6.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "Outreach/Discovery2020_4.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "Outreach/Discovery2020_1.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "Outreach/Discovery2020_3.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "Outreach/Discovery2020_5.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "Outreach/Discovery2020_2.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
     img: prefix + "Robot/Robot1.jpg",
     title: "Robot",
     category: ArchiveCategory.robot,
@@ -39,6 +75,12 @@ export const tileData: Tile[] = [
     title: "Soldering",
     category: ArchiveCategory.robot,
     orientation: "vertical"
+  },
+  {
+    img: prefix + "Outreach/Discovery2020_7.jpg",
+    title: "Discovery Place 2020",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
   },
   {
     img: prefix + "Robot/Robot2.jpg",
