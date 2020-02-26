@@ -10,6 +10,7 @@ export interface Tile {
   title: string;
   category: ArchiveCategory;
   orientation: "vertical" | "horizontal";
+  wide?: boolean;
 }
 
 export const defaultTileProps: Tile = {
@@ -26,6 +27,31 @@ export const tileData: Tile[] = [
     img: prefix + "ReturningMembers.jpg",
     title: "Returning Members",
     category: ArchiveCategory.all,
+    orientation: "horizontal",
+    wide: true
+  },
+  {
+    img: prefix + "Robot/Robot2020_1.jpg",
+    title: "Robot 2020",
+    category: ArchiveCategory.robot,
+    orientation: "vertical"
+  },
+  {
+    img: prefix + "Robot/Robot2020_2.jpg",
+    title: "Robot 2020",
+    category: ArchiveCategory.robot,
+    orientation: "vertical"
+  },
+  {
+    img: prefix + "Robot/DriveTesting.jpg",
+    title: "Drive Team Testing",
+    category: ArchiveCategory.robot,
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "Robot/DriveTesting2.jpg",
+    title: "Drive Team Testing",
+    category: ArchiveCategory.robot,
     orientation: "horizontal"
   },
   {
@@ -65,28 +91,23 @@ export const tileData: Tile[] = [
     orientation: "horizontal"
   },
   {
-    img: prefix + "Robot/Robot1.jpg",
-    title: "Robot",
-    category: ArchiveCategory.robot,
-    orientation: "vertical"
-  },
-  {
-    img: prefix + "Robot/Soldering.jpg",
-    title: "Soldering",
-    category: ArchiveCategory.robot,
-    orientation: "vertical"
-  },
-  {
     img: prefix + "Outreach/Discovery2020_7.jpg",
     title: "Discovery Place 2020",
     category: ArchiveCategory.outreach,
-    orientation: "horizontal"
+    orientation: "horizontal",
+    wide: true
   },
   {
-    img: prefix + "Robot/Robot2.jpg",
-    title: "Robot",
+    img: prefix + "Robot/ButtonMech2.jpg",
+    title: "Mechanical Button Pushing",
     category: ArchiveCategory.robot,
-    orientation: "horizontal"
+    orientation: "vertical"
+  },
+  {
+    img: prefix + "Robot/DriveElectrical.jpg",
+    title: "Drive Electrical",
+    category: ArchiveCategory.robot,
+    orientation: "vertical"
   },
   {
     img: prefix + "Outreach/ArduinoWksp-1.jpg",
@@ -143,6 +164,12 @@ export const tileData: Tile[] = [
     orientation: "horizontal"
   },
   {
+    img: prefix + "Outreach/Explore1.jpg",
+    title: "Explore",
+    category: ArchiveCategory.outreach,
+    orientation: "horizontal"
+  },
+  {
     img: prefix + "Outreach/DiscoveryPlace1.jpg",
     title: "Discovery Place",
     category: ArchiveCategory.outreach,
@@ -163,12 +190,6 @@ export const tileData: Tile[] = [
   {
     img: prefix + "Outreach/Elementary2.jpg",
     title: "Elementary",
-    category: ArchiveCategory.outreach,
-    orientation: "horizontal"
-  },
-  {
-    img: prefix + "Outreach/Explore1.jpg",
-    title: "Explore",
     category: ArchiveCategory.outreach,
     orientation: "horizontal"
   },
@@ -203,31 +224,25 @@ export const tileData: Tile[] = [
     orientation: "horizontal"
   },
   {
-    img: prefix + "SprintReviews/EndofSprint2-5.jpg",
-    title: "Sprint Reviews",
-    category: ArchiveCategory.sprintReview,
-    orientation: "horizontal"
-  },
-  {
     img: prefix + "SprintReviews/EndofSprint2-2.jpg",
     title: "Sprint Reviews",
     category: ArchiveCategory.sprintReview,
     orientation: "horizontal"
   },
   {
-    img: prefix + "SprintReviews/EndofSprint2-1.jpg",
+    img: prefix + "SprintReviews/EndofSprint2-5.jpg",
     title: "Sprint Reviews",
     category: ArchiveCategory.sprintReview,
-    orientation: "vertical"
+    orientation: "horizontal"
+  },
+  {
+    img: prefix + "SprintReviews/EndofSprint2-9.jpg",
+    title: "Sprint Reviews",
+    category: ArchiveCategory.sprintReview,
+    orientation: "horizontal"
   },
   {
     img: prefix + "SprintReviews/EndofSprint2-4.jpg",
-    title: "Sprint Reviews",
-    category: ArchiveCategory.sprintReview,
-    orientation: "vertical"
-  },
-  {
-    img: prefix + "SprintReviews/EndofSprint2-6.jpg",
     title: "Sprint Reviews",
     category: ArchiveCategory.sprintReview,
     orientation: "vertical"
@@ -239,9 +254,21 @@ export const tileData: Tile[] = [
     orientation: "vertical"
   },
   {
-    img: prefix + "SprintReviews/EndofSprint2-9.jpg",
+    img: prefix + "SprintReviews/EndofSprint2-6.jpg",
     title: "Sprint Reviews",
     category: ArchiveCategory.sprintReview,
+    orientation: "vertical"
+  },
+  {
+    img: prefix + "SprintReviews/EndofSprint2-1.jpg",
+    title: "Sprint Reviews",
+    category: ArchiveCategory.sprintReview,
+    orientation: "vertical"
+  },
+  {
+    img: prefix + "Robot/Robot2.jpg",
+    title: "Robot",
+    category: ArchiveCategory.robot,
     orientation: "horizontal"
   },
   {
@@ -251,39 +278,15 @@ export const tileData: Tile[] = [
     orientation: "horizontal"
   },
   {
-    img: prefix + "Robot/ButtonMech2.jpg",
-    title: "Mechanical Button Pushing",
+    img: prefix + "Robot/Robot1.jpg",
+    title: "Robot",
     category: ArchiveCategory.robot,
     orientation: "vertical"
   },
   {
-    img: prefix + "Robot/Robot2020_1.jpg",
-    title: "Robot 2020",
+    img: prefix + "Robot/Soldering.jpg",
+    title: "Soldering",
     category: ArchiveCategory.robot,
     orientation: "vertical"
-  },
-  {
-    img: prefix + "Robot/Robot2020_2.jpg",
-    title: "Robot 2020",
-    category: ArchiveCategory.robot,
-    orientation: "vertical"
-  },
-  {
-    img: prefix + "Robot/DriveElectrical.jpg",
-    title: "Drive Electrical",
-    category: ArchiveCategory.robot,
-    orientation: "vertical"
-  },
-  {
-    img: prefix + "Robot/DriveTesting.jpg",
-    title: "Drive Team Testing",
-    category: ArchiveCategory.robot,
-    orientation: "horizontal"
-  },
-  {
-    img: prefix + "Robot/DriveTesting2.jpg",
-    title: "Drive Team Testing",
-    category: ArchiveCategory.robot,
-    orientation: "horizontal"
   }
 ];
