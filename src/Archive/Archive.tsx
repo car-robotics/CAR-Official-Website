@@ -20,6 +20,7 @@ import Lightbox from "./Lightbox";
 import ScrollToTop from "./ScrollToTop";
 import { MobileContext } from "../Context/MobileContext";
 import { ArrowDropDown } from "@material-ui/icons";
+import GreenLink from "../Utils/GreenLink";
 
 interface ArchiveState {
   selectedIndex: number;
@@ -150,12 +151,29 @@ export default class Archive extends Component<{}, ArchiveState> {
 
               <Paper className="archive-video" elevation={24}>
                 <Typography align="center" variant="h1">
-                  From Youtube
+                  Videos
                 </Typography>
                 <Divider />
+                <Typography align="center" variant="h2">
+                  From YouTube
+                </Typography>
                 <iframe
                   title="DriveTeamSuccess"
                   src="https://www.youtube.com/embed/iIxAKaX1LlU"
+                ></iframe>
+                <Divider />
+                <Typography align="center" variant="h2">
+                  From QC Life
+                </Typography>
+                <Typography variant="subtitle1" align="center">
+                  <GreenLink
+                    text="Check out the full story here!"
+                    link="https://qclife.wbtv.com/getting-kids-interested-in-stem/"
+                  />
+                </Typography>
+                <iframe
+                  title="QC Life Segment"
+                  src="//players.brightcove.net/5316136204001/default_default/index.html?videoId=6136186126001"
                 ></iframe>
               </Paper>
             </main>
